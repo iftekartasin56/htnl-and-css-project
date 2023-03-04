@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <title>Retirement Planning Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: "Roboto", sans-serif;
+        }
+    </style>
+</head>
+<body>
+<style>
+#mx_cl *,
+::after,
+::before {
+    box-sizing: border-box;
+}
+#mx_cl {
+    line-height: 1.5;
+    font-family: inherit;
+}
+#mx_cl .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    border-radius: 10px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4a4a4a;
+    text-align: left;
+}
+#mx_cl label {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 10px;
+}
+#mx_cl .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+#mx_cl .col-md-1,
+#mx_cl .col-md-10,
+#mx_cl .col-md-11,
+#mx_cl .col-md-12,
+#mx_cl .col-md-2,
+#mx_cl .col-md-3,
+#mx_cl .col-md-4,
+#mx_cl .col-md-5,
+#mx_cl .col-md-6,
+#mx_cl .col-md-7,
+#mx_cl .col-md-8,
+#mx_cl .col-md-9 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+#mx_cl .form-group {
+    margin-bottom: 1rem;
+}
+#mx_cl .form-control {
+    display: block;
+    width: 100%;
+    height: 35px;
+    padding: 0.275rem 0.75rem;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #dddddd;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+#mx_cl .form-control:focus {
+    outline: none;
+}
+#mx_cl .btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+#mx_cl .btn-primary {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+}
+#mx_cl .btn-reset {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+}
+#mx_cl table {
+    border-collapse: collapse;
+}
+#mx_cl .table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+}
+#mx_cl .table td,
+#mx_cl .table th {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+#mx_cl .text-center {
+    text-align: center;
+}
+@media (min-width: 576px) {
+    #mx_cl .container {
+        max-width: 100%;
+    }
+}
+@media (min-width: 768px) {
+    #mx_cl .container {
+        max-width: 100%;
+    }
+    #mx_cl .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    #mx_cl .col-md-9 {
+        -ms-flex: 0 0 75%;
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+    #mx_cl .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+    #mx_cl .col-md-7 {
+        -ms-flex: 0 0 58.33333%;
+        flex: 0 0 58.33333%;
+        max-width: 58.33333%;
+    }
+    #mx_cl .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    #mx_cl .col-md-5 {
+        -ms-flex: 0 0 41.666667%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    #mx_cl .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    #mx_cl .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+@media (min-width: 992px) {
+    #mx_cl .container {
+        max-width: 900px;
+    }
+}
+@media (min-width: 1200px) {
+    #mx_cl .container {
+        max-width: 900px;
+    }
+}
+#mx_cl .text-right {
+    text-align: right;
+}
+#mx_cl .form-group,
+#mx_cl .input-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+#mx_cl .top-title {
+    font-size: 25px;
+    text-align: center;
+    border-bottom: 1px solid #d2d2d2;
+    padding-bottom: 8px;
+    margin-bottom: 25px;
+}
+#mx_cl .bottom-space {
+    margin-bottom: 20px;
+}
+#mx_cl .range-hadding {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #000;
+}
+#mx_cl .input-slider_1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#mx_cl .form-range {
+    width: 100%;
+}
+.ms-cl input[type="range"] {
+    margin: 0 0 0 0;
+    outline: none;
+    padding: 0;
+    width: 100%;
+    height: 7px;
+    background-color: #dbdbdb;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0f1d2b), color-stop(100%, #0f1d2b));
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+#mx_cl .ms-cl input[type="range"]::-webkit-slider-runnable-track {
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    -webkit-appearance: none;
+}
+#mx_cl.ms-cl input[type="range"]::-webkit-slider-thumb {
+    height: 20px;
+    width: 20px;
+    margin-top: -2px;
+    background: #e0c64d;
+    border: 5px solid #e0c64d;
+    border-radius: 25px;
+    /* box-shadow: 0 2px 2px 0px #000000; */
+    -webkit-appearance: none;
+}
+#mx_cl.ms-cl input[type="range"]::-moz-range-track {
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    -webkit-appearance: none;
+}
+#mx_cl.ms-cl input[type="range"]::-moz-range-thumb {
+    height: 20px;
+    width: 20px;
+    margin-top: -2px;
+    background: #e0c64d;
+    border: 5px solid #e0c64d;
+    border-radius: 25px;
+    /* box-shadow: 0 2px 2px 0px #000000; */
+    -webkit-appearance: none;
+}
+#mx_cl .slidecontainer {
+    width: 100%;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+#mx_cl #form-control {
+    height: 35px !important;
+    color: #000 !important;
+    font-size: 18px !important;
+    font-weight: 400 !important;
+}
+#mx_cl #middle-section {
+    background: #ffffff;
+    border: 1px solid #dedede;
+    border-radius: 10px;
+    padding: 30px 30px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+#mx_cl .Retirement_Savings {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+}
+#mx_cl .custom-in {
+    height: 35px !important;
+    margin-bottom: 10px;
+    width: 100% !important;
+}
+#mx_cl .sp-range-sec {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#mx_cl .custom-in-sm {
+    height: 35px !important;
+    font-weight: 400;
+    color: #000;
+}
+#mx_cl .output-sec {
+    background: #0f1d2b;
+    padding: 5px 0px !important;
+    margin-top: 15px !important;
+    border-radius: 8px;
+    box-shadow: 0 0 5px #909090;
+}
+#mx_cl .output-title {
+    color: #fff;
+    font-size: 18px !important;
+    font-weight: 400;
+    text-align: center;
+    line-height: 22px;
+    margin: 0;
+    margin-top: 20px;
+}
+#mx_cl .output-value {
+    color: #fff;
+    font-size: 32px !important;
+    font-weight: 700;
+    text-align: center;
+    line-height: 22px;
+    margin: 18px 0 20px 0;
+}
+#mx_cl .prepend-text {
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+}
+#mx_cl .append-text {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+}
+#mx_cl .left-sp {
+    padding-left: 25px;
+}
+#mx_cl .note-p {
+    display: none;
+    margin: 0; 
+    margin-top: 10px;
+    font-size: 12px;
+}
+#mx_cl .sp-in {
+    display: flex;
+}
+#mx_cl .sp-wd1 {
+    width: 100%;
+}
+#mx_cl .sp-wd2 {
+    width: 100%;
+}
+#mx_cl .right-output-box {
+    background: #F7F7F7;
+    padding: 20px;
+}
+#mx_cl .help-tip{
+    position: absolute;
+    top: 1px;
+    right: 18px;
+    text-align: center;
+    background-color: #ffffff;
+    border: 1px solid #000;
+    color: #000;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 14px;
+    line-height: 26px;
+    cursor: default;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+
+#mx_cl .help-tip:before{
+    content: 'i';
+    font-weight: bold;
+    color: #000;
+}
+
+#mx_cl .help-tip:hover p{
+    display:block;
+    transform-origin: 100% 0%;
+    -webkit-animation: fadeIn 0.3s ease-in-out;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+#mx_cl .help-tip p{    /* The tooltip */
+    display: none;
+    text-align: left;
+    background-color: #fff;
+    padding: 20px;
+    width: 300px;
+    position: absolute;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px rgb(0 0 0 / 20%);
+    right: -9px;
+    color: #000;
+    border: 1px solid #8cafd3;
+    font-size: 14px;
+    line-height: 1.4;
+    top: 13px;
+    z-index: 10;
+}
+
+#mx_cl .help-tip p:before{ /* The pointer of the tooltip */
+    position: absolute;
+    content: '';
+    width:0;
+    height: 0;
+    border:6px solid transparent;
+    border-bottom-color:#1E2021;
+    right:10px;
+    top:-12px;
+}
+
+#mx_cl .help-tip p:after{ /* Prevents the tooltip from being hidden */
+    width:100%;
+    height:40px;
+    content:'';
+    position: absolute;
+    top:-40px;
+    left:0;
+}
+#mx_cl .right-total-vl{
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+    margin: 0;
+    margin-bottom: 20px;
+}
+#mx_cl .sp-int-cl{
+    color: #0847DA;
+}
+#mx_cl .sp-con-cl{
+    color: #118475;
+}
+#mx_cl .tot-fut-title{
+    font-size: 16px;
+    font-weight: 600;
+    color: #3C4B5A;
+    text-transform: uppercase;
+    letter-spacing: 1.12px;
+    margin: 0;
+}
+#mx_cl .tot-fut-vl{
+    color: #118475;
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+    #mx_cl .mb-top-space {
+        margin-top: 20px;
+    }
+    #mx_cl #middle-section {
+        padding: 20px;
+    }
+}
+
+</style>
+<div class="ms-cl" id="mx_cl">
+    <div class="container">
+        <h1 class="top-title">Compound Interest Calculator</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Initial Investment</label>
+                    <div class="help-tip">
+                        <p>The amount of money you have to invest.</p>
+                    </div>
+                    <input type="text" class="form-control left-sp custom-in" id="in_3" value="10000" autocomplete="off" />
+                    <span class="prepend-text">$</span>
+                </div>
+                <div class="slidecontainer">
+                    <input type="range" min="1" max="100" value="20" step="1" class="rg-slider cl-in" id="in_1" />
+                </div>
+                <div class="form-group">
+                    <label>Contribution Amount</label>
+                    <div class="help-tip">
+                        <p>Choose an amount you plan to add to your investment and how regularly you will do it.</p>
+                    </div>
+                    <div class="sp-in"> 
+                            <div class="form-group" style="flex:3">
+                                <input type="text" class="form-control left-sp " id="in_3" value="10000" autocomplete="off" />
+                                <span class="prepend-text">$</span>
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control" style="flex:2" id="exampleFormControlSelect1">
+                                <option>Daily</option>
+                                <option>Weekly</option>
+                                <option>Semi-Monthly</option>
+                                <option>Monthly</option>
+                                <option>Quarterly</option>
+                                <option>Semi-Annually</option>
+                                <option>Annually</option>
+                                </select>
+                            </div>
+                    </div>
+                    <div class="slidecontainer">
+                        <input type="range" min="1" max="100" value="20" step="1" class="rg-slider cl-in" id="in_1" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Interest Rate</label>
+                    <div class="help-tip">
+                        <p>Most investments do not have a fixed interest rate. Here you can enter an interest rate or what percentage you expect your investment to grow.</p>
+                    </div>
+                    <div class="sp-in"> 
+                            <div class="form-group" style="flex:3">
+                                <input type="text" class="form-control left-sp " id="in_3" value="10000" autocomplete="off" />
+                                <span class="prepend-text">$</span>
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control" style="flex:2" id="exampleFormControlSelect1">
+                                <option>Daily</option>
+                                <option>Weekly</option>
+                                <option>Semi-Monthly</option>
+                                <option>Monthly</option>
+                                <option>Quarterly</option>
+                                <option>Semi-Annually</option>
+                                <option>Annually</option>
+                                </select>
+                            </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Length of investment</label>
+                    <input type="text" class="form-control left-sp custom-in" id="in_3" value="10000" autocomplete="off" />
+                    <span class="append-text">years</span>
+                </div>
+                <div class="slidecontainer">
+                    <input type="range" min="1" max="100" value="20" step="1" class="rg-slider cl-in" id="in_1" />
+                </div>
+               
+            </div>
+            <div class="col-md-6">
+                    <div class="right-output-box">
+                        <div>
+                            <h3 class="tot-fut-title">Total Future Balance</h3>
+                            <p class="tot-fut-vl">$1,593,860.28 </p>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6"></div>
+                            <div class="col-md-6">
+                                <div>
+                                    <h3 class="right-total-title">Total Interest </h3>
+                                    <p class="right-total-vl sp-int-cl">$373,860.28 </p>
+                                </div>
+                                <div>
+                                    <h3 class="right-total-title">Total Contributions </h3>
+                                    <p class="right-total-vl sp-con-cl">$1,220,000.00 </p>
+                                </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+<!-- <script>
+jQuery(($) => {
+    const numOptionCurrency = {
+        digitGroupSeparator        : ',',
+        decimalCharacter           : '.',
+        decimalCharacterAlternative: '.',
+        currencySymbol             : '',
+        currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.prefix,
+        decimalPlaces              : 0,
+        minimumValue               : 0
+    };
+
+    const nft = Intl.NumberFormat("en-US", {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+    });
+
+    const anElement1 = AutoNumeric.multiple('.custom-in', numOptionCurrency);
+
+    $('.rg-slider').on('input', function(e){
+        var min = Number(e.target.min),
+            max = Number(e.target.max),
+            vl = Number(e.target.value),
+            val = Number(e.target.value);
+        
+        let in_id = $(this).attr("id");
+
+        if(min == 0){
+            min = min + 1;
+            max = max + 1;
+            val = val + 1;
+        }
+            
+        let bg_size = (val - min) * 100 / (max - min);
+
+        $(e.target).css({
+            'backgroundSize': bg_size + '% 100%'
+        });
+
+        if(in_id == "in_1" || in_id == "in_2"){
+            $("#"+in_id+"_vl").val(vl);
+            
+            if(in_id == "in_1"){
+                $("#in_2").attr("min", vl);
+                $("#in_2").trigger("input");
+            }
+        } else {
+            $("#"+in_id+"_vl").val(vl + "%");
+        }
+
+        calc();
+
+    }).trigger('input');
+
+    $(".custom-in").on("input", function() {
+        calc();
+    });
+
+    function calc() {
+        in_1 = removeSign($("#in_1").val());
+        in_2 = removeSign($("#in_2").val());
+        in_3 = removeSign($("#in_3").val());
+        in_4 = removeSign($("#in_4").val());
+        in_5 = removeSign($("#in_5").val());
+        in_6 = removeSign($("#in_6").val());
+        in_7 = removeSign($("#in_7").val())/100;
+        in_8 = removeSign($("#in_8").val())/100;
+
+        if(in_7 > 7/100){
+            $("#prcnt_1").show();
+            $("#prcnt_2").hide();
+        } else {
+            $("#prcnt_1").hide();
+            $("#prcnt_2").show();
+        }
+
+        if(in_8 > 7/100){
+            $("#prcnt_3").show();
+            $("#prcnt_4").hide();
+        } else {
+            $("#prcnt_3").hide();
+            $("#prcnt_4").show();
+        }
+
+        output_1 = FV(in_7/12,(12*(in_2-in_1)),-in_4/12,in_3,0);
+        output_2 = (NPER(in_8/12,((in_5-in_6)*Math.pow(1.035,(in_2-in_1)))/12,-output_1,0,0))/12;
+
+        $("#output_1").text("$"+nft.format(onlyNum(output_1)));
+        $("#output_2").text(nft.format(onlyNum(output_2)));
+
+        if(output_2 < 35){
+            $("#con_1").show();
+            $("#con_2").hide();
+        } else {
+            $("#con_1").hide();
+            $("#con_2").show();
+        }
+    }
+
+    function FV(rate, nper, pmt, pv, type) {
+        var pow = Math.pow(1 + rate, nper),
+        fv;
+    
+        pv = pv || 0;
+        type = type || 0;
+    
+        if (rate) {
+        fv = (pmt*(1+rate*type)*(1-pow)/rate)-pv*pow;
+        } else {
+        fv = -1 * (pv + pmt * nper);
+        }
+        return fv;
+    }
+
+    function NPER(rate, payment, present, future, type) {
+        var type = (typeof type === 'undefined') ? 0 : type;
+
+        var future = (typeof future === 'undefined') ? 0 : future;
+
+        rate = eval(rate);
+
+        var num = payment * (1 + rate * type) - future * rate;
+        var den = (present * rate + payment * (1 + rate * type));
+        return Math.log(num / den) / Math.log(1 + rate);
+    }
+
+    function removeSign(vl){
+        return Number(vl.replace(/\$|,/g, ''));
+    }
+
+    function onlyNum(num){
+        return isFinite(num) ? num : 0;
+    }
+});
+</script> -->
+</body>
+</html>
