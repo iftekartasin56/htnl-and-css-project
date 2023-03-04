@@ -1,0 +1,21 @@
+<script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+
+const numOptionCurrency = {
+            digitGroupSeparator        : ',',
+            decimalCharacter           : '.',
+            decimalCharacterAlternative: '.',
+            currencySymbol             : '$',
+            currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.prefix,
+            decimalPlaces              : 0
+        };
+        const numOptionPercent = {
+            digitGroupSeparator        : ',',
+            decimalCharacter           : '.',
+            decimalCharacterAlternative: '.',
+            currencySymbol             : '%',
+            currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.suffix,
+            decimalPlaces              : 2
+        };
+
+        new AutoNumeric('#in_1', numOptionCurrency);
+new AutoNumeric('#in_4', numOptionPercent);

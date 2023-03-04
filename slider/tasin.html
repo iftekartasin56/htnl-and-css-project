@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>Slider</title>
+</head>
+<style>
+    .container{
+        width: 80%;
+        box-sizing: border-box;
+        box-shadow: 5px 3px 5px 10px rgba(0, 0, 0, 0.2);
+        font-family: 'poppins',sans-serif;
+        border-radius: 5px;
+        padding: 50px;
+        margin-top: 50px;
+    }
+    .slider-input-tittle{
+        display: flex;
+        justify-content: space-between;
+    }
+    .slider-input-tittle .title-name{
+        font-size: 20px;
+        font-weight: 700;
+        color: #002c3a;
+    }
+    .input-form{
+        border: 1px solid #595959;
+        border-radius: 10px;
+        height: 50px;
+    }
+    .form-range{
+        width: 100%;
+        margin: 20px 0 20px 0;
+    }
+    .slider{
+        height: 40px;
+        width: 100%;
+        align-items: center;
+        margin: 20px 0 20px 0;
+    }
+    .slider input{
+        height: 10px;
+        width: 100%;
+        -webkit-appearance: none;
+        outline: none;
+        background: #f3f3f3;
+        border-radius: 25px;
+        box-shadow: inset 0px 0px 4px rgba(0,0,0,0.2);
+    }
+    .slider input::-moz-range-progress{
+        height: 10px;
+        border-radius: 25px;
+        background: #00838b;
+    }
+    .slider input::-moz-range-thumb{
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        background: #00838b;
+        -webkit-appearance: none;
+    }
+    .box-info{
+        background-color: #f4f4f4;
+        padding: 30px;
+        border-radius: 10px;
+    }
+    .box-info .box-info-value{
+        font-size: 30px;
+        font-weight: 700;
+        color: #00838b;
+    }
+    .box-info .box-info-title{
+        font-size: 20px;
+        font-weight: 300;
+        color: #002c3a;
+        margin-top: -10px;
+    }
+    .domluvit-para{
+        display: block;
+        font-size: 15px;
+        font-weight: 400;
+        color: #a9a9a9;
+        margin: 15px 0 15px 0;
+    }
+    .domluvit-title{
+        width: 40%;
+        text-align: center;
+        background-color: #00838b;
+        color: #f7f7f7;
+        font-size: 20px;
+        font-weight: 500;
+        padding: 10px 20px 10px 20px;
+        border-radius: 10px;
+    }
+    .dlouhodobá-title{
+        font-size: 25px;
+        color: #00838b;
+        font-weight: 700;
+    }
+    .image-logo{
+        width: 70%;
+        margin-top: 50px;
+        padding-left: 50px;
+    }
+    .image-para{
+        font-size: 15px;
+        text-align: center;
+        font-weight: 600;
+        color: #595959;
+        padding: 0 130px 0 50px;
+        margin-top: 10px;
+    }
+    .dlouhodobá-title,.Dlouhodobá-details{
+        padding-left: 30px;
+    }
+     .Dlouhodobá-details{
+        font-size: 15px;
+        text-align: left;
+        font-weight: 300;
+        line-height: 2;
+        color: #5a5a5a;
+    } 
+</style>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                    <div class="slider-input-tittle"> 
+                        <p class="title-name">Měsíční investovaná částka</p>
+                        <input class="input-form" type="text">
+                    </div>
+                    <div class="slider">
+                        <input type="range" min="0" max="5000">
+                    </div>
+                    <div class="slider-input-tittle"> 
+                        <p class="title-name">Počet investovaných let</p>
+                        <input class="input-form" type="text">
+                    </div>
+                    <div class="slider">
+                        <input type="range" min="0" max="5000">
+                    </div>
+                    
+                    <div class="box-info">
+                        <p class="box-info-value">1041802 Kč</p>
+                        <p class="box-info-title">Celkový Kapitál</p>
+                    </div>
+                    <small class="domluvit-para">Chcete vědět více? Domluvte si se mnou nezávazně termín.</small>
+                    <p class="domluvit-title">Domluvit schůzku</p> 
+            </div>
+            <div class="col-md-6">
+                    <div class="title">
+                        <p class="dlouhodobá-title">Dlouhodobá rezerva</p> 
+                    </div>
+                    <div class="para">
+                        <p class="Dlouhodobá-details">Dlouhodobá rezerva většinou míří na velké a finančně náročné cíle jako jsou například plánované pořízení bytu nebo domu, dlouhodobé investice pro vytvoření startovacího kapitálu pro naše děti a v neposlední řadě investice tvořící rezervu na náš důchod.</p>  
+                    </div>
+                    <div class="">
+                        <!-- <img class="image-logo" src="12.png" alt=""> -->
+                        <img class="image-logo" src="1.png" alt="">
+                        <p class="image-para">Pohybujete se již v oblasti finanční pohody, za takovou částku si můžete pořídit dům či byt na hypotéku, renta 5 - 15.000,- měsíčně (1milion dokáže generovat rentu cca 5.000 Kč)</p>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

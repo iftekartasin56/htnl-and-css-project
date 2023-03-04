@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>Calculator</title>
+</head>
+<style>
+    .container{
+        font-family: 'poppins',sans-serif;
+        margin-top: 50px;
+        width: 1100px;
+        background-color: #f7f7f7;
+        box-shadow: 2px 1px 1px 2px rgba(0, 0, 0, 0.4);
+        border-radius: 10px;
+        padding: 40px;
+    }
+    .title{
+        font-size: 15px;
+        font-weight: 300;
+        color: #595959;
+    }
+    .input{
+        width: 100%;
+    }
+    
+    .cost{
+        box-sizing: border-box;
+        background: blue;
+        font-size: 20px;
+        font-weight: 700;
+        color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+    }
+    .cost .cost-value{
+        font-size: 50px;
+        font-weight: 700;
+    }
+    .cost .cost-title{
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .total{
+        padding-left: 20px;
+        padding-top: 20px;
+    }
+    .total .subscription-title{
+        font-size: 20px;
+        font-weight: 400;
+    }
+    .total .subscription-value{
+        font-size: 30px;
+        color: blue;
+    }
+    .btn-primary{
+        width: 100%;
+        background-color: brown;
+        color: #fff;
+        border-radius: 40px;
+    }
+    .checkbox{
+        display: flex;
+        justify-content: space-around;
+    }
+   .checkbox .form-check{
+        box-sizing: border-box;
+        border: 1px solid #595959;
+        padding: 10px 150px 10px 30px;
+        border-radius: 5px;
+   }
+</style>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <label class="title" for="basic-url">Number of school</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                </div>
+                <label class="title" for="basic-url">Number of grade K-3 Classrooms WITS</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                </div>
+                <label class="title" for="basic-url">Number of grade 4-6 Classrooms LEADS</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                </div>
+
+
+                <p>Basic of Enriched Modules</p>
+                <div class="checkbox">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">
+                        Basic
+                        </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                            Enriched
+                            </label>
+                        </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="cost">
+                    <h4 class="cost-value">$4,960</h4>
+                    <h5 class="cost-title">Total cost</h5>
+                </div>
+                <div class="total">
+                    <p class="subscription-title">Number Of Subscription</p>
+                    <p class="subscription-value">5</p>
+                    <p class="subscription-title">Number Of Modules</p>
+                    <p class="subscription-value">5</p>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" placeholder="Your Email">
+                </div>
+                <button type="button" class="btn btn-primary">Get Result</button>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

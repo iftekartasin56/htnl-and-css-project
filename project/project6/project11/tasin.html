@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Budget Claculator</title>
+</head>
+<style>
+    .container{
+        margin-top: 30px;
+    }
+    .total-incomne{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        background-color: #005f73;
+        color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .right-form-table{
+        background-color: #0a9396;
+        border-radius: 10px;
+        color: #fff;
+    }
+    .range-hadding{
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .input-slider_1{
+        display: flex;
+        justify-content: space-between;
+    }
+    .input-slider_2{
+        display: flex;
+        justify-content: space-between;
+    }
+    .form-range{
+        width: 100%;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    #form-control{
+        width: 40%;
+    }
+    .table td, .table th {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: none;
+    font-size: 20px;
+    }
+    #rightctn-form{
+        border: 1px solid #000;
+        border-radius: 20px;
+    }
+    .rightclt-heading{
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 30px;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <table class="table right-form-table">
+                    <tbody>
+                      <tr>
+                        <td colspan="2">Total Bookings</td>
+                        <td>$1200</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">Fees(3%)</td>
+                        <td>$1200</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">Other Fees(5%)</td>
+                        <td>$1200</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="total-incomne">                    
+                        <div class="income-heading"> Est Net Monthly Income</div>
+                        <div class="income-value">$12000</div>                     
+                  </div>
+                  <div class="input-slider_1">
+                        <h4 class="range-hadding">occupancy</h4>
+                        <input type="text" class="form-control" id="form-control">
+                  </div>
+                        <input type="range" class="form-range" min="0" max="5" step="0.5" id="customRange3">
+                  <div class="input-slider_2">
+                        <h4 class="range-hadding">Average Nightly Price</h4>
+                        <input type="text" class="form-control" id="form-control">
+                  </div>
+                        <input type="range" class="form-range" min="0" max="5" step="0.5" id="customRange3">
+            </div>
+            <div class="col-md-6" id="rightctn-form">
+                        <div class="text-center rightclt-heading"><header>Expenses</header></div>
+                        <table class="table form-table">
+                            <tbody>
+                                <tr>
+                                    <td>Rent</td>
+                                    <td><input type="text" class="form-control"></td>
+                                </tr>
+                                <tr>
+                                    <td>Water</td>
+                                    <td><input type="text" class="form-control"></td>
+                                </tr> 
+                                <tr>
+                                    <td>Power</td>
+                                    <td><input type="text" class="form-control"></td>
+                                </tr>
+                                <tr>
+                                    <td>Internet</td>
+                                    <td><input type="text" class="form-control"></td>
+                                </tr>
+                                <tr>
+                                    <td>Parking</td>
+                                    <td><input type="text" class="form-control"></td>
+                                </tr>
+                                <tr>
+                                    <td>Cable</td>
+                                    <td><input type="text" class="form-control"></td>
+                                </tr>
+                                <tr>
+                                    <td>Streaming</td>
+                                    <td><input type="text" class="form-control"></td>
+                                </tr>
+                                <tr>
+                                    <td>Insurance</td>
+                                    <td><input type="text" class="form-control"></td>
+                                </tr>
+                                <tr>
+                                    <td>Gas</td>
+                                    <td><input type="text" class="form-control"></td>
+                                </tr>
+                                <tr>
+                                    <td>Other</td>
+                                    <td><input type="text" class="form-control"></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

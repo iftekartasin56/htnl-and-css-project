@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <title>Calculator</title>
+</head>
+<body>
+<div id="clr_cl">
+    <div class="ms-cl daily-need-calc-container calculators">
+        <section class="container">
+            <div class="row">
+               <div class="col-12">
+                  <h1 class="margin-bottom-16">Calculate daily calories</h1>
+                  <p class="font-subtitle light mt-0 mb-0">For a correct calculation we need some basic information about you</p>
+               </div>
+            </div>
+            <div class="row mt-0 mt-md-32">
+               <div class="col-12 col-md-6">
+                  <div class="calculator-step" id="calculator-step-1">
+                     <hr class="d-block d-md-none">
+                     <div class="line-dot">
+                        <div class="dot">1</div>
+                     </div>
+                     <h2 class="mb-0 mb-md-32">What is your gender?</h2>
+                     <div class="mt-16">
+                        <div class="icn-btn-wrapper" id="gender-icn-btn-wrapper">
+                           <div id="calculator-gender-male-input" class="img-btn-container no-hover js-input-field focused" tabindex="1" data-abbreviation="m" data-value="5">
+                              <img class="icon-svg" src="https://i.postimg.cc/1XN2tJbJ/male-icon.png" alt="Hombre" type="image/svg+xml">
+                              <div class="choice-btn yz-btn grey font-subtitle">Man</div>
+                           </div>
+                           <div id="calculator-gender-female-input" class="img-btn-container no-hover js-input-field ml-32 ml-md-16 ml-lg-32 focused" tabindex="2" data-abbreviation="f" data-value="-161">
+                              <img class="icon-svg" src="https://i.postimg.cc/XvVR8KyY/female-icon.png" alt="Mujer" type="image/svg+xml">
+                              <div class="choice-btn yz-btn grey font-subtitle">Women</div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-12 col-md-6">
+                  <div class="calculator-step" id="calculator-step-2">
+                     <hr class="d-block d-md-none">
+                     <div class="line-dot">
+                        <div class="dot">2</div>
+                     </div>
+                     <h2 class="mb-0 mb-md-32">How old are you?</h2>
+                     <div class="mt-16">
+                        <div class="input-label-wrapper">
+                           <div class="mt16-32">
+                              <input type="tel" class="input dual-number js-input-field invalid-highlight js-max-length" data-decimals="false" placeholder="21" maxlength="3" id="calculator-step-age" name="calculator-step-age" pattern="[0-9]*" value="" tabindex="0" inputmode="tel">
+                              <label for="calculator-step-age" class="label invalid-highlight">years</label>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-12 col-md-6 mt-0 mt-md-32">
+                  <div class="calculator-step" id="calculator-step-3">
+                     <hr class="d-block d-md-none">
+                     <div class="line-dot">
+                        <div class="dot">3</div>
+                     </div>
+                     <h2 class="mb-0 mb-md-32">What's your height?</h2>
+                     <div class="mt-16">
+                        <div class="d-flex flex-column">
+                           <div class="c-toggle d-inline-block order-0 order-md-1">
+                              <input type="radio" class="radio-button calculator-step-height-choice" id="calculator-step-height-unit-cm" checked="" data-factor="100.0" data-unit="cm" name="height[metric]" required="required" value="cm" pattern="[0-9]*">
+                              <label for="calculator-step-height-unit-cm">cm</label>
+                              <input type="radio" class="radio-button calculator-step-height-choice" id="calculator-step-height-unit-ft" data-factor="3.2808" data-unit="ft / in" name="height[metric]" required="required" value="ft" pattern="[0-9]*">
+                              <label for="calculator-step-height-unit-ft">ft/in</label>
+                           </div>
+                           <div class="input-label-wrapper order-1 order-md-0 ">
+                              <div id="calculator-step-height-cm-input-wrapper" class="">
+                                 <input type="tel" id="calculator-step-height-cm" name="height[cm]" class="centered js-input-field input invalid-highlight js-max-length" placeholder="170" value="" maxlength="3" data-decimals="false" required="" pattern="[0-9]*" tabindex="0" inputmode="tel">
+                                 <label class="label invalid-highlight" for="step4[height_cm]">cm</label>
+                              </div>
+                              <div class="hidden" id="calculator-step-height-ft-input-wrapper">
+                                 <div class="metric-label-input-wrapper d-inline-block">
+                                    <input type="tel" id="calculator-step-height-feet" name="height[ft]" class="js-input-field input dual-number invalid-highlight js-max-length" data-factor="3.2808" value="" maxlength="1" data-decimals="false" required="" placeholder="5" pattern="[1-9]*" tabindex="0" inputmode="tel">
+                                    <label for="height[ft]" class="invalid-highlight">ft</label>
+                                 </div>
+                                 <div class="metric-label-input-wrapper d-inline-block">
+                                    <input type="tel" id="calculator-step-height-inch" name="height[in]" class="margin-left-32 js-input-field input dual-number invalid-highlight js-max-length" data-factor="39.37" value="" maxlength="2" data-decimals="false" required="" placeholder="7" pattern="[0-9]*" tabindex="0" inputmode="tel">
+                                    <label for="height[in]" class="invalid-highlight">in</label>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-12 col-md-6 mt-0 mt-md-32">
+                  <div class="calculator-step" id="calculator-step-4">
+                     <hr class="d-block d-md-none">
+                     <div class="line-dot">
+                        <div class="dot">4</div>
+                     </div>
+                     <h2 class="mb-0 mb-md-32">How much do you weight?</h2>
+                     <div class="mt-16">
+                        <div class="d-flex flex-column">
+                           <div class="c-toggle d-inline-block order-0 order-md-1">
+                              <input type="radio" class="radio-button calculator-step-weight-choice" id="calculator-step-weight-unit-kg" checked="" name="weight[metric]" data-factor="1" data-placeholder="69" required="" value="kg" pattern="[0-9]*">
+                              <label for="calculator-step-weight-unit-kg">kg</label>
+                              <input type="radio" class="radio-button calculator-step-weight-choice" id="calculator-step-weight-unit-lb" name="weight[metric]" data-factor="2.2046" data-placeholder="152" required="" value="lb" pattern="[0-9]*">
+                              <label for="calculator-step-weight-unit-lb">lb</label>
+                           </div>
+                           <div class="input-label-wrapper order-1 order-md-0">
+                              <div class="kg-input-wrapper">
+                                 <input type="tel" id="calculator-step-weight-input-kg" name="weight" class="d-inline-block centered js-input-field input form-control invalid-highlight js-max-length" placeholder="69" maxlength="5" data-decimals="true" required="" pattern="[0-9]*" value="" tabindex="0" inputmode="tel">
+                                 <label class="label invalid-highlight" for="calculator-step-weight-input-kg">kg</label>
+                              </div>
+                              <div class="lbs-input-wrapper hidden">
+                                 <input type="tel" id="calculator-step-weight-input-lbs" name="weight" class="d-inline-block centered js-input-field input form-control invalid-highlight js-max-length" placeholder="152" maxlength="6" data-decimals="true" required="" pattern="[0-9]*" value="" tabindex="0" inputmode="tel">
+                                 <label class="label invalid-highlight" for="calculator-step-weight-input-lbs">lbs</label>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-12 mt-0 mt-md-32">
+                  <div class="calculator-step" id="calculator-step-5">
+                     <hr class="d-block d-md-none">
+                     <div class="line-dot">
+                        <div class="dot">5</div>
+                     </div>
+                     <h2 class="mb-0 mb-md-32">How active are you on a daily basis?</h2>
+                     <div class="mt-16">
+                        <div class="row d-flex flex-column flex-md-row justify-content-center daily-activities-wrapper">
+                           <div class="d-flex flex-column flex-md-row mb-xl-32">
+                              <div class="d-flex flex-column mr-0 mr-md-16 ml-lg-16">
+                                 <div class="icn-btn-wrapper" id="daily-activities-wrapper">
+                                    <div id="daily-calorie-light-activity" class="img-btn-container no-hover js-input-field focused" tabindex="6" data-value="1.4">
+                                       <img class="icon-svg small" src="https://i.postimg.cc/PNsc81jh/sitting-on-chair.png" alt="No muy activo" type="image/svg+xml">
+                                       <div class="choice-btn yz-btn grey font-subtitle">not very active</div>
+                                       <div class="daily-activity-item-description centered">Especially sitting (eg office work)</div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="d-flex flex-column ml-0 ml-md-16 mr-0 mr-lg-16 mt-32 mt-md-0">
+                                 <div class="icn-btn-wrapper" id="daily-activities-wrapper">
+                                    <div id="daily-calorie-moderate-activity" class="img-btn-container no-hover js-input-field focused" tabindex="7" data-value="1.6">
+                                       <img class="icon-svg small" src="https://i.postimg.cc/9M0v3Wb3/stand-up.png" alt="Medianamente activo" type="image/svg+xml">
+                                       <div class="choice-btn yz-btn grey font-subtitle">moderately active</div>
+                                       <div class="daily-activity-item-description centered">Mostly standing (eg cashier, teacher)</div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="d-flex flex-column flex-md-row mt-0 mt-md-32 mt-lg-32 mt-xl-0 mb-xl-32">
+                              <div class="d-flex flex-column ml-0 ml-lg-16 mr-0 mr-md-16 mt-32 mt-md-0">
+                                 <div class="icn-btn-wrapper" id="daily-activities-wrapper">
+                                    <div id="daily-calorie-active-activity" class="img-btn-container no-hover js-input-field focused" tabindex="8" data-value="1.8">
+                                       <img class="icon-svg small" src="https://i.postimg.cc/mgNxCpkn/walking.png" alt="Activo" type="image/svg+xml">
+                                       <div class="choice-btn yz-btn grey font-subtitle">Active</div>
+                                       <div class="daily-activity-item-description centered">Especially walking (eg salesperson, waiter)</div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="d-flex flex-column ml-0 ml-md-16 mt-32 mt-md-0 mr-lg-16">
+                                 <div class="icn-btn-wrapper" id="daily-activities-wrapper">
+                                    <div id="daily-calorie-very-active-activity" class="img-btn-container no-hover js-input-field focused" tabindex="9" data-value="2">
+                                       <img class="icon-svg small" src="https://i.postimg.cc/cHzP0Vkv/handling.png" alt="Muy activo" type="image/svg+xml">
+                                       <div class="choice-btn yz-btn grey font-subtitle">Very active</div>
+                                       <div class="daily-activity-item-description centered">Physical work (eg construction)</div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-12 form-error-wrapper centered">
+                  <div class="yz-alert yz-alert-danger">
+                     <img src="https://i.postimg.cc/7LzkpwnQ/error-icon.png" class="icon-svg alert-icon" role="presentation" type="image/svg+xml">
+                     <p class="alert-text">
+                        <strong>¡Oh!</strong>, something has gone wrong. Please correct the highlighted fields.
+                     </p>
+                  </div>
+               </div>
+               <div class="col-12">
+                  <button class="yz-btn pink js-submit-button calc-submit bold" id="calculator-daily-calories-submit" data-delimiter-thousand="." data-delimiter-decimal=",">Calculate your recommended daily calories</button>
+               </div>
+            </div>
+            <hr>
+            <div class="row" id="clr_rs_sec">
+                <div class="col-md-4"></div>
+                <div class="col-md-4 rs-section">
+                    <h3 class="rs-title">recommended daily calories</h3>
+                    <h3 class="rs-value" id="clr_rs_calorie">-</h3>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+         </section>
+    </div>
+</div>
+<script src="calc.js"></script>
+
+</body>
+</html>

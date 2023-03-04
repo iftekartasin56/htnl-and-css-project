@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <title>Web Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body>
+<style>
+#mx_cl *, ::after, ::before {
+    box-sizing: border-box;
+}
+#mx_cl {
+    line-height: 1.5;
+    font-family: inherit;
+}
+#mx_cl .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    border-radius: 10px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4a4a4a;
+    text-align: left;
+}
+#mx_cl label {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 19px;
+    color: #000;
+    margin-bottom: 10px; 
+}
+#mx_cl .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+#mx_cl .col-md-1, #mx_cl .col-md-10, #mx_cl .col-md-11, #mx_cl .col-md-12, #mx_cl .col-md-2, #mx_cl .col-md-3, #mx_cl .col-md-4, #mx_cl .col-md-5, #mx_cl .col-md-6, #mx_cl .col-md-7, #mx_cl .col-md-8, #mx_cl .col-md-9 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+#mx_cl .form-group {
+    margin-bottom: 1rem;
+}
+#mx_cl .form-control {
+    display: block;
+    width: 30%;
+    height: calc(1em + 0.75rem + 2px);
+    padding: 0.275rem 0.75rem;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4a4a4a;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #dddddd;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#mx_cl .form-control:focus {
+    outline: none;
+}
+#mx_cl .btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#mx_cl .btn-primary {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+}
+#mx_cl .btn-reset {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+}
+#mx_cl table {
+    border-collapse: collapse;
+}
+#mx_cl .table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+}
+#mx_cl .table td, #mx_cl .table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+#mx_cl .text-center {
+    text-align: center;
+}
+@media (min-width: 576px){
+    #mx_cl .container {
+        max-width: 100%;
+    }
+}
+@media (min-width: 768px){
+    #mx_cl .container {
+        max-width: 100%;
+    }
+    #mx_cl .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    #mx_cl .col-md-9 {
+        -ms-flex: 0 0 75%;
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+    #mx_cl .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+    #mx_cl .col-md-7 {
+        -ms-flex: 0 0 58.33333%;
+        flex: 0 0 58.33333%;
+        max-width: 58.33333%;
+    }
+    #mx_cl .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    #mx_cl .col-md-5 {
+        -ms-flex: 0 0 41.666667%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    #mx_cl .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    #mx_cl .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+@media (min-width: 992px){
+    #mx_cl .container {
+        max-width: 900px;
+    }
+}
+@media (min-width: 1200px) {
+    #mx_cl .container {
+        max-width: 900px;
+    }
+}
+#mx_cl .text-right {
+    text-align: right ;
+}
+#mx_cl .form-group, #mx_cl .input-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+@media (max-width: 768px){
+
+}
+#mx_cl .top-title {
+    font-size: 25px;
+}
+#Top_Age_slider{
+    margin-bottom: 20px;
+}
+#mx_cl .range-hadding{
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #000;
+    }
+#mx_cl .input-slider_1{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+#mx_cl .form-range{
+        width: 100%;
+    }
+    .ms-cl input[type=range] {
+    margin: 0 0 0 0;
+    outline: none;
+    padding: 0;
+    width: 100%;
+    height: 7px;
+    background-color: #dbdbdb;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0F1D2B), color-stop(100%, #0F1D2B));
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+#mx_cl .ms-cl input[type=range]::-webkit-slider-runnable-track {
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    -webkit-appearance: none;
+}
+#mx_cl.ms-cl input[type=range]::-webkit-slider-thumb {
+    height: 20px;
+    width: 20px;
+    margin-top: -4px;
+    background: #E0C64D;
+    border: 5px solid #E0C64D;
+    border-radius: 25px;
+    /* box-shadow: 0 2px 2px 0px #000000; */
+    -webkit-appearance: none;
+}
+#mx_cl.ms-cl input[type=range]::-moz-range-track {
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    -webkit-appearance: none;
+}
+#mx_cl.ms-cl input[type=range]::-moz-range-thumb {
+    height: 20px;
+    width: 20px;
+    margin-top: -4px;
+    background: #E0C64D;
+    border: 5px solid #E0C64D;
+    border-radius: 25px;
+    /* box-shadow: 0 2px 2px 0px #000000; */
+    -webkit-appearance: none;
+}
+#mx_cl .slidecontainer{
+    width: 100%;
+    margin-right: 20px;
+}
+#mx_cl #form-control{
+        height: 35px !important;
+        color: #000 !important;
+        font-size: 18px !important;
+        font-weight: 400 !important;
+    }
+#mx_cl #Middle_Saving_Ammount{
+    background: #FFFFFF;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.32);
+    border-radius: 10px;
+    padding: 30px 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+#mx_cl .Retirement_Savings{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+}
+#mx_cl #Middle_Input_Sec{
+    height: 35px !important;
+    margin-bottom: 10px;
+    width: 100% !important;
+}
+#mx_cl .Befeore_Retirement{
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #000;
+    margin-top: 30px;
+}
+#mx_cl .After_Retirement{
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #000;
+    margin-top: 30px;
+}
+#mx_cl .BeforeRetirementRangeInput{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#mx_cl .AfterRetirementRangeInput{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#mx_cl #Retirement_Input {
+  height: 35px !important;
+  font-size: 18px;
+  font-weight: 400;
+  color: #000;
+}
+#mx_cl .SavedByRetirement{
+    background: #0F1D2B;
+    padding: 5px 0px !important;
+    margin-top: 50px !important;
+    /* width: 80%; */
+}
+#mx_cl .Saved_Retirement_Age-Heading{
+    color: #fff;
+    font-size: 18px !important;
+    font-weight: 400 ;
+    text-align: center;
+    line-height: 22px;
+}
+#mx_cl .Saved_Retirement_Age-Value{
+    color: #fff;
+    font-size: 24px !important;
+    font-weight: 700 ;
+    text-align: center;
+    line-height: 22px;
+}
+#mx_cl .RetirementWillLast{
+    background: #0F1D2B;
+    padding: 5px 0px !important;
+    margin-top: 50px !important;
+    /* width: 80%; */
+}
+#mx_cl .Retirement_Last_Heading{
+    color: #fff;
+    font-size: 18px !important;
+    font-weight: 400 ;
+    text-align: center;
+    line-height: 22px;
+}
+#mx_cl .Retirement_Last_Value{
+    color: #fff;
+    font-size: 24px !important;
+    font-weight: 700 ;
+    text-align: center;
+    line-height: 22px;
+}
+</style>
+<div class="ms-cl" id="mx_cl">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6" id="Top_Age_slider">
+                <div class="input-slider_1">
+                    <h3 class="range-hadding">Current Age</h3>
+                    <input type="text" class="form-control" id="form-control" value="0">
+              </div>
+            <div class="slidecontainer">
+                <input type="range" min="1" max="100" value="30" step="1" class="slider cl-in" id="in_2">
+            </div>
+            </div>
+            <div class="col-md-6" id="Top_Age_slider">
+                <div class="input-slider_1">
+                    <h3 class="range-hadding">Retirement Age</h3>
+                    <input type="text" class="form-control" id="form-control" value="0">
+              </div>
+              <div class="slidecontainer">
+                <input type="range" min="1" max="100" value="30" step="1" class="slider cl-in" id="in_2">
+            </div>
+            </div>
+            <div class="col-md-12">
+                <div id="Middle_Saving_Ammount">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="RetirementSavings">
+                                <label class="Retirement_Savings">Current Retirement Savings</label>
+                                <input type="text" class="form-control" id="Middle_Input_Sec">
+                            </div>
+                            <div class="AnnualSpending">
+                                <label class="Annual_Spanding">Current Annual Spending</label>
+                                <input type="text" class="form-control" id="Middle_Input_Sec">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="AnnualSavings">
+                                <label class="Annual_Savings">Annual Savings</label>
+                                <input type="text" class="form-control" id="Middle_Input_Sec">
+                            </div>
+                            <div class="SecurityStatement">
+                                <label class="Security_Statement">Most Recent Social Security Statement Estimate</label>
+                                <input type="text" class="form-control" id="Middle_Input_Sec">
+                            </div>
+                        </div>
+                       </div>
+                </div>
+               
+            </div>
+            <div class="col-md-6">
+                <div class="BeforeRetirement">
+                    <h3 class="Befeore_Retirement">Expected Rate of Return Before Retirement</h3>
+                </div>
+                <div class="BeforeRetirementRangeInput">
+                    <div class="slidecontainer">
+                        <input type="range" min="1" max="100" value="30" step="1" class="slider cl-in" id="in_2">
+                    </div>
+                    <input type="text" class="form-control" value="0%" id="Retirement_Input">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="AfterRetirement">
+                    <h3 class="After_Retirement">Expected Rate of Return After Retirement</h3>
+                </div>
+                <div class="AfterRetirementRangeInput">
+                    <div class="slidecontainer">
+                        <input type="range" min="1" max="100" value="30" step="1" class="slider cl-in" id="in_2">
+                    </div>
+                    <input type="text" class="form-control" value="0%" id="Retirement_Input"> 
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="SavedByRetirement">
+                    <h3 class="Saved_Retirement_Age-Heading">Amount Saved By Retirement Age</h3>
+                    <h3 class="Saved_Retirement_Age-Value">$1000000</h3>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="RetirementWillLast">
+                    <h3 class="Retirement_Last_Heading">Years Your Retirement Will Last</h3>
+                    <h3 class="Retirement_Last_Value">22</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

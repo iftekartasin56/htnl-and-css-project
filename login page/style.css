@@ -1,0 +1,56 @@
+
+body{
+    background: #202020;
+}
+form{
+    width: 250px;
+    height: 350px;
+    border: 2px solid #44bd32;
+    border-radius: 20px;
+    outline: none;
+    font-family: verdana;
+    margin-top: 70px;
+}
+h1{
+    font-size: 28px;
+    color: #fff;
+}
+input[type="text"],[type="password"]{
+    width: 210px;
+    border: 2px solid #44bd32;
+    border-radius: 15px;
+    outline: none;
+    padding: 10px;
+    margin-top: 10px;
+    background: transparent; 
+    color: #fff;
+    font-family: verdana;
+}
+input[type="submit"]{
+    margin-top: 10px;
+    padding: 10px;
+    outline: none;
+    border-radius: 15px;
+    width: 150px;
+    background: linear-gradient(#44bd32,#4cd137);
+    cursor: pointer;
+    font-size: 20px;
+    color: #fff;
+    font-family: verdana;
+    border: none;
+}
+
+p{
+    font-size: 10px;
+    color: #fff;
+    margin-top: 15px;
+}
+.signin p{
+    font-size: 20px;
+    color: #fff;
+}
+a{
+    color: #44bd32;
+    font-size: 20px;
+    text-decoration: none;
+}

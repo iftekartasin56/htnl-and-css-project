@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>Collage kit Calculator</title>
+</head>
+<style>
+    .container{
+        width: 700px;
+    }
+    .main-title{
+        text-transform: uppercase;
+        color: #505484;
+        text-align: center;
+        margin-top: 40px;
+        font-size: 30px;
+        font-weight: 600;
+    }
+    .measure-title{
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: 600;
+        color: #505484;
+        margin-top: 20px;
+    }
+    .measure-value{
+        display: flex;
+        text-transform: uppercase;
+    }
+    .measure-value-name{
+        width: 100%;
+        border: 1px solid #191919;
+        padding: 5px 10px 5px 10px;
+        text-align: center;
+        align-items: center;
+    }
+    .measure-value-name:hover{
+        background-color: #505484;
+        color: #fff;
+    }
+    .title{
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+    .form-control{
+        border-bottom: 3px solid #191919;
+    }
+    .custom-select{
+        border-bottom: 3px solid skyblue;
+    }
+    .width-title{
+        text-transform: uppercase;
+        font-weight: 600;
+     }
+     .images1{
+        display: flex;
+        justify-content: space-between;
+        background-color: #505484;
+        padding: 20px;
+     }
+     .images1{
+        border-bottom: 1px solid #191919;
+     }
+     .images2{
+        display: flex;
+        justify-content: space-between;
+        background-color: #505484;
+        padding: 20px;
+     }
+     .image-icon{
+        padding-top: 40px;
+        padding-right: 20px;
+     }
+     .images-title1 .images-title-value1{
+        font-size: 50px;
+        color: #fff;
+        font-weight: 600;
+        padding-left: 30px;
+     }
+     .images-title1 .images-title-value2{
+        font-size: 30px;
+        color: #fff;
+        font-weight: 600;
+     }
+     .images-title1 .para1{
+        color: #fff;
+        font-size: 20px; 
+        padding-left: 30px;   
+     }
+     .images-title2 .images-title-value1{
+        font-size: 50px;
+        color: #fff;
+        font-weight: 600;
+        padding-left: 30px;
+     }
+     .images-title2 .images-title-value2{
+        font-size: 30px;
+        color: #fff;
+        font-weight: 600;
+     }
+     .images-title2 .para2{
+        color: #fff;
+        font-size: 20px;
+        padding-left: 30px;    
+     }
+</style>
+<body>
+   <div class="container">
+        <header class="main-title">
+            Collage kit Calculator
+        </header>
+        <div class="measure-title">
+           <p>measure in</p> 
+        </div>
+        <div class="measure-value">
+            <p class="measure-value-name">feet</p>
+            <p class="measure-value-name">inches</p>
+            <p class="measure-value-name">meters</p>
+            <p class="measure-value-name">cm</p>
+        </div>
+        <label class="title" for="basic-url">Height(ft)</label>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+        </div>
+        <p class="width-title">Width(ft)</p>
+        <div class="input-group mb-3">
+            <select class="custom-select" id="inputGroupSelect03" aria-label="Example select with button addon">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+            </select>
+        </div>
+        <div class="images1">
+            <div class="images-title1">
+                <span class="images-title-value1">10</span>
+                <span class="images-title-value2">Images</span>
+                <p class="para1">Minimum Number of Needed Images</p>
+            </div>
+            <div class="image-icon"><img src="images/1.png" alt=""></div>
+        </div>
+        <div class="images2">
+            <div class="images-title2">
+                <span class="images-title-value1">7</span>
+                <span class="images-title-value2">Sq Ft</span>
+                <p class="para2">Area to be Covered</p>
+            </div>
+            <div class="image-icon"><img src="images/2.png" alt=""></div>
+        </div>
+
+
+   </div>
+</body>
+</html>

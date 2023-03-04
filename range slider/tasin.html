@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+</head>
+<style>
+    .slider{
+        height: 40px;
+        width: 300px;
+        align-items: center;
+    }
+    .slider input{
+        height: 10px;
+        width: 100%;
+        -webkit-appearance: none;
+        outline: none;
+        background: #f3f3f3;
+        border-radius: 25px;
+        box-shadow: inset 0px 0px 4px rgba(0,0,0,0.2);
+    }
+    .slider input::-moz-range-progress{
+        height: 10px;
+        border-radius: 25px;
+        background: #00838b;
+    }
+    .slider input::-moz-range-thumb{
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        background: #00838b;
+        -webkit-appearance: none;
+    }
+</style>
+<body>
+    <div class="slider">
+        <input type="range" min="0" max="5000">
+    </div>
+</body>
+</html>

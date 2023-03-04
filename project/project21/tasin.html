@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <title>Calorie Calculations</title>
+    <style>
+        @font-face { 
+            font-family: 'Azo Sans Light';
+            src: url('font/AzoSans-Light.woff') format('woff');
+        }
+        body {
+            font-family: 'Azo Sans Light';
+        }
+    </style>
+</head>
+<body>
+
+<!-----------Please copy and paste following code into any HTML element ---------------->
+
+<!----------- copy starts ---------------->
+<style>
+.ms-cl *, ::after, ::before {
+    box-sizing: border-box;
+}
+.ms-cl {
+    line-height: 1.5;
+    font-family: inherit;
+}
+.ms-cl .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4f4f4f;
+    text-align: left;
+}
+.ms-cl label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-size: 16px;
+    font-weight: 500;
+}
+.ms-cl .h1, .ms-cl h1 {
+    font-size: 2.5rem;
+}
+.ms-cl .h1, .ms-cl .h2, .ms-cl .h3, .ms-cl .h4, .ms-cl .h5, .ms-cl .h6, .ms-cl h1, .ms-cl h2, .ms-cl h3, .ms-cl h4, .ms-cl h5, .ms-cl h6 {
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+.ms-cl h1, .ms-cl h2, .ms-cl h3, .ms-cl h4, .ms-cl h5, .ms-cl h6 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+}
+.ms-cl .h3, .ms-cl h3 {
+    font-size: 1.75rem;
+}
+.ms-cl .h5, .ms-cl h5 {
+    font-size: 1.25rem;
+}
+.ms-cl .h6, .ms-cl h6 {
+    font-size: 1rem;
+}
+.ms-cl hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+
+.ms-cl hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+.ms-cl .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.ms-cl .col, .ms-cl .col-1, .ms-cl .col-10, .ms-cl .col-11, .ms-cl .col-12, .ms-cl .col-2, .ms-cl .col-3, .ms-cl .col-4, .ms-cl .col-5, .ms-cl .col-6, .ms-cl .col-7, .ms-cl .col-8, .ms-cl .col-9, .ms-cl .col-auto, .ms-cl .col-lg, .ms-cl .col-lg-1, .ms-cl .col-lg-10, .ms-cl .col-lg-11, .ms-cl .col-lg-12, .ms-cl .col-lg-2, .ms-cl .col-lg-3, .ms-cl .col-lg-4, .ms-cl .col-lg-5, .ms-cl .col-lg-6, .ms-cl .col-lg-7, .ms-cl .col-lg-8, .ms-cl .col-lg-9, .ms-cl .col-lg-auto, .ms-cl .col-md, .ms-cl .col-md-1, .ms-cl .col-md-10, .ms-cl .col-md-11, .ms-cl .col-md-12, .ms-cl .col-md-2, .ms-cl .col-md-3, .ms-cl .col-md-4, .ms-cl .col-md-5, .ms-cl .col-md-6, .ms-cl .col-md-7, .ms-cl .col-md-8, .ms-cl .col-md-9, .ms-cl .col-md-auto, .ms-cl .col-sm, .ms-cl .col-sm-1, .ms-cl .col-sm-10, .ms-cl .col-sm-11, .ms-cl .col-sm-12, .ms-cl .col-sm-2, .ms-cl .col-sm-3, .ms-cl .col-sm-4, .ms-cl .col-sm-5, .ms-cl .col-sm-6, .ms-cl .col-sm-7, .ms-cl .col-sm-8, .ms-cl .col-sm-9, .ms-cl .col-sm-auto, .ms-cl .col-xl, .ms-cl .col-xl-1, .ms-cl .col-xl-10, .ms-cl .col-xl-11, .ms-cl .col-xl-12, .ms-cl .col-xl-2, .ms-cl .col-xl-3, .ms-cl .col-xl-4, .ms-cl .col-xl-5, .ms-cl .col-xl-6, .ms-cl .col-xl-7, .ms-cl .col-xl-8, .ms-cl .col-xl-9, .ms-cl .col-xl-auto {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.ms-cl .form-row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -5px;
+    margin-left: -5px;
+}
+.ms-cl .form-row>.col, .ms-cl .form-row>[class*=col-] {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.ms-cl .form-group {
+    margin-bottom: 1rem;
+}
+.ms-cl .form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.ms-cl select {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff !important;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.ms-cl .form-control:focus {
+    outline: none;
+    border: 1px solid #c3922e;
+}
+.ms-cl [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    cursor: pointer;
+}
+.ms-cl .small, .ms-cl small {
+    font-size: 80%;
+    font-weight: 400;
+}
+.ms-cl .text-center {
+    text-align: center!important;
+}
+.ms-cl .mt-5, .ms-cl .my-5 {
+    margin-top: 3rem!important;
+}
+.ms-cl .mr-2, .ms-cl .mx-2 {
+    margin-right: .5rem!important;
+}
+.ms-cl .mt-3, .ms-cl .my-3 {
+    margin-top: 1rem!important;
+}
+.ms-cl .mt-4, .ms-cl .my-4 {
+    margin-top: 1.5rem!important;
+}
+.ms-cl .mb-4, .ms-cl .my-4 {
+    margin-bottom: 1.5rem!important;
+}
+.ms-cl .p-4 {
+    padding: 1.5rem!important;
+}
+.ms-cl .pt-2, .ms-cl .py-2 {
+    padding-top: .5rem!important;
+}
+.ms-cl .pl-5, .ms-cl .px-5 {
+    padding-left: 3rem!important;
+}
+.ms-cl .pr-5, .ms-cl .px-5 {
+    padding-right: 3rem!important;
+}
+.ms-cl .bg-white {
+    background-color: #fff!important;
+}
+.ms-cl .btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 14px;
+    font-family: inherit;
+    line-height: 1.5;
+    border-radius: 5px;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.ms-cl .btn-primary {
+    color: #fff;
+    background: #D32F2F;
+    border-color: #D32F2F;
+    padding: .575rem 1.2rem;
+    display: block;
+    width: 100%;
+    font-size: 18px;
+}
+.ms-cl .btn-primary:hover, .ms-cl .btn-primary:focus {
+    color: #fff;
+    background: #0D2131;
+    border-color: #0D2131;
+}
+.ms-cl .btn-primary:focus {
+    color: #fff;
+    background: #c3922e;
+    border-color: #c3922e;
+}
+.ms-cl .btn:focus {
+    outline: none !important;
+}
+/* Custom css */
+.ms-cl .cl-wrapper {
+    position: relative;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    background: #ffffff;
+    transition: all 1s ease-in-out;
+}
+.ms-cl .div-buttons {
+    display: flex;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.ms-cl .div-buttons .cl-button {
+    width: 50%;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    padding: 12px;
+    background: #F2F2F2;
+    color: #000;
+    cursor: pointer;
+}
+.ms-cl .div-buttons .cl-button.active {
+    background-color: #fff;
+    color:#000;
+}
+.ms-cl .div-buttons .cl-button:nth-child(1) {
+    border-radius: 10px 0 0;
+}
+.ms-cl .div-buttons .cl-button:nth-child(2) {
+    border-radius: 0 10px 0 0;
+}
+.ms-cl .cl-left-div {
+    padding: 2rem 4rem !important;
+}
+.ms-cl .cl-right-div {
+    padding: 4rem 0rem 0rem 0rem !important;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.ms-cl .cl-divider {
+    position: absolute;
+    width: 1px;
+    height: 80%;
+    top: 72px;
+    right: 0;
+    background-color: #727272;
+}
+.ms-cl .rs-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+.ms-cl .rs-sub-title{
+    font-size: 20px;
+    color: #4f4f4f;
+}
+.ms-cl .rs-sub-title-sp {
+    color: #0D2131;
+    font-size: 28px;
+    font-weight: bolder;
+}
+.ms-cl .rs-value {
+    font-size: 35px;
+    color: #c3922e;
+}
+.ms-cl .rs-sp-vl-sec {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 15px;
+    min-width: 240px;
+}
+.ms-cl .min-title {
+    position: absolute;
+    top: -11px;
+    left: 0;
+    right: 0;
+}
+.ms-cl .min-title-text {
+    background: #fff;
+    padding: 2px 5px;
+    font-size: 14px;
+}
+.ms-cl .rs-btn-sec {
+    position: absolute;
+    bottom: -18px;
+    left: 0;
+    right: 0;
+}
+.ms-cl .rs-sp-value {
+    color: #E1B350;
+    font-size: 2.5rem;
+    font-weight: 600 !important;
+    margin: 0;
+}
+
+.ms-cl #rValue {
+    color: #c3922e;
+    font-size: 16px;
+}
+.ms-cl .rs-bottom {
+    display: block;
+    margin-top: 20px;
+}
+.ms-cl .rs-bottom small {
+    font-size: 14px;
+}
+.ms-cl .rs-bottom h6 {
+    font-size: 16px;
+    color: #454545;
+}
+.ms-cl .err-msg {
+    display: none;
+    color: red;
+    margin: 2px 0;
+    font-size: 14px;
+}
+.ms-cl .cl-2 {
+    display: none;
+}
+
+.ms-cl input[type=range] {
+    -webkit-appearance: none;
+    margin: 10px 0px 10px 0px;
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+.ms-cl input[type=range]:focus {
+    outline: none;
+}
+.ms-cl input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: #c3922e;
+    border-radius: 25px;
+    box-shadow: inset 0 0 3px #ccc;
+}
+.ms-cl input[type=range]::-webkit-slider-runnable-track:hover {
+    background: #0c394d;
+}
+.ms-cl input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: #c3922e;
+    border-radius: 25px;
+    box-shadow: inset 0 0 3px #ccc;
+}
+.ms-cl input[type=range]::-moz-range-track:hover {
+    background: #0c394d;
+}
+.ms-cl input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    width: 20px !important;
+    height: 20px !important;
+    background: #c3922e !important;
+    cursor: pointer !important;
+    border-radius: 25px !important;
+    box-shadow: 0 0 2px #4f4f4f !important;
+    border: 4px solid #fff !important;
+    margin-top: -6px;
+    z-index: 1000;
+}
+.ms-cl input[type=range]::-webkit-slider-thumb:hover {
+    background: #0c394d !important;
+}
+.ms-cl input[type=range]::-moz-range-thumb {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    width: 20px !important;
+    height: 20px !important;
+    background: #c3922e !important;
+    cursor: pointer !important;
+    border-radius: 25px !important;
+    box-shadow: 0 0 2px #4f4f4f !important;
+    border: 4px solid #fff !important;
+    margin-top: -6px;
+    z-index: 1000;
+}
+.ms-cl input[type=range]::-moz-range-thumb:hover {
+    background: #0c394d !important;
+}
+.ms-cl .range-prog {
+    height: 8px;
+    background: #53bed6;
+    position: absolute;
+    top: 10px;
+    z-index: 100;
+    width: 0px;
+    border-radius: 5px;
+}
+.ms-cl .range-wrap {
+    width: 100%;
+    position: relative;
+    display: block;
+    margin-bottom: 40px;
+}
+.ms-cl .ms-sm-left {
+    display: inline-block;
+    font-size: 14px;
+    float: left;
+}
+.ms-cl .ms-sm-right {
+    display: inline-block;
+    font-size: 14px;
+    float: right;
+}
+.ms-cl .check-item {
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    padding: 7px 15px 5px 15px;
+    cursor: pointer;
+    background-color: transparent;
+    font-weight: 600;
+    width: 46%;
+}
+.ms-cl .check-item:hover {
+    background-color: #E1B350;
+    color:#fff;
+}
+.ms-cl .check-item.active {
+    background-color: #E1B350;
+    color:#fff;
+}
+.ms-cl #err_msg {
+    color: red;
+    display: none;
+    margin: 8px 2px;
+    text-align: center;
+}
+.ms-cl .top-title {
+    background: #0D2131;
+    padding: 10px;
+    border-radius: 0 0 5px 5px;
+    color: #fff;
+    font-size: 24px;
+}
+.ms-cl #imperial_inp {
+    display: none;
+}
+.ms-cl .main-calc {
+    transform: translateX(-300px);
+    opacity: 0;
+}
+.ms-cl .open{
+    transform: translateX(0px);
+    opacity: 1;    
+}
+/* responsive */
+
+@media (max-width: 768px){
+    .ms-cl .cl-divider {
+        display: none;
+    }
+    .ms-cl .cl-left-div {
+        padding: 2rem 2.5rem !important;
+    }
+    .ms-cl .btn-primary {
+        padding: .575rem 0.5rem;
+    }
+}
+@media (min-width: 576px){
+    .ms-cl .container, .ms-cl .container-sm {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px){
+    .ms-cl .container, .ms-cl .container-md, .ms-cl .container-sm {
+        max-width: 600px;
+    }
+    .ms-cl .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .ms-cl .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+    .ms-cl .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .ms-cl .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    .ms-cl .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+@media (min-width: 992px){
+    .ms-cl .container, .ms-cl .container-lg, .ms-cl .container-md, .ms-cl .container-sm {
+        max-width: 600px;
+    }
+}
+@media (min-width: 1200px) {
+    .ms-cl .container, .ms-cl .container-lg, .ms-cl .container-md, .ms-cl .container-sm, .ms-cl .container-xl {
+        max-width: 600px;
+    }
+}
+</style>
+<div class="ms-cl" id="ms_cl">
+    <div class="container cl-wrapper main-calc" id="calc_div">
+        <h3 class="top-title text-center">Calorie Calculations (Estimations)</h3>
+        <div class="row">
+            <div class="col-md-12 cl-left-div" id="cl-input-one">
+                <div class="form-group">
+                    <label style="display: block;">Gender</label>
+                    <div class="check-item gen_check" data-value="Male">
+                        Male
+                    </div>
+                    <div class="check-item gen_check" data-value="Female">
+                        Female
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cl_age">Age: <span id="rValue"></span></label>
+                    <div class="range-wrap">
+                        <input id="range" type="range" min="0" max="100" value="0" step="1">
+                        <div class="ms-sm-left">1</div>
+                        <div class="ms-sm-right">100</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="check-item unit_check active" data-value="1">
+                        Metric Units 
+                    </div>
+                    <div class="check-item unit_check" data-value="2">
+                        US Units
+                    </div>
+                </div>
+                <div class="row" id="metric_inp">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="cl_height">Height <small>(cm)</small></label>
+                            <input type="number" class="form-control cl-required" id="cl_height_1"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="cl_weight">Weight <small>(kg)</small></label>
+                            <input type="number" class="form-control cl-required" id="cl_weight_1"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="imperial_inp">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="cl_height">Height <small>(feet)</small></label>
+                            <input type="number" class="form-control cl-required" id="cl_height_2"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="cl_weight">Height <small>(inches)</small></label>
+                            <input type="number" class="form-control cl-required" id="cl_height_22"/>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="cl_weight">Weight <small>(lbs)</small></label>
+                            <input type="number" class="form-control cl-required" id="cl_weight_2"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="cl_activity">Activity Level</label>
+                            <select class="form-control cl-required" id="cl_activity">
+                                <option disabled selected value="">-select-</option>
+                                <option value="1.2">Sedentary</option>
+                                <option value="1.375">Lightly Active</option>
+                                <option value="1.55">Moderately Active</option>
+                                <option value="1.725">Very Active</option>
+                            </select>
+                        </div>
+                    </div>                   
+                </div>
+                <p id="err_msg">All inputs are required.</p>
+                <button type="button" class="btn btn-primary" id="calc_btn">Calculate</button>
+                <div class="cl-right-div" id="cl-rs-one">
+                    <h4 class="rs-sub-title-sp">Calories/Day</h4>
+                    <div class="rs-sp-vl-sec">
+                        <h2 class="rs-sp-value" id="rs_vl">0<span style='font-size:20px;'>cal</span></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    jQuery(document).ready(function($){
+        let cl_name, cl_email, cl_gender, cl_age, 
+        cl_height_1, cl_weight_1, cl_height_2, cl_height_22, cl_weight_2, cl_activity, 
+        cl_goal, cl_activity_txt, cl_goal_txt;
+        let rs_vl, cl_unit = 1;
+
+        const nft = Intl.NumberFormat("en-US", {
+            minimumFractionDigits:0,
+            maximumFractionDigits:0
+        });
+
+        const range = document.getElementById('range');
+        const rValue = document.getElementById("rValue");
+
+        const setValue = ()=>{
+            const newValue = Number( (range.value - range.min) * 100 / (range.max - range.min) );
+            const newPosition = 10 - (newValue * 0.2);
+            if(Number(range.value)){
+                rValue.innerHTML = `${nft.format(range.value)}`;
+            } else {
+                rValue.innerHTML = "";
+            }
+            cl_age = Number(range.value);
+        };
+        setValue();
+        range.addEventListener('input', setValue);
+
+        $("#calc_btn").on("click", function(){
+            let valid = validate();
+            if(valid){
+                $("#err_msg").hide();
+                calc();
+                sendMail();
+            } else {
+                $("#err_msg").slideDown();
+            }
+        });
+
+        $(".gen_check").on("click", function(){
+            cl_gender = $(this).data("value");
+            $(".gen_check").removeClass("active");
+            $(this).addClass("active");
+        });
+
+        $(".unit_check").on("click", function(){
+            cl_unit = Number($(this).data("value"));
+            $(".unit_check").removeClass("active");
+            $(this).addClass("active");
+            if(cl_unit == 1){
+                $("#metric_inp").css({"display":"flex"});
+                $("#imperial_inp").hide();
+            } else {
+                $("#metric_inp").hide();
+                $("#imperial_inp").css({"display":"flex"});
+            }
+        });
+
+        function calc(){
+            rs_vl = 0;
+            if(cl_gender == "Male"){
+                rs_vl = 10*cl_weight+6.25*cl_height-5*(cl_age)+5;
+            } else {
+                rs_vl = 10*cl_weight+6.25*cl_height-5*(cl_age)-161;
+            }
+
+            rs_vl = rs_vl * cl_activity;
+
+            if(cl_goal == 1){
+                rs_vl = rs_vl - 200;
+            } else if(cl_goal == 3){
+                rs_vl = rs_vl + 200;
+            }
+            animate_counter('#rs_vl',(rs_vl));
+        }
+
+        function sendMail(){
+            $("input[name='name']").val(cl_name);
+            $("input[name='email']").val(cl_email);
+            $("input[name='gender']").val(cl_gender);
+            $("input[name='age']").val(cl_age);
+            $("input[name='height']").val(cl_height+"cm");
+            $("input[name='weight']").val(cl_weight+"kg");
+            $("input[name='activity']").val(cl_activity_txt);
+            $("input[name='goal']").val(cl_goal_txt);
+            $("input[name='calorie']").val(nft.format(rs_vl)+" cal");
+            $("#submit_form").click();
+        }
+
+        function validate(){
+            cl_name = $("#cl_name").val().trim();
+            cl_email = $("#cl_email").val().trim();
+
+            if(cl_unit == 1){
+                cl_height = Number($("#cl_height_1").val());
+                cl_weight = Number($("#cl_weight_1").val());
+            } else {
+                cl_height = ((Number($("#cl_height_2").val())*12) + Number($("#cl_height_22").val())) * 2.55;
+                cl_weight = Number($("#cl_weight_2").val()) * 0.453592;
+            }
+            cl_activity = Number($("#cl_activity").val());
+            cl_goal = Number($("#cl_goal").val());
+
+            cl_activity_txt = $("#cl_activity option:selected").text();
+            cl_goal_txt = $("#cl_goal option:selected").text();
+
+            if(cl_name && cl_email && cl_age && cl_height &&cl_weight && cl_activity && cl_goal){
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        function animate_counter(id,value) {
+            $(id).text(value);
+
+            $(id).each(function () {
+                $(this).prop('Counter',0).animate({
+                    Counter: $(this).text()
+                }, {
+                    duration: 500,
+                    easing: 'swing',
+                    step: function (now) {
+                        $(this).html(nft.format(now)+"<span style='font-size:20px;'>cal</span>");
+                    }
+                });
+            });
+        }
+        if( $('#calc_div').length ) {
+            jQuery(window).scroll(function() {
+                let calc_div = $("#calc_div").offset().top;
+
+                if (jQuery(this).scrollTop() > (calc_div - 400)) {
+                    jQuery("#calc_div").addClass("open");
+                }
+            });            
+        }
+    });
+</script>
+<!----------- copy ends ---------------->
+</body>
+</html>
