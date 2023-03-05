@@ -169,7 +169,10 @@
 #mx_cl .prepend-text {
     position: absolute;
     bottom: 5px;
-    left: 5px;
+    left: 10px;
+}
+#mx_cl .left-sp {
+    padding-left: 25px;
 }
 #mx_cl .sp-rs-sec .rs-title {
     color: #fff;
@@ -206,7 +209,7 @@
                 </div>
                 <div class="form-group">
                     <label for="in_2">Additional Service Charge</label>
-                    <input type="text" name="in_2" class="form-control num-in cl-required" autocomplete="off" id="in_1" />
+                    <input type="text" name="in_2" class="form-control num-in cl-required left-sp" autocomplete="off" id="in_1" />
                     <span class="prepend-text">$</span>
                 </div>
             </div>
@@ -218,33 +221,6 @@
             </div>
         </div>
     </div>
-    
 </div>
-<!-- <script>
-    jQuery(document).ready(function($){
-        const nft = Intl.NumberFormat("en-US", {
-            minimumFractionDigits: 0,
-            maximumFractionDigits: 0
-        });
-
-        $(".cl-required").on("input", function(){
-            calc();
-        });
-
-        function calc(){
-            in_1 = Number($("#in_1").val());
-            in_2 = Number($("#in_2").val());
-
-            let avr_pr = 105;
-            let com_rate = 18/100;
-
-            rs_1 = (in_1 * in_2 * avr_pr) * com_rate;
-
-            $("#rs_1").text("$"+nft.format(rs_1));
-
-        }
-    });
-</script>
---------- copy ends -------------- -->
 </body>
 </html>
