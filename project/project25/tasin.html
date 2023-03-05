@@ -74,7 +74,7 @@
     font-weight: 400;
     line-height: 1.5;
     color: #000000;
-    border: 1px solid #283677;
+    border: 1px solid #DBDBDB;
     background: #ffffff;
     border-radius: 5px;
     background-clip: padding-box;
@@ -154,17 +154,24 @@
 .ms-cl .tick-mark {
   background-color: #ffffff;
   padding: 2px;
-  color: #000;
+  color: #fff;
   width: 20px;
   height: 20px;
   font-size: 14px;
   align-items: center;
+  justify-content: center;
   margin: 0 auto;
-  border: 1px solid #ccc;
+  border: 1px solid #DBDBDB;
   cursor: pointer;
+  display: flex;
+  margin-right: 10px;
+}
+.ms-cl .tick-mark.is-active{
+    color: #000;
 }
 #mx_cl .tck-mark{
     margin-bottom: 20px;
+    display: inline-block;
 }
 #mx_cl .prepend-text {
     position: absolute;
@@ -180,6 +187,10 @@
     font-weight: 700;
     border-bottom: 1px solid #A9072B;
 }
+#mx_cl .ds-none {
+   display: none;
+}
+
 #mx_cl .form-group {
     position: relative;
 }
@@ -201,26 +212,97 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label for="in_1">Number of Total Employees</label>
-                    <input type="text" name="in_1" class="form-control num-in cl-required" autocomplete="off" id="in_1" />
+                    <input type="text" id="in_1" class="form-control num-in cl-required" autocomplete="off" id="in_1" />
                 </div>
-                <div class="tck-mark">
-                    <span class="tick-mark">✔</span>
-                    <span class="">Do you require additional services?</span>
+                <div class="check-box">
+                    <div class="tck-mark">
+                        <span class="tick-mark">✔</span>
+                    </div>
+                    <span style="cursor: pointer;">Do you require additional services?</span>
                 </div>
-                <div class="form-group">
+                <div class="form-group ds-none" id="add_sec">
                     <label for="in_2">Additional Service Charge</label>
-                    <input type="text" name="in_2" class="form-control num-in cl-required left-sp" autocomplete="off" id="in_1" />
+                    <input type="text" id="in_2" class="form-control num-in cl-required left-sp" autocomplete="off" id="in_1" />
                     <span class="prepend-text">$</span>
                 </div>
             </div>
             <div class="col-md-12 sp-pd-top">
                 <div class="sp-rs-sec">
-                    <div class="rs-title" id="rs_1">Total Cost</div>
-                    <div class="rs-value">$10,520</div>
+                    <div class="rs-title">Total Cost</div>
+                    <div class="rs-value" id="rs_1">$0</div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+<script>
+    jQuery(($)=>{
+
+        let additional_cost = 0;
+
+        const nft = Intl.NumberFormat("en-US",{
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+        });
+        const numOptionCurrency = {
+            digitGroupSeparator        : ',',
+            decimalCharacter           : '.',
+            decimalCharacterAlternative: '.',
+            currencySymbol             : '',
+            currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.prefix,
+            decimalPlaces              : 0,
+            minimumValue               : 0
+        };
+        new AutoNumeric('#in_1', numOptionCurrency);
+        new AutoNumeric('#in_2', numOptionCurrency);
+
+        $('.check-box').on("click",function(){
+            let tick_mark = $(this).find('.tick-mark');
+            console.log("tasin")
+            if(tick_mark.hasClass("is-active")){
+                additional_cost = false;
+                tick_mark.removeClass("is-active");
+                $("#add_sec").addClass("ds-none");
+            } else{
+                additional_cost = true;
+                tick_mark.addClass("is-active");
+                $("#add_sec").removeClass("ds-none");
+            }
+            calcFunc();
+        });
+
+        $('.cl-required').on("input",function(){
+            calcFunc();
+        })
+
+        function calcFunc(){
+            in_1 = removeComma($("#in_1").val());
+            in_2 = removeComma($("#in_2").val());
+
+            if(in_1){
+                if(!additional_cost){
+                    in_2 = 0;
+                }
+
+                let total_cost = 0;
+
+                if(in_1 > 0 && in_1 <= 5 ){
+                    total_cost = 60;
+                } else if(in_1 > 5 && in_1 <= 10 ){
+                    total_cost = 85;
+                } else if(in_1 > 10){
+                    total_cost = 85 + (in_1 * 3.99);
+                }
+                $("#rs_1").text('$'+nft.format(total_cost + in_2));
+            } else{
+                $("#rs_1").text('$'+nft.format(0));
+            }
+        }
+        function removeComma(num){
+            return Number(num.replace(/,/g,""));
+        }
+    })
+</script>
 </body>
 </html>
