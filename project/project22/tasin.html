@@ -384,7 +384,11 @@
                             
                         </div>                
                     </div>
-                    <div class="col-md-6">                   
+                    <div class="col-md-6"> 
+                        <label for="hm_in_4">Average Revenue Per New Patient</label>    
+                        <div class="input-group">
+                            <input type="text" class="form-control cl-input" id="hm_in_4" readonly>
+                        </div>        
                     </div>
                 </div>
                 <br>
@@ -440,7 +444,6 @@ jQuery(document).ready(function($){
         hm_in_3 = removeComma($("#hm_in_3").val());
         
         if(hm_in_1 && hm_in_2 && hm_in_3){
-            console.log(hm_in_1);
             let x = hm_in_2/hm_in_1;
             let y = "";
 
@@ -459,11 +462,12 @@ jQuery(document).ready(function($){
 
             let z = "";
             if(y=="Very Low" || y=="Low"){
-                z =  (37000*12) - x;
+                z =  (444000 * hm_in_1) - (hm_in_2 * 12);
             } else{
-                z = x + (x*0.2);
+                z = ((120/100) * hm_in_2 * hm_in_1) - (hm_in_2 * 12);
             }
-            console.log(x, y);
+            hm_in_4 = hm_in_2/hm_in_3;
+            $("#hm_in_4").val("$"+nft.format(hm_in_4));
             $("#rs_2").text("$"+nft.format(z));
 
         }

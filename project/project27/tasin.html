@@ -1,0 +1,437 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<style>
+#msc *, ::after, ::before {
+    box-sizing: border-box;
+}
+#msc {
+    line-height: 1.5;
+    font-family: inherit;
+}
+#msc .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    text-align: left;
+    font-family: inherit;
+}
+#msc label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-size: 16px;
+    font-weight: 500;
+}
+#msc .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+#msc .col-md-1, #msc .col-md-10, #msc .col-md-11, #msc .col-md-12, #msc .col-md-2, #msc .col-md-3, #msc .col-md-4, #msc .col-md-5, #msc .col-md-6, #msc .col-md-7, #msc .col-md-8, #msc .col-md-9 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+#msc .form-group {
+    margin-bottom: 1rem;
+}
+#msc .form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: inherit;
+    line-height: 1.5;
+    color: #18519f;
+    background-color: #ffffff;
+    background-clip: padding-box;
+    border: 1px solid #18519f;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#msc .form-control:focus {
+    outline: none;
+    border: 1px solid #e74e5f;
+}
+#msc .text-center {
+    text-align: center!important;
+}
+/* Custom css */
+#msc .cl-wrapper {
+    position: relative;
+    /*background: #ffffff;*/
+}
+#msc .cl-left-div {
+    padding: 0;
+    /*background: #ffffff;*/
+    border: none;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+@media (max-width: 768px){
+    #msc .cl-left-div {
+        padding: 0.2rem !important;
+    }
+}
+@media (min-width: 576px){
+    #msc .container {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px){
+    #msc .container {
+        max-width: 100%;
+    }
+    #msc .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    #msc .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+}
+@media (min-width: 992px){
+    #msc .container {
+        max-width: 968px;
+    }
+}
+@media (min-width: 1200px) {
+    #msc .container {
+        max-width: 968px;
+    }
+}
+#msc .col-section {
+    display: block;
+    background: #ffffff;
+    box-shadow: 0 0 33px #dfdfdf;
+    padding: 1rem 1rem;
+}
+#msc .details-sec {
+    display: block;
+    text-align: center;
+}
+#msc .left-num-title {
+    font-size: 16px;
+    border-bottom: 1px solid #e4e4e4;
+}
+#msc .num-title {
+    display: none;
+    font-size: 16px;
+    border-bottom: 1px solid #e4e4e4;
+}
+#msc .num-value {
+    font-size: 20px;
+    font-weight: 600;
+}
+#msc .left-num-sec {
+    display: block;
+    margin-bottom: 24px;
+}
+#msc .num-sec {
+    display: block;
+    margin-bottom: 3rem;
+}
+#msc .num-sec:last-child {
+    display: block;
+    margin-bottom: 2rem;
+}
+#msc .sec-title {
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 0 5px #ccc;
+    border-radius: 35px;
+    margin: -45px auto 0 auto;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    display: block;
+    max-width: 242px;
+}
+#msc .final-sec {
+    text-align: center;
+    display: block;
+    padding: 1rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    margin-bottom: -1rem;
+}
+#msc .final-title {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+}
+#msc .final-value {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+}
+#msc .bg-1 {
+    background: rgb(109,194,184);
+    background: linear-gradient(320deg, rgba(109,194,184,1) 35%, rgba(48,124,186,1) 100%);
+}
+#msc .bg-2 {
+    background: #18519f;
+}
+#msc .cl-1 {
+    color: #307CBA;
+}
+#msc .cl-2 {
+    color: #18519f;
+}
+#msc .brd-1 {
+    border: 1px solid #307CBA;
+}
+#msc .brd-2 {
+    border: 1px solid #18519f;
+}
+@media (max-width: 768px){
+    #msc .main-title-sec {
+        flex-direction: column;
+    }
+    #msc .main-title {
+        margin: 10px 0;
+        font-size: 18px;
+    }
+    #msc .gr-logo {
+        height: 58px;
+    }
+    #msc .btn-position {
+        text-align: left;
+        margin-top: 10px;
+    }
+    #msc .col-sm-50 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    #msc .mb-pd-lf-2{
+        padding-left: 8px;
+    }
+    #msc .mb-pd-rt-2{
+        padding-right: 8px;
+    }
+    #msc .sec-title {
+        padding: 1rem 0;
+        margin: -33px auto 0 auto;
+        font-size: 12px;
+    }
+    #msc .col-section {
+        box-shadow: 0 0 12px #dfdfdf;
+        padding: 1rem 1rem;
+    }
+    #msc .col-section {
+        box-shadow: 0 0 12px #dfdfdf;
+        padding: 0.3rem;
+    }
+    #msc .num-value {
+        font-size: 16px;
+    }
+    #msc .num-sec {
+        margin-bottom: 1.5rem;
+    }
+    #msc .mb-mr-top {
+        margin-top: 3rem;
+    }
+    #msc .final-sec {
+        text-align: center;
+        display: block;
+        padding: 0.5rem;
+        margin-left: -5px;
+        margin-right: -5px;
+        margin-bottom: -5px;
+    }
+    #msc .final-title {
+        font-size: 16px;
+    }
+    #msc .final-value {
+        font-size: 20px;
+    }
+    #msc .mb-hide {
+        display: none;
+    }
+    #msc .num-title {
+        display: block;
+    }
+}
+</style>
+<div class="ms-cl" id="msc">
+    <div class="container cl-wrapper">
+        <div class="row">
+            <div class="col-md-12 cl-left-div">
+                <div class="row">
+                    <div class="col-md-4">
+                        <br>
+                        <label for="in_1">Sales Price</label>
+                        <div class="form-group">
+                            <input type="text" name="in_1" class="form-control cl-in" placeholder="$" autocomplete="off" id="in_1" />
+                        </div>
+                        <div class="left-num-sec mb-hide" style="margin-bottom: 13px;">
+                            <div class="left-num-title">Commission</div>
+                            <div class="num-value cl-2 rs-vl" id="rs_01">$0</div>
+                        </div>
+                        <label for="in_2">Lost Rent (3 months)</label>
+                        <div class="form-group">
+                            <input type="text" name="in_2" class="form-control cl-in" placeholder="$" autocomplete="off" id="in_2" />
+                        </div>
+                        <div class="left-num-sec mb-hide">
+                            <div class="left-num-title">Repairs</div>
+                            <div class="num-value cl-2 rs-vl" id="rs_02">$0</div>
+                        </div>
+                        <div class="left-num-sec mb-hide" style="margin-bottom: 13px;">
+                            <div class="left-num-title">Closing Cost</div>
+                            <div class="num-value cl-2 rs-vl" id="rs_03">$0</div>
+                        </div>
+                        <label for="in_3">Mortgage Balance</label>
+                        <div class="form-group">
+                            <input type="text" name="in_3" class="form-control cl-in" placeholder="$" autocomplete="off" id="in_3" />
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-50 mb-pd-rt-2 mb-mr-top">
+                        <div class="col-section brd-1">
+                            <div class="sec-title bg-1">Done for You</div>
+                            <div class="details-sec">
+                                <br>
+                                <div class="num-sec">
+                                    <div class="num-title">Sales Price</div>
+                                    <div class="num-value cl-1 rs-vl" id="rs_1">$0</div>
+                                </div>
+                                <div class="num-sec">
+                                    <div class="num-title">Commission</div>
+                                    <div class="num-value cl-1" id="rs_0">$0</div>
+                                </div>
+                                <div class="num-sec">
+                                    <div class="num-title">Lost Rent (3 months)</div>
+                                    <div class="num-value cl-1">$0</div>
+                                </div>
+                                <div class="num-sec">
+                                    <div class="num-title">Repairs</div>
+                                    <div class="num-value cl-1">$0</div>
+                                </div>
+                                <div class="num-sec">
+                                    <div class="num-title">Closing Cost</div>
+                                    <div class="num-value cl-1">$0</div>
+                                </div>
+                                <div class="num-sec">
+                                    <div class="num-title">Mortgage Balance</div>
+                                    <div class="num-value cl-1 rs-vl" id="rs_2">$0</div>
+                                </div>
+                            </div>
+                            <div class="final-sec bg-1">
+                                <div class="final-title">Net Sales Proceeds</div>
+                                <div class="final-value rs-vl"  id="rs_9">$0</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-50 mb-pd-lf-2 mb-mr-top"> 
+                        <div class="col-section brd-2">
+                            <div class="sec-title bg-2">Traditional Realtor</div>
+                            <div class="details-sec">
+                                <br>
+                                <div class="num-sec">
+                                    <div class="num-title">Sales Price</div>
+                                    <div class="num-value cl-2 rs-vl" id="rs_3">$0</div>
+                                </div>
+                                <div class="num-sec">
+                                    <div class="num-title">Commission</div>
+                                    <div class="num-value cl-2 rs-vl" id="rs_4">$0</div>
+                                </div>
+                                <div class="num-sec">
+                                    <div class="num-title">Lost Rent (3 months)</div>
+                                    <div class="num-value cl-2 rs-vl" id="rs_5">$0</div>
+                                </div>
+                                <div class="num-sec">
+                                    <div class="num-title">Repairs</div>
+                                    <div class="num-value cl-2 rs-vl" id="rs_6">$0</div>
+                                </div>
+                                <div class="num-sec">
+                                    <div class="num-title">Closing Cost</div>
+                                    <div class="num-value cl-2 rs-vl" id="rs_7">$0</div>
+                                </div>
+                                <div class="num-sec">
+                                    <div class="num-title">Mortgage Balance</div>
+                                    <div class="num-value cl-2 rs-vl" id="rs_8">$0</div>
+                                </div>
+                            </div>
+                            <div class="final-sec bg-2">
+                                <div class="final-title">Net Sales Proceeds</div>
+                                <div class="final-value rs-vl" id="rs_10">$0</div>
+                            </div>
+                        </div>                   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+<script>
+    jQuery(document).ready(function($){
+        let rs = {};
+
+        const nft = Intl.NumberFormat("en-US", { 
+            minimumFractionDigits:0,
+            maximumFractionDigits:0
+        });
+        const nftd = Intl.NumberFormat("en-US", { 
+            minimumFractionDigits:2,
+            maximumFractionDigits:2
+        });
+
+        const numOptionCurrency = {
+            digitGroupSeparator        : ',',
+            decimalCharacter           : '.',
+            decimalCharacterAlternative: '.',
+            currencySymbol             : '$',
+            currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.prefix,
+            decimalPlaces              : 0
+        };
+
+        new AutoNumeric('#in_1', numOptionCurrency);
+        new AutoNumeric('#in_2', numOptionCurrency);
+        new AutoNumeric('#in_3', numOptionCurrency);
+
+        $('.cl-in').on('input', function(){
+            in_1 = removeSign($('#in_1').val());
+            in_2 = removeSign($('#in_2').val());
+            in_3 = removeSign($('#in_3').val());
+
+            rs['rs_0'] = in_1*(4/100);
+            rs['rs_1'] = in_1;
+            rs['rs_01'] = in_1 * (6/100);
+            rs['rs_02'] = (in_1) ? 6000 : 0;
+            rs['rs_03'] = in_1 * (1.5/100);
+            rs['rs_2'] = in_3;
+
+            rs['rs_3'] = in_1;
+            rs['rs_4'] = rs['rs_01'];
+            rs['rs_5'] = in_2;
+            rs['rs_6'] = rs['rs_02'];
+            rs['rs_7'] = rs['rs_03'];
+            rs['rs_8'] = in_3;
+            
+            rs['rs_9'] = rs['rs_1'] - rs['rs_2'];
+            rs['rs_10'] = rs['rs_3'] - rs['rs_4'] - rs['rs_5'] - rs['rs_6'] - rs['rs_7'] - rs['rs_8'];
+
+            Object.keys(rs).forEach(function(k){
+                $('#'+k).text("$"+nft.format(rs[k]));
+            });
+        });        
+
+        function removeSign(vl){
+            return Number(vl.replace(/\$|,/g, ''));
+        }
+    });
+</script>
