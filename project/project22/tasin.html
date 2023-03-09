@@ -341,12 +341,12 @@
 }
 @media (min-width: 992px){
     #hm_cl .container {
-        max-width: 800px;
+        max-width: 960px;
     }
 }
 @media (min-width: 1200px) {
     #hm_cl .container {
-        max-width: 800px;
+        max-width: 1100px;
     }
 }
 #hm_cl hr {
@@ -359,13 +359,13 @@
         <div class="row">
             <div class="col-md-12 cl-left-div">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <label for="hm_in_1">Number of ops/rooms</label>
                         <div class="input-group">
                             <input type="text" class="form-control cl-input" id="hm_in_1">
                         </div>                     
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <label for="hm_in_2">Average monthly revenue $</label>    
                         <div class="input-group">
                             <div class="input-group-append">
@@ -375,25 +375,24 @@
                             
                         </div>             
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">   
+                    <div class="col-md-4">   
                         <label for="hm_in_3">Average number of new patients per month</label>    
                         <div class="input-group">
                             <input type="text" class="form-control cl-input" id="hm_in_3">
-                            
                         </div>                
-                    </div>
-                    <div class="col-md-6"> 
-                        <label for="hm_in_4">Average Revenue Per New Patient</label>    
-                        <div class="input-group">
-                            <input type="text" class="form-control cl-input" id="hm_in_4" readonly>
-                        </div>        
                     </div>
                 </div>
                 <br>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
+                        <div class="rs-sec">
+                            <div class="rs-sp-vl-sec text-center">
+                                <h4 class="rs-sub-title-sp" id="text_1">Average Revenue Per New Patient</h4>
+                                <h2 class="rs-sp-value" id="rs_0">-</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
                         <div class="rs-sec">
                             <div class="rs-sp-vl-sec text-center">
                                 <h4 class="rs-sub-title-sp" id="text_1">Revenue Maximization Grade</h4>
@@ -401,7 +400,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="rs-sec">
                             <div class="rs-sp-vl-sec text-center">
                                 <h4 class="rs-sub-title-sp">Unrealized Revenue Per Year</h4>
@@ -464,12 +463,11 @@ jQuery(document).ready(function($){
             if(y=="Very Low" || y=="Low"){
                 z =  (444000 * hm_in_1) - (hm_in_2 * 12);
             } else{
-                z = ((120/100) * hm_in_2 * hm_in_1) - (hm_in_2 * 12);
+                z = ((120/100) * hm_in_2 * 12) - (hm_in_2 * 12);
             }
-            hm_in_4 = hm_in_2/hm_in_3;
-            $("#hm_in_4").val("$"+nft.format(hm_in_4));
+            rs_0 = hm_in_2/hm_in_3;
+            $("#rs_0").text("$"+nft.format(rs_0));
             $("#rs_2").text("$"+nft.format(z));
-
         }
     }
 

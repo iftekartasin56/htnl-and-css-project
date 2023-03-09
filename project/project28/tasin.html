@@ -1,0 +1,924 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <title>FINANCING CALCULATOR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+<!-----------Please copy and paste following code into any HTML element ---------------->
+
+<!----------- copy starts ---------------->
+<style>
+#mx_cl *, ::after, ::before {
+    box-sizing: border-box;
+}
+#mx_cl {
+    line-height: 1.5;
+    font-family: inherit;
+}
+#mx_cl .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    text-align: left;
+}
+#mx_cl label {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+#mx_cl .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+#mx_cl .col-md-20, #mx_cl .col-md-1, #mx_cl .col-md-10, #mx_cl .col-md-11, #mx_cl .col-md-12, #mx_cl .col-md-2, #mx_cl .col-md-3, #mx_cl .col-md-4, #mx_cl .col-md-5, #mx_cl .col-md-6, #mx_cl .col-md-7, #mx_cl .col-md-8, #mx_cl .col-md-9 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+#mx_cl .form-group {
+    margin-bottom: 1rem;
+}
+#mx_cl .form-control {
+    display: block;
+    width: 100%;
+    height: calc(1em + 0.75rem + 2px);
+    padding: 0.275rem 0.75rem;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #dddddd;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#mx_cl .form-control:focus {
+    outline: none;
+}
+#mx_cl .text-center {
+    text-align: center!important;
+}
+#mx_cl .btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: 0.275rem 0.75rem;
+    font-size: 16px;
+    line-height: 1.5;
+    border-radius: 25px;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#mx_cl .btn-save {
+    width: 100%;
+    background: #d9d9d9;
+    color: #000;
+    padding: 3px;
+    border-radius: 5px;
+}
+@media (min-width: 576px){
+    #mx_cl .container {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px){
+    #mx_cl .container {
+        max-width: 100%;
+    }
+    #mx_cl .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    #mx_cl .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+    #mx_cl .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    #mx_cl .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    #mx_cl .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+    #mx_cl .col-md-20 {
+        -ms-flex: 0 0 20%;
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+}
+@media (min-width: 992px){
+    #mx_cl .container {
+        max-width: 800px;
+    }
+}
+@media (min-width: 1200px) {
+    #mx_cl .container {
+        max-width: 800px;
+    }
+}
+#mx_cl .input-sec {
+    width: 100%;
+    display: block;
+    background: #fff;
+    padding: 1rem 2rem 2rem 2rem;
+    border: 1px solid #d9d9d9;
+    border-bottom: none;
+    border-radius: 8px 8px 0px 0px;
+}
+#mx_cl .output-sec {
+    width: 100%;
+    display: block;
+    background: #fff;
+    padding: 2rem;
+    border: 1px solid #d9d9d9;
+    border-radius: 0px 0px 8px 8px;
+    color: #000;
+}
+#mx_cl .sum-sec {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+#mx_cl .sum-title {
+    border-bottom: 1px solid #d9d9d9;
+    color: #000;
+    padding: 5px 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+#mx_cl .sum-value {
+    font-size: 22px;
+    font-weight: 600;
+}
+#mx_cl .pd-0 {
+    padding: 0;
+}
+#mx_cl .text-right {
+    text-align: right !important;
+}
+#mx_cl .range-wrap {
+    display: block;
+    position: relative;
+    padding: 0;
+    margin: 0 0 25px 0;
+}
+#mx_cl input[type=range] {
+    margin: 0 0 0 0;
+    outline: none;
+    padding: 0;
+    width: 100%;
+    height: 7px;
+    background-color: #ccc;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #000), color-stop(100%, #000));
+    border: 1px solid #ccc;
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+#mx_cl input[type=range]::-webkit-slider-runnable-track {
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    -webkit-appearance: none;
+}
+#mx_cl input[type=range]::-webkit-slider-thumb {
+    height: 20px;
+    width: 20px;
+    margin-top: -4px;
+    background: #ffffff;
+    border: 5px solid #000;
+    border-radius: 25px;
+    box-shadow: 0 2px 2px 0px #646464;
+    -webkit-appearance: none;
+}
+#mx_cl .prepend-text {
+    font-size: 16px;
+    position: absolute;
+    bottom: 2px;
+    left: 4px;
+    padding: 1px 5px;
+    border-radius: 5px;
+    color: #000000;
+}
+#mx_cl .append-text {
+    font-size: 16px;
+    position: absolute;
+    bottom: 1px;
+    right: 6px;
+    padding: 1px 5px;
+    border-radius: 5px;
+    color: #000000;
+}
+#mx_cl .form-group, #mx_cl .input-group {
+    position: relative;
+    margin-bottom: 22px;
+}
+#mx_cl .optios-sec{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+}
+#mx_cl .radio-option{
+    padding: 4px 10px;
+    width: 50%;
+    border-radius: 0;
+    border: 1px solid #ccc;
+    text-align: center;
+    cursor: pointer;
+    color: #000;
+    transition: all .2s;
+    font-size: 14px;
+    user-select: none;
+    border-radius: 25px;
+}
+#mx_cl .radio-option:hover{
+    background:#ddd;
+    border:1px solid #ddd;
+}
+#mx_cl .radio-option.active{
+    background:#0274ae;
+    border:1px solid #0274ae;
+    color:#fff;
+}
+#mx_cl .circle-radio{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:#fff;
+    border:1px solid #7b7b7b;
+    margin-right:6px;
+    box-shadow:inset 0 0 1px #000;
+}
+#mx_cl #mx_rs_data, #mx_cl #no_result {
+    display: none;
+}
+#mx_cl #err_msg {
+    display: none;
+    color: red;
+    margin: 0;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+#mx_cl .warning-icon {
+    font-size: 30px;
+    color: #0090D9;
+    display: block;
+    text-align: center;
+}
+#mx_cl .top-title {
+    font-size: 20px;
+    text-align: center;
+    padding: 0px 5px 4px 5px;
+    margin: 0;
+    color: #000;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #d5d5d5;
+}
+#mx_cl .sec-title {
+    border: 1px solid #d9d9d9;
+    color: #000;
+    padding: 5px 0;
+    font-size: 18px;
+    border-radius: 8px;
+    background: #ccc;
+}
+#mx_cl .mb_dis {
+    display: none;
+}
+@media (max-width: 768px){
+    #mx_cl .input-sec {
+        padding: 1rem;
+    }
+    #mx_cl .output-sec {
+        padding: 1rem;
+        margin-left: 0;
+    }
+    #mx_cl .form-control {
+        height: auto;
+        padding: .175rem .75rem;
+    }
+    #mx_cl label {
+        font-size: 16px;
+    }
+    #mx_cl .form-group, #mx_cl .input-group {
+        position: relative;
+        margin-bottom: 10px;
+    }
+    #mx_cl .prepend-text {
+        bottom: 3px;
+    }
+    #mx_cl .append-text {
+        bottom: 2px;
+    }
+    #mx_cl .ds_dis {
+        display: none;
+    }
+    #mx_cl .mb_dis {
+        display: block;
+    }
+    #mx_cl .col-sm-50 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+#mx_cl #bottom_note {
+    display: none;
+}
+#mx_cl .apply-btn {
+    text-decoration: none;
+    background: #ccc;
+    margin-top: 1rem;
+    padding: 0.5rem 3rem;
+    color: #000;
+}
+#mx_cl .bottom-form-title {
+    font-size: 18px;
+    color: #000;
+    font-weight: 600;
+    margin: 0;
+}
+#mx_cl #success_msg {
+    color: green;
+    margin: 0;
+    margin-top: 15px;
+    text-align: center;
+}
+#pdf_section {
+   display: none;
+}
+#pdf_data .top-row {
+    background: #f6f6f6 !important;
+}
+#pdf_data .ds-none {
+    display: none !important;
+}
+#pdf_data .text-right {
+    text-align: right !important;
+}
+#pdf_data .text-center {
+    text-align: center !important;
+}
+#pdf_data .text-left {
+    text-align: left !important;
+}
+#pdf_data .f600 {
+    font-weight: 600 !important;
+}
+#pdf_data h3 {
+    color: #000000;
+    margin: 3px 0;
+    padding: 0;
+    font-size: 18px;
+}
+#pdf_data p {
+    font-size: 14px;
+    margin: 2px 0;
+    font-size: 14px;
+    margin: 2px 0;
+    padding: 0px;
+    line-height: 18px;
+}
+#pdf_data table {
+    border: none;
+}
+#pdf_data table tr td {
+    padding: 0px 5px;
+    border-top: none;
+}
+#pdf_data .pdf-custom-table {
+    width: 100%;
+    border: none;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+#pdf_data .custom-box {
+    border: 2px solid #616161;
+    padding: 0px 3px;
+    font-weight: 600;
+    text-align: center;
+}
+#pdf_data .custom-box-th {
+    background: #a8a8a8;
+    color: #ffff;
+    padding: 0px 3px;
+    border: 1px solid #000c;
+    text-align: center;
+}
+#pdf_data .custom-box-td {
+    text-align: center;
+    font-weight: 600;
+    padding: 0px 3px;
+    border: 1px solid #000;
+}
+#pdf_data .custom-box-heading {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: right;
+    padding-right: 5px;
+}
+</style>
+<div class="ms-cl" id="mx_cl">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 pd-0">
+                <div class="input-sec">
+                    <h3 class="top-title">FINANCING CALCULATOR</h3>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <label for="in_1">Amount to Finance <small>(slide or type in box)</small></label>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="input-group" style="margin-bottom: 8px;">
+                                <input type="text" class="form-control cl-input" style="padding-left: 20px;" id="in_1_vl">
+                                <span class="prepend-text">$</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="range-wrap">
+                                <input id="in_1" class="range-bg-1 cl-in" type="range" min="10001" max="999999" value="100000" step="1">
+                            </div>  
+                        </div>
+                    </div>  
+                </div>            
+            </div>
+            <div class="col-md-12 pd-0">
+                <div class="output-sec">
+                    <div id="rs_sec_2">
+                        <div class="row">
+                            <div class="col-md-20 text-center ds_dis">
+                                <div class="sum-title">24 Months</div>
+                            </div>
+                            <div class="col-md-20 text-center ds_dis">
+                                <div class="sum-title">36 Months</div>
+                            </div>
+                            <div class="col-md-20 text-center ds_dis">
+                                <div class="sum-title">48 Months</div>
+                            </div>
+                            <div class="col-md-20 text-center ds_dis">
+                                <div class="sum-title">60 Months</div>
+                            </div>
+                            <div class="col-md-20 text-center ds_dis is-more">
+                                <div class="sum-title">72 Months</div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="sec-title text-center" style="margin-top: 1rem; margin-bottom: 1rem;">Estimated Cost / Day</div>
+                            </div>
+                            <div class="mb_dis col-sm-50 text-center">
+                                <div class="sum-title">24 Months</div>
+                            </div>
+                            <div class="col-md-20 col-sm-50">
+                                <div class="sum-sec" id="sum_sec">
+                                    <div class="sum-value"><span id="rs_10">-</span></div>
+                                </div>                            
+                            </div>
+                            <div class="mb_dis col-sm-50 text-center">
+                                <div class="sum-title">36 Months</div>
+                            </div>
+                            <div class="col-md-20 col-sm-50">
+                                <div class="sum-sec" id="sum_sec">
+                                    <div class="sum-value"><span id="rs_20">-</span></div>
+                                </div>
+                            </div>
+                            <div class="mb_dis col-sm-50 text-center">
+                                <div class="sum-title">48 Months</div>
+                            </div>
+                            <div class="col-md-20 col-sm-50">
+                                <div class="sum-sec" id="sum_sec">
+                                    <div class="sum-value"><span id="rs_30">-</span></div>
+                                </div>
+                            </div>
+                            <div class="mb_dis col-sm-50 text-center">
+                                <div class="sum-title">60 Months</div>
+                            </div>
+                            <div class="col-md-20 col-sm-50">
+                                <div class="sum-sec" id="sum_sec">
+                                    <div class="sum-value"><span id="rs_40">-</span></div>
+                                </div>
+                            </div>
+                            <div class="mb_dis col-sm-50 text-center is-more">
+                                <div class="sum-title">72 Months</div>
+                            </div>
+                            <div class="col-md-20 col-sm-50  is-more">
+                                <div class="sum-sec" id="sum_sec">
+                                    <div class="sum-value"><span id="rs_50">-</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="sec-title text-center" style="margin-top: 2rem; margin-bottom: 1rem;">Estimated Monthly Payment</div>
+                        </div>
+                        <div class="mb_dis col-sm-50 text-center">
+                            <div class="sum-title">24 Months</div>
+                        </div>
+                        <div class="col-md-20 col-sm-50">
+                            <div class="sum-sec" id="sum_sec">
+                                <div class="sum-value"><span id="rs_1">-</span></div>
+                            </div>                            
+                        </div>
+                        <div class="mb_dis col-sm-50 text-center">
+                            <div class="sum-title">36 Months</div>
+                        </div>
+                        <div class="col-md-20 col-sm-50">
+                            <div class="sum-sec" id="sum_sec">
+                                <div class="sum-value"><span id="rs_2">-</span></div>
+                            </div>
+                        </div>
+                        <div class="mb_dis col-sm-50 text-center">
+                            <div class="sum-title">48 Months</div>
+                        </div>
+                        <div class="col-md-20 col-sm-50">
+                            <div class="sum-sec" id="sum_sec">
+                                <div class="sum-value"><span id="rs_3">-</span></div>
+                            </div>
+                        </div>
+                        <div class="mb_dis col-sm-50 text-center">
+                            <div class="sum-title">60 Months</div>
+                        </div>
+                        <div class="col-md-20 col-sm-50">
+                            <div class="sum-sec" id="sum_sec">
+                                <div class="sum-value"><span id="rs_4">-</span></div>
+                            </div>
+                        </div>
+                        <div class="mb_dis col-sm-50 text-center">
+                            <div class="sum-title">72 Months</div>
+                        </div>
+                        <div class="col-md-20 col-sm-50">
+                            <div class="sum-sec" id="sum_sec">
+                                <div class="sum-value"><span id="rs_5">-</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12"><br></div>
+            <div class="col-md-4">
+                <h3 class="bottom-form-title">FINANCING PROPOSAL FOR:</h3>
+            </div>
+            <div class="col-md-4">
+                <input type="text" class="form-control" id="proposal_for_in">
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="btn btn-save" id="btn_save">Save as PDF</button>
+            </div>
+            <div class="col-md-12">
+                <p id="success_msg" style="display: none; color: green;">The PDF has been downloaded!</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="pdf_section">
+    <div id="pdf_data">
+        <table class="table">
+            <tr>
+                <td>
+                    <img id="our_logo" src="https://i.postimg.cc/DwGnx1ZR/quail-logo.png" alt="" srcset="">
+                </td>
+                <td id="todate" style="text-align: right !important;">-</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <h3>FINANCING PROPOSAL FOR: <span id="proposal_for" style="color: #000;"></span></h3>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <h3>INDUSTRY EXPERTS</h3>
+                    <p style="margin-bottom: 12px;">With over 40 years’ experience in the AVL world, Quail is the first choice of major AVL manufactures including Harman, L-Acoustics, Elation, Yamaha and others. We are the most trusted and experienced financing team in the AVL industry.</p>
+                    <h3>UNLIMITED FUNDING CAPACITY</h3>					
+                    <p style="margin-bottom: 12px;">Quail has the most robust network of lenders with the ability to fund single transactions from $10,000 to $3M+ or split a transaction into several schedules if needed.</p>                                                
+                    <h3>FAST, EASY & FLEXIBLE</h3>						
+                    <p style="margin-bottom: 12px;">We will help close the sale faster with “Application Only” programs up to $500,000 and the ability to custom tailor payments to match specific budgets and cash flows.</p>
+                    <h3>100% FUNDING</h3>
+                    <p style="margin-bottom: 12px;">We can fund all AVL equipment brands, accessories, installation, vehicles, and staging equipment needed to complete the job. In some cases, we can add working capital to the contract as well.</p>
+                    <h3>PROGRAM HIGHLIGHTS</h3>
+                    <p>
+                        &minus; Custom payment plans from 12 - 84 months<br>
+                        &minus; $500K+ with a simple application<br>
+                        &minus; Multiple vendors can be added to the same contract <br>
+                        &minus; Initial "Soft Pull" on personal credit (if required) for pre-qualification <br>
+                        &minus; Deferred Payments up to 6 months (Just $99 for the first 6 months)
+                    </p>
+                    <table class="pdf-custom-table">
+                      <tr>
+                        <td class="custom-box-heading">Equipment Cost:</td>
+                        <td class="custom-box" id="amount_show">$250,000.00</td>
+                        <td colspan="4">
+                            <p style="font-size: 14px;font-style: italic;padding-left: 10px;">&nbsp;&nbsp;&nbsp;&nbsp;payments below are valid for 2 weeks for the date above</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="6"><span style="width: 100%; display: block; height: 2px;"></span></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td class="custom-box-th">24 Months</td>
+                        <td class="custom-box-th">36 Months</td>
+                        <td class="custom-box-th">48 Months</td>
+                        <td class="custom-box-th">60 Months</td>
+                        <td class="custom-box-th">72 Months</td>
+                      </tr>  
+                      <tr>
+                        <td class="custom-box-heading">Estimated Monthly Payment:</td>
+                        <td class="custom-box-td" id="cost_1">$0.00</td>
+                        <td class="custom-box-td" id="cost_2">$0.00</td>
+                        <td class="custom-box-td" id="cost_3">$0.00</td>
+                        <td class="custom-box-td" id="cost_4">$0.00</td>
+                        <td class="custom-box-td" id="cost_5">$0.00</td>
+                      </tr>
+                      <tr>
+                        <td class="custom-box-heading">Estimated Cost / Day:</td>
+                        <td class="custom-box-td" id="payment_1">$0.00</td>
+                        <td class="custom-box-td" id="payment_2">$0.00</td>
+                        <td class="custom-box-td" id="payment_3">$0.00</td>
+                        <td class="custom-box-td" id="payment_4">$0.00</td>
+                        <td class="custom-box-td" id="payment_5">$0.00</td>
+                      </tr>  
+                    </table>
+                    <p style="font-size: 14px;">
+                    <b>Notes:</b><br>
+                    1) Payments quoted are estimates without seeing any credit information and are subject to changes in market rates. <br>
+                    2) Actual monthly payments will be determined after complete review of company's credit strength.<br>
+                    3) Rates are generally lower when several pieces of equipment are combined into a larger total package. <br>
+                    4) Odd length terms, deferred, seasonal, or balloon payment structures are also available.  <br>
+                    5) Payments are based on $1 Buyout / Equipment Finance Agreement - Other options are available. Call for 84 mo. quotes. <br>
+                    6) Call for payments on Municipal or Federal customers for tax-exempt payments</p>
+                    <br>
+                    <p style="text-align: center;font-size: 18px;">
+                        To get pre-qualified at no cost and no obligation 
+                        <a href="https://zfrmz.com/AqyZpVYMktZzRATDyeGZ" style="display: inline-block; background-color: #a8a8a8;color:#fff; padding: 2px 10px;" target="_blank">Click here</a>
+                    </p>
+                    <p style="font-weight: 600; font-size: 18px; text-align: center; margin-top: 30px;">For Questions contact Hannah Cash at HannahC@QuailCap.com or 818.826.2584</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js"></script>
+<script>
+    jQuery(document).ready(function($){
+        let in_1;
+        let dataArr = [
+            [0.04718, 0.03246, 0.02512, 0.02072],
+            [0.04674, 0.03216, 0.02488, 0.02053],
+            [0.04630, 0.03186, 0.02465, 0.02034, 0.01747],
+            [0.04586, 0.03155, 0.02441, 0.02014, 0.01731]
+        ];
+
+        const nft = Intl.NumberFormat("en-US", {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+        });
+        const nftd = Intl.NumberFormat("en-US", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+
+        $('#in_1').on('input', function(e){
+            var min = e.target.min,
+                max = e.target.max,
+                val = e.target.value; 
+            
+            let in_id = $(this).attr("id");
+                
+            let bg_size = (val - min) * 100 / (max - min);
+
+            $(e.target).css({
+                'backgroundSize': bg_size + '% 100%'
+            });
+
+            $("#"+in_id+"_vl").val(nft.format(val));
+
+            calc();
+
+        }).trigger('input');
+
+        $("#in_1_vl").on("change", function(){
+            let vl = removeSign($(this).val());
+            if(vl < 10001){
+                vl = 10001;
+            } else if(vl > 999999){
+                vl = 999999;
+            }
+            $(this).val(nft.format(vl));
+            $("#in_1").val(vl).trigger('input');
+        });
+
+        $("#proposal_for_in").on("input", function(){
+            let name = $(this).val();
+            $("#proposal_for").text(name);
+        });
+
+        $("#btn_save").on("click", function() {
+            let name = $("#proposal_for_in").val().trim();
+
+            if(name){
+                let date = new Date();
+                let todate = addZero((date.getMonth()+1))+"/"+addZero(date.getDate())+"/"+date.getFullYear();
+
+                $("#todate").text(todate);
+
+                $(this).prop('disabled', true);
+                $('#btn_save').text("Downloading....");
+
+                genPDF();
+                setTimeout(() => {
+                    $('#btn_save').prop('disabled', false);
+                    $('#btn_save').text("Save as PDF");
+                    $("#proposal_for_in").val("");
+                    $("#success_msg").show();
+                }, 500);
+
+                setTimeout(() => {
+                    $("#success_msg").hide();
+                }, 1500);
+            } else {
+                alert("Please input a valid name.");
+            }
+        });
+
+        function genPDF(){
+            var d = new Date();
+            let date_time = d.getMonth() + 1+"_"+ d.getDate() + "_"+d.getFullYear()+"_"+d.getHours()+"_"+d.getMinutes()+"_"+d.getSeconds();
+            var element = document.getElementById('pdf_data');
+            html2pdf(element, {
+                margin:       10,
+                enableLinks:  true,
+                filename:     'Financial_Calculator'+date_time+".pdf",
+                image:        { type: 'jpeg', quality: 1 },
+                html2canvas:  { scale: 2, logging: true },
+                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            });
+        }
+
+        function toDataUrl(url, callback) {
+            var xhr = new XMLHttpRequest();
+            xhr.onload = function() {
+                var reader = new FileReader();
+                reader.onloadend = function() {
+                    callback(reader.result);
+                }
+                reader.readAsDataURL(xhr.response);
+            };
+            xhr.open('GET', url);
+            xhr.responseType = 'blob';
+            xhr.send();
+        }
+
+        setTimeout(() => {
+            let src = $("#our_logo").attr("src");
+            toDataUrl(src, function(myBase64) {
+                $("#our_logo").attr("src", myBase64);
+            });
+        }, 3000);
+
+        function addZero(num){
+            let newNum;
+
+            if(num < 10) newNum = "0"+num;
+            else newNum = num;
+
+            return newNum;
+        }
+
+        function calc(){
+            in_1 = removeSign($("#in_1").val());
+            
+            let rates, isMore = false;
+
+            if(in_1 > 10000 && in_1 <= 50000) {
+                rates = dataArr[0];
+            } else if(in_1 > 50000 && in_1 <= 100000) {
+                rates = dataArr[1];
+            } else if(in_1 > 100000 && in_1 <= 250000) {
+                rates = dataArr[2];
+                isMore = true;
+            } else if(in_1 > 250000 && in_1 <= 500000) {
+                rates = dataArr[3];
+                isMore = true;
+            }
+
+            $("#amount_show").text("$"+nft.format(in_1));
+
+            if(rates){
+                rs_1 = in_1 * rates[0];
+                rs_2 = in_1 * rates[1];
+                rs_3 = in_1 * rates[2];
+                rs_4 = in_1 * rates[3];
+                
+                if(isMore){
+                    rs_5 = in_1 * rates[4];
+                } else {
+                    rs_5 = 0;
+                }
+
+                $("#rs_1").text("$"+nft.format(rs_1));
+                $("#rs_2").text("$"+nft.format(rs_2));
+                $("#rs_3").text("$"+nft.format(rs_3));
+                $("#rs_4").text("$"+nft.format(rs_4));
+
+                $("#rs_10").text("$"+nft.format(rs_1/30));
+                $("#rs_20").text("$"+nft.format(rs_2/30));
+                $("#rs_30").text("$"+nft.format(rs_3/30));
+                $("#rs_40").text("$"+nft.format(rs_4/30));
+
+                if(isMore){
+                    $("#rs_5").text("$"+nft.format(rs_5));
+                    $("#rs_50").text("$"+nft.format(rs_5/30));
+                    $("#cost_5").text("$"+nft.format(rs_5/30));
+                    $("#payment_5").text("$"+nft.format(rs_5));
+                } else {
+                    $("#rs_5").text("N/A");
+                    $("#rs_50").text("N/A");
+                    $("#cost_5").text("N/A");
+                    $("#payment_5").text("N/A");
+                }
+                $(".sum-value").css({'font-size':'22px'});
+
+                $("#rs_sec_2, .con-dis").show();
+
+                $("#cost_1").text("$"+nft.format(rs_1/30));
+                $("#cost_2").text("$"+nft.format(rs_2/30));
+                $("#cost_3").text("$"+nft.format(rs_3/30));
+                $("#cost_4").text("$"+nft.format(rs_4/30));
+
+                $("#payment_1").text("$"+nft.format(rs_1));
+                $("#payment_2").text("$"+nft.format(rs_2));
+                $("#payment_3").text("$"+nft.format(rs_3));
+                $("#payment_4").text("$"+nft.format(rs_4));
+            } else {
+                $("#rs_1, #rs_2, #rs_3, #rs_4, #rs_5").text("Call for Quote");
+                $("#cost_1").text("Call for Quote");
+                $("#cost_2").text("Call for Quote");
+                $("#cost_3").text("Call for Quote");
+                $("#cost_5").text("Call for Quote");
+                $("#cost_4").text("Call for Quote");
+
+                $("#payment_1").text("Call for Quote");
+                $("#payment_2").text("Call for Quote");
+                $("#payment_3").text("Call for Quote");
+                $("#payment_4").text("Call for Quote");
+                $("#payment_5").text("Call for Quote");
+                $(".sum-value").css({'font-size':'16px'});
+                $("#rs_sec_2, .con-dis").hide();
+            }
+        }
+
+        function removeSign(vl){
+            return Number(vl.replace(/,/g,''));
+        }
+    });
+</script>
+<!----------- copy ends ---------------->
+</body>
+</html>

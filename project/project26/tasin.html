@@ -42,11 +42,12 @@
     text-align: left;
 }
 #mx_cl label {
-    display: inline-block;
+    display: block;
     font-size: 18px;
     font-weight: 400;
     color: #333;
     margin-bottom: 0.5rem;
+    text-align: center;
 }
 #mx_cl .row {
     display: -ms-flexbox;
@@ -66,8 +67,8 @@
     margin-bottom: 1rem;
 }
 #mx_cl .form-control {
-    display: inline-block;
-    width: 200px;
+    display: block;
+    width: 100%;
     height: 35px;
     padding: 0.275rem 0.75rem;
     font-size: 16px;
@@ -140,12 +141,12 @@
 }
 @media (min-width: 992px){
     #mx_cl .container {
-        max-width: 658px;
+        max-width: 500px;
     }
 }
 @media (min-width: 1200px) {
     #mx_cl .container {
-        max-width: 658px;
+        max-width: 500px;
     }
 }
 #mx_cl .form-group {
@@ -239,13 +240,13 @@
     <div class="container cl-wrapper">
         <div class="row">
             <div class="col-md-12">
+                <label>What is:</label>
                 <div class="form-group">
-                    <label>
-                        What is: &nbsp;
-                        <input type="number" id="in_prcnt" class="form-control num-in cl-required" autocomplete="off" />
-                        &nbsp;&nbsp;Percent of:&nbsp;
-                        <input type="number" id="in_amount" class="form-control num-in cl-required" autocomplete="off" />
-                    </label>
+                    <input type="number" id="in_prcnt" class="form-control num-in cl-required" autocomplete="off" />
+                </div>
+                <label>Percent of:</label>
+                <div class="form-group">
+                    <input type="number" id="in_amount" class="form-control num-in cl-required" autocomplete="off" />
                 </div>
                 <div class="sp-rs-sec">
                     <div class="rs-title">Answer:</div>
