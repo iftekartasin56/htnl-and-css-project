@@ -1,0 +1,517 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <title>Calorie Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+<!-----------Please copy and paste following code into any HTML element ---------------->
+
+<!----------- copy starts ---------------->
+<style>
+.ms-cl *, ::after, ::before {
+    box-sizing: border-box;
+}
+.ms-cl {
+    line-height: 1.5;
+    font-family: inherit;
+}
+.ms-cl .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4f4f4f;
+    text-align: left;
+}
+.ms-cl label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-size: 16px;
+    font-weight: 500;
+}
+.ms-cl .h1, .ms-cl h1 {
+    font-size: 2.5rem;
+}
+.ms-cl .h1, .ms-cl .h2, .ms-cl .h3, .ms-cl .h4, .ms-cl .h5, .ms-cl .h6, .ms-cl h1, .ms-cl h2, .ms-cl h3, .ms-cl h4, .ms-cl h5, .ms-cl h6 {
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+.ms-cl h1, .ms-cl h2, .ms-cl h3, .ms-cl h4, .ms-cl h5, .ms-cl h6 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+}
+.ms-cl .h3, .ms-cl h3 {
+    font-size: 1.75rem;
+}
+.ms-cl .h5, .ms-cl h5 {
+    font-size: 1.25rem;
+}
+.ms-cl .h6, .ms-cl h6 {
+    font-size: 1rem;
+}
+.ms-cl hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+
+.ms-cl hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+.ms-cl .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.ms-cl .col-md-1, .ms-cl .col-md-10, .ms-cl .col-md-11, .ms-cl .col-md-12, .ms-cl .col-md-2, .ms-cl .col-md-3, .ms-cl .col-md-4, .ms-cl .col-md-5, .ms-cl .col-md-6, .ms-cl .col-md-7, .ms-cl .col-md-8, .ms-cl .col-md-9 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.ms-cl .form-group {
+    margin-bottom: 1rem;
+}
+.ms-cl .form-control {
+    display: block;
+    width: 100%;
+    height: 35px;
+    padding: 0.275rem 0.75rem;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.ms-cl select {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff !important;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.ms-cl .form-control:focus {
+    outline: none;
+    border: 1px solid #0D2131;
+}
+.ms-cl .text-center {
+    text-align: center!important;
+}
+.ms-cl .btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 14px;
+    font-family: inherit;
+    line-height: 1.5;
+    border-radius: 5px;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.ms-cl .btn-primary {
+    color: #fff;
+    background: #D32F2F;
+    border-color: #D32F2F;
+    padding: 0.375rem 1.2rem;
+    display: block;
+    width: 100%;
+    font-size: 18px;
+}
+.ms-cl .btn-primary:hover, .ms-cl .btn-primary:focus {
+    color: #fff;
+    background: #0D2131;
+    border-color: #0D2131;
+}
+.ms-cl .btn-primary:focus {
+    color: #fff;
+    background: #0D2131;
+    border-color: #0D2131;
+}
+.ms-cl .btn:focus {
+    outline: none !important;
+}
+/* Custom css */
+.ms-cl .cl-wrapper {
+    position: relative;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    background: #ffffff;
+    transition: all 1s ease-in-out;
+}
+.ms-cl .cl-left-div {
+    padding: 2rem 3rem !important;
+}
+.ms-cl .cl-right-div {
+    padding: 2rem 0rem 0rem 0rem !important;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.ms-cl .rs-sub-title-sp {
+    color: #0D2131;
+    font-size: 28px;
+    font-weight: bolder;
+}
+.ms-cl .rs-sp-vl-sec {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 15px;
+    min-width: 240px;
+}
+.ms-cl .rs-sp-value {
+    color: #0D2131;
+    font-size: 2.5rem;
+    font-weight: 600 !important;
+    margin: 0;
+}
+.ms-cl .err-msg {
+    display: none;
+    color: red;
+    margin: 2px 0;
+    font-size: 14px;
+}
+.ms-cl .cl-2 {
+    display: none;
+}
+.ms-cl .check-item {
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 7px 15px 5px 15px;
+    cursor: pointer;
+    background-color: transparent;
+    font-weight: 600;
+    width: 100%;
+}
+.ms-cl .check-item:hover {
+    background-color: #0D2131;
+    color:#fff;
+}
+.ms-cl .check-item.active {
+    background-color: #0D2131;
+    border-color: #0D2131;
+    color:#fff;
+}
+.ms-cl #err_msg {
+    color: red;
+    display: none;
+    margin: 8px 2px;
+    text-align: center;
+}
+.ms-cl .top-title {
+    padding: 10px;
+    color: #000;
+    font-size: 24px;
+    margin-top: 12px;
+    border-bottom: 1px solid #cdcdcd;
+}
+.ms-cl #imperial_inp {
+    display: none;
+}
+.ms-cl .main-calc {
+    transform: translateX(0px);
+    opacity: 1;
+}
+/* responsive */
+
+@media (max-width: 768px){
+    .ms-cl .cl-divider {
+        display: none;
+    }
+    .ms-cl .cl-left-div {
+        padding: 2rem 2.5rem !important;
+    }
+    .ms-cl .btn-primary {
+        padding: .575rem 0.5rem;
+    }
+}
+@media (min-width: 576px){
+    .ms-cl .container {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px){
+    .ms-cl .container {
+        max-width: 600px;
+    }
+    .ms-cl .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .ms-cl .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+    .ms-cl .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .ms-cl .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    .ms-cl .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+@media (min-width: 992px){
+    .ms-cl .container {
+        max-width: 600px;
+    }
+}
+@media (min-width: 1200px) {
+    .ms-cl .container {
+        max-width: 600px;
+    }
+}
+.ms-cl .check-box {
+    display: flex;
+    gap: 10px;
+}
+</style>
+<div class="ms-cl" id="ms_cl">
+    <div class="container cl-wrapper main-calc">
+        <h3 class="top-title text-center">Calorie Calculator</h3>
+        <div class="row">
+            <div class="col-md-12 cl-left-div">
+                <div class="form-group">
+                    <label style="display: block;">Gender</label>
+                    <div class="check-box">
+                        <div class="check-item gen_check" data-value="Male">
+                            Man
+                        </div>
+                        <div class="check-item gen_check" data-value="Female">
+                            Women
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-group">
+                        <label for="cl_age">Age</label>
+                        <input type="number" class="form-control cl-required" id="cl_age"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="check-box">
+                        <div class="check-item unit_check active" data-value="1">
+                            Metric unit
+                        </div>
+                        <div class="check-item unit_check" data-value="2">
+                            US Unit
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row" id="metric_inp">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="cl_height">Height <small>(cm)</small></label>
+                            <input type="number" class="form-control cl-required" id="cl_height_1"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="cl_weight">Weight <small>(kg)</small></label>
+                            <input type="number" class="form-control cl-required" id="cl_weight_1"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="imperial_inp">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="cl_height">Height <small>(feet)</small></label>
+                            <input type="number" class="form-control cl-required" id="cl_height_2"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="cl_weight">Height <small>(inches)</small></label>
+                            <input type="number" class="form-control cl-required" id="cl_height_22"/>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="cl_weight">Weight <small>(lbs)</small></label>
+                            <input type="number" class="form-control cl-required" id="cl_weight_2"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="cl_activity">Activity level</label>
+                            <select class="form-control cl-required" id="cl_activity">
+                                <option disabled selected value="">-selecteren-</option>
+                                <option value="1.2">Little / no exercise</option>
+                                <option value="1.4">Exercise 1-2 times</option>
+                                <option value="1.6">Exercise 2-3 times times</option>
+                                <option value="1.75">Exercise 3-5 times</option>
+                                <option value="2.0">Exercise 5-6 times</option>
+                                <option value="2.3">Professional Athlete</option>
+                            </select>
+                        </div>
+                    </div>                   
+                </div>
+                <p id="err_msg">All inputs required.</p>
+                <button type="button" class="btn btn-primary" id="calc_btn">Calculate</button>
+                <div class="cl-right-div" id="cl-rs-one">
+                    <h4 class="rs-sub-title-sp">Calories/day</h4>
+                    <div class="rs-sp-vl-sec">
+                        <h2 class="rs-sp-value" id="rs_vl">0<span style='font-size:20px;'>kcal</span></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>
+    jQuery(document).ready(function($){
+        let cl_gender, cl_age, cl_height_1, cl_weight_1, cl_height_2, cl_height_22, cl_weight_2, cl_activity, 
+        cl_goal, cl_activity_txt, cl_goal_txt;
+        let rs_vl, cl_unit = 1;
+
+        const nft = Intl.NumberFormat("en-US", {
+            minimumFractionDigits:0,
+            maximumFractionDigits:0
+        });
+
+        $("#calc_btn").on("click", function(){
+            let valid = validate();
+            if(valid){
+                $("#err_msg").hide();
+                calc();
+            } else {
+                $("#err_msg").slideDown();
+            }
+        });
+
+        $(".gen_check").on("click", function(){
+            cl_gender = $(this).data("value");
+            $(".gen_check").removeClass("active");
+            $(this).addClass("active");
+        });
+
+        $(".unit_check").on("click", function(){
+            cl_unit = Number($(this).data("value"));
+            $(".unit_check").removeClass("active");
+            $(this).addClass("active");
+            if(cl_unit == 1){
+                $("#metric_inp").css({"display":"flex"});
+                $("#imperial_inp").hide();
+            } else {
+                $("#metric_inp").hide();
+                $("#imperial_inp").css({"display":"flex"});
+            }
+        });
+
+        function calc(){
+            rs_vl = 0;
+            if(cl_gender == "Male"){
+                rs_vl = 10*cl_weight+6.25*cl_height-5*(cl_age)+5;
+            } else {
+                rs_vl = 10*cl_weight+6.25*cl_height-5*(cl_age)-161;
+            }
+
+            rs_vl = rs_vl * cl_activity;
+            
+            animate_counter('#rs_vl',(rs_vl));
+        }
+
+        function validate(){
+            cl_age = Number($("#cl_age").val());
+
+            if(cl_unit == 1){
+                cl_height = Number($("#cl_height_1").val());
+                cl_weight = Number($("#cl_weight_1").val());
+            } else {
+                cl_height = ((Number($("#cl_height_2").val())*12) + Number($("#cl_height_22").val())) * 2.55;
+                cl_weight = Number($("#cl_weight_2").val()) * 0.453592;
+            }
+            cl_activity = Number($("#cl_activity").val());
+
+            if(cl_gender && cl_age && cl_height &&cl_weight && cl_activity){
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        function animate_counter(id,value) {
+            $(id).text(value);
+
+            $(id).each(function () {
+                $(this).prop('Counter',0).animate({
+                    Counter: $(this).text()
+                }, {
+                    duration: 500,
+                    easing: 'swing',
+                    step: function (now) {
+                        $(this).html(nft.format(now)+"<span style='font-size:20px;'>kcal</span>");
+                    }
+                });
+            });
+        }
+    });
+</script>
+<!----------- copy ends ---------------->
+</body>
+</html>

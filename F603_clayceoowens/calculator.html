@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="calculator-widget">
+	<div id="life_insurance_needs" class="widget-container show-1">
+			<div class="side-nav secondary">
+			<h1>Calculate your life insurance needs</h1>
+
+			<nav>
+				<ul>
+					<li class="page-1"><a href="javascript:;" class="circle page-changer" data-page="1">1</a></li>
+					<li class="page-2"><span class="circle"></span></li>
+					<li class="page-2"><span class="circle"></span></li>
+					<li class="page-2"><span class="circle"></span></li>
+					<li class="page-2"><a href="javascript:;" class="circle page-changer" data-page="2">2</a></li>
+					<li class="page-3"><span class="circle"></span></li>
+					<li class="page-3"><span class="circle"></span></li>
+					<li class="page-3"><span class="circle"></span></li>
+					<li class="page-3"><a href="javascript:;" class="circle page-changer" data-page="3">3</a></li>
+					<li class="page-4"><span class="circle"></span></li>
+					<li class="page-4"><span class="circle"></span></li>
+					<li class="page-4"><span class="circle"></span></li>
+					<li class="page-4"><a href="javascript:;" class="circle page-changer" data-page="4">4</a></li>
+					<li class="page-5"><span class="circle"></span></li>
+					<li class="page-5"><span class="circle"></span></li>
+					<li class="page-5"><span class="circle"></span></li>
+					<li class="page-5"><a href="javascript:;" class="circle page-changer" data-page="5">Analysis</a></li>
+				</ul>
+			</nav>
+		</div>
+
+		<form action="javascript:void(0)" class="calculator-form">
+			<!-- ....................... QUESTION 1 ....................... -->
+			<section class="page-1" data-page="1">
+				<h2>Estimate your family's expenses in case of your death</h2>
+				<div class="question-container-wrapper">
+					<div class="question">
+						<div class="label-container">
+							<label>Final expenses</label>
+						</div>
+
+						<span class="tooltip">
+							<h3>Final expenses</h3>
+							<a href="javascript:;" class="tooltip-close ss-right right">Close</a>
+							<p>Typically the greater of $15,000 or 4% of your estate. This would include uncovered medical costs, funeral expenses, and final estate settlement costs. Note: If your estate is over $1,500,000 your final expenses may be much higher due to federal and state estate or inheritance taxes.
+							</p>
+						</span>
+
+						<div class="input-container">
+							<input name="final_expenses" type="text" size="10" value="15000" tabindex="1">
+							<span class="help primary">?</span>
+						</div>
+					</div>
+
+					<div class="question">
+						<div class="label-container">
+							<label>Outstanding debts (other than your mortgage)</label>
+						</div>
+
+						<div class="input-container">
+							<input name="outstanding_debts" type="text" size="10" value="0" tabindex="2">
+						</div>
+					</div>
+
+					<div class="question">
+						<div class="label-container">
+							<label>Outstanding mortgage</label>
+						</div>
+
+						<span class="tooltip">
+							<h3>Outstanding mortgage</h3>
+							<a href="javascript:;" class="tooltip-close ss-right right">Close</a>
+							<p>Mortgage payment fund: Whether or not your survivors would use life insurance proceeds to pay off the mortgage right away, creating a fund to cover mortgage payments makes sense.</p>
+						</span>
+
+						<div class="input-container">
+							<input name="mortgage" type="text" size="10" value="0" tabindex="3">
+							<span class="help primary">?</span>
+						</div>
+					</div>
+
+					<div class="question clear selector">
+						<div class="label-container">
+							<label>How many children require college funding?</label>
+						</div>
+
+						<span class="tooltip">
+							<h3>How many children require college funding?</h3>
+							<a href="javascript:;" class="tooltip-close ss-right right">Close</a>
+							<p>College funding: Total projected college costs (tuition plus all other costs such as room and board, books, etc.), less current funds in the child’s name. The tuition amount being used is for the average 4-year education and is provided by The College Board, which is $158,072 for private institutions and $71,440 for public institutions.</p>
+						</span>
+
+						<div class="select-container">
+							<i class="ss-icon">down</i>
+							<select name="how_many_kids" id="how_many_kids" tabindex="4">
+								<option value="">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+							</select>
+							<span class="help primary">?</span>
+						</div>
+					</div>
+
+					<div class="question clear">
+
+						<div class="child" style="display: none;">
+							<span>Child 1</span>
+							<div class="select-container age">
+								<i class="ss-icon">down</i>
+								<select name="cf1" class="cf1">
+									<option value="age" selected="">Age</option>
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+									<option value="13">13</option>
+									<option value="14">14</option>
+									<option value="15">15</option>
+									<option value="16">16</option>
+									<option value="17">17</option>
+									<option value="18">18</option>
+									<option value="19">19</option>
+									<option value="20">20</option>
+									<option value="21">21</option>
+								</select>
+							</div>
+							<div class="select-container school">
+								<i class="ss-icon">down</i>
+								<select name="cc1" class="cc1">
+									<option value="0" selected="">School Type</option>
+									<option value="1">Public</option>
+									<option value="2">Private</option>
+								</select>
+							</div>
+						</div>
+						<div class="child" style="display: none;">
+							<span>Child 2</span>
+							<div class="select-container age">
+								<i class="ss-icon">down</i>
+								<select name="cf2" class="cf2">
+									<option value="age" selected="">Age</option>
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+									<option value="13">13</option>
+									<option value="14">14</option>
+									<option value="15">15</option>
+									<option value="16">16</option>
+									<option value="17">17</option>
+									<option value="18">18</option>
+									<option value="19">19</option>
+									<option value="20">20</option>
+									<option value="21">21</option>
+								</select>
+							</div>
+							<div class="select-container school">
+								<i class="ss-icon">down</i>
+								<select name="cc2" class="cc2">
+									<option value="0" selected="">School Type</option>
+									<option value="1">Public</option>
+									<option value="2">Private</option>
+								</select>
+							</div>
+						</div>
+						<div class="child" style="display: none;">
+							<span>Child 3</span>
+							<div class="select-container age">
+								<i class="ss-icon">down</i>
+								<select name="cf3" class="cf3">
+									<option value="age" selected="">Age</option>
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+									<option value="13">13</option>
+									<option value="14">14</option>
+									<option value="15">15</option>
+									<option value="16">16</option>
+									<option value="17">17</option>
+									<option value="18">18</option>
+									<option value="19">19</option>
+									<option value="20">20</option>
+									<option value="21">21</option>
+								</select>
+							</div>
+							<div class="select-container school">
+								<i class="ss-icon">down</i>
+								<select name="cc3" class="cc3">
+									<option value="0" selected="">School Type</option>
+									<option value="1">Public</option>
+									<option value="2">Private</option>
+								</select>
+							</div>
+						</div>
+						<div class="child" style="display: none;">
+							<span>Child 4</span>
+							<div class="select-container age">
+								<i class="ss-icon">down</i>
+								<select name="cf4" class="cf4">
+									<option value="age" selected="">Age</option>
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+									<option value="13">13</option>
+									<option value="14">14</option>
+									<option value="15">15</option>
+									<option value="16">16</option>
+									<option value="17">17</option>
+									<option value="18">18</option>
+									<option value="19">19</option>
+									<option value="20">20</option>
+									<option value="21">21</option>
+								</select>
+							</div>
+							<div class="select-container school">
+								<i class="ss-icon">down</i>
+								<select name="cc4" class="cc4">
+									<option value="0" selected="">School Type</option>
+									<option value="1">Public</option>
+									<option value="2">Private</option>
+								</select>
+							</div>
+						</div>
+						<div class="child" style="display: none;">
+							<span>Child 5</span>
+							<div class="select-container age">
+								<i class="ss-icon">down</i>
+								<select name="cf5" class="cf5">
+									<option value="age" selected="">Age</option>
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+									<option value="13">13</option>
+									<option value="14">14</option>
+									<option value="15">15</option>
+									<option value="16">16</option>
+									<option value="17">17</option>
+									<option value="18">18</option>
+									<option value="19">19</option>
+									<option value="20">20</option>
+									<option value="21">21</option>
+
+								</select>
+							</div>
+							<div class="select-container school">
+								<i class="ss-icon">down</i>
+								<select name="cc5" class="cc5">
+									<option value="0" selected="">School Type</option>
+									<option value="1">Public</option>
+									<option value="2">Private</option>
+								</select>
+							</div>
+						</div>
+						<div class="child" style="display: none;">
+							<span>Child 6</span>
+							<div class="select-container age">
+								<i class="ss-icon">down</i>
+								<select name="cf6" class="cf6">
+									<option value="age" selected="">Age</option>
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+									<option value="13">13</option>
+									<option value="14">14</option>
+									<option value="15">15</option>
+									<option value="16">16</option>
+									<option value="17">17</option>
+									<option value="18">18</option>
+									<option value="19">19</option>
+									<option value="20">20</option>
+									<option value="21">21</option>
+								</select>
+							</div>
+							<div class="select-container school">
+								<i class="ss-icon">down</i>
+								<select name="cc6" class="cc6">
+									<option value="0" selected="">School Type</option>
+									<option value="1">Public</option>
+									<option value="2">Private</option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+					<button class="page-changer highlight" data-page="2">Next</button>
+
+					<div class="clear"></div>
+				</div>
+			</section>
+
+			<!-- ....................... QUESTION 2 ....................... -->
+			<section class="page-2" data-page="2">
+				<h2>Total annual income your family would need if you died today</h2>
+
+				<div class="question-container-wrapper">
+					<div class="question">
+						<div class="label-container">
+							<label>Total annual income?</label>
+						</div>
+
+						<span class="tooltip">
+							<h3>Total annual income?</h3>
+							<a href="javascript:;" class="tooltip-close ss-right right">Close</a>
+							<p>Total amount your family needs, before taxes, to maintain their current standard of living, typically 60%-75% of total income. Families with higher incomes typically fall into the lower end of that range.</p>
+						</span>
+
+						<div class="input-container">
+							<input name="total_annual_income" type="text" size="10" value="0" tabindex="6">
+							<span class="help primary">?</span>
+						</div>
+					</div>
+
+					<div class="question half-size">
+						<div class="label-container">
+							<label>How many years should income be provided?</label>
+						</div>
+
+
+						<div class="input-container blank year">
+							<input name="how_many_years" type="text" size="10" value="" tabindex="7">
+						</div>
+					</div>
+
+					<div class="question">
+						<div class="label-container">
+							<label>What is your current savings and investments (not including retirement funds)?</label>
+						</div>
+
+						<span class="tooltip">
+							<h3>What is your current savings and investments (not including retirement funds)?</h3>
+							<a href="javascript:;" class="tooltip-close ss-right right">Close</a>
+							<p>Includes bank accounts, money market accounts, mutual funds, CDs, bonds, stocks and other assets.</p>
+						</span>
+						<div class="input-container">
+							<input name="existing_invest" type="text" size="10" value="0" tabindex="8">
+							<span class="help primary">?</span>
+						</div>
+					</div>
+
+					<div class="question">
+						<div class="label-container">
+							<label>What are your current retirement savings?</label>
+						</div>
+
+						<span class="tooltip">
+							<h3>What are your current retirement savings?</h3>
+							<a href="javascript:;" class="tooltip-close ss-right right">Close</a>
+							<p>Includes 401(k), Keoghs, pension and profit sharing plans.</p>
+						</span>
+
+
+						<div class="input-container">
+							<input name="curr_ret_savings" type="text" size="10" value="0" tabindex="9">
+							<span class="help primary">?</span>
+						</div>
+					</div>
+
+					<div class="question">
+						<div class="label-container">
+							<label>What is the value of the life insurance in force on your life?</label>
+						</div>
+
+						<span class="tooltip">
+							<h3>What is the value of the life insurance in force on your life?</h3>
+							<a href="javascript:;" class="tooltip-close ss-right right">Close</a>
+							<p>Includes individual policies, group term coverage available through work, and any other life insurance on your life payable to your family or for the benefit of your family. Do not include accidental death insurance or “double indemnity” insurance.</p>
+						</span>
+
+						<div class="input-container">
+							<input name="existing_ins" type="text" size="10" value="0" tabindex="10">
+							<span class="help primary">?</span>
+						</div>
+					</div>
+
+					<button class="yellow page-changer highlight" data-page="3">Next</button>
+					<a href="javascript:;" class="back ss-left page-changer" data-page="1">Back</a>
+
+					<div class="clear"></div>
+				</div>
+			</section>
+
+			<!-- ....................... QUESTION 3 ....................... -->
+			<section class="page-3" data-page="3">
+				<h2>Assuming your spouse would work following your death</h2>
+
+				<div class="question-container-wrapper">
+					<div class="question">
+						<div class="label-container">
+							<label>What is your spouse’s annual income?</label>
+						</div>
+
+
+						<div class="input-container">
+							<input name="spouse_income" type="text" size="10" value="0" tabindex="12">
+						</div>
+					</div>
+
+					<div class="question half-size">
+						<div class="label-container">
+							<label>How many years does your spouse expect to work?</label>
+						</div>
+
+						<div class="input-container blank year half-size">
+							<input name="spouse_years" type="text" size="10" value="" tabindex="13">
+						</div>
+					</div>
+
+					<div class="question quarter-size">
+						<div class="label-container">
+							<label>Your spouse’s marginal tax rate?</label>
+						</div>
+
+						<span class="tooltip">
+							<h3>Your spouse’s marginal tax rate?</h3>
+							<a href="javascript:;" class="tooltip-close ss-right right">Close</a>
+							<p>Marginal tax rate: This is the rate of tax you are paying on your highest dollars of income. For instance, in 2013 a married taxpayer earning $50,000 has a Marginal Tax Rate of 15%. That’s because earned income between $72,500 and $146,400 gets taxed at 25%. The lowest Marginal Tax Rate is 10% and applies to couples who earn less than $17,850. The highest Marginal Tax Rate is 39.6% for dollars earned in excess of $450,000.</p>
+						</span>
+
+						<div class="input-container percent">
+							<input name="spouse_marginal_tax_rate" type="text" value="25" size="5" tabindex="14">
+							<span class="help primary">?</span>
+						</div>
+					</div>
+
+					<div class="clear"></div>
+
+					<button class="yellow page-changer highlight" data-page="4">Next</button>
+					<a href="javascript:;" class="back ss-left page-changer" data-page="2">Back</a>
+				</div>
+			</section>
+
+			<!-- ....................... QUESTION 4 ....................... -->
+			<section class="page-4" data-page="4">
+				<h2>Extras</h2>
+
+				<div class="question-container-wrapper">
+
+					<div class="question quarter-size">
+						<div class="label-container">
+							<label>Estimated inflation rate</label>
+						</div>
+
+						<div class="input-container percent">
+							<input name="inflation_est" type="text" size="10" value="3" tabindex="16">
+						</div>
+					</div>
+
+					<div class="question quarter-size">
+						<div class="label-container">
+							<label>After-tax net investment yield</label>
+						</div>
+
+						<div class="input-container percent">
+							<input name="estimated_aftertax_yield" type="text" size="10" value="6" tabindex="17">
+						</div>
+					</div>
+
+					<div class="clear"></div>
+					<input type="hidden" name="wp-user" value="0">
+				</div>
+
+				<div class="clear"></div>
+
+				<button class="yellow page-changer highlight trigger-calculate" data-page="5">Next</button>
+				<a href="javascript:;" class="back ss-left page-changer" data-page="3">Back</a>
+			</section>
+
+			<!-- ....................... RESULTS ....................... -->
+			<section class="page-5" data-page="5">
+				<h2>Analysis</h2>
+
+				<h3 class="analysis-title">Your need for life insurance:</h3>
+				<div class="question-container-wrapper">
+					<div class="results">
+						<div class="single">
+							<span class="number-result primary-text" id="final-result"></span>
+							<div class="clear"></div>
+						</div>
+					</div>
+
+					<p>Should you die, the financial impact on your dependents is the loss of your income as well as the immediate expenses associated with your death. The death benefit offered through life insurance serves as replacement income for a period of time to help your family build a more financially secure future.</p>
+				</div>
+
+				<a href="javascript:;" class="ss-right page-changer right calculations primary-text" data-page="6">See Calculations</a>
+
+				<div class="clear"></div>
+				<a href="javascript:;" class="back ss-left page-changer" data-page="4">Back</a>
+			</section>
+
+			<!-- ....................... CALCULATIONS ....................... -->
+			<section class="page-6" data-page="6">
+				<h2>Calculations</h2>
+				<table style="font-size:1em" id="results_table">
+					<tbody>
+						<tr class="no-border">
+							<td colspan="4"><h4>Lump Sum Needs at Death:</h4></td>
+						</tr>
+						<tr>
+							<td width="230">Final expenses:</td>
+							<td width="5"></td>
+							<td>$ <span id="expense_finalexpense"></span></td>
+						</tr>
+						<tr>
+							<td>Outstanding debts:</td>
+							<td width="5">+</td>
+							<td>$ <span id="expense_debts"></span></td>
+						</tr>
+						<tr>
+							<td>Mortgage:</td>
+							<td width="5">+</td>
+							<td>$ <span id="expense_mortgage"></span></td>
+						</tr>
+						<tr>
+							<td>College funding:</td>
+							<td width="5">+</td>
+							<td>$ <span id="expense_college"></span></td>
+						</tr>
+						<tr>
+							<td>Total lump sum needs:</td>
+							<td width="5">=</td>
+							<td>$ <span id="expense_total"></span></td>
+						</tr>
+						<tr>
+							<td colspan="4"><h4>Income Needs:</h4></td>
+						</tr>
+						<tr>
+							<td>Annual income to be provided:</td>
+							<td width="5"></td>
+							<td>$ <span id="income_annual"></span></td>
+						</tr>
+							<tr>
+							<td>Number of years to provide income:</td>
+							<td width="5"></td>
+							<td> <span id="income_years"></span></td>
+						</tr>
+						<tr>
+							<td>Estimated inflation rate: </td>
+							<td width="5"></td>
+							<td> <span id="rate_inflation"></span>%</td>
+						</tr>
+							<tr>
+							<td>After-tax net investment yield:</td>
+							<td width="5"></td>
+							<td> <span id="rate_after_tax"></span>%</td>
+						</tr>
+						<tr>
+							<td colspan="4"><h4>Calculation &amp; Results:</h4></td>
+						</tr>
+						<tr>
+							<td>Present value of income needs*:</td>
+							<td width="5"></td>
+							<td>$ <span id="present_value"></span></td>
+						</tr>
+						<tr>
+							<td>Lump sum needs:</td>
+							<td width="5">+</td>
+							<td>$ <span id="expense_total_2"></span></td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td width="5">=</td>
+							<td>$ <span id="subtotal_need"></span></td>
+						</tr>
+						<tr>
+							<td>Less current investment capital:</td>
+							<td width="5">-</td>
+							<td>$ <span id="current_totalsavings"></span></td>
+						</tr>
+						<tr>
+							<td>Less existing life insurance:</td>
+							<td width="5">-</td>
+							<td>$ <span id="current_lifeinsurance"></span></td>
+						</tr>
+						<tr>
+							<td>Less present value of spouse’s income*:</td>
+							<td width="5">-</td>
+							<td>$ <span id="present_value_spouse"></span></td>
+						</tr>
+						<tr>
+							<td>Your need for additional life insurance:</td>
+							<td width="5">=</td>
+							<td>$ <span id="total_need"></span></td>
+						</tr>
+					</tbody>
+				</table>
+
+				<a href="javascript:;" class="back ss-left page-changer" data-page="5">Back</a>
+			</section>
+		</form>
+		</div>
+</body>
+</html>

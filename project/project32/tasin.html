@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body>
+	<div id="mx_cl">
+		<div class="calculator-widget container">
+			<div id="life_insurance_needs" class="widget-container show-1">
+					<div class="side-nav secondary">
+					<h1>Calculate your life insurance needs</h1>
+		
+					<nav>
+						<ul>
+							<li class="page-1 active"><a href="javascript:;" class="circle page-changer active" data-page="1">1</a></li>
+							<li class="page-2"><span class="circle"></span></li>
+							<li class="page-2"><span class="circle"></span></li>
+							<li class="page-2"><span class="circle"></span></li>
+							<li class="page-2"><a href="javascript:;" class="circle page-changer" data-page="2">2</a></li>
+							<li class="page-3"><span class="circle"></span></li>
+							<li class="page-3"><span class="circle"></span></li>
+							<li class="page-3"><span class="circle"></span></li>
+							<li class="page-3"><a href="javascript:;" class="circle page-changer" data-page="3">3</a></li>
+							<li class="page-4"><span class="circle"></span></li>
+							<li class="page-4"><span class="circle"></span></li>
+							<li class="page-4"><span class="circle"></span></li>
+							<li class="page-4"><a href="javascript:;" class="circle page-changer" data-page="4">4</a></li>
+							<li class="page-5"><span class="circle"></span></li>
+							<li class="page-5"><span class="circle"></span></li>
+							<li class="page-5"><span class="circle"></span></li>
+							<li class="page-5"><a href="javascript:;" class="circle page-changer" data-page="5">Analysis</a></li>
+						</ul>
+					</nav>
+				</div>
+		
+				<form action="javascript:void(0)" class="calculator-form">
+					<!-- ....................... QUESTION 1 ....................... -->
+					<section class="slide-content page-1" data-page="1">
+						<h2>Estimate your family's immediate expenses.</h2>
+						<div class="question-container-wrapper">
+							<div class="question">
+								<div class="label-container">
+									<label>Final Expenses for burial or cremation.</label>
+								</div>
+		
+								<div class="input-container">
+									<input class="cl-in cr-in" name="final_expenses" type="text" size="10" value="15000" tabindex="1">
+								</div>
+							</div>
+		
+							<div class="question">
+								<div class="label-container">
+									<label>Outstanding Mortgage Balance</label>
+								</div>
+		
+								<div class="input-container">
+									<input class="cl-in cr-in" name="outstanding_mort" type="text" size="10" value="300000" tabindex="2">
+								</div>
+							</div>
+		
+							<div class="question">
+								<div class="label-container">
+									<label>Other Debts</label>
+								</div>
+		
+								<div class="input-container">
+									<input class="cl-in cr-in" name="other_debts" type="text" size="10" value="40000" tabindex="3">
+								</div>
+							</div>
+		
+							<div class="question clear selector">
+								<div class="label-container">
+									<label>How many children require college/trade school funding?</label>
+								</div>
+		
+								<div class="input-container sl-container">
+									<select class="cl-in num-in" name="how_many_kids" tabindex="4">
+										<option value="">0</option>
+										<option value="1">1</option>
+										<option value="2" selected>2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+									</select>
+								</div>
+							</div>
+		
+							<div class="button-sec">
+								<button class="page-changer highlight" data-page="2">Next</button>
+							</div>
+		
+							<div class="clear"></div>
+						</div>
+					</section>
+		
+					<!-- ....................... QUESTION 2 ....................... -->
+					<section class="slide-content ds-none page-2" data-page="2">
+						<h2>Estimate the total income your family will need.</h2>
+		
+						<div class="question-container-wrapper">
+							<div class="question">
+								<div class="label-container">
+									<label>Your total annual income before baxes?</label>
+								</div>
+		
+								<div class="input-container">
+									<input class="cl-in cr-in" name="total_annual_income" type="text" size="10" value="50000" tabindex="6">
+								</div>
+							</div>
+		
+							<div class="question half-size">
+								<div class="label-container">
+									<label>How many years do you want your family to collect your income?</label>
+								</div>
+		
+		
+								<div class="input-container blank year">
+									<input class="cl-in num-in" name="how_many_years" type="text" size="10" value="5" tabindex="7">
+								</div>
+							</div>
+		
+							<div class="question">
+								<div class="label-container">
+									<label>What is the current value of your savings and investments (not including retirement funds)?</label>
+								</div>
+								<div class="input-container">
+									<input class="cl-in cr-in" name="current_sv_inv" type="text" size="10" value="5000" tabindex="8">
+								</div>
+							</div>
+		
+							<div class="question">
+								<div class="label-container">
+									<label>What is the current value of your retirement savings?</label>
+								</div>
+		
+								<div class="input-container">
+									<input class="cl-in cr-in" name="current_ret_sv" type="text" size="10" value="0" tabindex="9">
+								</div>
+							</div>
+		
+							<div class="question">
+								<div class="label-container">
+									<label>What is the value of the life insurance in force on your life?</label>
+								</div>
+		
+								<div class="input-container">
+									<input class="cl-in cr-in" name="life_ins" type="text" size="10" value="100000" tabindex="10">
+								</div>
+							</div>
+		
+							<div class="button-sec">
+								<button class="back-btn page-changer highlight" data-page="1">Back</button>
+								<button class="yellow page-changer highlight" data-page="3">Next</button>
+							</div>
+		
+							<div class="clear"></div>
+						</div>
+					</section>
+		
+					<!-- ....................... QUESTION 3 ....................... -->
+					<section class="slide-content ds-none page-3" data-page="3">
+						<h2>Skip if you DO NOT have life insurance coverage.</h2>
+		
+						<div class="question-container-wrapper">
+							<div class="question">
+								<div class="label-container">
+									<label>Is the life insurance in force on your life provided through your job?</label>
+								</div>
+								<div class="input-container sl-container">
+									<select class="cl-in" name="is_ins_job" tabindex="4">
+										<option value="Yes">Yes</option>
+										<option value="No">No</option>
+										<option value="I'm not sure">I'm not sure</option>
+									</select>
+								</div>
+							</div>
+		
+							
+							<div class="question clear selector">
+								<div class="label-container">
+									<label>What kind of coverage do you have?</label>
+								</div>
+		
+								<div class="input-container sl-container">
+									<select class="cl-in" name="coverage_type" tabindex="4">
+										<option value="Term">Term</option>
+										<option value="Term With Return of Premium">Term With Return of Premium</option>
+										<option value="Whole Life">Whole Life </option>
+										<option value="Universal Life ">Universal Life </option>
+										<option value="I'm not sure">I'm not sure</option>
+									</select>
+								</div>
+							</div>
+		
+							<div class="question quarter-size">
+								<div class="label-container">
+									<label style="font-weight: 600;">Does the life insurance in force on your life provide any of the following living benefits:</label>
+								</div>
+							</div>
+							<div class="question clear selector">
+								<div class="label-container">
+									<label>Terminal Illness: Diagnosed with 12 months or less to live.</label>
+								</div>
+		
+								<div class="input-container sl-container">
+									<select class="cl-in" name="terminal_illness" tabindex="4">
+										<option value="Yes">Yes</option>
+										<option value="No">No</option>
+										<option value="I'm not sure">I'm not sure</option>
+									</select>
+								</div>
+							</div>
+							<div class="question clear selector">
+								<div class="label-container">
+									<label>Critical Illness: Diagnosed with life threatening cancer, stroke, heart attack, etc.</label>
+								</div>
+		
+								<div class="input-container sl-container">
+									<select class="cl-in" name="critical_illness" tabindex="4">
+										<option value="Yes">Yes</option>
+										<option value="No">No</option>
+										<option value="I'm not sure">I'm not sure</option>
+									</select>
+								</div>
+							</div>
+							<div class="question clear selector">
+								<div class="label-container">
+									<label>Chronic Illness: Unable to perform daily living activies (bathing, eating, walking, etc.)</label>
+								</div>
+		
+								<div class="input-container sl-container">
+									<select class="cl-in" name="chronic_illness" tabindex="4">
+										<option value="Yes">Yes</option>
+										<option value="No">No</option>
+										<option value="I'm not sure">I'm not sure</option>
+									</select>
+								</div>
+							</div>
+		
+							<div class="clear"></div>
+		
+							<div class="button-sec">
+								<button class="back-btn page-changer highlight" data-page="2">Back</button>
+								<button class="yellow page-changer highlight" data-page="4">Next</button>
+							</div>
+						</div>
+					</section>
+					<!-- ....................... RESULTS ....................... -->
+					<section class="slide-content ds-none page-4" data-page="4">
+						<h2>Analysis</h2>
+		
+						<h3 class="analysis-title">Your need for life insurance:</h3>
+						<div class="question-container-wrapper">
+							<div class="results">
+								<span class="number-result primary-text" id="final_result"></span>
+							</div>
+						</div>
+		
+						<a href="javascript:;" class="ss-right page-changer right calculations primary-text" data-page="5">See Calculations</a>
+		
+						<div class="clear"></div>
+						<div class="button-sec">
+							<button class="back-btn page-changer highlight" data-page="3">Back</button>
+						</div>
+					</section>
+		
+					<!-- ....................... CALCULATIONS ....................... -->
+					<section class="slide-content ds-none page-5" data-page="5">
+						<h2>Calculations</h2>
+						<table style="font-size:1em; width: 100%;" id="results_table">
+							<tbody>
+								<tr class="no-border">
+									<td colspan="4"><h4>Lump Sum Needs at Death:</h4></td>
+								</tr>
+								<tr>
+									<td class="sp-width">Final Expenses:</td>
+									<td width="5"></td>
+									<td>$ <span id="final_expenses"></span></td>
+								</tr>
+								<tr>
+									<td class="sp-width">Outstanding Mortgage:</td>
+									<td width="5"></td>
+									<td>$ <span id="outstanding_mort"></span></td>
+								</tr>
+								<tr>
+									<td>Outstanding Other Debts:</td>
+									<td width="5">+</td>
+									<td>$ <span id="other_debts"></span></td>
+								</tr>
+								<tr>
+									<td>College/Trade Funding:</td>
+									<td width="5">+</td>
+									<td>$ <span id="trade_funding"></span></td>
+								</tr>
+								<tr>
+									<td>Total lump sum need:</td>
+									<td width="5">+</td>
+									<td>$ <span id="total_sum"></span></td>
+								</tr>
+								<tr>
+									<td colspan="4"><h4>Income Needs:</h4></td>
+								</tr>
+								<tr>
+									<td>Annual income before taxes to be provided:</td>
+									<td width="5"></td>
+									<td>$ <span id="total_annual_income"></span></td>
+								</tr>
+									<tr>
+									<td>Number of years to provide income:</td>
+									<td width="5"></td>
+									<td> <span id="how_many_years"></span></td>
+								</tr>
+								<tr>
+									<td colspan="4"><h4>Other Factors / Concerns</h4></td>
+								</tr>
+								<tr>
+									<td>Life insurance through your job:</td>
+									<td width="5"></td>
+									<td><span id="is_ins_job"></span></td>
+								</tr>
+								<tr>
+									<td>Type of coverage:</td>
+									<td width="5"></td>
+									<td><span id="coverage_type"></span></td>
+								</tr>
+								<tr>
+									<td>Terminal Illness Living Benefit:</td>
+									<td width="5"></td>
+									<td><span id="terminal_illness"></span></td>
+								</tr>
+								<tr>
+									<td>Critical Illness Living Benefit:</td>
+									<td width="5"></td>
+									<td><span id="critical_illness"></span></td>
+								</tr>
+								<tr>
+									<td>Chronic Illness Living Benefit:</td>
+									<td width="5"></td>
+									<td><span id="chronic_illness"></span></td>
+								</tr>
+								<tr>
+									<td colspan="4"><h4>Calculation &amp; Results:</h4></td>
+								</tr>
+								<tr>
+									<td>Lump Sum:</td>
+									<td width="5"></td>
+									<td>$ <span id="total_sum_2"></span></td>
+								</tr>
+								<tr>
+									<td>Income needs:</td>
+									<td width="5">+</td>
+									<td>$ <span id="income_needs"></span></td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+									<td width="5">=</td>
+									<td>$ <span id="subtotal_need"></span></td>
+								</tr>
+								<tr>
+									<td>Less Existing Life Insurance:</td>
+									<td width="5">-</td>
+									<td>$ <span id="life_ins"></span></td>
+								</tr>
+								<tr>
+									<td>Less Investments:</td>
+									<td width="5">-</td>
+									<td>$ <span id="less_inv"></span></td>
+								</tr>
+								<tr>
+									<td style="font-weight: 600;">Your Total Need for Life Insurance:</td>
+									<td width="5">=</td>
+									<td style="font-weight: 600;">$ <span id="total_sum_3"></span></td>
+								</tr>
+							</tbody>
+						</table>
+		
+						<div class="button-sec">
+							<button class="back-btn page-changer highlight" data-page="4">Back</button>
+						</div>
+					</section>
+				</form>
+				</div>
+		</div>
+
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+	<script>
+		jQuery(($) => {
+			let ins = {};
+
+			const numOptionCurrency = {
+				digitGroupSeparator        : ',',
+				decimalCharacter           : '.',
+				decimalCharacterAlternative: '.',
+				currencySymbol             : '',
+				currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.prefix,
+				decimalPlaces              : 0
+			};
+			const nft = Intl.NumberFormat("en-US",{
+				minimumFractionDigits: 0,
+				maximumFractionDigits: 0
+			});
+			const anElement1 = AutoNumeric.multiple('.cr-in', numOptionCurrency);
+
+			get_set_data();
+
+			$('.page-changer').on("click",function(){
+				let page_id = $(this).data("page");
+
+				$('.slide-content').addClass("ds-none");
+				$('.page-'+page_id).removeClass("ds-none");
+				$('.page-'+page_id).addClass("active");
+			});
+
+			$('.cl-in').on("input",function(){
+				get_set_data();
+			});
+
+			function get_set_data(){
+				ins = {};
+				$('.cl-in').each(function(i, elm){
+					let in_name = $(elm).attr("name");
+					let vl = 0;
+
+					if($(elm).hasClass("cr-in") || $(elm).hasClass("num-in")){
+						vl = removeComma($(elm).val());
+						if($("#"+in_name).length>0) $("#"+in_name).text(nft.format(vl));
+					} else {
+						vl = $(elm).val();
+						if($("#"+in_name).length>0) $("#"+in_name).text(vl);
+					}
+					ins[in_name] = vl;
+				});
+
+				trade_funding = (26000*4) * ins["how_many_kids"];
+				total_sum = ins["final_expenses"]+ins["outstanding_mort"]+ins["other_debts"]+trade_funding;
+				income_needs = ins["total_annual_income"]*ins["how_many_years"];
+				subtotal_need = total_sum + income_needs;
+				less_inv = ins["current_sv_inv"]+ins["current_ret_sv"];
+				total_sum_3 = subtotal_need - (ins["life_ins"]+less_inv);
+
+				$("#trade_funding").text(nft.format(trade_funding));
+				$("#total_sum, #total_sum_2").text(nft.format(total_sum));
+				$("#income_needs").text(nft.format(income_needs));
+				$("#subtotal_need").text(nft.format(subtotal_need));
+				$("#less_inv").text(nft.format(less_inv));
+				$("#total_sum_3").text(nft.format(total_sum_3));
+				$("#final_result").text(nft.format(total_sum_3));
+
+				console.log(ins);
+			}
+
+			function removeComma(num){
+				return Number(num.replace(/,/g,""));
+			}
+		});
+
+	</script>
+</body>
+</html>

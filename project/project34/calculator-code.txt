@@ -1,0 +1,1488 @@
+<style>
+.ms-cl *, ::after, ::before {
+    box-sizing: border-box;
+}
+.ms-cl {
+    line-height: 1.5;
+    font-family: inherit;
+}
+.ms-cl .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    text-align: left;
+}
+.ms-cl label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #000000;
+}
+.ms-cl .h1, .ms-cl .h2, .ms-cl .h3, .ms-cl h1, .ms-cl h2, .ms-cl h3 {
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: .5rem;
+}
+.ms-cl .h3, .ms-cl h3 {
+    /* font-size: 1.75rem; */
+}
+.ms-cl .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.ms-cl .col-md-1, .ms-cl .col-md-10, .ms-cl .col-md-11, .ms-cl .col-md-12, .ms-cl .col-md-2, .ms-cl .col-md-3, .ms-cl .col-md-4, .ms-cl .col-md-5, .ms-cl .col-md-6, .ms-cl .col-md-7, .ms-cl .col-md-8, .ms-cl .col-md-9, .ms-cl .col-md-auto, .ms-cl .col-sm, .ms-cl .col-sm-1, .ms-cl .col-sm-10, .ms-cl .col-sm-11, .ms-cl .col-sm-12, .ms-cl .col-sm-2, .ms-cl .col-sm-3, .ms-cl .col-sm-4, .ms-cl .col-sm-5, .ms-cl .col-sm-6, .ms-cl .col-sm-7, .ms-cl .col-sm-8, .ms-cl .col-sm-9, .ms-cl .col-sm-auto, .ms-cl .col-xl, .ms-cl .col-xl-1, .ms-cl .col-xl-10, .ms-cl .col-xl-11, .ms-cl .col-xl-12, .ms-cl .col-xl-2, .ms-cl .col-xl-3, .ms-cl .col-xl-4, .ms-cl .col-xl-5, .ms-cl .col-xl-6, .ms-cl .col-xl-7, .ms-cl .col-xl-8, .ms-cl .col-xl-9, .ms-cl .col-xl-auto {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.ms-cl .form-group {
+    margin-bottom: 15px;
+    position: relative;
+}
+.ms-cl .form-control {
+    display: block;
+    width: 100%;
+    height: 38px;
+    padding: 0.175rem 0.55rem;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    color: #000000 !important;
+    background-color: #fff !important;
+    background-clip: padding-box;
+    border: 1px solid #CDCDCD !important;
+    border-radius: 5px;
+    font-family: inherit;
+    visibility: visible !important;
+    transition: background .3s,border .3s,border-radius .3s,box-shadow .3s,-webkit-border-radius .3s,-webkit-box-shadow .3s;
+}
+.ms-cl .form-control:hover, .ms-cl .form-control:focus {
+    border-color: #07acac !important;
+}
+.ms-cl select {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 0.375rem 0.55rem !important;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    background-color: #fff !important;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+    font-family: inherit;
+    transition: background .3s,border .3s,border-radius .3s,box-shadow .3s,-webkit-border-radius .3s,-webkit-box-shadow .3s;
+}
+.ms-cl .form-control:focus {
+    outline: none;
+}
+/* responsive */
+@media (min-width: 768px){
+    .ms-cl .container {
+        max-width: 100%;
+    }
+    .ms-cl .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .ms-cl .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+    .ms-cl .col-md-7 {
+        -ms-flex: 0 0 58.33333%;
+        flex: 0 0 58.33333%;
+        max-width: 58.33333%;
+    }
+    .ms-cl .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .ms-cl .col-md-5 {
+        -ms-flex: 0 0 41.66666%;
+        flex: 0 0 41.66666%;
+        max-width: 41.66666%;
+    }
+    .ms-cl .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    .ms-cl .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+@media (min-width: 820px){
+    .ms-cl .container {
+        max-width: 960px;
+    }
+}
+@media (min-width: 1200px) {
+    .ms-cl .container {
+        max-width: 1000px;
+    }
+}
+.ms-cl .sp-pd-left {
+    padding-left: 28px !important;
+}
+.ms-cl .sp-pd-right {
+    padding-right: 28px !important;
+}
+.ms-cl .ms-mr {
+    margin-bottom: 1rem;
+}
+.ms-cl .text-center {
+    text-align: center;
+}
+.ms-cl .text-left {
+    text-align: left !important;
+}
+.ms-cl .text-right {
+    text-align: right !important;
+}
+.ms-cl .content-sec{
+    box-shadow: 0 0px 22px 1px rgb(0 0 0 / 19%);
+    border-radius: 10px;
+    padding: 32px 40px;
+    background: #fff;
+}
+.ms-cl .top-title {
+    color: #6bc14b;
+    font-size: 30px !important;
+    font-weight: 600;
+    border-bottom: 1px solid #6bc14b;
+}
+.ms-cl .top-para {
+    display: block;
+    color: #6bc14b;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+.ms-cl .content-in-sec {
+    margin-bottom: 70px;
+}
+.ms-cl .sp-income-sec {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: right;
+    color: #000;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    box-shadow: 0 0px 30px 1px rgb(0 0 0 / 10%);
+}
+.ms-cl .sp-vl-sec {
+    font-weight: 700;
+    font-size: 26px;
+    margin: 8px 2px;
+    color: #6BC14B;
+}
+.ms-cl .sp-bot-para {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 300;
+    color: #000;
+}
+.ms-cl .sp-top-title {
+    color: #6bc14b;
+    font-size: 20px;
+    font-weight: 600;
+    border-bottom: 1px solid #6bc14b;
+    margin-bottom: 20px;
+    margin-top: 2rem;
+}
+.ms-cl .rs-sec {
+    background: #6bc14b;
+    padding: 22px 22px 6px 22px;
+    border-radius: 5px 5px 0 0;
+    margin-top: 0;
+}
+.ms-cl .rs-sec-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #6bc14b;
+    padding: 5px 22px;
+    border-radius: 0 0 5px 5px;
+    color: #fff;
+}
+.ms-cl .rs-sec-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #6bc14b;
+    padding: 5px 22px;
+    border-radius: 5px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+.ms-cl .rs-title {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+}
+.ms-cl .rs-value {
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+}
+.ms-cl .rs-title-2 {
+    font-size: 18px;
+    font-weight: 600;
+}
+.ms-cl .rs-value-2 {
+    font-size: 26px;
+    font-weight: 600;
+}
+.ms-cl .rs-sec-last {
+    border: 1px solid #6bc14b;
+    border-radius: 8px;
+    padding: 25px;
+    margin-top: 20px;
+}
+.ms-cl .rs-title-3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+}
+.ms-cl .rs-value-3 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #6bc14b;
+}
+.ms-cl .option-sec {
+    display: flex;
+    margin-bottom: 2rem;
+    box-shadow: 0 0px 22px 1px rgb(0 0 0 / 19%);
+    border-radius: 8px;
+}
+.ms-cl .option-sec .option-item {
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #6bc14b;
+    border-right: none;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+.ms-cl .option-sec .option-item:first-child {
+    border: 1px solid #6bc14b;
+    border-right: none;
+    border-radius: 8px 0 0 8px;
+}
+.ms-cl .option-sec .option-item:last-child {
+    border: 1px solid #6bc14b;
+    border-radius: 0 8px 8px 0;
+}
+.ms-cl .option-sec .option-item.is-active {
+    background-color: #6bc14b;
+    color: #fff;
+    border-color: #6bc14b;
+}
+.ms-cl .option-sec .option-item:not(.is-active):hover {
+    background-color: #dde0e1;
+}
+.ms-cl .prepend-text {
+    position: absolute;
+    bottom: 4.5px;
+    left: 11px;
+    color: #000000;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: normal;
+}
+.ms-cl .append-text {
+    font-size: 16px;
+    position: absolute;
+    bottom: 4px;
+    right: 9px;
+    color: #000000;
+}
+.ms-cl .left-pd {
+    padding-left: 25px !important;
+}
+.ms-cl .right-pd {
+    padding-right: 25px !important;
+}
+.ms-cl .f600 {
+    font-weight: 600 !important;
+}
+.ms-cl .rs-title {
+    font-size: 18px;
+    margin: 2px;
+    color: #26459E;
+}
+.ms-cl .ds-none {
+    display: none;
+}
+@media (max-width: 768px){
+    .ms-cl label {
+        margin-bottom: 8px;
+    }
+    .ms-cl .rs-sec-top {
+        margin-top: 15px;
+    }
+    .ms-cl .sp-vl-sec {
+        font-size: 18px;
+    }
+    .ms-cl .rs-title {
+        font-size: 16px;
+    }
+    .ms-cl .top-title {
+        font-size: 24px !important;
+    }
+    .ms-cl .option-sec {
+        flex-direction: column;
+    }
+    .ms-cl .option-sec .option-item:first-child {
+        border-radius: 8px 8px 0 0;
+    }
+    .ms-cl .option-sec .option-item:last-child {
+        border-radius: 0 0 8px 8px;
+    }
+}
+</style>
+<div class="ms-cl" id="ms_cl">
+    <div class="container cl-wrapper">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="option-sec">
+                    <span data-value="slide_a" class="option-item is-active">Schedule C</span>
+                    <span data-value="slide_b" class="option-item">Partnership 1065</span>
+                    <span data-value="slide_c" class="option-item">S Corp 1120S</span>
+                    <span data-value="slide_d" class="option-item">Corporation 1120</span>
+                </div>
+            </div>
+            <div class="col-md-12 slide-content" id="slide_a">
+                <div class="content-sec">
+                    <h1 class="top-title">Self-Employed Schedule C Borrower</h1>
+                    <span class="top-para">For borrowers that claim self-employment income on Schedule C.</span>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <label>Is the borrower qualifying with one or two years of returns?</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <select class="form-control" id="a_con_1">
+                                            <option value="" selected>select option</option>
+                                            <option value="con-1">One</option>
+                                            <option value="con-2">Two</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12" id="slide_a_content" style="display: none;">
+                            <div class="row">
+                                <div class="col-md-6 con-1 con-2">
+                                    <h3 class="sp-top-title">Returns from 2 Years Ago (2020)</h3>
+                                    <div class="row">
+                                        <div class="col-md-7">
+                                            <label>Net Profit (31):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-1" id="a_1" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Non-Recurring Income (6):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-1" id="a_2" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Depletion/Depreciation (12&13):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-1" id="a_3" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Meals/Entertainment (24b):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-1" id="a_4" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Business Use of Home (30):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-1" id="a_5" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Vehicle Miles (Actual Miles):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-1" id="a_6" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-md-6 con-2">
+                                    <h3 class="sp-top-title">Returns from Most Recent Year (2021)</h3>
+                                    <div class="row">
+                                        <div class="col-md-7">
+                                            <label>Net Profit (31):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-2" id="a_7" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Non-Recurring Income (6):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-2" id="a_8" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Depletion/Depreciation (12&13):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-2" id="a_9" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Meals/Entertainment (24b):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-2" id="a_10" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Business Use of Home (30):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-2" id="a_11" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Vehicle Miles (Actual Miles):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-2" id="a_12" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <h3 class="sp-income-sec"><span class="rs-title">Monthly Income:</span> <span class="sp-vl-sec rs_vl">$0.00</span></h3>
+                                    <div class="bottom-sec">
+                                        <p class="sp-bot-para"><i>If the borrower claims amortization, it should be added to the depletion/depreciation line above. </i></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 slide-content ds-none" id="slide_b">
+                <div class="content-sec">
+                    <h1 class="top-title">Self-Employed Partnership 1065 Borrower</h1>
+                    <span class="top-para">For borrowers that claim self-employment income on Form 1065.</span>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <label>Is the borrower qualifying with one or two years of returns?</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <select class="form-control" id="b_con_1">
+                                            <option value="" selected>select option</option>
+                                            <option value="con-1">One</option>
+                                            <option value="con-2">Two</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <label>Is the borrower able to prove liquidity?</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <select class="form-control" id="b_con_2">
+                                            <option value="yes" selected>Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12" id="slide_b_content" style="display: none;">
+                            <div class="row">
+                                <div class="col-md-6 con-1 con-2">
+                                    <h3 class="sp-top-title">Returns from 2 Years Ago (2020)</h3>
+                                    <div class="row">
+                                        <div class="col-md-7">
+                                            <label>W2 Income (Box 5):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-1" id="b1_1" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Percentage of Ownership (K1 J):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control right-pd cl-in-1" id="b1_2" autocomplete="off"/>
+                                                <span class="append-text">%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>K-1 Income (1-3):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-1" id="b1_3" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Distributions (K1 Box 19):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-1" id="b1_4" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Guaranteed Payments* (K1 Box 4):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-1" id="b1_5" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Other Ordinary Income (Line 4):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-1" id="b1_6" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Nonrecurring Other Income (Line 7):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-1" id="b1_7" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Depreciation (Line 16c):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-1" id="b1_8" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Depletion (Line17):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-1" id="b1_9" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Mortgages, Notes, Bonds < 1 Year (L Line 16):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-1" id="b1_10" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Travel and Entertainment (M1 Line 4b):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-1" id="b1_11" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Amortization:</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-1" id="b1_12" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 con-2">
+                                    <h3 class="sp-top-title">Returns from Most Recent Year (2021)</h3>
+                                    <div class="row">
+                                        <div class="col-md-7">
+                                            <label>W2 Income (Box 5):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-2" id="b2_1" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Percentage of Ownership (K1 J):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control right-pd cl-in-2" id="b2_2" autocomplete="off"/>
+                                                <span class="append-text">%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>K-1 Income (1-3):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-2" id="b2_3" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Distributions (K1 Box 19):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-2" id="b2_4" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Guaranteed Payments* (K1 Box 4):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-2" id="b2_5" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Other Ordinary Income (Line 4):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-2" id="b2_6" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Nonrecurring Other Income (Line 7):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-2" id="b2_7" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Depreciation (Line 16c):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-2" id="b2_8" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Depletion (Line17):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-2" id="b2_9" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Mortgages, Notes, Bonds < 1 Year (L Line 16):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-2" id="b2_10" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Travel and Entertainment (M1 Line 4b):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-2" id="b2_11" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Amortization:</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-2" id="b2_12" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <h3 class="sp-income-sec"><span class="rs-title">Monthly Income:</span> <span class="sp-vl-sec rs_vl">$0.00</span></h3>
+                                    <div class="bottom-sec">
+                                        <p class="sp-bot-para"><i>*DU loans require a 2 year history to add in guaranteed payments from the partnership. LP loans allow for guaranteed payments to be utilized without a two-year history.</i></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 slide-content ds-none" id="slide_c">
+                <div class="content-sec">
+                    <h1 class="top-title">Self-Employed S Corp 1120S Borrower</h1>
+                    <span class="top-para">For borrowers that claim self-employment income on Form 1120S.</span>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <label>Is the borrower qualifying with one or two years of returns?</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <select class="form-control" id="c_con_1">
+                                            <option value="" selected>select option</option>
+                                            <option value="con-1">One</option>
+                                            <option value="con-2">Two</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <label>Is the borrower able to prove liquidity?</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <select class="form-control" id="c_con_2">
+                                            <option value="yes" selected>Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12" id="slide_c_content" style="display: none;">
+                            <div class="row">
+                                <div class="col-md-6 con-1 con-2">
+                                    <h3 class="sp-top-title">Returns from 2 Years Ago (2020)</h3>
+                                    <div class="row">
+                                        <div class="col-md-7">
+                                            <label>W2 Income (Box 5):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-1" id="c1_1" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Percentage of Ownership (K1 G):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control right-pd cl-in-1" id="c1_2" autocomplete="off"/>
+                                                <span class="append-text">%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>K-1 Income (1-3):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-1" id="c1_3" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Distributions (K1 Box 16d):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-1" id="c1_4" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Nonrecurring Other Income (Line 5):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-1" id="c1_7" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Depreciation (Line 14):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-1" id="c1_8" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Depletion (Line 15):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-1" id="c1_9" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Mortgages, Notes, Bonds < 1 Year (L Line 17):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-1" id="c1_10" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Travel and Entertainment (M1 Line 3b):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-1" id="c1_11" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Amortization:</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-1" id="c1_12" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 con-2">
+                                    <h3 class="sp-top-title">Returns from Most Recent Year (2021)</h3>
+                                    <div class="row">
+                                        <div class="col-md-7">
+                                            <label>W2 Income (Box 5):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-2" id="c2_1" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Percentage of Ownership (K1 G):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control right-pd cl-in-2" id="c2_2" autocomplete="off"/>
+                                                <span class="append-text">%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>K-1 Income (1-3):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-2" id="c2_3" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Distributions (K1 Box 16d):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-2" id="c2_4" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Nonrecurring Other Income (Line 5):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-2" id="c2_7" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Depreciation (Line 14):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-2" id="c2_8" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Depletion (Line 15):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-2" id="c2_9" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Mortgages, Notes, Bonds < 1 Year (L Line 17):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-2" id="c2_10" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Travel and Entertainment (M1 Line 3b):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-2" id="c2_11" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Amortization:</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-2" id="c2_12" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <h3 class="sp-income-sec"><span class="rs-title">Monthly Income:</span> <span class="sp-vl-sec rs_vl">$0.00</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 slide-content ds-none" id="slide_d">
+                <div class="content-sec">
+                    <h1 class="top-title">Self-Employed Partnership 1065 Borrower</h1>
+                    <span class="top-para">For borrowers that claim self-employment income on Form 1065.</span>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <label>Is the borrower qualifying with one or two years of returns?</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <select class="form-control" id="d_con_1">
+                                            <option value="" selected>select option</option>
+                                            <option value="con-1">One</option>
+                                            <option value="con-2">Two</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12" id="slide_d_content" style="display: none;">
+                            <div class="row">
+                                <div class="col-md-6 con-1 con-2">
+                                    <h3 class="sp-top-title">Returns from 2 Years Ago (2020)</h3>
+                                    <div class="row">
+                                        <div class="col-md-7">
+                                            <label>W2 Income (Box 5):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-1" id="d1_1" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Percentage of Ownership:</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control right-pd cl-in-1" id="d1_2" autocomplete="off"/>
+                                                <span class="append-text">%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Nonrecurring Gains (Lines 8 & 9):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-1" id="d1_3" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Nonrecurring Other Income (Line 10):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-1" id="d1_4" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Depreciation (Line 20):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-1" id="d1_5" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Depletion (Line 21):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-1" id="d1_6" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Net Operating Loss (Line 29a):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-1" id="d1_7" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Taxable Income (Line 30):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-1" id="d1_8" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Total Tax (Line 31):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-1" id="d1_9" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Mortgages, Notes, Bonds < 1 Year (L Line 17):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-1" id="d1_10" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Travel and Entertainment (M1 Line 5c):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-1" id="d1_11" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Amortization:</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-1" id="d1_12" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 con-2">
+                                    <h3 class="sp-top-title">Returns from Most Recent Year (2021)</h3>
+                                    <div class="row">
+                                        <div class="col-md-7">
+                                            <label>W2 Income (Box 5):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-2" id="d2_1" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Percentage of Ownership:</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control right-pd cl-in-2" id="d2_2" autocomplete="off"/>
+                                                <span class="append-text">%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Nonrecurring Gains (Lines 8 & 9):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-2" id="d2_3" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Nonrecurring Other Income (Line 10):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-2" id="d2_4" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Depreciation (Line 20):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-2" id="d2_5" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Depletion (Line 21):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-2" id="d2_6" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Net Operating Loss (Line 29a):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-2" id="d2_7" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Taxable Income (Line 30):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-2" id="d2_8" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Total Tax (Line 31):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-2" id="d2_9" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Mortgages, Notes, Bonds < 1 Year (L Line 17):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-2" id="d2_10" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Travel and Entertainment (M1 Line 5c):</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-2" id="d2_11" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label>Amortization:</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="number" class="form-control left-pd cl-in-2" id="d2_12" autocomplete="off"/>
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <h3 class="sp-income-sec"><span class="rs-title">Monthly Income:</span> <span class="sp-vl-sec rs_vl">$0.00</span></h3>
+                                    <div class="bottom-sec">
+                                        <p class="sp-bot-para"><i>For a DU loan, business income can only be given if the borrower owns 100% of the business. For LPA loans, business income can be given if the borrower owns 25% or more of the business. </i></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    jQuery(($)=>{
+        let slide_id = "slide_a", clm = "" , b_con_2 = "yes", c_con_2 = "yes";
+        let ins_1 = {}, ins_2 = {};
+        let xy, rs_vl; 
+
+        const nftd = Intl.NumberFormat("en-US",{
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+
+        $('.option-item').on('click',function(){
+            $('.option-item').removeClass('is-active');
+            $(this).addClass('is-active');
+            slide_id = $(this).data('value');
+            $('.slide-content').addClass('ds-none');
+            $('#'+slide_id).removeClass('ds-none');
+        });
+
+        $('#slide_a .cl-in-1, #slide_a .cl-in-2, #slide_b .cl-in-1, #slide_b .cl-in-2, #slide_c .cl-in-1, #slide_c .cl-in-2, #slide_d .cl-in-1, #slide_d .cl-in-2').on("input",function(){
+            getInputs(slide_id);
+        });
+        $('#slide_a #a_con_1, #slide_b #b_con_1, #slide_c #c_con_1, #slide_d #d_con_1').on("input",function(){
+            let vl = $(this).val();
+            if(vl){
+                clm = vl;
+
+                if(clm == 'con-1'){
+                    $('#'+slide_id+' .con-1').removeClass('col-md-6').addClass('col-md-12');
+                } else{
+                    $('#'+slide_id+' .con-1').removeClass('col-md-12').addClass('col-md-6');
+                }
+                $('#'+slide_id+' .con-1, #'+slide_id+' .con-2').hide();
+                $('#'+slide_id+' .'+clm).show();
+                $('#'+slide_id+' #'+slide_id+'_content').show();
+            } else{
+                $('#'+slide_id+' #'+slide_id+'_content').hide();
+            }
+            getInputs(slide_id);
+        });
+        $('#slide_b #b_con_2').on("input",function(){
+            let vl = $(this).val();
+            b_con_2 = vl;
+            getInputs(slide_id);
+        });
+        $('#slide_c #c_con_2').on("input",function(){
+            let vl = $(this).val();
+            c_con_2 = vl;
+            getInputs(slide_id);
+        });
+
+        function getInputs(slide){
+            ins_1 = {}, ins_2 = {};
+            $('#'+slide+' .cl-in-1').each(function(i, elm){
+                let vl = Number($(elm).val());
+                let inId = $(elm).attr("id");
+                ins_1[inId] = vl;
+            });
+
+            $('#'+slide+' .cl-in-2').each(function(i, elm){
+                let vl = Number($(elm).val());
+                let inId = $(elm).attr("id");
+                ins_2[inId] = vl;
+            });
+            
+            calcFunc(slide);
+        }
+
+        function calcFunc(slide){
+            if(slide == 'slide_a'){
+
+                let miles_1 = ins_1["a_6"]*0.26;
+                let miles_2 = ins_2["a_12"]*0.26;
+                let x_calc = ((ins_1["a_1"]-ins_1["a_2"]+ins_1["a_3"]-ins_1["a_4"]+ins_1["a_5"]+miles_1)/12);
+                let y_calc = ((ins_2["a_7"]-ins_2["a_8"]+ins_2["a_9"]-ins_2["a_10"]+ins_2["a_11"]+miles_2)/12);
+                let xy_calc = (x_calc+y_calc)/2;
+
+                if(clm == "con-1"){
+                    rs_vl = x_calc;
+                } else{
+                    rs_vl = (y_calc < x_calc) ? y_calc : xy_calc;
+                }
+
+                
+            } else if(slide == 'slide_b'){
+                ins_1["b1_2"] = ins_1["b1_2"]/100;
+                ins_2["b2_2"] = ins_2["b2_2"]/100;
+
+                if (clm == 'con-1'){
+                    let x = (ins_1["b1_12"]-ins_1["b1_7"]+ins_1["b1_8"]+ins_1["b1_9"]-ins_1["b1_10"]-ins_1["b1_11"]-ins_1["b1_6"])*ins_1["b1_2"];
+                    if(b_con_2 == "no" && ins_1["b1_3"] >= ins_1["b1_4"]){
+                        x = (x + (ins_1["b1_1"]+ins_1["b1_4"]+ins_1["b1_5"]))/12;
+                    } else if(b_con_2 == "no" && ins_1["b1_3"] < ins_1["b1_4"]){
+                        x = (x + (ins_1["b1_1"]+ins_1["b1_3"]+ins_1["b1_5"]))/12;
+                    } else if(b_con_2 == "yes"){
+                        x = (x + (ins_1["b1_1"]+ins_1["b1_3"]+ins_1["b1_5"]))/12;
+                    }
+                    rs_vl = x;
+                } else{
+                    let x = (ins_1["b1_12"]-ins_1["b1_7"]+ins_1["b1_8"]+ins_1["b1_9"]-ins_1["b1_10"]-ins_1["b1_11"]-ins_1["b1_6"])*ins_1["b1_2"];
+                    if(b_con_2 == "no" && ins_1["b1_3"] >= ins_1["b1_4"]){
+                        x = (x + (ins_1["b1_1"]+ins_1["b1_4"]+ins_1["b1_5"]))/12;
+                    } else if(b_con_2 == "no" && ins_1["b1_3"] < ins_1["b1_4"]){
+                        x = (x + (ins_1["b1_1"]+ins_1["b1_3"]+ins_1["b1_5"]))/12;
+                    } else if(b_con_2 == "yes"){
+                        x = (x + (ins_1["b1_1"]+ins_1["b1_3"]+ins_1["b1_5"]))/12;
+                    }
+                    
+                    let y = (ins_2["b2_12"]-ins_2["b2_7"]+ins_2["b2_8"]+ins_2["b2_9"]-ins_2["b2_10"]-ins_2["b2_11"]-ins_2["b2_6"])*ins_2["b2_2"];
+                    if(b_con_2 == "no" && ins_2["b2_3"] >= ins_2["b2_4"]){
+                        y = (y + (ins_2["b2_1"]+ins_2["b2_4"]+ins_2["b2_5"]))/12;
+                    } else if(b_con_2 == "no" && ins_2["b2_3"] < ins_2["b2_4"]){
+                        y = (y + (ins_2["b2_1"]+ins_2["b2_3"]+ins_2["b2_5"]))/12;
+                    } else if(b_con_2 == "yes"){
+                        y = (y + (ins_2["b2_1"]+ins_2["b2_3"]+ins_2["b2_5"]))/12;
+                    }
+
+                    if(y>=x){
+                        rs_vl = (x+y)/2;
+                    } else{
+                        rs_vl = y;
+                    }
+                }
+            }  else if(slide == 'slide_c'){
+                ins_1["c1_2"] = ins_1["c1_2"]/100;
+                ins_2["c2_2"] = ins_2["c2_2"]/100;
+
+                if (clm == 'con-1'){
+                    let x = (ins_1["c1_12"]-ins_1["c1_7"]+ins_1["c1_8"]+ins_1["c1_9"]-ins_1["c1_10"]-ins_1["c1_11"])*ins_1["c1_2"];
+                    if(c_con_2 == "no" && ins_1["c1_3"] >= ins_1["c1_4"]){
+                        x = (x + (ins_1["c1_1"]+ins_1["c1_4"]))/12;
+                    } else if(c_con_2 == "no" && ins_1["c1_3"] < ins_1["c1_4"]){
+                        x = (x + (ins_1["c1_1"]+ins_1["c1_3"]))/12;
+                    } else if(c_con_2 == "yes"){
+                        x = (x + (ins_1["c1_1"]+ins_1["c1_3"]))/12;
+                    }
+                    rs_vl = x;
+                } else{
+                    let x = (ins_1["c1_12"]-ins_1["c1_7"]+ins_1["c1_8"]+ins_1["c1_9"]-ins_1["c1_10"]-ins_1["c1_11"])*ins_1["c1_2"];
+                    if(c_con_2 == "no" && ins_1["c1_3"] >= ins_1["c1_4"]){
+                        x = (x + (ins_1["c1_1"]+ins_1["c1_4"]))/12;
+                    } else if(c_con_2 == "no" && ins_1["c1_3"] < ins_1["c1_4"]){
+                        x = (x + (ins_1["c1_1"]+ins_1["c1_3"]))/12;
+                    } else if(c_con_2 == "yes"){
+                        x = (x + (ins_1["c1_1"]+ins_1["c1_3"]))/12;
+                    }
+                
+                    let y = (ins_2["c2_12"]-ins_2["c2_7"]+ins_2["c2_8"]+ins_2["c2_9"]-ins_2["c2_10"]-ins_2["c2_11"])*ins_2["c2_2"];
+                    
+                    if(c_con_2 == "no" && ins_2["c2_3"] >= ins_2["c2_4"]){
+                        y = (y + (ins_2["c2_1"]+ins_2["c2_4"]))/12;
+                    } else if(c_con_2 == "no" && ins_2["c2_3"] < ins_2["c2_4"]){
+                        y = (y + (ins_2["c2_1"]+ins_2["c2_3"]))/12;
+                    } else if(c_con_2 == "yes"){
+                        y = (y + (ins_2["c2_1"]+ins_2["c2_3"]))/12;
+                    }
+                    if(y>=x){
+                        rs_vl = (x+y)/2;
+                    } else{
+                        rs_vl = y;
+                    }
+                }
+            } else if(slide == 'slide_d'){
+                ins_1["d1_2"] = ins_1["d1_2"]/100;
+                ins_2["d2_2"] = ins_2["d2_2"]/100;
+
+                if (clm == 'con-1'){
+                    let x = ((((ins_1["d1_5"]-ins_1["d1_3"]-ins_1["d1_4"]+ins_1["d1_6"]+ins_1["d1_7"]+ins_1["d1_8"]-ins_1["d1_9"]-ins_1["d1_10"]-ins_1["d1_11"]+ins_1["d1_12"])*ins_1["d1_2"])+ins_1["d1_1"])/12);
+                    
+                    rs_vl = x;
+                } else{
+                    let x = ((((ins_1["d1_5"]-ins_1["d1_3"]-ins_1["d1_4"]+ins_1["d1_6"]+ins_1["d1_7"]+ins_1["d1_8"]-ins_1["d1_9"]-ins_1["d1_10"]-ins_1["d1_11"]+ins_1["d1_12"])*ins_1["d1_2"])+ins_1["d1_1"])/12);
+                    let y = ((((ins_2["d2_5"]-ins_2["d2_3"]-ins_2["d2_4"]+ins_2["d2_6"]+ins_2["d2_7"]+ins_2["d2_8"]-ins_2["d2_9"]-ins_2["d2_10"]-ins_2["d2_11"]+ins_2["d2_12"])*ins_2["d2_2"])+ins_2["d2_1"])/12);
+                    
+                    if(y > x){
+                        rs_vl = (x+y)/2;
+                    } else{
+                        rs_vl = y;
+                    }
+                }
+            }
+            
+            $('#'+slide+' .rs_vl').text("$"+nftd.format(rs_vl));
+        }
+    });
+</script>

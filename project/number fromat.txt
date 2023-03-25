@@ -20,6 +20,8 @@ const numOptionCurrency = {
         new AutoNumeric('#in_1', numOptionCurrency);
 new AutoNumeric('#in_4', numOptionPercent);
 
+const anElement1 = AutoNumeric.multiple('.cl-in', numOptionCurrency);
+
  function removeComma(num){
         return Number(num.replace(/,/g,""));
     }
@@ -28,3 +30,12 @@ const nft = Intl.NumberFormat("en-US",{
         minimumFractionDigits: 0,
         maximumFractionDigits: 0
     });
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+ $('#in_3').flatpickr({
+            dateFormat: "d/m/y",
+            minDate: "31/12/21",
+            maxDate: "31/12/24"
+        });

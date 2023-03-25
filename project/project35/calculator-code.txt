@@ -1,0 +1,1032 @@
+<style>
+#clc-wrapper *, ::after, ::before {
+    box-sizing: border-box;
+}
+#clc-wrapper {
+    line-height: 1.5;
+    font-family: inherit;
+}
+#clc-wrapper .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    text-align: left;
+}
+#clc-wrapper label {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+#clc-wrapper h2, #clc-wrapper h3 {
+    margin: 2px 0;
+}
+#clc-wrapper .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+#clc-wrapper .col-md-1,  #clc-wrapper .col-md-10,  #clc-wrapper .col-md-11,  #clc-wrapper .col-md-12,  #clc-wrapper .col-md-2,  #clc-wrapper .col-md-3,  #clc-wrapper .col-md-4,  #clc-wrapper .col-md-5,  #clc-wrapper .col-md-6,  #clc-wrapper .col-md-7,  #clc-wrapper .col-md-8,  #clc-wrapper .col-md-9 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+#clc-wrapper .form-group {
+    margin-bottom: 1rem;
+}
+#clc-wrapper .form-control {
+    display: block;
+    width: 100%;
+    height: 35px;
+    padding: 0.275rem 0.75rem;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    background-color: #ffffff;
+    background-clip: padding-box;
+    border-radius: 8px;
+    border: 1px solid #d3d3d3;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#clc-wrapper .form-control:focus {
+    outline: none;
+}
+#clc-wrapper .text-center {
+    text-align: center;
+}
+@media (min-width: 576px){
+    #clc-wrapper .container {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px){
+    #clc-wrapper .container {
+        max-width: 100%;
+    }
+    #clc-wrapper .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    #clc-wrapper .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+    #clc-wrapper .col-md-7 {
+        -ms-flex: 0 0 58.333333%;
+        flex: 0 0 58.333333%;
+        max-width: 58.333333%;
+    }
+    #clc-wrapper .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    #clc-wrapper .col-md-5 {
+        -ms-flex: 0 0 41.66667%;
+        flex: 0 0 41.66667%;
+        max-width: 41.66667%;
+    }
+    #clc-wrapper .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    #clc-wrapper .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+@media (min-width: 992px){
+    #clc-wrapper.container {
+        max-width: 960px;
+    }
+}
+@media (min-width: 1200px) {
+    #clc-wrapper .container {
+        max-width: 1130px;
+    }
+}
+#clc-wrapper .hide-td {
+    display: none;
+}
+#clc-wrapper .range-wrap {
+    display: block;
+    position: relative;
+    padding: 0;
+    margin: 0 0 25px 0;
+}
+#clc-wrapper input[type=range].range-sl {
+    margin: 0 0 0 0;
+    outline: none;
+    padding: 0;
+    width: 100%;
+    height: 7px;
+    background-color: #E7E7E7;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #672667), color-stop(100%, #672667));
+    border: 1px solid #E7E7E7;
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+#clc-wrapper input[type=range].range-sl::-webkit-slider-runnable-track {
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    -webkit-appearance: none;
+}
+#clc-wrapper input[type=range].range-sl::-webkit-slider-thumb {
+    height: 20px;
+    width: 20px;
+    margin-top: -4px;
+    background: #960A9D;
+    border: 1px solid #960A9D;
+    border-radius: 25px;
+    -webkit-appearance: none;
+    margin-bottom: -3px;
+}
+#clc-wrapper .form-group,  #clc-wrapper .input-group {
+    position: relative;
+    margin-bottom: 22px;
+}
+#clc-wrapper .range-wrapper-title {
+    margin: 1.5rem 0 1rem 0;
+}
+#clc-wrapper .range-input {
+    margin-bottom: 0.3rem;
+}
+#clc-wrapper .range-title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#clc-wrapper .range-title p {
+    margin: 0;
+    font-size: 15px;
+}
+#clc-wrapper .total-title h2 {
+    font-size: 25px;
+    color: #ffffff;
+    border-bottom: 1px solid #FFFFFF;
+    margin: 0;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+#clc-wrapper .total-title p {
+    font-size: 16px;
+    color: #C1C1C1;
+    margin: 0 0 20px;
+}
+#clc-wrapper .unit-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+#clc-wrapper .unit-area p {
+    font-size: 14px;
+    color: #C1C1C1;
+    margin: 0;
+}
+#clc-wrapper .total-content p {
+    color: #606454;
+    text-align: center;
+    margin: 80px 0 0;
+    font-size: 12px;
+}
+#clc-wrapper .project-title h2 {
+    font-size: 32px;
+    margin: 20px 0 0;
+}
+#clc-wrapper .project-area-content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    max-width: 700px;
+    flex-wrap: wrap;
+}
+#clc-wrapper .total-area-wrapper {
+    background-color: #672667;
+    padding: 20px;
+    height: 100%;
+    border-radius: 8px;
+}
+#clc-wrapper .total-area-wrapper * {
+    color: #ffffff;
+}
+#clc-wrapper .dropdown-menu select {
+    width: 100%;
+    background-color: transparent;
+    outline: 0;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+}
+#clc-wrapper .dropdown-menu input {
+    width: 100%;
+    padding: 10px 20px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    background-color: #D0CCC1;
+    border: 0;
+    outline: 0;
+    text-align: center;
+    border: 1px solid #D0CCC1;
+}
+#clc-wrapper .email-input {
+    position: relative;
+}
+#clc-wrapper .email-input input {
+    width: 100%;
+    padding: 10px 30px;
+    font-size: 16px;
+}
+#clc-wrapper .btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.3rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#clc-wrapper .btn-primary {
+    width: 100%;
+    color: #606454;
+    background-color: #D0CCC1;
+    border-color: #D0CCC1;
+}
+#clc-wrapper .btn-primary:hover {
+    color: #606454;
+    background-color: #beb9aa;
+    border-color: #beb9aa;
+}
+#clc-wrapper .email-input a:hover {
+    opacity: 0.8;
+}
+#clc-wrapper .logo-area img {
+    width: 150px;
+}
+#clc-wrapper .header-title h2, #clc-wrapper .project-title h2 {
+    font-size: 22px;
+    color:#D0CCC1;
+    font-weight: 700;
+}
+#clc-wrapper .range-wrapper-title h3 {
+    border-bottom: 1px solid #CCCCCC;
+}
+#clc-wrapper .text-600 {
+    font-weight: 600;
+}
+#clc-wrapper .sp-input {
+    display: inline-block;
+    width: 140px;
+    padding: 2px 5px;
+    font-size: 14px;
+    text-align: right;
+}
+@media (max-width: 767px){
+    #clc-wrapper .total-area-wrapper {
+        margin-top: 30px;
+        min-height: 500px;
+    }
+    #clc-wrapper .email-input a {
+        padding: 9px 12px;
+    }
+    #clc-wrapper .email-input input {
+        padding: 10px 15px;
+    }
+}
+#clc-wrapper .cl-blue {
+    color: #D0CCC1;
+}
+#clc-wrapper ::placeholder {
+    color: #D0CCC1;
+}
+#clc-wrapper .header-sec {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+#clc-wrapper .header-sec img {
+    width: 200px;
+}
+#clc-wrapper .header-title {
+    width: 100%;
+    text-align: center;
+    padding: 8px;
+    border-radius: 5px;
+    color: #672667;
+    border: 1px solid #672667;
+}
+#clc-wrapper .img-option-sec {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+#clc-wrapper .img-option-sec .img-option {
+    width: 48%;
+    border: 1px solid #ccc;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+}
+#clc-wrapper .img-option-sec .img-option:hover {
+    border-color: #672667;
+}
+#clc-wrapper .img-option-sec .img-option .option-title {
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+    text-align: center;
+    font-size: 14px;
+    background: #ededed;
+    border-radius: 5px 5px 0 0;
+}
+#clc-wrapper .img-option-sec .img-option.is-active {
+    border-color: #672667;
+}
+#clc-wrapper .img-option-sec .img-option.is-active .option-title {
+    background-color: #672667;
+    color: #fff;
+}
+#clc-wrapper .img-option-sec .img-option .option-img {
+    padding: 10px;
+    width: 100%;
+}
+#clc-wrapper .option-sec {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+#clc-wrapper .option-sec .option-title {
+    border: 1px solid #ccc;
+    padding: 5px;
+    text-align: center;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 14px;
+    border-radius: 8px;
+}
+#clc-wrapper .check-box {
+    margin-bottom: 6px;
+}
+#clc-wrapper span {
+    cursor: pointer;
+    font-size: 14px;
+}
+#clc-wrapper .tck-mark {
+    display: inline-block;
+}
+#clc-wrapper .tick-mark {
+    background-color: #ffffff;
+    padding: 2px;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    border: 1px solid #DBDBDB;
+    cursor: pointer;
+    display: flex;
+    margin-right: 10px;
+    border-radius: 25px;
+}
+#clc-wrapper .check-box.is-active .tick-mark {
+    background-color: #672667;
+    border: 1px solid #672667;
+}
+#clc-wrapper table {
+    border-collapse: collapse;
+}
+#clc-wrapper .table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+}
+#clc-wrapper .table td, #clc-wrapper .table th {
+    padding: 2px 0;
+    vertical-align: top;
+    border-top: none;
+    border-bottom: 1px solid #570457;
+    color: #dbdbdb;
+    font-size: 14px;
+}
+#clc-wrapper .rs-title {
+    font-size: 18px;
+    color: #fff;
+}
+#clc-wrapper .rs-value {
+    font-size: 28px;
+    color: #ffa53c;
+    font-weight: 600;
+}
+#clc-wrapper .slider-bottom {
+    font-size: 10px;
+    display: flex;
+    justify-content: space-between;
+    color: #585858;
+}
+#clc-wrapper .text-right {
+    text-align: right !important;
+}
+#clc-wrapper .br-bottom {
+    border-bottom: 1px solid #ccc;
+}
+@media (max-width: 768px) {
+    #clc-wrapper .header-sec {
+        gap: 10px;
+        flex-direction: column;
+    }
+    #clc-wrapper .table td, #clc-wrapper .table th {
+        font-size: 16px;
+    }
+    #clc-wrapper label {
+        font-size: 18px;
+    }
+}
+.highcharts-credits {
+    display: none !important;
+}
+</style>
+<div id="clc-wrapper">
+    <div class="container cl-sec">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="header-sec">
+                    <img src="https://imagineorthostudio.com/wp-content/themes/osicustom/library/svg/logo.svg" alt="">
+                    <h2 class="header-title">Financial Calculator</h2>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="in_1">Insurance Type:</label>
+                            <select class="form-control cl-in" name="in_1" id="in_1">
+                                <option value="Not Applicable" selected>Not Applicable</option>
+                                <option value="Aetna PPO">Aetna PPO</option>
+                                <option value="Allegiance">Allegiance</option>
+                                <option value="Ameritas">Ameritas</option>
+                                <option value="Anthem BCBS">Anthem BCBS</option>
+                                <option value="Argus">Argus</option>
+                                <option value="BCBS of Florida">BCBS of Florida</option>
+                                <option value="Blue Dental">Blue Dental</option>
+                                <option value="Cigna HMO">Cigna HMO</option>
+                                <option value="Cigna PPO">Cigna PPO</option>
+                                <option value="Delta Care HMO">Delta Care HMO</option>
+                                <option value="Delta Dental (of multiple states)">Delta Dental (of multiple states)</option>
+                                <option value="Dentaquest">Dentaquest</option>
+                                <option value="Florida Combined Life">Florida Combined Life</option>
+                                <option value="GEHA">GEHA</option>
+                                <option value="Guardian">Guardian</option>
+                                <option value="Humana HMO">Humana HMO</option>
+                                <option value="Humana PPO">Humana PPO</option>
+                                <option value="Liberty">Liberty</option>
+                                <option value="Lincoln Financial">Lincoln Financial</option>
+                                <option value="MCNA">MCNA</option>
+                                <option value="Metlife">Metlife</option>
+                                <option value="Mutual of Omaha">Mutual of Omaha</option>
+                                <option value="Principal PPO">Principal PPO</option>
+                                <option value="Sunlife">Sunlife</option>
+                                <option value="Tricare/UCCI">Tricare/UCCI</option>
+                                <option value="United Concordia PPO">United Concordia PPO</option>
+                                <option value="United Healthcare">United Healthcare</option>
+                                <option value="UNUM">UNUM</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="in_2">Base Plan:</label>
+                            <select class="form-control cl-in" name="in_2" id="in_2">
+                                <option value="0">CUSTOM</option>
+                                <option value="0" selected>IMAGINE SMILE PLAN</option>
+                                <option value="100">ROYAL TREATMENT PLAN</option>
+                                <option value="250">OTHER</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="in_3">Treatment Type:</label>
+                            <div class="img-option-sec">
+                                <div class="img-option in_3 is-active" data-value="3998,2998">
+                                    <div class="option-title">Braces</div>
+                                    <img class="option-img" src="https://i.postimg.cc/0jPDj6ym/image1.png" />
+                                </div>
+                                <div class="img-option in_3" data-value="4998,3998">
+                                    <div class="option-title">Invisalign</div>
+                                    <img class="option-img" src="https://i.postimg.cc/ZRkrkskw/image2.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Color Brackets:</label>
+                            <div class="img-option-sec">
+                                <div class="img-option in_4 is-active" data-value="500">
+                                    <div class="option-title">Gold</div>
+                                    <img class="option-img" src="https://i.postimg.cc/GmVDYgpb/Gold.jpg" />
+                                </div>
+                                <div class="img-option in_4" data-value="500">
+                                    <div class="option-title">Rose Gold</div>
+                                    <img class="option-img" src="https://i.postimg.cc/mDGFpcMq/Rose-Gold.jpg" />
+                                </div>
+                                <div class="img-option in_4" data-value="500">
+                                    <div class="option-title">Rainbow</div>
+                                    <img class="option-img" src="https://i.postimg.cc/pdjFBQ9z/Rainbow.jpg" />
+                                </div>
+                                <div class="img-option in_4" data-value="500">
+                                    <div class="option-title">Blue</div>
+                                    <img class="option-img" src="https://i.postimg.cc/3JLmrx54/blue.jpg" />
+                                </div>
+                                <div class="img-option in_4" data-value="500">
+                                    <div class="option-title">Black</div>
+                                    <img class="option-img" src="https://i.postimg.cc/MZm14Y9Y/Classic-Black.jpg" />
+                                </div>
+                                <div class="img-option in_4" data-value="0">
+                                    <div class="option-title">None</div>
+                                    <img class="option-img" src="https://i.postimg.cc/XJw9nK44/none.jpg" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="br-bottom">Whitening:</label>
+                            <div class="check-box in_6 is-active" data-value="500">
+                                <div class="tck-mark"><span class="tick-mark">✔</span></div>
+                                <span style="cursor: pointer;">In-Office Zoom Whitening</span>
+                            </div>
+                            <div class="check-box in_6 is-active" data-value="150">
+                                <div class="tck-mark"><span class="tick-mark">✔</span></div>
+                                <span style="cursor: pointer;">Take-Home Whitening Kit</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="in_5">Retainer Assurance:</label>
+                            <select class="form-control cl-in" name="in_5" id="in_5">
+                                <option value="600" selected>Included</option>
+                                <option value="0">Not-included</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="in_7">Imagine Pain Eraser Pen:</label>
+                            <select class="form-control cl-in" name="in_7" id="in_7">
+                                <option value="250,200" selected>Included</option>
+                                <option value="0">Not-included</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="in_8">Same-Day Start:</label>
+                            <select class="form-control cl-in" name="in_8" id="in_8">
+                                <option value="1" selected>Yes</option>
+                                <option value="0">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="in_9">Tooth Jewels:</label>
+                            <input class="form-control cl-in" name="in_9" id="in_9" >
+                        </div>
+                        <div class="form-group">
+                            <label class="br-bottom">Service:</label>
+                            <div class="check-box in_10 is-active" data-value="700">
+                                <div class="tck-mark"><span class="tick-mark">✔</span></div>
+                                <span style="cursor: pointer;">Preferred Appointment Times</span>
+                            </div>
+                            <div class="check-box in_10 is-active" data-value="300">
+                                <div class="tck-mark"><span class="tick-mark">✔</span></div>
+                                <span style="cursor: pointer;">VIP Service Line</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="in_11">$99 / Month Lock (LION PLAN ONLY)</label>
+                            <select class="form-control cl-in" name="in_11" id="in_11">
+                                <option value="99">Enable</option>
+                                <option value="0">Disable</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="br-bottom">Appliance:</label>
+                            <div class="check-box in_12" data-value="300">
+                                <div class="tck-mark"><span class="tick-mark">✔</span></div>
+                                <span style="cursor: pointer;">Bonded Retainer</span>
+                            </div>
+                            <div class="check-box in_12" data-value="300">
+                                <div class="tck-mark"><span class="tick-mark">✔</span></div>
+                                <span style="cursor: pointer;">Essix Retainer</span>
+                            </div>
+                            <div class="check-box in_12" data-value="250">
+                                <div class="tck-mark"><span class="tick-mark">✔</span></div>
+                                <span style="cursor: pointer;">Flipper w/ pontic</span>
+                            </div>
+                            <div class="check-box in_12" data-value="380">
+                                <div class="tck-mark"><span class="tick-mark">✔</span></div>
+                                <span style="cursor: pointer;">Blue Grass / Tongue Crib</span>
+                            </div>
+                            <div class="check-box in_12" data-value="380">
+                                <div class="tck-mark"><span class="tick-mark">✔</span></div>
+                                <span style="cursor: pointer;">LA or UHA</span>
+                            </div>
+                            <div class="check-box in_12" data-value="380">
+                                <div class="tck-mark"><span class="tick-mark">✔</span></div>
+                                <span style="cursor: pointer;">Nance</span>
+                            </div>
+                            <div class="check-box in_12" data-value="500">
+                                <div class="tck-mark"><span class="tick-mark">✔</span></div>
+                                <span style="cursor: pointer;">Trans Palatal Arch (TPA)</span>
+                            </div>
+                            <div class="check-box in_12" data-value="500">
+                                <div class="tck-mark"><span class="tick-mark">✔</span></div>
+                                <span style="cursor: pointer;">Hawley Retainer</span>
+                            </div>
+                            <div class="check-box in_12" data-value="250">
+                                <div class="tck-mark"><span class="tick-mark">✔</span></div>
+                                <span style="cursor: pointer;">Per Dgainer</span>
+                            </div>
+                            <div class="check-box in_12" data-value="500">
+                                <div class="tck-mark"><span class="tick-mark">✔</span></div>
+                                <span style="cursor: pointer;">RMX Appliance</span>
+                            </div>
+                            <div class="check-box in_12" data-value="500">
+                                <div class="tck-mark"><span class="tick-mark">✔</span></div>
+                                <span style="cursor: pointer;">Flea Appliance</span>
+                            </div>
+                            <div class="check-box in_12" data-value="500">
+                                <div class="tck-mark"><span class="tick-mark">✔</span></div>
+                                <span style="cursor: pointer;">Schwarz Appliance</span>
+                            </div>
+                            <div class="check-box in_12" data-value="500">
+                                <div class="tck-mark"><span class="tick-mark">✔</span></div>
+                                <span style="cursor: pointer;">Carriere Appliance</span>
+                            </div>
+                            <div class="check-box in_12" data-value="325">
+                                <div class="tck-mark"><span class="tick-mark">✔</span></div>
+                                <span style="cursor: pointer;">Face Mask</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <div style="display: flex; justify-content: space-between;">
+                                <label for="in_13">Down Payment:</label>
+                                <input type="text" class="form-control sp-input" id="in_13_vl" readonly>
+                            </div>
+                            <div class="range-input">
+                                <input id="in_13" class="range-sl" type="range" min="250" max="20000" value="250" step="250" style="background-size: 0% 100%;">
+                                <div class="slider-bottom">
+                                    <span>$250</span>
+                                    <span>$20,000</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="total-area-sm  total-area-wrapper">
+                    <div class="total-title">
+                        <h2>Summary</h2>
+                    </div>
+                    <table class="table">
+                        <tr>
+                            <td>Insurance Type:</td>
+                            <td class="text-600 text-right" id="rs_1" style="min-width: 80px">-</td>
+                        </tr>
+                        <tr>
+                            <td>Base Plan:</td>
+                            <td class="text-600 text-right" id="rs_2">-</td>
+                        </tr>
+                        <tr>
+                            <td>Treatment Type:</td>
+                            <td class="text-600 text-right" id="rs_3">-</td>
+                        </tr>
+                        <tr>
+                            <td>Color Brackets:</td>
+                            <td class="text-600 text-right" id="rs_4">-</td>
+                        </tr>
+                        <tr>
+                            <td>Retainer Assurance:</td>
+                            <td class="text-600 text-right" id="rs_5">-</td>
+                        </tr>
+                        <tr>
+                            <td>Whitening:</td>
+                            <td class="text-600 text-right" id="rs_6">-</td>
+                        </tr>
+                        <tr>
+                            <td>Imagine Pain Eraser Pen:</td>
+                            <td class="text-600 text-right" id="rs_7">-</td>
+                        </tr>
+                        <tr>
+                            <td>Same-Day Start:</td>
+                            <td class="text-600 text-right" id="rs_8">-</td>
+                        </tr>
+                        <tr>
+                            <td>Tooth Jewels:</td>
+                            <td class="text-600 text-right" id="rs_9">-</td>
+                        </tr>
+                        <tr>
+                            <td>Service</td>
+                            <td class="text-600 text-right" id="rs_10">-</td>
+                        </tr>
+                        <tr>
+                            <td>Appliance</td>
+                            <td class="text-600 text-right" id="rs_12">-</td>
+                        </tr>
+                        <tr>
+                            <td>Down Payment:</td>
+                            <td class="text-600 text-right" id="rs_13">-</td>
+                        </tr>
+                        <tr>
+                            <td>$99 / Month Lock</td>
+                            <td class="text-600 text-right" id="rs_11">-</td>
+                        </tr>
+                    </table>
+                    <br>
+                    <div id="pie_chart"></div>
+                    <br>
+                    <div class="total-title"><h2>Financial Summary</h2></div>
+                    <br>
+                    <div class="rs-title">Total Payment</div>
+                    <div class="rs-value" id="rs_15">$125,000.00</div>
+                    <br>
+                    <div class="rs-title">Initial Down Payment</div>
+                    <div class="rs-value" id="rs_16">$1,500.00</div>
+                    <br>
+                    <div class="rs-title">Monthly Payment Amount</div>
+                    <div class="rs-value" id="rs_17">$150.00</div>
+                    <br>
+                    <div class="rs-title">Monthly Payments</div>
+                    <div class="rs-value" id="rs_18">50</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script>
+    jQuery(document).ready(function($){
+        let ins = {};
+        let tooth_Jewel_price = 150;
+
+        const nft = Intl.NumberFormat("en-US", {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+        });
+        const nftd = Intl.NumberFormat("en-US", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+
+        $('.range-sl').on('input', function(e){
+            var min = e.target.min,
+                max = e.target.max,
+                crv = e.target.value,
+                val = e.target.value; 
+            
+            let in_id = $(this).attr("id");
+
+            if(min == 0){
+                min = min + 1;
+                max = max + 1;
+                val = val + 1;
+            }
+                
+            let bg_size = (val - min) * 100 / (max - min);
+
+            $(e.target).css({
+                'backgroundSize': bg_size + '% 100%'
+            });
+
+            ins["in_13"] = crv;
+
+            $("#"+in_id+"_vl").val("$"+nft.format(crv));
+
+            $("#rs_13").text("$"+nft.format(crv));
+
+            calc();
+        }).trigger('input');
+
+        $("#rs_3").text($(".in_3.is-active").text());
+        $("#rs_4").text($(".in_4.is-active").text());
+
+        slected_items("in_6");
+        slected_items("in_10");
+        slected_items("in_12");
+
+        $(".in_3").on("click", function(){
+            $(".in_3").removeClass("is-active");
+            $(this).addClass("is-active");
+            let vl = $(this).data("value");
+
+            $("#rs_3").text($(this).text());
+            
+            calc();
+        });
+
+        $(".in_4").on("click", function(){
+            $(".in_4").removeClass("is-active");
+            $(this).addClass("is-active");
+            let vl = $(this).data("value");
+
+            $("#rs_4").text($(this).text());
+            
+            calc();
+        });
+
+        $(".in_6").on("click", function(){
+            if($(this).hasClass("is-active")){
+                $(this).removeClass("is-active");
+            } else {
+                $(this).addClass("is-active");
+            }
+
+            slected_items("in_6");
+            
+            calc();
+        });
+
+        $(".in_10").on("click", function(){
+            if($(this).hasClass("is-active")){
+                $(this).removeClass("is-active");
+            } else {
+                $(this).addClass("is-active");
+            }
+
+            slected_items("in_10");
+            
+            calc();
+        });
+
+        $(".in_12").on("click", function(){
+            if($(this).hasClass("is-active")){
+                $(this).removeClass("is-active");
+            } else {
+                $(this).addClass("is-active");
+            }
+            slected_items("in_12");
+
+            calc();
+        });
+
+        function slected_items(cls){
+            let t = 0, sl_itm = 0;
+            $("."+cls+".is-active").each(function(i, elm){
+                let vl = Number($(elm).data("value"));
+                t = t + vl;
+                sl_itm++;
+            });
+
+            ins[cls] = t;
+
+            $("#rs_"+cls.replace("in_", "")).text(sl_itm);
+        }
+
+        $(".cl-in").on("input", function(){
+            calc();
+        });
+
+        calc();
+
+        function calc(){
+            $(".cl-in").each(function(){
+                let in_id = $(this).attr("id");
+                let vl = $(this).val();
+
+                if(in_id == "in_9"){
+                    vl_txt = vl;
+                } else {
+                    vl_txt = $("#"+in_id+" option:selected").text();
+                }
+                if(in_id != "in_1" && in_id != "in_7"){
+                    vl = Number(vl);
+                }
+                ins[in_id] = vl == "-" ? 0 : vl;
+
+                $("#rs_"+in_id.replace("in_", "")).text(vl_txt);
+            });
+
+            ins["in_3"] = Number($(".in_3.is-active").data("value").split(",")[ins["in_8"]]);
+            ins["in_4"] = Number($(".in_4.is-active").data("value"));
+
+            let arr = ins["in_7"].split(",");
+
+            if(ins["in_5"] ==  0){
+                ins["in_7"] = Number(arr[0]);
+            } else {
+                ins["in_7"] = Number(arr[1]);
+            }
+
+            let total_payment = (ins["in_3"] + ins["in_4"] + ins["in_5"] + ins["in_6"] + ins["in_7"] + (ins["in_9"] * tooth_Jewel_price) + ins["in_10"] + ins["in_12"]) - ins["in_2"];
+            let down_payment = Number(ins["in_13"]);
+            let monthly_py_amount = ins["in_11"] == 0 ? (total_payment - down_payment)/30 : ins["in_11"];
+            let no_mn_py = (total_payment - down_payment)/monthly_py_amount;
+            
+            $("#rs_15").text("$"+nft.format(onlyNum(total_payment)));
+            $("#rs_16").text("$"+nft.format(onlyNum(down_payment)));
+            $("#rs_17").text("$"+nft.format(onlyNum(monthly_py_amount)));
+            $("#rs_18").text(nft.format(onlyNum(no_mn_py)));
+
+            excGraph(total_payment, down_payment, monthly_py_amount);
+        }
+
+        function excGraph(x, y, z) {
+            Highcharts.setOptions({
+                lang: {
+                    thousandsSep: ",",
+                },
+            });
+            Highcharts.chart("pie_chart", {
+                chart: {
+                    width: 250,
+                    height: 250,
+                    backgroundColor: "transparent",
+                },
+                title: {
+                    text: "",
+                },
+                yAxis: {
+                    title: {
+                        text: "",
+                    },
+                },
+                tooltip: {
+                    backgroundColor: '#000000',
+                    headerFormat: '<span style="font-size:10px; color: #000;"><b>{point.key}</b></span><table>',
+                    pointFormat: '<tr><td style="padding:0;"></td>' + '<td style="padding:0;"><b>${point.y:,.2f}</b></td></tr>',
+                    footerFormat: "</table>",
+                    shared: true,
+                    useHTML: true,
+                },
+                series: [
+                    {
+                        type: "pie",
+                        name: "Amount",
+                        data: [
+                            {
+                                name: "Total Payment",
+                                y: x,
+                                color: "#de6884",
+                            },
+                            {
+                                name: "Initial Down Payment",
+                                y: y,
+                                color: "#ffa53c",
+                            },
+                            {
+                                name: "Monthly Payment Amount",
+                                y: z,
+                                color: "#00BCD4",
+                            },
+                        ],
+                        size: "90%",
+                        innerSize: "80%",
+                        center: [120, 80],
+                        showInLegend: false,
+                        dataLabels: {
+                            enabled: false,
+                        },
+                    },
+                ],
+            });
+        }
+
+        function removeSign(vl){
+            return Number(vl.replace(/\$|,/g, ''));
+        }
+
+        function onlyNum(vl){
+            return (isFinite(vl)) ? vl : 0;
+        }
+    });
+</script>
