@@ -265,12 +265,6 @@
             margin-bottom: 25px;
 
         }
-
-        #mx_cl .all-body {
-            box-shadow: 0 0 10px #c0c0c0;
-            border-radius: 8px;
-        }
-
         #mx_cl .left-heading {
             font-weight: 400;
             font-size: 20px;
@@ -306,6 +300,16 @@
             margin-top: 0px !important;
 
         }
+        #mx_cl .prepend-text {
+            position: absolute;
+            bottom: 5px;
+            left: 10px;
+}
+        #mx_cl .append-text {
+            position: absolute;
+            bottom: 5px;
+            right: 10px;
+}
         #mx_cl .rs-vl{
             font-weight: 400;
             font-size: 32px;
@@ -355,18 +359,21 @@
                             <p class="left-sec-p">We’ll Convert this into a Number of SEO focused blog posts per
                                 month
                             </p>
-                            <input type="text" class="form-control cl-in" id="in_1" aria-describedby="emailHelp" placeholder="">
+                            <input type="text" class="form-control cl-in" id="in_1" aria-describedby="emailHelp" placeholder="" style="padding-left: 25px;">
+                            <span class="prepend-text">$</span>
                         </div>
                         <div class="form-group">
                             <label for="left-heading" class="left-heading">Conversion Rate Per Visitor</label>
                             <p class="left-sec-p">Not Sure? Use a Conservative .006</p>
-                            <input type="text" class="form-control cl-in" id="In_2" aria-describedby="emailHelp" placeholder="">
+                            <input type="text" class="form-control cl-in" id="in_2" aria-describedby="emailHelp" placeholder="">
+                            <span class="append-text">%</span>
                         </div>
                         <div class="form-group">
                             <label for="left-heading" class="left-heading left-heading-last">Average Customer
                                 Lifetime Value
                             </label>
-                            <input type="text" class="form-control cl-in" id="in_3" aria-describedby="emailHelp" placeholder="">
+                            <input type="text" class="form-control cl-in" id="in_3" aria-describedby="emailHelp" placeholder="" style="padding-left: 25px;">
+                            <span class="prepend-text">$</span>
                         </div>
                     </div>
                 </div>
@@ -385,11 +392,19 @@
             </div>
 </body>
 <script>
-    jQuery(($)=>{
-        $('.cl-in').on("input", function(){
-            in_1  = $("#in_1").val();
-            in_2  = $("#in_2").val();
-        });
-    });
+    jQuery(($) => {
+      $('#in_1, #in_2, #in_3').on('input', function() {
+        in_1 = $('#in_1').val();
+        in_2 = $('#in_2').val();
+        in_3 = $('#in_3').val();
+
+        let rs_1 = in_1 / 0.30 / 1250 * 12 * 1500 * 0.0875;
+        let rs_2 = rs_1 * in_2 * in_3;
+
+        $('#rs_1').text('$' + rs_1.toFixed(2));
+        $('#rs_2').text('$' + rs_2.toFixed(2));
+  });
+});
+
 </script>
 </html>

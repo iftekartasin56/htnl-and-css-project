@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>jQuery</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  </head>
+  <style>
+    .final-val {
+      margin-top: 20px;
+    }
+    #err_msg {
+    color: red;
+    display: none;
+    margin: 8px 2px;
+}
+  </style>
+  <body>
+    <div class="container">
+      <h2>Total Income Form</h2>
+      <form>
+        <div class="form-group">
+          <label>Primary Income:</label>
+          <input type="text" class="form-control" id="in_1" />
+        </div>
+        <div class="form-group">
+          <label>Other Income:</label>
+          <input type="text" class="form-control" id="in_2" />
+        </div>
+        <p id="err_msg">All inputs are required.</p>
+        <button type="button" class="btn btn-primary" id="calculate">
+          Calculate
+        </button>
+        <div class="final-val">Total Income: <span id="rs_vl">$0.00</span></div>
+      </form>
+    </div>
+
+    <script>
+      jQuery(($) => {
+        const nft = Intl.NumberFormat("en-US", {
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0,
+        });
+        let primary_income = 0;
+        let other_income = 0;
+
+        $("#in_1").on("input", function () {
+          primary_income = Number($("#in_1").val());
+        });
+        $("#in_2").on("input", function () {
+          other_income = Number($("#in_2").val());
+        });
+
+        $("#calculate").on("click", function(){
+            if(primary_income > 0 && other_income > 0){
+                $("#err_msg").hide();
+                let total = primary_income + other_income;
+
+                $("#rs_vl").text("$" + total);
+            } else {
+                $("#err_msg").slideDown();
+            }
+        });
+        $('#in_1, in_2').on('keyup', function() {
+          $('#err_msg').hide();
+        });
+      });
+
+      //     $(document).ready(function() {
+      //       $("#calculate").click(function() {
+      //         var primaryIncome = parseFloat($("#in_1").val());
+      //         var otherIncome = parseFloat($("#in_2").val());
+      //         var totalIncome = primaryIncome + otherIncome;
+      //         $("#rs_vl").text("$" + totalIncome.toFixed(2));
+      //   });
+      // });
+    </script>
+  </body>
+</html>
