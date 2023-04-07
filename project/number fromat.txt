@@ -39,3 +39,16 @@ const nft = Intl.NumberFormat("en-US",{
             minDate: "31/12/21",
             maxDate: "31/12/24"
         });
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.9/datepicker.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.9/datepicker.min.js"></script>
+
+$("#cl_date").datepicker({
+            autoClose: true,
+            viewStart: 2,
+            format: 'dd/mm/yyyy'
+        });
+
+        $('#cl_date').datepicker('setDate', new Date());

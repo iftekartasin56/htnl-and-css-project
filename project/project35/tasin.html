@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <title>Financial Calculator</title>
+    <title>Imagine Smile Calculator</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -397,6 +399,10 @@
     background-color: #672667;
     color: #fff;
 }
+#clc-wrapper .option-sec .option-title.is-active{
+    background-color: #672667;
+    color: #fff;
+}
 #clc-wrapper .img-option-sec .img-option .option-img {
     padding: 10px;
     width: 100%;
@@ -416,6 +422,7 @@
     display: flex;
     font-size: 14px;
     border-radius: 8px;
+    cursor: pointer;
 }
 #clc-wrapper .check-box {
     margin-bottom: 6px;
@@ -492,6 +499,9 @@
 #clc-wrapper .br-bottom {
     border-bottom: 1px solid #ccc;
 }
+#clc-wrapper .sp-row {
+    background: #a342a3;
+}
 @media (max-width: 768px) {
     #clc-wrapper .header-sec {
         gap: 10px;
@@ -504,6 +514,39 @@
         font-size: 18px;
     }
 }
+#pdf_data .table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 0rem;
+    background-color: transparent;
+    border-collapse: collapse;
+    border: 1px solid #b6b6b6;
+}
+#pdf_data .table td, #pdf_data .table th {
+    padding: .30rem;
+    vertical-align: middle;
+    border-right: 1px solid #b6b6b6;
+    border-left: none !important;
+    border-top: none !important;
+    border-bottom: 1px solid #b6b6b6;
+    font-size: 16px;
+    font-weight: 400;
+}
+#pdf_data .table th {
+    font-weight: 500;
+}
+#pdf_data .table td:last-child {
+    text-align: right;
+}
+#pdf_data #pdf_graph {
+    height: 400px;
+}
+#pdf_section {
+   display: none;
+}
+#pdf_section .sp-row {
+    background: #eeeeee;
+}
 .highcharts-credits {
     display: none !important;
 }
@@ -514,7 +557,7 @@
             <div class="col-md-12">
                 <div class="header-sec">
                     <img src="https://imagineorthostudio.com/wp-content/themes/osicustom/library/svg/logo.svg" alt="">
-                    <input type="text" class="form-control header-title" value="Imagine Smile Calculator">
+                    <input type="text" id="cl_title" class="form-control header-title" value="Imagine Smile Calculator">
                 </div>
             </div>
             <div class="col-md-8">
@@ -569,7 +612,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="in_3">Treatment Type:</label>
+                            <label for="in_3" style="background-color: #672667; color: #fff; padding: 10px 5px; border-radius: 5px;">Treatment Type:</label>
                             <div class="img-option-sec">
                                 <div class="img-option in_3 is-active" data-value="3998">
                                     <div class="option-title">Braces</div>
@@ -612,14 +655,12 @@
                         </div>
                         <div class="form-group">
                             <label for="in_6">Whitening:</label>
-                            <div class="img-option-sec">
-                                <div class="img-option in_6 is-active" data-value="500">
-                                    <div class="option-title">In-Office Zoom Whitening</div>
-                                    <img class="option-img" src="img/Zoom Vertical.jpg" />
+                            <div class="option-sec">
+                                <div class="option-title in_6 is-active" data-value="500">
+                                    In-Office Zoom Whitening
                                 </div>
-                                <div class="img-option in_6" data-value="150">
-                                    <div class="option-title">Take-Home Whitening Kit</div>
-                                    <img class="option-img" src="img/Whitening Kit.jpg" />
+                                <div class="option-title in_6" data-value="150">
+                                    Take-Home Whitening Kit
                                 </div>
                             </div>
                         </div>
@@ -665,11 +706,11 @@
                         <div class="form-group">
                             <label class="br-bottom">Service Options:</label>
                             <div class="check-box in_10 is-active" data-value="700">
-                                <div class="tck-mark"><span class="tick-mark">✔</span></div>
+                                <div class="tck-mark"><span class="tick-mark">&#x2713;</span></div>
                                 <span style="cursor: pointer;">Preferred Appointment Times</span>
                             </div>
                             <div class="check-box in_10 is-active" data-value="300">
-                                <div class="tck-mark"><span class="tick-mark">✔</span></div>
+                                <div class="tck-mark"><span class="tick-mark">&#x2713;</span></div>
                                 <span style="cursor: pointer;">VIP Service Line</span>
                             </div>
                         </div>
@@ -683,62 +724,64 @@
                         <div class="form-group">
                             <label class="br-bottom">Appliance:</label>
                             <div class="check-box in_12" data-value="300">
-                                <div class="tck-mark"><span class="tick-mark">✔</span></div>
+                                <div class="tck-mark"><span class="tick-mark">&#x2713;</span></div>
                                 <span style="cursor: pointer;">Bonded Retainer</span>
                             </div>
                             <div class="check-box in_12" data-value="300">
-                                <div class="tck-mark"><span class="tick-mark">✔</span></div>
+                                <div class="tck-mark"><span class="tick-mark">&#x2713;</span></div>
                                 <span style="cursor: pointer;">Essix Retainer</span>
                             </div>
                             <div class="check-box in_12" data-value="250">
-                                <div class="tck-mark"><span class="tick-mark">✔</span></div>
+                                <div class="tck-mark"><span class="tick-mark">&#x2713;</span></div>
                                 <span style="cursor: pointer;">Flipper w/ pontic</span>
                             </div>
                             <div class="check-box in_12" data-value="380">
-                                <div class="tck-mark"><span class="tick-mark">✔</span></div>
+                                <div class="tck-mark"><span class="tick-mark">&#x2713;</span></div>
                                 <span style="cursor: pointer;">Blue Grass / Tongue Crib</span>
                             </div>
                             <div class="check-box in_12" data-value="380">
-                                <div class="tck-mark"><span class="tick-mark">✔</span></div>
+                                <div class="tck-mark"><span class="tick-mark">&#x2713;</span></div>
                                 <span style="cursor: pointer;">LA or UHA</span>
                             </div>
                             <div class="check-box in_12" data-value="380">
-                                <div class="tck-mark"><span class="tick-mark">✔</span></div>
+                                <div class="tck-mark"><span class="tick-mark">&#x2713;</span></div>
                                 <span style="cursor: pointer;">Nance</span>
                             </div>
                             <div class="check-box in_12" data-value="500">
-                                <div class="tck-mark"><span class="tick-mark">✔</span></div>
+                                <div class="tck-mark"><span class="tick-mark">&#x2713;</span></div>
                                 <span style="cursor: pointer;">Trans Palatal Arch (TPA)</span>
                             </div>
                             <div class="check-box in_12" data-value="500">
-                                <div class="tck-mark"><span class="tick-mark">✔</span></div>
+                                <div class="tck-mark"><span class="tick-mark">&#x2713;</span></div>
                                 <span style="cursor: pointer;">Hawley Retainer</span>
                             </div>
                             <div class="check-box in_12" data-value="250">
-                                <div class="tck-mark"><span class="tick-mark">✔</span></div>
-                                <span style="cursor: pointer;">Per Dgainer</span>
+                                <div class="tck-mark"><span class="tick-mark">&#x2713;</span></div>
+                                <span style="cursor: pointer;">Dgainer</span>
                             </div>
                             <div class="check-box in_12" data-value="500">
-                                <div class="tck-mark"><span class="tick-mark">✔</span></div>
+                                <div class="tck-mark"><span class="tick-mark">&#x2713;</span></div>
                                 <span style="cursor: pointer;">RMX Appliance</span>
                             </div>
                             <div class="check-box in_12" data-value="500">
-                                <div class="tck-mark"><span class="tick-mark">✔</span></div>
+                                <div class="tck-mark"><span class="tick-mark">&#x2713;</span></div>
                                 <span style="cursor: pointer;">Flea Appliance</span>
                             </div>
                             <div class="check-box in_12" data-value="500">
-                                <div class="tck-mark"><span class="tick-mark">✔</span></div>
+                                <div class="tck-mark"><span class="tick-mark">&#x2713;</span></div>
                                 <span style="cursor: pointer;">Schwarz Appliance</span>
                             </div>
                             <div class="check-box in_12" data-value="500">
-                                <div class="tck-mark"><span class="tick-mark">✔</span></div>
+                                <div class="tck-mark"><span class="tick-mark">&#x2713;</span></div>
                                 <span style="cursor: pointer;">Carriere Appliance</span>
                             </div>
                             <div class="check-box in_12" data-value="325">
-                                <div class="tck-mark"><span class="tick-mark">✔</span></div>
+                                <div class="tck-mark"><span class="tick-mark">&#x2713;</span></div>
                                 <span style="cursor: pointer;">Face Mask</span>
                             </div>
                         </div>
+                        
+                        
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
@@ -747,7 +790,7 @@
                                 <input type="text" class="form-control sp-input" id="in_13_vl" readonly>
                             </div>
                             <div class="range-input">
-                                <input id="in_13" class="range-sl" type="range" min="250" max="7000" value="250" step="250" style="background-size: 0% 100%;">
+                                <input id="in_13" class="range-sl" type="range" min="250" max="7000" value="250" step="25" style="background-size: 0% 100%;">
                                 <div class="slider-bottom">
                                     <span>$250</span>
                                     <span>$7,000</span>
@@ -760,12 +803,24 @@
                                 <input type="text" class="form-control sp-input" id="in_14_vl" readonly>
                             </div>
                             <div class="range-input">
-                                <input id="in_14" class="range-sl" type="range" min="0" max="1500" value="150" step="10" style="background-size: 0% 100%;">
+                                <input id="in_14" class="range-sl" type="range" min="0" max="1500" value="150" step="5" style="background-size: 0% 100%;">
                                 <div class="slider-bottom">
                                     <span>$0</span>
                                     <span>$1,500</span>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="in_15">Insurance Contracted Rate:</label>
+                            <input type="text" class="form-control cl-in" name="in_15" id="in_15">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="in_16">Less: Insurance Benefit:</label>
+                            <input type="text" class="form-control cl-in" name="in_16" id="in_16">
                         </div>
                     </div>
                 </div>
@@ -776,54 +831,56 @@
                         <h2>Treatment Summary</h2>
                     </div>
                     <table class="table">
-                        <tr>
-                            <td>Treatment Type:</td>
-                            <td class="text-600 text-right" id="rs_3">-</td>
-                        </tr>
-                        <tr>
-                            <td>Insurance Type:</td>
-                            <td class="text-600 text-right" id="rs_1" style="min-width: 80px">-</td>
-                        </tr>
-                        <tr>
-                            <td>Base Plan:</td>
-                            <td class="text-600 text-right" id="rs_2">-</td>
-                        </tr>
-                        <tr>
-                            <td>Color Brackets:</td>
-                            <td class="text-600 text-right" id="rs_4">-</td>
-                        </tr>
-                        <tr>
-                            <td>Retainer Assurance:</td>
-                            <td class="text-600 text-right" id="rs_5">-</td>
-                        </tr>
-                        <tr>
-                            <td id="rs_6_label">Whitening:</td>
-                            <td class="text-600 text-right" id="rs_6">-</td>
-                        </tr>
-                        <tr>
-                            <td>Imagine Pain Eraser Pen:</td>
-                            <td class="text-600 text-right" id="rs_7">-</td>
-                        </tr>
-                        <tr>
-                            <td>Tooth Jewels:</td>
-                            <td class="text-600 text-right" id="rs_9">-</td>
-                        </tr>
-                        <tr>
-                            <td>Service Options</td>
-                            <td class="text-600 text-right" id="rs_10">-</td>
-                        </tr>
-                        <tr>
-                            <td>Appliance</td>
-                            <td class="text-600 text-right" id="rs_12">-</td>
-                        </tr>
-                        <tr>
-                            <td>$99 / Month Lock</td>
-                            <td class="text-600 text-right" id="rs_11">-</td>
-                        </tr>
-                        <tr>
-                            <td>Same-Day Start:</td>
-                            <td class="text-600 text-right" id="rs_8">-</td>
-                        </tr>
+                        <tbody id="tb_1">
+                            <tr>
+                                <td>Treatment Type:</td>
+                                <td class="text-600 text-right" id="rs_3">-</td>
+                            </tr>
+                            <tr>
+                                <td>Insurance Type:</td>
+                                <td class="text-600 text-right" id="rs_1" style="min-width: 80px">-</td>
+                            </tr>
+                            <tr>
+                                <td>Base Plan:</td>
+                                <td class="text-600 text-right" id="rs_2">-</td>
+                            </tr>
+                            <tr>
+                                <td>Color Brackets:</td>
+                                <td class="text-600 text-right" id="rs_4">-</td>
+                            </tr>
+                            <tr>
+                                <td>Retainer Assurance:</td>
+                                <td class="text-600 text-right" id="rs_5">-</td>
+                            </tr>
+                            <tr>
+                                <td id="rs_6_label">Whitening:</td>
+                                <td class="text-600 text-right" id="rs_6">-</td>
+                            </tr>
+                            <tr>
+                                <td>Imagine Pain Eraser Pen:</td>
+                                <td class="text-600 text-right" id="rs_7">-</td>
+                            </tr>
+                            <tr>
+                                <td>Tooth Jewels:</td>
+                                <td class="text-600 text-right" id="rs_9">-</td>
+                            </tr>
+                            <tr>
+                                <td>Service Options</td>
+                                <td class="text-600 text-right" id="rs_10">-</td>
+                            </tr>
+                            <tr>
+                                <td>Appliance</td>
+                                <td class="text-600 text-right" id="rs_12">-</td>
+                            </tr>
+                            <tr>
+                                <td>$99 / Month Lock</td>
+                                <td class="text-600 text-right" id="rs_11">-</td>
+                            </tr>
+                            <tr>
+                                <td>Same-Day Start:</td>
+                                <td class="text-600 text-right" id="rs_8">-</td>
+                            </tr>
+                        </tbody>
                     </table>
                     <br>
                     <div id="pie_chart"></div>
@@ -831,66 +888,102 @@
                     <div class="total-title"><h2>Financial Summary</h2></div>
                     <br>
                     <table class="table sum-table">
-                        <tr>
-                            <td>Base Treatment Fee:</td>
-                            <td class="text-600 text-right" id="rs_15">-</td>
-                        </tr>
-                        <tr>
-                            <td>Insurance Contracted Rate:</td>
-                            <td class="text-600 text-right" id="rs_19">-</td>
-                        </tr>
-                        <tr>
-                            <td>Less: Insurance Benefit:</td>
-                            <td class="text-600 text-right" id="rs_20">-</td>
-                        </tr>
-                        <tr>
-                            <td>Appliance(s):</td>
-                            <td class="text-600 text-right" id="rs_21">-</td>
-                        </tr>
-                        <tr>
-                            <td>Other(s):</td>
-                            <td class="text-600 text-right" id="rs_22">-</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><br></td>
-                        </tr>
-                        <tr>
-                            <td>Subtotal:</td>
-                            <td class="text-600 text-right" id="rs_23">-</td>
-                        </tr>
-                        <tr>
-                            <td>Less: Same-Day Start Discount:</td>
-                            <td class="text-600 text-right" id="rs_24">-</td>
-                        </tr>
-                        <tr>
-                            <td>Total Treatment Fee:</td>
-                            <td class="text-600 text-right" id="rs_25">-</td>
-                        </tr>
-                        <tr>
-                            <td>Initian Down Payment:</td>
-                            <td class="text-600 text-right" id="rs_16">-</td>
-                        </tr>
-                        <tr>
-                            <td><span id="rs_18"></span> Monthly Payments of:</td>
-                            <td class="text-600 text-right" id="rs_17">-</td>
-                        </tr>
-                        <tr>
-                            <td>Remaining Balance:</td>
-                            <td class="text-600 text-right" id="rs_26">-</td>
-                        </tr>
-                        <tr>
-                            <td>If not starting today, Monthly Payment of:</td>
-                            <td class="text-600 text-right" id="rs_27">-</td>
-                        </tr>
+                        <tbody id="tb_2">
+                            <tr>
+                                <td>Base Treatment Fee:</td>
+                                <td class="text-600 text-right" id="rs_15">-</td>
+                            </tr>
+                            <tr>
+                                <td>Less: Insurance Benefit:</td>
+                                <td class="text-600 text-right" id="rs_20">-</td>
+                            </tr>
+                            <tr>
+                                <td>Appliance(s):</td>
+                                <td class="text-600 text-right" id="rs_21">-</td>
+                            </tr>
+                            <tr>
+                                <td>Other(s):</td>
+                                <td class="text-600 text-right" id="rs_22">-</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><br></td>
+                            </tr>
+                            <tr class="sp-row">
+                                <td style="font-weight: bold;">Subtotal:</td>
+                                <td style="font-weight: bold;" class="text-right" id="rs_23">-</td>
+                            </tr>
+                            <tr>
+                                <td>Less: Same-Day Start Discount:</td>
+                                <td class="text-600 text-right" id="rs_24">-</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><br></td>
+                            </tr>
+                            <tr class="sp-row">
+                                <td style="font-weight: bold;">Total Treatment Fee:</td>
+                                <td style="font-weight: bold;" class="text-right" id="rs_25">-</td>
+                            </tr>
+                            <tr>
+                                <td>Initial Down Payment:</td>
+                                <td class="text-600 text-right" id="rs_16">-</td>
+                            </tr>
+                            <tr>
+                                <td><span id="rs_18"></span> Monthly Payments of:</td>
+                                <td class="text-600 text-right" id="rs_17">-</td>
+                            </tr>
+                            <tr>
+                                <td>Remaining Balance:</td>
+                                <td class="text-600 text-right" id="rs_26">-</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><br></td>
+                            </tr>
+                            <tr>
+                                <td>If not starting today, Monthly Payment of:</td>
+                                <td class="text-600 text-right" id="rs_27">-</td>
+                            </tr>
+                        </tbody>
                     </table>
                     <p style="font-size: 14px; margin: 0; margin-top: 30px; color: #d9d9d9;">This amount is an estimate only and responsible party will be personally responsible for any balance not paid by insurance.<br><br></p>
-                    <button type="button" class="btn btn-primary">Print</button>
+                    <button type="button" class="btn btn-primary" id="btn_download">Print</button>
                 </div>
             </div>
             </div>
     </div>
 </div>
+<div id="pdf_section">
+    <div id="pdf_data">
+        <table class="table" style="border: none;">
+            <tr>
+                <td style="border: none;text-align: center;"><img style="width: 150px;" id="cl_logo" src="https://i.postimg.cc/yYq0XKq2/imagine-logo-2.jpg" alt=""></td>
+                <td id="cl_title_show" style="border-left: 1px solid #ccc !important;border-bottom: none !important;border-right: 1px solid #ccc !important;text-align: center !important;border-top: 1px solid #ccc !important;font-size: 24px;font-weight: 600;;"></td>
+            </tr>
+        </table>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th colspan="2" style="background: #eee;width: 33.30%;">Treatment Summary</th>
+                </tr>
+            </thead>
+            <tbody id="pdf_tb_1"></tbody>
+        </table>
+        <br>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th colspan="2" style="background: #eee;width: 33.30%;">Financial Summary</th>
+                </tr>
+            </thead>
+            <tbody id="pdf_tb_2"></tbody>
+        </table>
+        <br>
+        <br>
+        <p>This amount is an estimate only and responsible party will be personally responsible for any balance not paid by insurance.</p>
+    </div>
+</div>
 <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
     jQuery(document).ready(function($){
         let ins = {};
@@ -1031,6 +1124,36 @@
             calc();
         });
 
+        $('#btn_download').on('click', function(){
+            $(this).prop('disabled', true);
+            $('#btn_download').text("Generating PDF....");
+            let tb_1 = $("#tb_1").html();
+            let tb_2 = $("#tb_2").html();
+            $("#pdf_tb_1").html(tb_1);
+            $("#pdf_tb_2").html(tb_2);
+
+
+            setTimeout(() => {
+                genPDF();
+                $('#btn_download').prop('disabled', false);
+                $('#btn_download').text("Print");
+            }, 500);
+        });
+
+        function genPDF(){
+            var d = new Date();
+            let date_time = d.getMonth() + 1+"_"+ d.getDate() + "_"+d.getFullYear()+"_"+d.getHours()+"_"+d.getMinutes()+"_"+d.getSeconds();
+            var element = document.getElementById('pdf_data');
+            html2pdf(element, {
+                margin:       10,
+                enableLinks:  true,
+                filename:     'Imagine_Smile_Calculator_'+date_time+".pdf",
+                image:        { type: 'jpeg', quality: 1 },
+                html2canvas:  { scale: 2, logging: true },
+                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            });
+        }
+
         calc();
 
         function calc(){
@@ -1062,13 +1185,21 @@
                 ins["in_7"] = Number(arr[1]);
             }
 
-            let total_payment = (ins["in_3"] + ins["in_4"] + ins["in_5"] + ins["in_6"] + ins["in_7"] + (ins["in_9"] * tooth_Jewel_price) + ins["in_10"] + ins["in_12"]) - ins["in_2"];
+            let total_payment = 0;
+            
+            if(ins["in_15"] > 0){
+                total_payment = ins["in_15"];
+            } else {
+                total_payment = (ins["in_3"] + ins["in_4"] + ins["in_5"] + ins["in_6"] + ins["in_7"] + (ins["in_9"] * tooth_Jewel_price) + ins["in_10"] + ins["in_12"]) - ins["in_2"];
+            }
+
             let down_payment = Number(ins["in_13"]);
             let monthly_py_amount = ins["in_11"] == 0 ? ins["in_14"] : ins["in_11"];
             let no_mn_py = (total_payment - down_payment)/monthly_py_amount;
             
+            rs_20 = ins["in_16"];
             rs_22 = ins["in_4"] + ins["in_6"] + (ins["in_9"] * tooth_Jewel_price) + ins["in_10"];
-            rs_23 = total_payment + ins["in_12"] + rs_22;
+            rs_23 = total_payment + ins["in_12"] + rs_22 - rs_20;
             rs_24 = ins["in_8"];
             rs_25 = rs_23 - rs_24;
             rs_26 = rs_25 - monthly_py_amount;
@@ -1078,6 +1209,7 @@
             $("#rs_16").text("$"+nft.format(onlyNum(down_payment)));
             $("#rs_17").text("$"+nft.format(onlyNum(monthly_py_amount)));
             $("#rs_18").text(nft.format(onlyNum(no_mn_py)));
+            $("#rs_20").text(`${ rs_20 ? "-$"+nft.format(onlyNum(rs_20)) : "$0"}`);
             $("#rs_21").text("$"+nft.format(onlyNum(ins["in_12"])));
             $("#rs_22").text("$"+nft.format(onlyNum(rs_22)));
             $("#rs_23").text("$"+nft.format(onlyNum(rs_23)));
@@ -1086,7 +1218,7 @@
             $("#rs_26").text("$"+nft.format(onlyNum(rs_26)));
             $("#rs_27").text("$"+nft.format(onlyNum(rs_27)));
 
-            excGraph(total_payment, down_payment, monthly_py_amount);
+            excGraph((total_payment-rs_20), ins["in_12"], rs_22);
         }
 
         function excGraph(x, y, z) {
@@ -1123,17 +1255,17 @@
                         name: "Amount",
                         data: [
                             {
-                                name: "Total Payment",
+                                name: "Base Treatment Fee",
                                 y: x,
                                 color: "#de6884",
                             },
                             {
-                                name: "Initial Down Payment",
+                                name: "Appliance(s)",
                                 y: y,
                                 color: "#ffa53c",
                             },
                             {
-                                name: "Monthly Payment Amount",
+                                name: "Other(s)",
                                 y: z,
                                 color: "#00BCD4",
                             },
@@ -1156,6 +1288,32 @@
 
         function onlyNum(vl){
             return (isFinite(vl)) ? vl : 0;
+        }
+
+        $("#cl_title_show").text($("#cl_title").val());
+
+        $("#cl_title").on("input", function() {
+            $("#cl_title_show").text($(this).val());
+        });
+
+        let src = $("#cl_logo").attr("src");
+
+        toDataUrl(src, function(myBase64) {
+            $("#cl_logo").attr("src", myBase64);
+        });
+
+        function toDataUrl(url, callback) {
+            var xhr = new XMLHttpRequest();
+            xhr.onload = function() {
+                var reader = new FileReader();
+                reader.onloadend = function() {
+                    callback(reader.result);
+                }
+                reader.readAsDataURL(xhr.response);
+            };
+            xhr.open('GET', url);
+            xhr.responseType = 'blob';
+            xhr.send();
         }
     });
 </script>

@@ -11,33 +11,139 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   </head>
   <style>
-    .final-val {
+  .final-val {
       margin-top: 20px;
-    }
-    #err_msg {
+  }
+  #err_msg {
     color: red;
     display: none;
     margin: 8px 2px;
+  }
+  .table {
+    width: 100%;
+    margin-bottom: 0;
+    color: #212529;
+    border: none;
+}
+.table td, .table th {
+    padding: 0.25rem 0;
+    vertical-align: middle;
+    border-bottom: 1px solid #000;
+    color: #000;
+    border-top: none;
+}
+.rs-sec-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #009AA4;
+    padding: 5px 22px;
+    border-radius: 0 0 5px 5px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+.rs-sec {
+    background: #00BCC8;
+    padding: 22px 22px 6px 22px;
+    border-radius: 5px 5px 0 0;
+    margin-top: 0;
 }
   </style>
   <body>
     <div class="container">
-      <h2>Total Income Form</h2>
-      <form>
-        <div class="form-group">
-          <label>Primary Income:</label>
-          <input type="text" class="form-control" id="in_1" />
-        </div>
-        <div class="form-group">
-          <label>Other Income:</label>
-          <input type="text" class="form-control" id="in_2" />
-        </div>
+    <div class="row">
+      <div class="col-md-6">
+        <form>
+          <h1>Income</h1>
+          <div class="form-group">
+            <label>Income X:</label>
+            <input type="text" class="form-control" id="in_1"/>
+          </div>
+          <div class="form-group">
+            <label>Income Y:</label>
+            <input type="text" class="form-control" id="in_2"/>
+          </div>
+          <div class="form-group">
+            <label>Income Z:</label>
+            <input type="text" class="form-control" id="in_3"/>
+          </div>
+        </form>
+          <h1>Expense</h1>
+          <div class="form-group">
+            <label>Expense A:</label>
+            <input type="text" class="form-control" id="in_4"/>
+          </div>
+          <div class="form-group">
+            <label>Expense B:</label>
+            <input type="text" class="form-control" id="in_5"/>
+          </div>
+          <div class="form-group">
+            <label>Expense C:</label>
+            <input type="text" class="form-control" id="in_6"/>
+          </div>
+        </form>
         <p id="err_msg">All inputs are required.</p>
         <button type="button" class="btn btn-primary" id="calculate">
           Calculate
         </button>
         <div class="final-val">Total Income: <span id="rs_vl">$0.00</span></div>
-      </form>
+      </div>
+      <div class="col-md-6">
+        <div class="rs-sec">
+          <table  class="table" style="font-size:1em; width: 100%;" id="results_table">
+              <tr>
+                  <td><h4>Total Income:</h4></td>
+              </tr>
+              <tr>
+                <td class="sp-width">Income X:</td>
+                <td width="5"></td>
+                <td>$ <span id="income_x"></span></td>
+              </tr>
+              <tr>
+                <td class="sp-width">Income Y:</td>
+                <td width="5"></td>
+                <td>$ <span id="income_y"></span></td>
+              </tr>
+              <tr>
+                <td>Income Z:</td>
+                <td width="5"></td>
+                <td>$ <span id="income_z"></span></td>
+              </tr>
+          </table>
+      </div>
+      <div class="rs-sec-bottom">
+          <span class="rs-title">Overhead cost for ticket</span>
+          <span class="rs-value" id="E18">$100</span>
+      </div>
+      <div class="rs-sec">
+          <table class="table" style="font-size:1em; width: 100%;" id="results_table">
+            <tr>
+              <td colspan="4"><h4>Total Expense:</h4></td>
+            </tr>
+            <tr>
+              <td class="sp-width">Expenses A:</td>
+              <td width="5"></td>
+              <td>$ <span id="final_expenses"></span></td>
+            </tr>
+            <tr>
+              <td class="sp-width">Expenses B:</td>
+              <td width="5"></td>
+              <td>$ <span id="outstanding_mort"></span></td>
+            </tr>
+            <tr>
+              <td>Expenses C:</td>
+              <td width="5"></td>
+              <td>$ <span id="other_debts"></span></td>
+            </tr>
+          </tbody>
+      </table>
+      </div>
+      <div class="rs-sec-bottom">
+          <span class="rs-title">Overhead cost for ticket</span>
+          <span class="rs-value" id="E18">$100</span>
+      </div>
+      </div>
+    </div>
     </div>
 
     <script>
@@ -49,26 +155,39 @@
         let primary_income = 0;
         let other_income = 0;
 
-        $("#in_1").on("input", function () {
+        $("#in_1, #in_2").on("input", function () {
           primary_income = Number($("#in_1").val());
-        });
-        $("#in_2").on("input", function () {
           other_income = Number($("#in_2").val());
         });
+        // $("#in_2").on("input", function () {
+        // });
 
         $("#calculate").on("click", function(){
             if(primary_income > 0 && other_income > 0){
                 $("#err_msg").hide();
+
                 let total = primary_income + other_income;
 
                 $("#rs_vl").text("$" + total);
+
+                if(total < 100){
+                  $("#rs_vl").css("color","red");
+                } else{                                                
+                  $("#rs_vl").css("color","green");
+                }
             } else {
                 $("#err_msg").slideDown();
+                $("#rs_vl").text("$0.00");
             }
+            
         });
-        $('#in_1, in_2').on('keyup', function() {
+        
+        
+
+        $('#in_1, #in_2').on('keyup', function() {
           $('#err_msg').hide();
         });
+
       });
 
       //     $(document).ready(function() {

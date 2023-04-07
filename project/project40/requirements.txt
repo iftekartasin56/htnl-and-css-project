@@ -1,0 +1,46 @@
+https://www.khadamat.ae/
+
+
+The first tow questions about the joining and last date will calculate numbers of years, month and days and should be automatically added to the formula
+
+Example
+
+Joining date 01 /03/2020
+Last day. 07/05/2023
+
+That is 3 years 2month 6 days
+
+
+Joining date
+Last working date
+Basic salary
+
+Joining and last working date will calculate toyal years of service
+
+If duration of service less than 1 year employee not entitled for any gratuity pay or final service
+
+
+1 to 5 years of service gratuity based on 21 days of salary
+
+More than 5 years of service gratuity pay based on 30 day salary
+
+
+Example
+7 years service
+
+Basic salary 8,000
+
+First five years
+8000 ÷30=266.66*21=5600
+5600*5=28000
+
+Remaining 2 years
+
+8000÷30=266.66*30=8000
+
+8000*2=16000
+
+16000+28000=44000
+
+
+Total gratuity pay=44000

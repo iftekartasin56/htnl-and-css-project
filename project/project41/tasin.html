@@ -1,0 +1,598 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <title>Web Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <script src="index.js"></script>
+    <script src="jquery.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <style>
+        #mx_cl *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+        }
+
+        #mx_cl {
+            line-height: 1.5;
+            font-family: inherit;
+        }
+
+        #mx_cl .container {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #4a4a4a;
+            text-align: left;
+        }
+
+        #mx_cl label {
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        #mx_cl .row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        #mx_cl .col-md-1,
+        #mx_cl .col-md-10,
+        #mx_cl .col-md-11,
+        #mx_cl .col-md-12,
+        #mx_cl .col-md-2,
+        #mx_cl .col-md-3,
+        #mx_cl .col-md-4,
+        #mx_cl .col-md-5,
+        #mx_cl .col-md-6,
+        #mx_cl .col-md-7,
+        #mx_cl .col-md-8,
+        #mx_cl .col-md-9 {
+            position: relative;
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        #mx_cl .form-group {
+            margin-bottom: 1rem;
+        }
+
+        #mx_cl .form-control {
+            display: block;
+            width: 100%;
+            height: calc(1em + 0.75rem + 2px);
+            padding: 0.275rem 0.75rem;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #4a4a4a;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #dddddd;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+
+        #mx_cl .form-control:focus {
+            outline: none;
+        }
+
+        #mx_cl .btn {
+            display: inline-block;
+            font-weight: 400;
+            color: #212529;
+            text-align: left;
+            vertical-align: middle;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-color: transparent;
+            border: 1px solid transparent;
+            padding: .575rem .85rem;
+            font-weight: 400;
+            font-size: 22px;
+            width: 100%;
+            transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+            margin-top: 20px;
+        }
+
+        #mx_cl .btn-primary {
+            color: #fff;
+            background-color: #9506E6;
+            border-color: #9506E6;
+        }
+
+        #mx_cl .btn-reset {
+            color: #fff;
+            background-color: #9506E6;
+            border-color: #9506E6;
+        }
+
+        #mx_cl table {
+            border-collapse: collapse;
+        }
+
+        #mx_cl .table {
+            width: 100%;
+            margin-bottom: 1rem;
+            color: #212529;
+        }
+
+        #mx_cl .table td,
+        #mx_cl .table th {
+            padding: .75rem;
+            vertical-align: top;
+            border-top: 1px solid #dee2e6;
+        }
+
+        #mx_cl .text-center {
+            text-align: center;
+        }
+
+        @media (min-width: 576px) {
+            #mx_cl .container {
+                max-width: 100%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            #mx_cl .container {
+                max-width: 100%;
+            }
+
+            #mx_cl .col-md-12 {
+                -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            #mx_cl .col-md-9 {
+                -ms-flex: 0 0 75%;
+                flex: 0 0 75%;
+                max-width: 75%;
+            }
+
+            #mx_cl .col-md-8 {
+                -ms-flex: 0 0 66.666667%;
+                flex: 0 0 66.666667%;
+                max-width: 66.666667%;
+            }
+
+            #mx_cl .col-md-7 {
+                -ms-flex: 0 0 58.33333%;
+                flex: 0 0 58.33333%;
+                max-width: 58.33333%;
+            }
+
+            #mx_cl .col-md-6 {
+                -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+
+            #mx_cl .col-md-5 {
+                -ms-flex: 0 0 41.666667%;
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+
+            #mx_cl .col-md-4 {
+                -ms-flex: 0 0 33.333333%;
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+
+            #mx_cl .col-md-3 {
+                -ms-flex: 0 0 25%;
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+        }
+
+        @media (min-width: 992px) {
+            #mx_cl .container {
+                max-width: 700px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            #mx_cl .container {
+                max-width: 700px;
+            }
+        }
+
+        #mx_cl .text-right {
+            text-align: right;
+        }
+
+        #mx_cl .form-group,
+        #mx_cl .input-group {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+
+
+        #mx_cl .top-title {
+            font-size: 24px;
+            background-color: #9506E6;
+            color: #ffffff;
+            text-align: center;
+            padding: 15px;
+            border-radius: 8px 8px 0px 0px;
+            margin-bottom: 0px;
+        }
+
+        #mx_cl .em-context {
+            box-shadow: 0 0 10px #4a4a4a;
+            border-radius: 0px 0px 8px 8px;
+            border-radius: 8px;
+        }
+
+        #mx_cl .em-sub-heading {
+            font-weight: 600;
+            font-size: 18px;
+            color: #9506E6;
+            margin: 0px;
+            border-bottom: 1px solid #9506E6;
+            border-top: none;
+        }
+
+        #mx_cl .em-tab-section {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        #mx_cl .em-tab-design {
+            background: #ffffff;
+            margin-top: 20px;
+            border-radius: 8px;
+            color: #9506E6;
+            border: 1px solid #DcDcDc;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+        }
+
+        #mx_cl .em-tab-design:hover {
+            background: #9506E6;
+            color: #ffffff;
+        }
+
+        #mx_cl .em-mid-section {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #mx_cl .em-mid-sub-heading {
+            font-weight: 600;
+            font-size: 20px;
+            color: #9506E6;
+            margin: 0px;
+        }
+
+        #mx_cl .em-mid-span {
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        #mx_cl input[type=range] {
+            margin: 0 0 0 0;
+            outline: none;
+            padding: 0;
+            width: 100%;
+            height: 7px;
+            background-color: #dbdbdb;
+            background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0D2131), color-stop(100%, #0D2131));
+            background-size: 0% 100%;
+            background-repeat: no-repeat;
+            border-radius: 10px;
+            cursor: pointer;
+            -webkit-appearance: none;
+        }
+
+        #mx_cl input[type=range]::-webkit-slider-runnable-track {
+            box-shadow: none;
+            border: none;
+            background: transparent;
+            -webkit-appearance: none;
+        }
+
+        #mx_cl input[type=range]::-webkit-slider-thumb {
+            height: 23px;
+            width: 23px;
+            margin-top: -1px;
+            background: #9506E6;
+            border: 5px solid #9506E6;
+            border-radius: 25px;
+            -webkit-appearance: none;
+        }
+
+        #mx_cl input[type=range]::-moz-range-track {
+            box-shadow: none;
+            border: none;
+            background: transparent;
+            -webkit-appearance: none;
+        }
+
+        #mx_cl input[type=range]::-moz-range-thumb {
+            height: 20px;
+            width: 20px;
+            margin-top: -4px;
+            background: #0D2131;
+            border: 5px solid #0D2131;
+            border-radius: 25px;
+            box-shadow: 0 2px 2px 0px #0D2131;
+            -webkit-appearance: none;
+        }
+
+        #mx_cl .em-mid-slide-sec {
+            display: flex;
+            margin-top: 30px;
+        }
+
+        #mx_cl .em-add-border-radius {
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        #mx_cl .em-table-section {
+            padding: 20px;
+            border: 1px solid #9506E6;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        #mx_cl .em-common-span {
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        #mx_cl .em-table-output {
+            font-weight: 600;
+            font-size: 20px;
+            color: #9506E6;
+            text-align: right;
+        }
+
+        #mx_cl .em-note-section {
+            text-align: center;
+            margin-top: 20px;
+            font-style: italic;
+            font-size: small;
+        }
+
+        #mx_cl .em-footer {
+            font-weight: 600;
+            font-size: 20px;
+            color: #464646;
+            margin-top: 25px;
+        }
+
+        #mx_cl .em-footer-span {
+            margin-left: 8px;
+            color: #9506E6;
+            border: none;
+            font-size: 20px;
+            background-color: #fff;
+        }
+
+        #mx_cl .inner-content {
+            padding: 35px;
+        }
+        #mx_cl .em-first-td{
+            border-top: none !important;
+        }
+        @media (max-width: 768px) {
+            #mx_cl .inner-content {
+                padding: 15px;
+            }
+
+            #mx_cl .top-title {
+                font-size: 20px;
+                background-color: #9506E6;
+                color: #ffffff;
+                text-align: center;
+                padding: 15px;
+                border-radius: 8px 8px 0px 0px;
+                margin-bottom: 0px;
+            }
+
+            #mx_cl .em-sub-heading {
+                font-size: 16px;
+            }
+
+            #mx_cl .em-tab-design {
+                font-size: 16px;
+            }
+
+            #mx_cl .em-mid-sub-heading {
+                font-weight: 600;
+                font-size: 16px;
+                color: #9506E6;
+                margin: 0px;
+            }
+
+            #mx_cl .em-mid-span {
+                font-size: 13px;
+                font-weight: 400;
+            }
+
+            #mx_cl .em-common-span {
+                font-weight: 600;
+                font-size: 14px;
+            }
+
+            #mx_cl .em-table-section {
+                padding: 5px;
+                border: 1px solid #9506E6;
+                border-radius: 8px;
+                margin-top: 30px;
+            }
+
+            #mx_cl .em-table-output {
+                font-weight: 600;
+                font-size: 18px;
+                color: #9506E6;
+                text-align: right;
+            }
+
+            #mx_cl .btn {
+
+                font-weight: 400;
+                font-size: 18px;
+                width: 90%;
+                text-align: center;
+
+            }
+
+            #mx_cl .em-footer-sec {
+                text-align: center;
+            }
+
+            #mx_cl .em-footer {
+                font-size: 18px;
+            }
+
+            #mx_cl .em-footer-span {
+                font-size: 18px;
+               
+            }
+
+            #mx_cl .em-common-td-span {
+                font-size: 13px;
+            }
+
+            #mx_cl .em-tab-design {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+            }
+        }
+    </style>
+    <div class="ms-cl" id="mx_cl">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="em-context">
+                        <h3 class="top-title">CALCULATE YOUR EARNINGS</h3>
+                        <div class="inner-content">
+                            <h3 class="em-sub-heading">Tabs</h3>
+                            <div class="em-tab-section">
+                                <span class="em-tab-design">Movies</span>
+                                <span class="em-tab-design em-junck">Junck removal</span>
+                                <span class="em-tab-design">Labor</span>
+                            </div><br>
+                            <h3 class="em-sub-heading">Filters:</h3>
+                            <div class="em-tab-section">
+                                <span class="em-tab-design">Driver</span>
+                                <span class="em-tab-design em-junck">Helper</span>
+                            </div>
+                            <div class="em-mid-section">
+                                <h3 class="em-mid-sub-heading">Select how many daily jobs you want.</h3>
+                                <span class="em-mid-span">Calculations below based on $50 avg. per job.</span>
+                            </div>
+                            <div class="em-mid-slide-sec">
+                                <label for="Reps" style="flex:3">Reps:</label>
+                                <input type="text" class="form-control em-add-border-radius" id="reps_value"
+                                    style="width: 27%;">
+                            </div>
+                            <div class="form-group">
+                                <div class="slidecontainer">
+
+                                    <input type="range" min="1" max="12" value="1" step="1" class="slider cl-in"
+                                        id="in_2">
+                                </div>
+                            </div>
+                            <div class="em-table-section">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td class="em-first-td"><span class="em-common-span">Daily Earnings<br></span><span
+                                                    class="em-common-td-span">x 1 day</span>
+                                            </td>
+                                            <td class="em-table-output em-first-td">$50.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="em-common-span">Weekly Earnings<br></span><span
+                                                    class="em-common-td-span">x 6 days per week</span>
+                                            </td>
+                                            <td class="em-table-output">$300.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="em-common-span">Monthly Earning<br></span><span
+                                                    class="em-common-td-span">
+                                                    x 4 Weeks (24 Days)</span></td>
+                                            <td class="em-table-output">$1,200.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="em-common-span">Yearly Earning<br></span><span
+                                                    class="em-common-td-span">x 52 weeks (312
+                                                    days)</span>
+                                            </td>
+                                            <td class="em-table-output">$15,600.00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="em-note-section">
+                                <span>**Earnings are based on averages only and can<br> vary depending on location,
+                                    seasonality, etc.</span>
+                            </div>
+                            <div class="em-footer-sec">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <button type="button" class="btn btn-primary">SIGN UP TODAY -></button><br>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="em-footer">Have an account<button class="em-footer-span">Log
+                                                in?></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        
+    </script>
+</body>
+
+</html>

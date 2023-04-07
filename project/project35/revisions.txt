@@ -1,0 +1,17 @@
+Revisions:
+=1. Correct spelling in Financial Summary area for “Initian Down Payment:” should be “Initial Down Payment:”
+=2. Rename “Per Dgainer” to “Dgainer”
+=3. Place a row of space above “Total Treatment Fee:” like you have above “Subtotal”
+=4. Place a row of space above “If not starting today, Monthly Payment of:”
+!5. Make the value for “Less: Same-Day Start Discount:” be center justified in its cell?
+=6. Change for the increments for change on the Down Payment scroller are in increments of $25 instead of $250
+=7. Change for the increments for change on the Monthly Payment scroller are in increments of $5 instead of $10
+=8. Remove the pictures for In-Office Zoom Whitening and Take-Home Whitening Kit
+!9. Correct the Base Treatment Fee for Braces should be $3998, it is showing as $2998
+!10. Correct the Base Treatment Fee for Invisalign should be $4998, it is showing as $3998
+=11. Could you put a lighter purple box behind “Treatment Type:” and its options to make it stand out separately from the rest
+!12. In Treatment Summary, change so that “Service Options:” shows the services that are checked (None, Preferred Appointment Times, VIP Service Line, or Preferred Appointment Times and VIP Service Line) instead of the dollar amount, similar to how “Whitening” functions
+=13. Move the “Insurance Contracted Rate:” and “Less: Insurance Benefit:” to below the scroll bars
+!14. In that area below the scroll bars, add an input field for “Additional Discount:” similar to “Insurance Contracted Rate:”, and add a line in Financial Summary for “Additional Discount:” after “Less: Same-Day Start Discount:” that equals the negative value of the inputted value
+!15. In that area below the scroll bars, add a option for “Paying in Full:” with a Yes/No option, and add a line in Financial Summary for “Pay in Full Discount:” after “Additional Discount:” that will show the an amount that is equal to ((Subtotal – Less: Same-Day Start Discount – Additional Discount)*0.03), and update “Total Treatment Fee:” to incorporate this and other discount if applied
+!16. Can we add a button under Print to Email the summary that is inputted… it would send as a PDF or something static?
