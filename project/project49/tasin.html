@@ -1,0 +1,472 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <title>Web Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body>
+<style>
+#mx_cl *, ::after, ::before {
+    box-sizing: border-box;
+}
+#mx_cl {
+    line-height: 1.5;
+    font-family: inherit;
+}
+#mx_cl .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4a4a4a;
+    text-align: left;
+}
+#mx_cl .cl-wrapper {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    padding: 50px 60px;
+}
+#mx_cl label {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    color: #000;
+}
+#mx_cl .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+#mx_cl .col-md-1, #mx_cl .col-md-10, #mx_cl .col-md-11, #mx_cl .col-md-12, #mx_cl .col-md-2, #mx_cl .col-md-3, #mx_cl .col-md-4, #mx_cl .col-md-5, #mx_cl .col-md-6, #mx_cl .col-md-7, #mx_cl .col-md-8, #mx_cl .col-md-9 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+#mx_cl .form-group {
+    margin-bottom: 1rem;
+}
+#mx_cl .form-control {
+    display: block;
+    width: 100%;
+    height: 48px;
+    padding: 0.275rem 0.75rem;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4a4a4a;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#mx_cl .form-control:focus {
+    outline: none;
+}
+.ms-cl .tick-mark {
+    background-color: #ffffff;
+    padding: 2px;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #DBDBDB;
+    cursor: pointer;
+    display: flex;
+    margin-right: 10px;
+}
+.ms-cl .tick-mark.is-active{
+    color: #000;
+}
+#mx_cl .tck-mark{
+    margin-bottom: 0;
+    display: inline-block;
+}
+#mx_cl table {
+    border-collapse: collapse;
+}
+#mx_cl .table {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 1rem;
+    color: #212529;
+}
+#mx_cl .table td, #mx_cl .table th {
+    padding: 5px;
+    vertical-align: top;
+    border-bottom: 1px solid #E2E2E2;
+}
+#mx_cl .text-center {
+    text-align: center;
+}
+#mx_cl .form-width-sec {
+    text-align: right;
+}
+#mx_cl .sp-rs-sec {
+    background-color: #00989D;
+    border-radius: 8px;
+    padding: 20px 25px;
+    text-align: center;
+    margin-top: 20px;
+}
+#mx_cl .rs-title {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+}
+#mx_cl .rs-value {
+    color: #fff;
+    font-size: 26px;
+    font-weight: 700;
+}
+#mx_cl .sp-gross-sec {
+    background-color: #F9A13B;
+    border-radius: 8px;
+    padding: 20px 25px;
+    text-align: center;
+    margin-top: 20px;
+    height: 117px;
+}
+#mx_cl .gross-title {
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+}
+#mx_cl .gross-vl {
+    color: #fff;
+    font-size: 26px;
+    font-weight: 700;
+}
+@media (min-width: 576px){
+    #mx_cl .container {
+        max-width: 100%;
+    }
+}
+@media (min-width: 768px){
+    #mx_cl .container {
+        max-width: 100%;
+    }
+    #mx_cl .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    #mx_cl .col-md-9 {
+        -ms-flex: 0 0 75%;
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+    #mx_cl .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+    #mx_cl .col-md-7 {
+        -ms-flex: 0 0 58.33333%;
+        flex: 0 0 58.33333%;
+        max-width: 58.33333%;
+    }
+    #mx_cl .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    #mx_cl .col-md-5 {
+        -ms-flex: 0 0 41.666667%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    #mx_cl .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    #mx_cl .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+@media (min-width: 992px){
+    #mx_cl .container {
+        max-width: 960px;
+    }
+}
+@media (min-width: 1200px) {
+    #mx_cl .container {
+        max-width: 1150px;
+    }
+}
+#mx_cl .text-right {
+    text-align: right ;
+}
+#mx_cl .form-group, #mx_cl .input-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+@media (max-width: 768px){
+    #mx_cl .cl-wrapper {
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+        border-radius: 8px;
+        padding: 20px 25px;
+    }
+}
+#mx_cl .top-title {
+    font-size: 25px;
+}
+#mx_cl .check-box {
+    display: flex;
+}
+#mx_cl .check-box-sec {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    height: 45px;
+}
+</style>
+<div class="ms-cl" id="mx_cl">
+    <div class="container cl-wrapper">
+        <div class="row">
+            <div class="col-md-6">
+               <div class="form-group">
+                <label for="">Role</label>
+                <select class="form-control" id="in_role">
+                    <option selected value="">Select a role</option>
+                    <option value="1">Clinical pharmacist</option>
+                    <option value="2">Advanced practitioner (Clinical pharmacist, Physiotherapist, Dietitian, Podiatrist, Occupational therapist, Paramedic)</option>
+                    <option value="3">Pharmacy technician</option>
+                    <option value="4">Social prescribing link worker</option>
+                    <option value="5">Health and wellbeing coach</option>
+                    <option value="6">Care coordinator</option>
+                    <option value="7">Physician associate</option>
+                    <option value="8">First contact physiotherapist</option>
+                    <option value="9">Dietician</option>
+                    <option value="10">Podiatrist</option>
+                    <option value="11">Occupational therapist</option>
+                    <option value="12">Trainee nursing associate </option>
+                    <option value="13">Nursing associate </option>
+                    <option value="14">Paramedic</option>
+                    <option value="15">General Practice Assitant</option>
+                    <option value="16">Digital & Transformation Lead</option>
+                    <option value="17">Adult Mental Health Practitioner (Band 4)</option>
+                    <option value="18">Adult Mental Health Practitioner (Band 5)</option>
+                    <option value="19">Adult Mental Health Practitioner (Band 6)</option>
+                    <option value="20">CYP Mental Health Practitioner (Band 7)</option>
+                    <option value="21">CYP Mental Health Practitioner (Band 8a)</option>
+                </select>
+               </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="">&nbsp;</label>
+                <div class="check-box-sec">
+                    <div class="check-box" data-value="3">
+                        <span class="tick-mark">✔</span>
+                        <span style="cursor: pointer;">No London</span>
+                   </div>
+                    <div class="check-box" data-value="1">
+                        <span class="tick-mark">✔</span>
+                        <span style="cursor: pointer;">Inside London</span>
+                   </div>
+                    <div class="check-box" data-value="2">
+                        <span class="tick-mark">✔</span>
+                        <span style="cursor: pointer;">Outside London</span>
+                   </div>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                 <label for="">Days per week</label>
+                 <select class="form-control" id="days_per_week">
+                     <option selected value="">Regular</option>
+                     <option value="1">1 day a week</option>
+                     <option value="2">2 days a week</option>
+                     <option value="3">3 days a week</option>
+                     <option value="4">4 days a week</option>
+                 </select>
+                </div>
+             </div>
+            <div class="col-md-12">
+                <table class="table form-table">
+                    <tbody>
+                        <tr>
+                            <td>Indicative AfC band</td>
+                            <td class="form-width-sec" id="rs_1">-</td>
+                        </tr>
+                        <tr>
+                            <td>Annual maximum reimbursable amount per role (2022/23)</td>
+                            <td class="form-width-sec" id="rs_2">£0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Maximum reimbursable amount per month (2022/23)</td>
+                            <td class="form-width-sec" id="rs_3">£0.00</td>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-4">
+                <div class="sp-rs-sec">
+                    <div class="rs-title">Employers National Insurance</div>
+                    <div class="rs-value" id="rs_4">£0.00</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="sp-rs-sec">
+                    <div class="rs-title">Employers NHS Pension</div>
+                    <div class="rs-value" id="rs_5">£0.00</div>
+                </div>
+                
+            </div>
+            <div class="col-md-4">
+                <div class="sp-rs-sec">
+                    <div class="rs-title">Total cost to PCN</div>
+                    <div class="rs-value" id="rs_6">£0.00</div>
+                </div>
+                
+            </div>
+            <div class="col-md-4">
+                <div class="sp-gross-sec">
+                    <div class="gross-title">Gross PA Max. to employee</div>
+                    <div class="gross-vl" id="rs_7">£0.00</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="sp-gross-sec">
+                    <div class="gross-title">Gross Hourly rate to employee<span style="display: block; font-size: 10px; margin: 0; padding: 0;">(assumes 37.5hrs)</span></div>
+                    <div class="gross-vl" id="rs_8">£0.00</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="sp-gross-sec">
+                    <div class="gross-title">Under/(Overspend)</div>
+                    <div class="gross-vl" id="rs_9">£0.00</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    jQuery(($)=>{
+        const nftd = Intl.NumberFormat("en-US",{
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+        let data_arr = [
+            [[59312,47250],[68768,54625],[65948,52425]],
+            [[65002,51690],[72340,57415],[71638,56865]],
+            [[38187,30770],[46076,36925],[44104,35385]],
+            [[38187,30770],[46076,36925],[44104,35385]],
+            [[38187,30770],[46076,36925],[44104,35385]],
+            [[31746,25745],[38346,30895],[37011,29850]],
+            [[57465,45810],[66921,53185],[64101,50985]],
+            [[59312,47250],[68768,54625],[65948,52425]],
+            [[57465,45810],[66921,53185],[64101,50985]],
+            [[57465,45810],[66921,53185],[64101,50985]],
+            [[57465,45810],[66921,53185],[64101,50985]],
+            [[28177,22960],[34442,27845],[33443,27070]],
+            [[31746,25745],[38346,30895],[37011,29850]],
+            [[57465,45810],[66921,53185],[64101,50985]],
+            [[31746,25745],[38346,30895],[37011,29850]],
+            [[65002,51690],[74457,59065],[71638,56865]],
+            [[15873,13360],[19173,15935],[18506,15415]],
+            [[19094,15875],[23038,18950],[22052,18180]],
+            [[23551,19350],[28279,23040],[26869,21940]],
+            [[28733,23395],[33460,27080],[32050,25980]],
+            [[32501,26335],[37229,30020],[35819,28920]]
+        ];
+
+        let band_arr = ["7-8a","5","Up to 5","Up to 5","4","7","7-8a","7","7","7","3","4","7","4","8a","4","5","6","7","8a"];
+
+        let loc_sts = 0, role_ind = 0;
+        let inc_vl = 9100;
+
+        $('.check-box').on("click",function(){
+            let tick_mark = $('.check-box').find('.tick-mark');
+
+            let vl = 0;
+            if ($(this).find('.tick-mark').hasClass('is-active')){
+                tick_mark.removeClass('is-active');
+                loc_sts = 0;
+            } else{
+                tick_mark.removeClass('is-active');
+                $(this).find('.tick-mark').addClass('is-active');
+                vl = $(this).data('value');
+                loc_sts = vl;
+            }
+            calcFunc();
+        });
+
+        $('#in_role').on("input",function(){
+            let vl = Number($(this).val());
+
+            role_ind = vl;
+            calcFunc();
+        });
+        function calcFunc(){
+            if (role_ind){
+                let ind = role_ind - 1;
+                let arr = data_arr[ind]
+
+                let arr2 = arr[loc_sts];
+
+                let x = arr2[0];
+                let y = arr2[1];
+
+                rs_1 = band_arr[ind];
+                rs_2 = x;
+                rs_3 = x/12;
+                rs_4 = (y-inc_vl)*0.138;
+                rs_5 = y*0.1438;
+                rs_6 = y+rs_4+rs_5;
+                rs_7 = y;
+                rs_8 = (y/52)/37.5;
+                rs_9 = x-rs_6;
+
+                $("#rs_1").text(rs_1);
+                $("#rs_2").text("£"+nftd.format(rs_2));
+                $("#rs_3").text("£"+nftd.format(rs_3));
+                $("#rs_4").text("£"+nftd.format(rs_4));
+                $("#rs_5").text("£"+nftd.format(rs_5));
+                $("#rs_6").text("£"+nftd.format(rs_6));
+                $("#rs_7").text("£"+nftd.format(rs_7));
+                $("#rs_8").text("£"+nftd.format(rs_8));
+                $("#rs_9").text("£"+nftd.format(rs_9));
+            } else{
+                $("#rs_1").text("-");
+                $("#rs_2").text("£"+nftd.format(0));
+                $("#rs_3").text("£"+nftd.format(0));
+                $("#rs_4").text("£"+nftd.format(0));
+                $("#rs_5").text("£"+nftd.format(0));
+                $("#rs_6").text("£"+nftd.format(0));
+                $("#rs_7").text("£"+nftd.format(0));
+                $("#rs_8").text("£"+nftd.format(0));
+                $("#rs_9").text("£"+nftd.format(0));
+            }
+        }
+    });
+</script>
+</body>
+</html>

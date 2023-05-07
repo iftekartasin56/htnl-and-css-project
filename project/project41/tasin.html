@@ -104,37 +104,16 @@
             outline: none;
         }
 
-        #mx_cl .btn {
+        #mx_cl .bot-sign-up {
+            color: #fff;
+            background-color: #9506E6;
             display: inline-block;
-            font-weight: 400;
-            color: #212529;
-            text-align: left;
-            vertical-align: middle;
+            font-weight: 600; 
             cursor: pointer;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            background-color: transparent;
-            border: 1px solid transparent;
-            padding: .575rem .85rem;
-            font-weight: 400;
-            font-size: 22px;
-            width: 100%;
-            transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+            padding: 10px 15px;
+            font-size: 18px;
             margin-top: 20px;
-        }
-
-        #mx_cl .btn-primary {
-            color: #fff;
-            background-color: #9506E6;
-            border-color: #9506E6;
-        }
-
-        #mx_cl .btn-reset {
-            color: #fff;
-            background-color: #9506E6;
-            border-color: #9506E6;
+            text-decoration: none;
         }
 
         #mx_cl table {
@@ -282,12 +261,19 @@
             width: 100%;
             text-align: center;
             padding: 10px;
+            cursor: pointer;
         }
 
         #mx_cl .em-tab-design:hover {
             background: #9506E6;
             color: #ffffff;
         }
+        
+        #mx_cl .em-tab-design.active {
+            background-color: #9506E6;
+            color: #ffffff;
+        }
+        
 
         #mx_cl .em-mid-section {
             margin-top: 20px;
@@ -364,6 +350,7 @@
         #mx_cl .em-add-border-radius {
             border-radius: 5px;
             text-align: center;
+            height: 35px;
         }
 
         #mx_cl .em-table-section {
@@ -405,6 +392,7 @@
             border: none;
             font-size: 20px;
             background-color: #fff;
+            text-decoration: none;
         }
 
         #mx_cl .inner-content {
@@ -510,29 +498,29 @@
                         <div class="inner-content">
                             <h3 class="em-sub-heading">Tabs</h3>
                             <div class="em-tab-section">
-                                <span class="em-tab-design">Movies</span>
-                                <span class="em-tab-design em-junck">Junck removal</span>
-                                <span class="em-tab-design">Labor</span>
+                                <span class="em-tab-design in-1" data-value="moves">Moves</span>
+                                <span class="em-tab-design em-junck in-1" data-value="removal">Junck removal</span>
+                                <span class="em-tab-design in-1" data-value="labor">Labor</span>
                             </div><br>
-                            <h3 class="em-sub-heading">Filters:</h3>
-                            <div class="em-tab-section">
-                                <span class="em-tab-design">Driver</span>
-                                <span class="em-tab-design em-junck">Helper</span>
+                            <h3 class="em-sub-heading sp-hide">Filters:</h3>
+                            <div class="em-tab-section sp-hide">
+                                <span class="em-tab-design in-2" data-value="driver">Driver</span>
+                                <span class="em-tab-design em-junck in-2" data-value="helper">Helper</span>
                             </div>
                             <div class="em-mid-section">
                                 <h3 class="em-mid-sub-heading">Select how many daily jobs you want.</h3>
                                 <span class="em-mid-span">Calculations below based on $50 avg. per job.</span>
                             </div>
                             <div class="em-mid-slide-sec">
-                                <label for="Reps" style="flex:3">Reps:</label>
-                                <input type="text" class="form-control em-add-border-radius" id="reps_value"
+                                <label for="Reps" style="flex:3">Number of jobs completed per day:</label>
+                                <input type="text" class="form-control em-add-border-radius" id="in_3_vl"
                                     style="width: 27%;">
                             </div>
                             <div class="form-group">
                                 <div class="slidecontainer">
 
                                     <input type="range" min="1" max="12" value="1" step="1" class="slider cl-in"
-                                        id="in_2">
+                                        id="in_3">
                                 </div>
                             </div>
                             <div class="em-table-section">
@@ -542,26 +530,26 @@
                                             <td class="em-first-td"><span class="em-common-span">Daily Earnings<br></span><span
                                                     class="em-common-td-span">x 1 day</span>
                                             </td>
-                                            <td class="em-table-output em-first-td">$50.00</td>
+                                            <td class="em-table-output em-first-td" id="rs_1">$0.00</td>
                                         </tr>
                                         <tr>
                                             <td><span class="em-common-span">Weekly Earnings<br></span><span
                                                     class="em-common-td-span">x 6 days per week</span>
                                             </td>
-                                            <td class="em-table-output">$300.00</td>
+                                            <td class="em-table-output" id="rs_2">$0.00</td>
                                         </tr>
                                         <tr>
                                             <td><span class="em-common-span">Monthly Earning<br></span><span
                                                     class="em-common-td-span">
                                                     x 4 Weeks (24 Days)</span></td>
-                                            <td class="em-table-output">$1,200.00</td>
+                                            <td class="em-table-output" id="rs_3">$0.00</td>
                                         </tr>
                                         <tr>
                                             <td><span class="em-common-span">Yearly Earning<br></span><span
                                                     class="em-common-td-span">x 52 weeks (312
                                                     days)</span>
                                             </td>
-                                            <td class="em-table-output">$15,600.00</td>
+                                            <td class="em-table-output" id="rs_4">$0.00</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -573,11 +561,11 @@
                             <div class="em-footer-sec">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <button type="button" class="btn btn-primary">SIGN UP TODAY -></button><br>
+                                        <a href="#" class="bot-sign-up">SIGN UP TODAY--></a>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="em-footer">Have an account<button class="em-footer-span">Log
-                                                in?></button>
+                                        <div class="em-footer">Have an account<a href="#" class="em-footer-span">Log
+                                                in?> </a>
                                         </div>
                                     </div>
                                 </div>
@@ -591,7 +579,86 @@
 
 
     <script>
-        
+        jQuery(($) => {
+            let in_1 = 0, in_2 = 0, in_3 = 0;
+            let cl_labor = 1;
+
+            let driver_price = 90;
+            let helper_price = 60;
+            let labor_price = 50;
+
+            const nftd = Intl.NumberFormat("en-US", {
+                minimumFractionDigits:2,
+                maximumFractionDigits:2
+            });
+
+            $("#in_3").on("input", function (e) {
+                var min = Number(e.target.min),
+                    max = Number(e.target.max),
+                    vl = Number(e.target.value),
+                    val = Number(e.target.value);
+                $("#in_3_vl").val(vl);
+                console.log(in_3_vl);
+                let in_id = $(this).attr("id");
+
+                if (min == 0) {
+                    min = min + 1;
+                    max = max + 1;
+                    val = val + 1;
+                }
+                in_3 = vl;
+                let bg_size = ((val - min) * 100) / (max - min);
+
+                $(e.target).css({
+                    backgroundSize: bg_size + "% 100%",
+                });
+                calc();
+            }).trigger("input"); 
+            
+            $(".in-1").on("click", function(){
+                in_1 = $(this).data("value");
+
+                $(".in-1").removeClass("active");
+                $(this).addClass("active");
+
+                if(in_1 == 'labor'){
+                    $('.sp-hide').hide();
+                } else{
+                    $('.sp-hide').show();
+                }
+                calc();
+            });
+            $(".in-2").on("click", function(){
+                in_2 = $(this).data("value");
+
+                $(".in-2").removeClass("active");
+                $(this).addClass("active");
+                calc();
+            });
+            
+            function calc(){
+                let price = 0;
+                if(in_1 == 'moves' || in_1 == 'removal'){
+                    if(in_2 == 'driver'){
+                        price = driver_price;
+                    } else{
+                        price = helper_price;
+                    }
+                } else{
+                    price = labor_price;
+                }
+                
+                rs_1 = 1*(price*in_3);
+                rs_2 = 6*rs_1;
+                rs_3 = 24*rs_1;
+                rs_4 = 312*rs_1;
+
+                $("#rs_1").text("$"+nftd.format(rs_1));
+                $("#rs_2").text("$"+nftd.format(rs_2));
+                $("#rs_3").text("$"+nftd.format(rs_3));
+                $("#rs_4").text("$"+nftd.format(rs_4));
+            };
+        });
     </script>
 </body>
 
