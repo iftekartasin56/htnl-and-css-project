@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -162,6 +163,11 @@
     background-color: #2b3136;
     border-color: #2b3136;
 }
+#hm_cl .btn-primary.is-active {
+    color: #fff;
+    background-color: #2b3136;
+    border-color: #2b3136;
+}
 #hm_cl .rs-vl {
     text-align: right;
     font-weight: 500;
@@ -313,21 +319,31 @@
                             <h3>Enter Distance</h3>
                             <hr>
                         </div>
-                        <div class="col-md-12 space-1"></div>
                         <div class="col-md-12">
+                            <button type="button" class="btn btn-primary sp-mb dstn-check is-active" data-value="1" id="miles_yards">Miles,Yards</button>
+                            <button type="button" class="btn btn-primary sp-mb dstn-check" data-value="2" id="meters">Meters</button>
+                        </div>
+                        <div class="col-md-12 space-1"></div>
+                        <div class="col-md-12" id="miles_yards2">
                             <table class="table">
                                 <tr>
                                     <td class="title-td">Miles =</td>
                                     <td>
-                                        <input type="text" name="width" class="form-control" id="in_1">
+                                        <input type="text" name="width" class="form-control distance" id="in_1">
                                     </td>
                                     <td class="title-td" style="padding-left: 10px;">Yards =</td>
                                     <td>
-                                        <input type="text" name="width" class="form-control" id="in_2">
+                                        <input type="text" name="width" class="form-control distance" id="in_2">
                                     </td>
-                                    <td class="title-td" style="padding-left: 10px;">Meters =</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-md-12" id="meters2" style="display: none;">
+                            <table class="table">
+                                <tr>
+                                    <td class="title-td">Meters =</td>
                                     <td>
-                                        <input type="text" name="width" class="form-control" id="in_6">
+                                        <input type="text" name="width" class="form-control distance" id="in_6">
                                     </td>
                                 </tr>
                             </table>
@@ -378,6 +394,22 @@
 </div>
 <script>
 jQuery(function($){
+    $(".dstn-check").on("click", function(){
+
+        $(".distance").val("");
+
+        $(".dstn-check").removeClass("is-active");
+        $(this).addClass("is-active");
+
+        let milesYards = $(this).data("value");
+        if(milesYards == 1){
+            $("#miles_yards2").show();
+            $("#meters2").hide();
+        } else if(milesYards == 2){
+            $("#meters2").show();
+            $("#miles_yards2").hide();
+        }
+    })
     $("#btn_ypm").on("click", function(){
         getInputs()
         calc_ypm();

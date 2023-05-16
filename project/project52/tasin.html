@@ -1,0 +1,945 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <title>HYPO calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script> 
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+<!-----------Please copy and paste following code into any HTML element ---------------->
+
+<!----------- copy starts ---------------->
+<style>
+#hm_cl *, ::after, ::before {
+    box-sizing: border-box;
+}
+#hm_cl {
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+}
+#hm_cl .container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    text-align: left;
+    padding-right: 0;
+    padding-left: 0;
+}
+#hm_cl label {
+    display: block;
+    text-align: left;
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 500;
+}
+#hm_cl .table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 0rem;
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 5px;
+}
+#hm_cl .table td, #hm_cl .table th {
+    padding: .65rem 5px;
+    vertical-align: middle;
+    border-right: none !important;
+    border-left: none !important;
+    border-top: none !important;
+    font-size: 16px;
+    background: transparent;
+    box-shadow: none;
+    color:#000000;
+}
+#hm_cl .table th {
+    text-align: left;
+    font-weight: 500;
+}
+#hm_cl .w25 {
+    width: 25%;
+}
+#hm_cl .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0;
+}
+#hm_cl .col, #hm_cl .col-1, #hm_cl .col-10, #hm_cl .col-11, #hm_cl .col-12, #hm_cl .col-2, #hm_cl .col-3, #hm_cl .col-4, #hm_cl .col-5, #hm_cl .col-6, #hm_cl .col-7, #hm_cl .col-8, #hm_cl .col-9, #hm_cl .col-auto, #hm_cl .col-lg, #hm_cl .col-lg-1, #hm_cl .col-lg-10, #hm_cl .col-lg-11, #hm_cl .col-lg-12, #hm_cl .col-lg-2, #hm_cl .col-lg-3, #hm_cl .col-lg-4, #hm_cl .col-lg-5, #hm_cl .col-lg-6, #hm_cl .col-lg-7, #hm_cl .col-lg-8, #hm_cl .col-lg-9, #hm_cl .col-lg-auto, #hm_cl .col-md, #hm_cl .col-md-1, #hm_cl .col-md-10, #hm_cl .col-md-11, #hm_cl .col-md-12, #hm_cl .col-md-2, #hm_cl .col-md-3, #hm_cl .col-md-4, #hm_cl .col-md-5, #hm_cl .col-md-6, #hm_cl .col-md-7, #hm_cl .col-md-8, #hm_cl .col-md-9, #hm_cl .col-md-auto, #hm_cl .col-sm, #hm_cl .col-sm-1, #hm_cl .col-sm-10, #hm_cl .col-sm-11, #hm_cl .col-sm-12, #hm_cl .col-sm-2, #hm_cl .col-sm-3, #hm_cl .col-sm-4, #hm_cl .col-sm-5, #hm_cl .col-sm-6, #hm_cl .col-sm-7, #hm_cl .col-sm-8, #hm_cl .col-sm-9, #hm_cl .col-sm-auto, #hm_cl .col-xl, #hm_cl .col-xl-1, #hm_cl .col-xl-10, #hm_cl .col-xl-11, #hm_cl .col-xl-12, #hm_cl .col-xl-2, #hm_cl .col-xl-3, #hm_cl .col-xl-4, #hm_cl .col-xl-5, #hm_cl .col-xl-6, #hm_cl .col-xl-7, #hm_cl .col-xl-8, #hm_cl .col-xl-9, #hm_cl .col-xl-auto {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+#hm_cl .form-group {
+    margin-bottom: 2rem;
+}
+#hm_cl .form-control {
+    display: block;
+    width: 100%;
+    height: 45px;
+    padding: 0.375rem 1.5rem 0.375rem 0.75rem;
+    font-family: 'Poppins', sans-serif;
+    text-align: right;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #212322;
+    background-color: transparent;
+    background-clip: padding-box;
+    border: none;
+    border-radius: 0;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#hm_cl .form-control:focus {
+    outline: none;
+}
+#hm_cl .input-group {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    width: 100%;
+}
+#hm_cl .text-center {
+    text-align: center!important;
+}
+#hm_cl .btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 25px;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#hm_cl .btn-primary {
+    background-color: #862026;
+    color: #ffffff;
+    width: 100%;
+}
+#hm_cl select option {
+    background-color: aliceblue;
+    color: #000000;
+}
+/* Custom css */
+#hm_cl .cl-wrapper {
+    position: relative;
+    background: #ffffff;
+    margin-top:30px;
+}
+#hm_cl .cl-left-div {
+    padding: 30px !important;
+    background: #ffffff;
+    border-radius: 10px;
+}
+#hm_cl .rs-sec {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+#hm_cl .rs-vl {
+    text-align: right;
+    font-weight: 500;
+}
+#hm_cl .p-2313 {
+    padding: 2rem 3rem 1rem 3rem !important;
+}
+#hm_cl .rs-sub-title-sp {
+    font-size: 20px;
+    margin: 2px;
+    border-bottom: 1px solid #cccccc;
+    font-weight: 600;
+    color: #862026;
+}
+#hm_cl .rs-sp-value {
+    font-size: 36px;
+    margin: 8px 2px 0px 2px;
+    color: #862026;
+    font-family: 'Poppins', sans-serif !important;
+}
+#hm_cl .top-title-sec {
+    margin: -75px 0 5px 0;
+}
+#hm_cl .top-title {
+    margin-top: 0;
+    padding-top: 0;
+    color: #000;
+    font-size: 30px;
+    border-bottom: 1px solid #cdcdcd;
+}
+#hm_cl .sub-title {
+    display: inline-block;
+    font-size: 20px;
+    margin: 10px 0 20px 0;
+    padding: 0 0 4px 0;
+    border-bottom: 1px solid #ccc;
+}
+#hm_cl .form-control-container {
+    background-color: #f3f4f8;
+    font-weight: 600;
+    color: #212322;
+    margin-top: 1.6em;
+}
+#hm_cl .middle-sec-output{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #212322; 
+    color: #fff;
+    padding: 40px;
+    font-size: 26px;
+    font-weight: 600;
+    border-radius: 5px;
+}
+#hm_cl .bottom-sec{
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#hm_cl .sp-output-title{
+    margin-top: 20px;
+}
+#hm_cl .sp-output{
+    background-color: #212322;
+    color: #fff;
+    padding: 10px;
+}
+#hm_cl .help-tip {
+    position: absolute;
+    top: 17px;
+    right: 30px;
+    text-align: center;
+    background-color: #ffffff;
+    border: 1px solid #b5b5b5;
+    color: #000;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 13px;
+    line-height: 26px;
+    cursor: default;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+    font-family: auto;
+}
+#hm_cl .help-tip p {
+    display: none;
+    text-align: left;
+    background-color: #f7f7f7;
+    padding: 20px;
+    width: 300px;
+    position: absolute;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px rgb(0 0 0 / 20%);
+    left: -9px;
+    color: #000;
+    font-size: 14px;
+    line-height: 1.4;
+    top: 13px;
+    z-index: 10;
+    font-family: Arial, sans-serif;
+}
+#hm_cl .help-tip:hover p {
+    display: block;
+    font-style: normal;
+    transform-origin: 100% 0%;
+    -webkit-animation: fadeIn 0.3s ease-in-out;
+    animation: fadeIn 0.3s ease-in-out;
+}
+#hm_cl .help-tip:before {
+    content: "i";
+    font-weight: bold;
+    color: #000;
+}
+/* responsive */
+
+@media (max-width: 768px){
+    #hm_cl .cl-left-div {
+        padding: 1rem 2rem !important;
+    }
+    #hm_cl .cl-right-div {
+        padding: 2rem 1rem !important;
+        border-radius: 0 0 8px 8px;
+    }
+    #hm_cl .input-group {
+        margin-bottom: 10px;
+    }
+    #hm_cl .form-control {
+        height: auto;
+        padding: .175rem 3.5rem .175rem .75rem;
+    }
+    #hm_cl label {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+    #hm_cl .rs-sec {
+        flex-direction: column;
+    }
+}
+@media (min-width: 576px){
+    #hm_cl .container, #hm_cl .container-sm {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px){
+    #hm_cl .container, #hm_cl .container-md, #hm_cl .container-sm {
+        max-width: 100%;
+    }
+    #hm_cl .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    #hm_cl .col-md-9 {
+        -ms-flex: 0 0 75%;
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+    #hm_cl .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+    #hm_cl .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    #hm_cl .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    #hm_cl .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+@media (min-width: 992px){
+    #hm_cl .container, #hm_cl .container-lg, #hm_cl .container-md, #hm_cl .container-sm {
+        max-width: 800px;
+    }
+    #hm_cl .ds-none-dk{
+        display: none;
+    }
+}
+@media (min-width: 1200px) {
+    #hm_cl .container, #hm_cl .container-lg, #hm_cl .container-md, #hm_cl .container-sm, #hm_cl .container-xl {
+        max-width: 1100px;
+    }
+    #hm_cl .ds-none-dk{
+        display: none;
+    }
+}
+#hm_cl .range-wrap {
+    display: block;
+    position: relative;
+    padding: 0;
+    margin: 0 0 15px 0;
+}
+#hm_cl input[type=range] {
+    margin: 0 0 0 0;
+    outline: none;
+    padding: 0;
+    width: 100%;
+    height: 7px;
+    background-color: #ccc;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #212322), color-stop(100%, #212322));
+    border: 1px solid #ccc;
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+#hm_cl input[type=range]::-webkit-slider-runnable-track {
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    -webkit-appearance: none;
+}
+
+
+#hm_cl input[type=range]::-webkit-slider-thumb {
+    height: 20px;
+    width: 20px;
+    margin-top: -4px;
+    background: #ffffff;
+    border: 5px solid #212322;
+    border-radius: 25px;
+    box-shadow: 0 2px 2px 0px #646464;
+    -webkit-appearance: none;
+}
+#hm_cl .ms-sm-left {
+    display: inline-block;
+    font-size: 12px;
+    float: left;
+    color: #414141;
+}
+#hm_cl .ms-sm-right {
+    display: inline-block;
+    font-size: 12px;
+    float: right;
+    color: #414141;
+}
+#hm_cl hr {
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+#hm_cl .cl-rs-div-1 {
+    background: #e7e7e7;
+    padding: 20px;
+    border-right: 1px solid #e7e7e7;
+    border-radius: 0 0 0 10px;
+    color: #862026;
+}
+#hm_cl .cl-rs-div-2 {
+    background: #e7e7e7;
+    padding: 20px;
+    border-right: 1px solid #e7e7e7;
+    border-radius: 0;
+    color: #862026;
+}
+#hm_cl .cl-rs-div-3 {
+    background: #862026;
+    padding: 20px;
+    border-radius: 0 0 10px 0;
+    color: #ffffff;
+    cursor: pointer;
+}
+#hm_cl .rs-note {
+    font-weight: normal;
+}
+@media (max-width: 768px){
+    #hm_cl .range-wrap {
+        padding: 0;
+    }
+    #hm_cl .cl-rs-div-1 {
+        border-radius: 0;
+    }
+    #hm_cl .cl-rs-div-2 {
+        border-radius: 0;
+    }
+    #hm_cl .cl-rs-div-3 {
+        border-radius: 0 0 10px 10px;
+    }
+    #hm_cl .top-title-sec {
+        margin: -39px 0 5px 0;
+    }
+    #hm_cl .top-title {
+        font-size: 16px;
+    }
+    #hm_cl .sub-title {
+        font-size: 14px;
+    }
+}
+#hm_cl .optios-sec {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+#hm_cl .radio-option {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #ffffff;
+    padding: 6px 10px;
+    width: 50%;
+    border-radius: 0;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    color: #000000;
+    transition: all 0.2s;
+    font-size: 16px;
+    user-select: none;
+    border-bottom: 2px solid #cccccc;
+}
+#hm_cl .radio-option:hover {
+    background: #dddddd;
+    border-bottom: 2px solid #dddddd;
+}
+#hm_cl .radio-option.active {
+    background: #862026;
+    border-bottom: 2px solid #862026;
+    color:#ffffff;
+}
+#hm_cl .mr-right {
+    margin-right: 5px;
+}
+#hm_cl .sp-input-sec {
+    background: #862026;
+    color: #ffffff;
+    padding: 30px;
+}
+#hm_cl .err-msg {
+    color:red;
+    display: none;
+}
+#hm_cl .form-group, #hm_cl .input-group {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+#hm_cl .prepend-text {
+    font-size: 16px;
+    position: absolute;
+    bottom: 8px;
+    left: 20px;
+    padding: 1px 5px;
+    border-radius: 5px;
+    color: #000000;
+}
+#hm_cl .append-text {
+    font-size: 16px;
+    position: absolute;
+    bottom: 6px;
+    right: 8px;
+    padding: 1px 5px;
+    border-radius: 5px;
+    color: #000000;
+}
+#hm_cl .cus-link{
+    text-decoration: none;
+    color: #862026;
+}
+#hm_cl .text-right {
+    text-align: right;
+}
+#hm_cl .sp-rs-sec-sc {
+    padding: 15px;
+    margin: 5px 0;
+    color: #fff;
+    background-color: #00a700;
+}
+#hm_cl .sp-rs-sec-fl {
+    padding: 15px;
+    margin: 5px 0;
+    color: #fff;
+    background-color: #fa260a;
+}
+#hm_cl .btm-br {
+    border-bottom: 1px solid #919191;
+}
+#hm_cl .btm-br-2 {
+    border-bottom: 4px double #919191;
+}
+#hm_cl .not-valid {
+    color: #fff;
+    background-color: #fa260a;
+}
+#hm_cl .ds-none {
+    display: none;
+}
+@media (max-width: 768px){
+    #hm_cl .append-text {
+        font-size: 16px;
+        position: absolute;
+        bottom: 1px;
+        right: 8px;
+        padding: 1px 5px;
+        border-radius: 5px;
+        color: #000000;
+    }
+    
+    #hm_cl .table td, #hm_cl .table th {
+        font-size: 13px;
+    }
+}
+</style>
+<div class="ms-cl" id="hm_cl">
+    <div class="container cl-wrapper">
+       <div class="row">
+          <div class="col-md-12">
+             <div class="row">
+                <div class="col-md-12">
+                    <h3 class="top-title">Hypothekenrechner</h3>
+                    <p>Der Hypothekenrechner ist eine Orientierungshilfe, jedoch kein Garant für eine verbindliche Einschätzung.</p>
+                    <p>Machen Sie sich ein erstes Bild über die eigene Tragbarkeit und über Ihren finanziellen Spielraum.</p>
+                    <p class="sp-rs-sec-sc con-1" id="sc_msg">Glückwunsch – die Finanzierung ist möglich. Gerne holen wir die besten Offerten für Sie ein.</p>
+                    <p class="sp-rs-sec-fl ds-none" id="fl_msg">Die Hypothek übersteigt die Tragbarkeitsnormen. Gerne beraten wir Sie für weitere Möglichkeiten.</p>
+                </div>
+                <div class="col-md-8">
+                   <label for="in_1">Kaufpreis</label>
+                   <div class="range-wrap">
+                      <input id="in_1" class="range-bg-1 cl-in" type="range" min="0" max="8000000" value="1800000" step="10000">
+                   </div>
+                </div>
+                <div class="col-md-4">
+                   <div class="input-group">
+                      <input type="text" class="form-control cl-input  form-control-container" id="in_1_vl">
+                      <span class="prepend-text">CHF</span>
+                   </div>
+                </div>
+                <div class="col-md-8">
+                   <label for="in_1">Bruttoeinkommen</label>
+                   <div class="range-wrap">
+                      <input id="in_2" class="range-bg-1 cl-in" type="range" min="0" max="2000000" value="400000" step="1000">
+                   </div>
+                </div>
+                <div class="col-md-4">
+                   <div class="input-group">
+                      <input type="text" class="form-control cl-input  form-control-container" id="in_2_vl">
+                      <span class="prepend-text">CHF</span>
+                   </div>
+                </div>
+                <div class="col-md-8">
+                   <label for="in_1">Eigenmittel</label>
+                   <div class="range-wrap">
+                      <input id="in_3" class="range-bg-1 cl-in" type="range" min="0" max="4000000" value="500000" step="1000">
+                   </div>
+                   <span class="err-msg" id="sp_err_msg">Dieser Wert sollte mindestens 10 % des Feldkaufpreises betragen.</span>
+                </div>
+                <div class="col-md-4">
+                   <div class="input-group">
+                      <input type="text" class="form-control cl-input  form-control-container" id="in_3_vl">
+                      <span class="prepend-text">CHF</span>
+                   </div>
+                </div>
+                <div class="col-md-8">
+                   <label for="in_1" style="margin-top: 40px;">Höhe Ihrer Hypothek</label>
+                </div>
+                <div class="col-md-4">
+                   <div class="input-group">
+                      <input type="text" class="form-control form-control-container" id="in_4_vl" readonly>
+                      <span class="prepend-text">CHF</span>
+                   </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="middle-sec-output con-1">
+                        <div>Tragbarkeit</div>
+                        <div id="rs_0">0%</div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                   <table class="table form-table">
+                      <tbody>
+                         <tr>
+                            <th>
+                                <div style="padding: 5px;border-bottom: 1px solid #ccc;">Ihre jährlichen Kosten im Detail</div>
+                            </th>
+                            <th colspan="3">
+                                <div style="padding: 5px;border-bottom: 1px solid #ccc;">Simulierte Kosten 5%</div>
+                                <div class="help-tip">
+                                     <p>Zur Berechnung der Tragbarkeit einer Hypothek gehen die Hypothekenprovider von einem Zinssatz von 5 Prozent aus.</p> 
+                                </div>
+                            </th>
+                         </tr>
+                         <tr>
+                            <td>Zins p.a. für die Hypothek</td>
+                            <td>CHF</td>
+                            <td class="text-right" id="rs_11">0</td>
+                         </tr>
+                         <tr>
+                            <td>Nebenkosten</td>
+                            <td>CHF</td>
+                            <td class="text-right" id="rs_21">0</td>
+                         </tr>
+                         <tr>
+                            <td>Amortisation</td>
+                            <td class="btm-br">CHF</td>
+                            <td class="text-right btm-br" id="rs_31">0</td>
+                         </tr>
+                         <tr>
+                            <td>Total Kosten p.a.</td>
+                            <td class=" btm-br-2">CHF</td>
+                            <td class="text-right btm-br-2" id="rs_41">0</td>
+                         </tr>
+                      </tbody>
+                   </table>
+                </div>
+                <div class="col-md-4">
+                   <table class="table form-table">
+                      <tbody>
+                         <tr>
+                            <th class="ds-none-dk">
+                                <div style="padding: 5px;border-bottom: 1px solid #ccc;">Ihre jährlichen Kosten im Detail</div>
+                            </th>
+                            <th colspan="3">
+                                <div style="padding: 5px;border-bottom: 1px solid #ccc;">Effective Kosten 2.5%</div>
+                                <div class="help-tip">
+                                     <p>Dies soll den Satz einer 10-jährigen Festhypothek exemplarisch aufzeigen. Dies hat einen rein informativen Charakter und der Zinssatz ist unverbindlich zu verstehen.</p> 
+                                </div>
+                            </th>
+                         </tr>
+                         <tr>
+                            <td class="ds-none-dk">Zins p.a. für die Hypothek</td>
+                            <td>CHF</td>
+                            <td class="text-right" id="rs_01">0</td>
+                         </tr>
+                         <tr>
+                            <td class="ds-none-dk">Nebenkosten</td>
+                            <td>CHF</td>
+                            <td class="text-right" id="rs_02">0</td>
+                         </tr>
+                         <tr>
+                            <td class="ds-none-dk">Amortisation</td>
+                            <td class="btm-br">CHF</td>
+                            <td class="text-right btm-br" id="rs_03">0</td>
+                         </tr>
+                         <tr>
+                            <td class="ds-none-dk">Total Kosten p.a.</td>
+                            <td class="btm-br-2">CHF</td>
+                            <td class="text-right btm-br-2" id="rs_04">0</td>
+                         </tr>
+                      </tbody>
+                   </table>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="bottom-sec">
+                        <div class="sp-output-title">Monatliche effektive Kosten</div>
+                        <div class="sp-output con-1" id="rs_2">CHF 0</div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="bottom-sec">
+                        <div class="sp-output-title">Ihre möglichen Ersparnisse über 10 Jahre</div>
+                        <div class="sp-output con-1" id="rs_3">CHF 0</div>
+                    </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+<script>
+jQuery(function($){
+    let in_1, in_2, in_3;
+    const nft = Intl.NumberFormat("en-US", {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+    });
+    const nftd = Intl.NumberFormat("en-US", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+    const nftd2 = Intl.NumberFormat("en-US", {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 2
+    });
+
+    const numOptionCurrency = {
+        digitGroupSeparator        : '\'',
+        decimalCharacter           : '.',
+        decimalCharacterAlternative: '.',
+        currencySymbol             : '',
+        currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.prefix,
+        decimalPlaces              : 0,
+        minimumValue               : 0
+    };
+
+    const elm1 = new AutoNumeric('#in_1_vl', numOptionCurrency);
+    const elm2 = new AutoNumeric('#in_2_vl', numOptionCurrency);
+    const elm3 = new AutoNumeric('#in_3_vl', numOptionCurrency);
+
+    $('#in_1, #in_2, #in_3').on('input', function(e){
+        var min = e.target.min,
+            max = e.target.max,
+            vl = e.target.value,
+            val = e.target.value; 
+        
+        let in_id = $(this).attr("id");
+
+        if(min == 0){
+            min = min + 1;
+            max = max + 1;
+            val = val + 1;
+        }
+            
+        let bg_size = (val - min) * 100 / (max - min);
+
+        $(e.target).css({
+            'backgroundSize': bg_size + '% 100%'
+        });
+
+        if(in_id == "in_1"){
+            elm1.set(vl);
+        } else if(in_id == "in_2"){
+            elm2.set(vl);
+        } else if(in_id == "in_3"){
+            elm3.set(vl);
+        }
+
+        calc();
+    }).trigger('input');
+
+    $("#in_1_vl").on("change", function(){
+        let vl = removeSign($(this).val());
+        
+        vl = Math.ceil(vl/10000)*10000;
+
+        if(vl < 0){
+            vl = 0;
+            elm1.set(vl);
+        } else if(vl > 8000000){
+            vl = 8000000;
+            elm1.set(vl);
+        }
+        
+        $("#in_1").val(vl).trigger('input');
+        calc();
+    });
+
+    $("#in_2_vl").on("change", function(){
+        let vl = removeSign($(this).val());
+        
+        vl = Math.ceil(vl/1000)*1000;
+
+        if(vl < 0){
+            vl = 0;
+            elm2.set(vl);
+        } else if(vl > 2000000){
+            vl = 2000000;
+            elm2.set(vl);
+        }
+        
+        $("#in_2").val(vl).trigger('input');
+        calc();
+    });
+    $("#in_3_vl").on("change", function(){
+        let vl = removeSign($(this).val());
+        
+        vl = Math.ceil(vl/1000)*1000;
+
+        if(vl < 0){
+            vl = 0;
+            elm3.set(vl);
+        } else if(vl > 4000000){
+            vl = 4000000;
+            elm3.set(vl);
+        }
+        
+        $("#in_3").val(vl).trigger('input');
+        calc();
+    });
+    
+
+    function calc(){
+        in_1 = Number($("#in_1").val());
+        in_2 = Number($("#in_2").val());
+        in_3 = Number($("#in_3").val());
+
+        if(in_3 < (in_1 * 0.1)){
+            $("#sp_err_msg").show();
+        } else {
+            $("#sp_err_msg").hide();
+        }
+
+        rs_1 = in_1-in_3;
+
+        rs_11 = rs_1*(5/100);
+        rs_01 = rs_1*(2.5/100);
+
+        rs_21 = rs_02 = in_1*(1/100);
+
+        let prcnt_1 = rs_1/in_1;
+        let prcnt_2 = (prcnt_1-(66.67/100));
+
+        if(prcnt_2 < 0){
+            rs_31 = rs_03 = 0;
+        } else {
+            rs_31 = rs_03 = (prcnt_2*in_1)/15;
+        }
+
+        rs_41 = rs_11 + rs_21 + rs_31;
+        rs_04 = rs_01 + rs_02 + rs_03;
+
+        rs_0 = rs_41/in_2;
+
+        rs_2 = rs_04/12;
+
+        rs_0 = rs_0 > 0 ? rs_0 : 0;
+        rs_1 = rs_1 > 0 ? rs_1 : 0;
+        rs_2 = rs_2 > 0 ? rs_2 : 0;
+        
+        
+        rs_3 = (rs_1 * 0.2 / 100) * 10;
+
+        let vl_prcnt = rs_0 * 100;
+        if( vl_prcnt < 35){
+            $(".con-1").css("background-color","green")
+            $("#sc_msg").text("Glückwunsch – die Finanzierung ist möglich. Gerne holen wir die besten Offerten für Sie ein.")
+            
+        } else if(  vl_prcnt < 45){
+            $(".con-1").css("background-color","orange")
+            $("#sc_msg").text("Die Finanzierung ist eventuell möglich. Setzen Sie sich mit uns in Verbindung, wir möchten gerne mehr über Sie und die Pläne erfahren.")
+            
+        } else {
+            $(".con-1").css("background-color","red")
+            $("#sc_msg").text("Die Hypothek übersteigt die Tragbarkeitsnormen. Gerne beraten wir Sie für weitere Möglichkeiten.")
+        }
+
+        
+        $("#in_4_vl").val(spFormat(nft.format(onlyNum(rs_1))));
+        $("#rs_0").text(nft.format(rs_0*100)+"%");
+        $("#rs_11").text(spFormat(nft.format(onlyNum(rs_11))));
+        $("#rs_21").text(spFormat(nft.format(onlyNum(rs_21))));
+        $("#rs_31").text(spFormat(nft.format(onlyNum(rs_31))));
+        $("#rs_41").text(spFormat(nft.format(onlyNum(rs_41))));
+
+        $("#rs_01").text(spFormat(nft.format(onlyNum(rs_01))));
+        $("#rs_02").text(spFormat(nft.format(onlyNum(rs_02))));
+        $("#rs_03").text(spFormat(nft.format(onlyNum(rs_03))));
+        $("#rs_04").text(spFormat(nft.format(onlyNum(rs_04))));
+
+        $("#rs_2").text("CHF "+spFormat(nft.format(rs_2)));
+        $("#rs_3").text("CHF "+spFormat(nft.format(rs_3)));
+    }
+
+    function removeSign(vl){
+        return Number((vl.replace(/\'|\./g,'').replace(/,/g,'.')));
+    }
+
+    function onlyNum(num){
+        return isFinite(num) ? num : 0;
+    }
+
+    function spFormat(vl){
+        return vl.replace(/\,/g,'\'');
+    }
+});
+</script>
+<!----------- copy ends ---------------->
+</body>
+</html>
