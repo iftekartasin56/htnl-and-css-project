@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -363,11 +364,13 @@
     border-color: #D24C37;
 }
 #mx_cl .score-title {
-    font-size: 25px;
+    font-size: 24px;
+    font-weight: 500;
+
 }
-#mx_cl .score-value {
-    color: #D24C37;
-    font-weight: 600;
+#mx_cl .score-vl {
+    font-size: 36px;
+    font-weight: 700;
 }
 #mx_cl .sub-head-p {
     font-size: 16px;
@@ -390,6 +393,9 @@
 
 #mx_cl .last-last-div {
     text-align: left;
+    padding: 60px 60px;
+    min-width: 400px;
+    margin-top: 15px;
 }
 
 #mx_cl .last {
@@ -482,243 +488,15 @@
                             <p class="mid-p">Please Enter </p>
                         </div>
                         <br><br><br>
-                        <button type="button" class="btn btn-second btn-next" data-slide="slide_3">LET'S GO</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12 slide-elm ds-none" id="slide_3">
-                <div class="slide-element">
-                    <div class="progressbar">
-                        <div class="progressbar-track" style="width: 13.02%;">
-                            <div class="progressbar-thumb">13%</div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="bottom-sub-head">
-                        <p>Okay <span class="u-name">[NAME]</span>, it’s great to meet you. How much do you earn as a household in a normal year?</p>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="checkbox-one">
-                                <input type="radio" id="op1" name="ques_1" value="Under 100k">
-                                <label for="op1">Under 100k</label><br>
-                                <input type="radio" id="op2" name="ques_1" value="100k – 200k">
-                                <label for="op2">100k – 200k</label><br>
-                                <input type="radio" id="op3" name="ques_1" value="200k – 300k">
-                                <label for="op3">200k – 300k</label><br><br>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="checkbox-two">
-                                <input type="radio" id="op4" name="ques_1" value="300k – 500k">
-                                <label for="op4">300k – 500k</label><br>
-                                <input type="radio" id="op5" name="ques_1" value="Over 500k">
-                                <label for="op5">Over 500k </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="button-sec">
-                        <button class="btn btn-action btn-prev" type="button" data-slide="slide_2">BACK</button>
-                        <button class="btn btn-action btn-next ds-none" type="button" data-slide="slide_4">NEXT</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12 slide-elm ds-none" id="slide_4">
-                <div class="slide-element">
-                    <div class="progressbar">
-                        <div class="progressbar-track" style="width: 17.36%;">
-                            <div class="progressbar-thumb">18%</div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="bottom-sub-head">
-                        <p>How would you describe your current financial situation?</p>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="checkbox-one">
-                                <input type="radio" id="op6" name="ques_2" value="We live paycheck to paycheck">
-                                <label for="op6">We live paycheck to paycheck</label><br>
-                                <input type="radio" id="op7" name="ques_2" value="Easily save 10% - 20% of our take home salary every month">
-                                <label for="op7">Easily save 10% - 20% of our take home salary every month</label><br>
-                                <input type="radio" id="op8" name="ques_2" value="We save well-over 20% without issue.">
-                                <label for="op8">We save well-over 20% without issue.</label><br><br>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="button-sec">
-                        <button class="btn btn-action btn-prev" type="button" data-slide="slide_3">BACK</button>
-                        <button class="btn btn-action btn-next ds-none" type="button" data-slide="slide_5">NEXT</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12 slide-elm ds-none" id="slide_5">
-                <div class="slide-element">
-                    <div class="progressbar">
-                        <div class="progressbar-track" style="width: 21%;">
-                            <div class="progressbar-thumb">21%</div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="bottom-sub-head">
-                        <p>How much have you saved for retirement?</p>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="checkbox-one">
-                                <input type="radio" id="op9" name="ques_3" value="Less than 10,000">
-                                <label for="op9">Less than 10,000</label><br>
-                                <input type="radio" id="op10" name="ques_3" value="10,000-50,000">
-                                <label for="op10">10,000-50,000</label><br>
-                                <input type="radio" id="op11" name="ques_3" value="50,000-100,000">
-                                <label for="op11">50,000-100,000</label><br>
-                                <input type="radio" id="op12" name="ques_3" value="More than 100,000">
-                                <label for="op12">More than 100,000</label><br>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="button-sec">
-                        <button class="btn btn-action btn-prev" type="button" data-slide="slide_4">BACK</button>
-                        <button class="btn btn-action btn-next ds-none" type="button" data-slide="slide_6">NEXT</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12 slide-elm ds-none" id="slide_6">
-                <div class="slide-element">
-                    <div class="progressbar">
-                        <div class="progressbar-track" style="width: 26%;">
-                            <div class="progressbar-thumb">26%</div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="bottom-sub-head">
-                        <p>Any other cash laying around?</p>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="checkbox-one">
-                                <input type="radio" id="op13" name="ques_4" value="Less than 10,000">
-                                <label for="op13">Less than 10,000</label><br>
-                                <input type="radio" id="op14" name="ques_4" value="10,000-50,000">
-                                <label for="op14">10,000-50,000</label><br>
-                                <input type="radio" id="op15" name="ques_4" value="50,000-100,000">
-                                <label for="op15">50,000-100,000</label><br>
-                                <input type="radio" id="op16" name="ques_4" value="More than 100,000">
-                                <label for="op16">More than 100,000</label><br>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="button-sec">
-                        <button class="btn btn-action btn-prev" type="button" data-slide="slide_5">BACK</button>
-                        <button class="btn btn-action btn-next ds-none" type="button" data-slide="slide_7">NEXT</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12 slide-elm ds-none" id="slide_7">
-                <div class="slide-element">
-                    <div class="progressbar">
-                        <div class="progressbar-track" style="width: 30%;">
-                            <div class="progressbar-thumb">30%</div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="bottom-sub-head">
-                        <p>Okay, what are we working with? What’s the big number?</p>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="checkbox-one">
-                                <input type="radio" id="op17" name="ques_5" value="100,000-200,000">
-                                <label for="op17">100,000-200,000</label><br>
-                                <input type="radio" id="op18" name="ques_5" value="200,000-400,000">
-                                <label for="op18">200,000-400,000</label><br>
-                                <input type="radio" id="op19" name="ques_5" value="More than 400,000">
-                                <label for="op19">More than 400,000</label><br>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="button-sec">
-                        <button class="btn btn-action btn-prev" type="button" data-slide="slide_6">BACK</button>
-                        <button class="btn btn-action btn-next ds-none" type="button" data-slide="slide_8">NEXT</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12 slide-elm ds-none" id="slide_8">
-                <div class="slide-element">
-                    <div class="progressbar">
-                        <div class="progressbar-track" style="width: 34%;">
-                            <div class="progressbar-thumb">34%</div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="bottom-sub-head">
-                        <p>What type(s) of debt do you have?</p>
-                        <p class="sub-head-p">Choose all that apply.</p>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="checkbox-one">
-                                <input type="checkbox" id="op20" name="ques_6" value="Bike">
-                                <label for="op20"> None</label><br>
-                                <input type="checkbox" id="op21" name="ques_6" value="Car">
-                                <label for="op21"> Cradit Card</label><br>
-                                <input type="checkbox" id="op22" name="ques_6" value="Boat">
-                                <label for="op22"> Student Loans</label><br><br>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="checkbox-two">
-                                <input type="checkbox" id="op23" name="ques_6" value="Bike">
-                                <label for="op23">Mortgage</label><br>
-                                <input type="checkbox" id="op24" name="ques_6" value="Car">
-                                <label for="op24">Car Loan</label><br>
-                                <input type="checkbox" id="op25" name="ques_6" value="Boat">
-                                <label for="op25">Personal or Business Loan</label><br><br>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="button-sec">
-                        <button class="btn btn-action btn-prev" type="button" data-slide="slide_7">BACK</button>
-                        <button class="btn btn-action btn-next" type="button" data-slide="slide_9">NEXT</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12 slide-elm ds-none" id="slide_9">
-                <div class="slide-element">
-                    <div class="progressbar">
-                        <div class="progressbar-track" style="width: 39%;">
-                            <div class="progressbar-thumb">39%</div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="bottom-sub-head">
-                        <p>How do you typically spend your money?</p>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="checkbox-one">
-                                <input type="radio" id="op26" name="ques_7" value="Debit card">
-                                <label for="op26">Debit card</label><br>
-                                <input type="radio" id="op27" name="ques_7" value="Credit card">
-                                <label for="op27">Credit card</label><br>
-                                <input type="radio" id="op28" name="ques_7" value="Cash">
-                                <label for="op28">Cash</label><br>
-                                <input type="radio" id="op29" name="ques_7" value="Depends on the day">
-                                <label for="op29">Depends on the day</label><br>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="button-sec">
-                        <button class="btn btn-action btn-prev" type="button" data-slide="slide_8">BACK</button>
-                        <button class="btn btn-action btn-next ds-none" type="button" data-slide="slide_10">NEXT</button>
+                        <button type="button" class="btn btn-second btn-next" data-slide="slide_10">LET'S GO</button>
                     </div>
                 </div>
             </div>
             <div class="col-md-12 slide-elm ds-none" id="slide_10">
                 <div class="slide-element">
                     <div class="progressbar">
-                        <div class="progressbar-track" style="width: 43%;">
-                            <div class="progressbar-thumb">43%</div>
+                        <div class="progressbar-track" style="width: 24%;">
+                            <div class="progressbar-thumb">24%</div>
                         </div>
                     </div>
                     <br>
@@ -738,7 +516,7 @@
                         </div>
                     </div>
                     <div class="button-sec">
-                        <button class="btn btn-action btn-prev" type="button" data-slide="slide_9">BACK</button>
+                        <button class="btn btn-action btn-prev" type="button" data-slide="slide_2">BACK</button>
                         <button class="btn btn-action btn-next ds-none" type="button" data-slide="slide_11">NEXT</button>
                     </div>
                 </div>
@@ -746,8 +524,8 @@
             <div class="col-md-12 slide-elm ds-none" id="slide_11">
                 <div class="slide-element">
                     <div class="progressbar">
-                        <div class="progressbar-track" style="width: 47%;">
-                            <div class="progressbar-thumb">47%</div>
+                        <div class="progressbar-track" style="width: 32%;">
+                            <div class="progressbar-thumb">32%</div>
                         </div>
                     </div>
                     <br>
@@ -775,8 +553,8 @@
             <div class="col-md-12 slide-elm ds-none" id="slide_12">
                 <div class="slide-element">
                     <div class="progressbar">
-                        <div class="progressbar-track" style="width: 52%;">
-                            <div class="progressbar-thumb">52%</div>
+                        <div class="progressbar-track" style="width: 40%;">
+                            <div class="progressbar-thumb">40%</div>
                         </div>
                     </div>
                     <br>
@@ -804,8 +582,8 @@
             <div class="col-md-12 slide-elm ds-none" id="slide_13">
                 <div class="slide-element">
                     <div class="progressbar">
-                        <div class="progressbar-track" style="width: 56%;">
-                            <div class="progressbar-thumb">56%</div>
+                        <div class="progressbar-track" style="width: 48%;">
+                            <div class="progressbar-thumb">48%</div>
                         </div>
                     </div>
                     <br>
@@ -836,8 +614,8 @@
             <div class="col-md-12 slide-elm ds-none" id="slide_14">
                 <div class="slide-element">
                     <div class="progressbar">
-                        <div class="progressbar-track" style="width: 60%;">
-                            <div class="progressbar-thumb">60%</div>
+                        <div class="progressbar-track" style="width: 56%;">
+                            <div class="progressbar-thumb">56%</div>
                         </div>
                     </div>
                     <br>
@@ -865,8 +643,8 @@
             <div class="col-md-12 slide-elm ds-none" id="slide_15">
                 <div class="slide-element">
                     <div class="progressbar">
-                        <div class="progressbar-track" style="width: 65%;">
-                            <div class="progressbar-thumb">65%</div>
+                        <div class="progressbar-track" style="width: 64%;">
+                            <div class="progressbar-thumb">64%</div>
                         </div>
                     </div>
                     <br>
@@ -894,8 +672,8 @@
             <div class="col-md-12 slide-elm ds-none" id="slide_16">
                 <div class="slide-element">
                     <div class="progressbar">
-                        <div class="progressbar-track" style="width: 69%;">
-                            <div class="progressbar-thumb">69%</div>
+                        <div class="progressbar-track" style="width: 72%;">
+                            <div class="progressbar-thumb">72%</div>
                         </div>
                     </div>
                     <br>
@@ -923,8 +701,8 @@
             <div class="col-md-12 slide-elm ds-none" id="slide_17">
                 <div class="slide-element">
                     <div class="progressbar">
-                        <div class="progressbar-track" style="width: 73%;">
-                            <div class="progressbar-thumb">73%</div>
+                        <div class="progressbar-track" style="width: 80%;">
+                            <div class="progressbar-thumb">80%</div>
                         </div>
                     </div>
                     <br>
@@ -952,8 +730,8 @@
             <div class="col-md-12 slide-elm ds-none" id="slide_18">
                 <div class="slide-element">
                     <div class="progressbar">
-                        <div class="progressbar-track" style="width: 78%;">
-                            <div class="progressbar-thumb">78%</div>
+                        <div class="progressbar-track" style="width: 88%;">
+                            <div class="progressbar-thumb">88%</div>
                         </div>
                     </div>
                     <br>
@@ -981,8 +759,8 @@
             <div class="col-md-12 slide-elm ds-none" id="slide_19">
                 <div class="slide-element">
                     <div class="progressbar">
-                        <div class="progressbar-track" style="width: 82%;">
-                            <div class="progressbar-thumb">82%</div>
+                        <div class="progressbar-track" style="width: 96%;">
+                            <div class="progressbar-thumb">96%</div>
                         </div>
                     </div>
                     <br>
@@ -1003,116 +781,6 @@
                     </div>
                     <div class="button-sec">
                         <button class="btn btn-action btn-prev" type="button" data-slide="slide_18">BACK</button>
-                        <button class="btn btn-action btn-next ds-none" type="button" data-slide="slide_20">NEXT</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12 slide-elm ds-none" id="slide_20">
-                <div class="slide-element">
-                    <div class="progressbar">
-                        <div class="progressbar-track" style="width: 86%;">
-                            <div class="progressbar-thumb">86%</div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="bottom-sub-head">
-                        <p>What kind of relationship with an advisor are you looking for?</p>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="checkbox-one">
-                                <input type="radio" id="op59" name="ques_18" value="One time">
-                                <label for="op59">One time</label><br>
-                                <input type="radio" id="op60" name="ques_18" value="Ongoing, but I’ll manage my own investments">
-                                <label for="op60">Ongoing, but I’ll manage my own investments</label><br>
-                                <input type="radio" id="op61" name="ques_18" value="Ongoing and I’m looking for someone to help me with my investment strategy">
-                                <label for="op61">Ongoing and I’m looking for someone to help me with my investment strategy</label><br>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="button-sec">
-                        <button class="btn btn-action btn-prev" type="button" data-slide="slide_19">BACK</button>
-                        <button class="btn btn-action btn-next ds-none" type="button" data-slide="slide_21">NEXT</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12 slide-elm ds-none" id="slide_21">
-                <div class="slide-element">
-                    <div class="progressbar">
-                        <div class="progressbar-track" style="width: 91%;">
-                            <div class="progressbar-thumb">91%</div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="bottom-sub-head">
-                        <p>Which of the following challenges are most holding you back from reaching your goals? </p>
-                        <p class="sub-head-p">Choose all that apply.</p>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="checkbox-one">
-                                <input type="checkbox" id="op62" name="ques_19" value="No idea how best to grow my savings">
-                                <label for="op62">No idea how best to grow my savings</label><br>
-                                <input type="checkbox" id="op63" name="ques_19" value="No idea how to reach my financial goals">
-                                <label for="op63">No idea how to reach my financial goals</label><br>
-                                <input type="checkbox" id="op64" name="ques_19" value="Taxes are complicated and I want to pay less of them">
-                                <label for="op64">Taxes are complicated and I want to pay less of them</label><br>
-                                <input type="checkbox" id="op65" name="ques_19" value="I lack discipline in sticking to my budget">
-                                <label for="op65">I lack discipline in sticking to my budget</label><br>
-                                <input type="checkbox" id="op66" name="ques_19" value="Will? Estate plan? What’s that?">
-                                <label for="op66">Will? Estate plan? What’s that?</label><br>
-                                <input type="checkbox" id="op67" name="ques_19" value="I need to earn more and need help with this.">
-                                <label for="op67">I need to earn more and need help with this.</label><br>
-                                <input type="checkbox" id="op68" name="ques_19" value="There’s a lot of risk. I have no idea how to manage it all.">
-                                <label for="op68">There’s a lot of risk. I have no idea how to manage it all.</label><br>
-                                <input type="checkbox" id="op69" name="ques_19" value="Preparing for major life events (having a baby, buying a house, etc.)">
-                                <label for="op69">Preparing for major life events (having a baby, buying a house, etc.)</label><br>
-                                <input type="checkbox" id="op70" name="ques_19" value="Equity compensation (ISOs, RSUs, ESPP, etc.)">
-                                <label for="op70">Equity compensation (ISOs, RSUs, ESPP, etc.)</label><br>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="button-sec">
-                        <button class="btn btn-action btn-prev" type="button" data-slide="slide_20">BACK</button>
-                        <button class="btn btn-action btn-next" type="button" data-slide="slide_22">NEXT</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12 slide-elm ds-none" id="slide_22">
-                <div class="slide-element">
-                    <div class="progressbar">
-                        <div class="progressbar-track" style="width: 95%;">
-                            <div class="progressbar-thumb">95%</div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="bottom-sub-head">
-                        <p>Last question: what are some of the goals you want to plan for?</p>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="checkbox-one">
-                                <input type="radio" id="op71" name="ques_20" value="Buy a home">
-                                <label for="op71">Buy a home</label><br>
-                                <input type="radio" id="op72" name="ques_20" value="Travel abroad">
-                                <label for="op72">Travel abroad</label><br>
-                                <input type="radio" id="op73" name="ques_20" value="Start a family">
-                                <label for="op73">Start a family</label><br>
-                                <input type="radio" id="op74" name="ques_20" value="Retire someday">
-                                <label for="op74">Retire someday</label><br>
-                                <input type="radio" id="op75" name="ques_20" value="Upgrade lifestyle">
-                                <label for="op75">Upgrade lifestyle</label><br>
-                                <input type="radio" id="op76" name="ques_20" value="Start a business">
-                                <label for="op76">Start a business</label><br>
-                                <input type="radio" id="op77" name="ques_20" value="Buy a fancy Tesla">
-                                <label for="op77">Buy a fancy Tesla</label><br>
-                                <input type="radio" id="op78" name="ques_20" value="All of the above">
-                                <label for="op78">All of the above</label><br>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="button-sec">
-                        <button class="btn btn-action btn-prev" type="button" data-slide="slide_21">BACK</button>
                         <button class="btn btn-action btn-next ds-none" type="button" data-slide="slide_23">NEXT</button>
                     </div>
                 </div>
@@ -1128,50 +796,23 @@
                             </div>
                         </div>
                         <br>
-                        <div class="second-slide-element">
+                        <div class="second-slide-element" id="submit_form">
                             <br><br>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="name_input" placeholder="Enter Email address">
+                                <input type="text" class="form-control" id="email_input" placeholder="Enter Email address">
                                 <p class="mid-p">Please Enter </p>
                             </div>
                             <br><br><br>
-                            <button type="button" class="btn btn-primary" data-slide="slide_3">SUBMIT</button>
+                            <button type="button" class="btn btn-primary" id="form_submit">SUBMIT</button>
                             <br><br><br>
                         </div>
-                        <div class="last-last-div ds-none">
+                        <div class="last-last-div ds-none" id="score_form">
                             <div class="score-title">Score:</div>
-                            <div id="score_vl">0%</div>
-                        </div>
-                        <div class="last-last-div ds-none" id="rs_ans_1">
-                            <p class="last">
-                                You’re a great candidate to work with Progress Wealth Management!
-                            </p>
-                            <p class="last-slide-second-p">Your challenges are:<br>
-                                <span class="last ques_19_list">(answers to question 10)</span>
-                            </p>
-                            <p class="last-slide-third">We’ve helped literally thousands of people fix these kinds
-                                of problems. By working with us, you’ll get custom advice on how to:<br>
-                                <span class="last ques_19_list">(problems in question 10).</span>
-                            </p>
-
-                            <p class="last-forth">You’ll get access to your own team of professionals including your
-                                own CFP, tax professional, non-commissioned insurance professionals and more to help
-                                you make better decisions at each step of the way</p>
-                            <p class="last-fifth">You’ll have access to a suite of software that will make planning
-                                for your future both simpler and easier.</p>
-                            <p class="last-sixth">Your initial consultation is completely complimentary. It won’t be
-                                salesy at all (we promise). We’ll answer all of your questions at no cost and, if
-                                you want to keep to working with us, we’ll let you know what we charge and whether
-                                we think we can earn you more than the cost.</p>
-                            <a href="https://calendly.com/progresswealth/complimentary-30-minute-consultation" target="_blank" class="last-last"><i>Click here to schedule your appointment </i></a>
-                        </div>
-                        <div class="last-last-div ds-none" id="rs_ans_2">
-                            <p class="last-slide-third">Great! We think you’d be a great fit to work with a financial coach to help you improve your ability to improve your life. We’ve built a list of highly qualified financial coaches who can help you grow, faster.</p>
-                            <a href="https://wealthtender.com/financial-coaches/" target="_blank" class="last-last"><i>Click here to review the list and pick out the person who can help.</i></a>
+                            <div id="score_vl" class="score-vl">0%</div>
                         </div>
                     </div>
                     <div class="button-sec">
-                        <button class="btn btn-action btn-prev" type="button" data-slide="slide_22">BACK</button>
+                        <button class="btn btn-action btn-prev" type="button" data-slide="slide_19">BACK</button>
                         <button class="btn btn-action btn-next" type="button" data-slide="slide_2">START OVER</button>
                     </div>
                 </div>
@@ -1219,26 +860,9 @@ jQuery(($) => {
     $(".btn-next").on("click", function(){
         let slide_no = $(this).data("slide");
 
-        if(slide_no == "slide_3"){
-            if(name){
-                $(".slide-elm").addClass("ds-none");
-                $("#"+slide_no).removeClass("ds-none");   
-            }
-        } else if(slide_no == "slide_7"){
-            let vl = $('input[name="ques_4"]:checked').val();
-
-
-            if(vl != "More than 100,000"){
-                slide_no = "slide_8";
-                sp_slide = true;
-            }
-
-            $(".slide-elm").addClass("ds-none");
-            $("#"+slide_no).removeClass("ds-none");
-        } else {
-            $(".slide-elm").addClass("ds-none");
-            $("#"+slide_no).removeClass("ds-none");
-        }
+    
+        $(".slide-elm").addClass("ds-none");
+        $("#"+slide_no).removeClass("ds-none");
 
         $("#"+slide_no+" input[type='radio']").prop("checked", false);
         $("#"+slide_no+" input[type='checkbox']").prop("checked", false);
@@ -1248,25 +872,34 @@ jQuery(($) => {
         }
     });
 
-    function finalStep(){
-        let ques_2 = $('input[name="ques_2"]:checked').val();
-        let ques_19_arr = [];
-        let ques_19_list = "";
-        let i = 1;
-        $('input[name="ques_19"]:checked').each(function(){
-            ques_19_arr.push($(this).val());
-            ques_19_list = ques_19_list + `${i}. ${$(this).val()}<br>`;
-            i++;
-        });
-
-        if(ques_19_arr.includes("I lack discipline in sticking to my budget") || ques_2 == "We live paycheck to paycheck"){
-            $("#rs_ans_2").show();
-            $("#rs_ans_1").hide();
-        } else {
-            $("#rs_ans_1").show();
-            $("#rs_ans_2").hide();
-            $(".ques_19_list").html(ques_19_list);
+    
+    $('#form_submit').on('click', function(){
+        let emailForm = $('#email_input').val();
+        if(validateEmail(emailForm)){
+            $('#submit_form').hide();
+            $('#score_form').show();
+        } else{
+            $('#submit_form').show();
+            $('#score_form').hide();
         }
+        
+    });
+
+
+    let totalScore = 0;
+    function finalStep(){
+        $("input[type='radio']:checked").each(function(i, elm){
+            let vl = Number($(elm).val());
+            totalScore = totalScore + vl;
+        });
+        let prcnt = (totalScore /20)*100;
+        $('#score_vl').text(prcnt.toFixed(0)+ "%");
+        console.log(totalScore);
+    }
+    function validateEmail(email){
+        return email.match(
+            /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        );
     }
 });
 </script>

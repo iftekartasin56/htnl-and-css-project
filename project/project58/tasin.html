@@ -1,0 +1,476 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <title>Calculate Your Life Path Number</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <style>
+        #mx_cl *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+        }
+
+        #mx_cl {
+            line-height: 1.5;
+            font-family: inherit;
+        }
+
+        #mx_cl .container {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #4a4a4a;
+            text-align: left;
+        }
+
+        #mx_cl label {
+            display: inline-block;
+            font-size: 16px;
+            color: #000;
+            font-weight: 400 !important;
+            margin-bottom: 0.5rem;
+        }
+
+        #mx_cl .row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        #mx_cl .col-md-1,
+        #mx_cl .col-md-10,
+        #mx_cl .col-md-11,
+        #mx_cl .col-md-12,
+        #mx_cl .col-md-2,
+        #mx_cl .col-md-3,
+        #mx_cl .col-md-4,
+        #mx_cl .col-md-5,
+        #mx_cl .col-md-6,
+        #mx_cl .col-md-7,
+        #mx_cl .col-md-8,
+        #mx_cl .col-md-9 {
+            position: relative;
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        #mx_cl .form-group {
+            margin-bottom: 1rem;
+        }
+
+        #mx_cl .form-control {
+            display: block;
+            width: 100%;
+            height: 35px;
+            padding: 0.275rem 0.75rem;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #4a4a4a;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ec6e7a;
+            border-radius: 5px;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+
+        #mx_cl .form-control:focus {
+            outline: none;
+        }
+
+        #mx_cl .btn {
+            display: inline-block;
+            font-weight: 400;
+            color: #212529;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-color: transparent;
+            border: 1px solid transparent;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: 5px;
+            transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+
+        #mx_cl .btn-primary {
+            color: #fff;
+            background-color: #ec6e7a;
+            border-color: #ec6e7a;
+            width: 100%;
+        }
+
+        #mx_cl .btn-reset {
+            color: #fff;
+            background-color: #ec6e7a;
+            border-color: #ec6e7a;
+        }
+
+        #mx_cl table {
+            border-collapse: collapse;
+        }
+
+        #mx_cl .table {
+            width: 100%;
+            margin-bottom: 1rem;
+            color: #212529;
+        }
+
+        #mx_cl .table td,
+        #mx_cl .table th {
+            padding: .75rem;
+            vertical-align: top;
+            border-bottom: 1px solid #b8b8b8;
+        }
+
+        #mx_cl .text-center {
+            text-align: center;
+        }
+
+        @media (min-width: 576px) {
+            #mx_cl .container {
+                max-width: 100%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            #mx_cl .container {
+                max-width: 100%;
+            }
+
+            #mx_cl .col-md-12 {
+                -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            #mx_cl .col-md-9 {
+                -ms-flex: 0 0 75%;
+                flex: 0 0 75%;
+                max-width: 75%;
+            }
+
+            #mx_cl .col-md-8 {
+                -ms-flex: 0 0 66.666667%;
+                flex: 0 0 66.666667%;
+                max-width: 66.666667%;
+            }
+
+            #mx_cl .col-md-7 {
+                -ms-flex: 0 0 58.33333%;
+                flex: 0 0 58.33333%;
+                max-width: 58.33333%;
+            }
+
+            #mx_cl .col-md-6 {
+                -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+
+            #mx_cl .col-md-5 {
+                -ms-flex: 0 0 41.666667%;
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+
+            #mx_cl .col-md-4 {
+                -ms-flex: 0 0 33.333333%;
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+
+            #mx_cl .col-md-3 {
+                -ms-flex: 0 0 25%;
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+        }
+
+        @media (min-width: 992px) {
+            #mx_cl .container {
+                max-width: 960px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            #mx_cl .container {
+                max-width: 900px;
+            }
+        }
+
+        #mx_cl .text-right {
+            text-align: right;
+        }
+
+        #mx_cl .form-group,
+        #mx_cl .input-group {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        #mx_cl .top-title {
+            font-size: 25px;
+            font-weight: 800;
+            padding: 10px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            color: #ec6e7a;
+            text-align: center;
+            margin: 0px;
+            border-bottom: 1px solid #ec6e7a;
+        }
+
+        #mx_cl .em-context {
+            box-shadow: 0 0 10px #d7d7d7;
+            border-radius: 8px;
+        }
+
+        #mx_cl .inner-context {
+            padding: 30px;
+        }
+
+        #mx_cl .td_right {
+            text-align: right;
+            padding-right: 0px !important;
+        }
+
+        #mx_cl .td_left {
+            text-align: left;
+            padding-left: 0px !important;
+        }
+
+        #mx_cl .inner-context {
+            padding: 40px;
+        }
+
+        #mx_cl .em-footer-sec {
+            margin-top: 40px !important;
+            padding: 15px 25px;
+            text-align: left;
+            background-color: #ec6e7a;
+            border-radius: 8px;
+            color: #ffffff;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        #mx_cl .em-footer-sub-heading {
+            font-size: 24px;
+            font-weight: 600;
+            border-bottom: 1px solid #fff;
+            padding-bottom: 10px;
+            margin-bottom: 0px;
+        }
+
+        #mx_cl .em-footer-output {
+            font-size: 40px;
+            font-weight: 800px !important;
+        }
+
+        @media (max-width: 768px) {
+            #mx_cl .inner-context {
+                padding: 15px;
+            }
+
+            #mx_cl .em-footer-sec {
+                text-align: center;
+            }
+        }
+
+        #mx_cl .input-group-text {
+            margin-bottom: 0;
+            position: absolute;
+            padding-left: 9px;
+            padding-top: 5px;
+            font-size: 1rem;
+        }
+
+        #mx_cl .text-right {
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        #mx_cl .input-group-text-right {
+            margin-bottom: 0;
+            position: absolute;
+            right: 25px;
+            font-size: 1rem;
+        }
+    </style>
+    <div class="ms-cl" id="mx_cl">
+        <div class="container">
+            <div class="em-context">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="top-title">Calculate Your Life Path Number</h3>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="inner-context">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label style="color: #777;">We do not store any data submitted </label>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <input type="number" min="1" max="31" class="form-control cl-input" id="in_1" value="" placeholder="Day">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <select class="form-control cl-input" id="in_2">
+                                            <option value="1">January</option>
+                                            <option value="2">February</option>
+                                            <option value="3">March</option>
+                                            <option value="4">April</option>
+                                            <option value="5">May</option>
+                                            <option value="6">June</option>
+                                            <option value="7">July</option>
+                                            <option value="8">August</option>
+                                            <option value="9">September</option>
+                                            <option value="10">October</option>
+                                            <option value="11">November</option>
+                                            <option value="12">December</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <input type="number" min="1800" max="0" class="form-control cl-input" id="in_3" value="" placeholder="Year">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <button class="btn btn-primary" id="calc_btn">Calculate</button>
+                                </div>
+                                <div class="col-md-12">
+                                    <p id="err_msg" style="display:none; margin: 0; margin-top: 15px; color: red; text-align: center;">All fields are required!</p>
+                                </div>
+                            </div>
+                            <div class="em-footer-sec" style="display: none;" id="rs_sec">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h3 class="em-footer-sub-heading">Your Life Path number is</h3>
+                                        <span class="em-footer-output" id="output">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            let day = 0;
+            let month = 0;
+            let year = 0;
+
+            let todate = new Date();
+
+            $("#in_3").attr("max", todate.getFullYear());
+
+            $(".cl-input").on("input", function(){
+                $("#err_msg").hide();
+            });
+
+            $(".cl-input").on("keyup", function(e){
+                if(e.which == 13){
+                    $('#calc_btn').click();
+                }
+            });
+
+            $(".cl-input").on("change", function(){
+                let vl = Number($(this).val());
+                
+                let min = Number($(this).attr("min"));
+                let max = Number($(this).attr("max"));
+                
+                if(min && max){
+                    if(vl < min){
+                        $(this).val(min);
+                    } else if(vl > max) {
+                        $(this).val(max);                        
+                    }
+                }
+            });
+
+            $('#calc_btn').on('click', function(){
+                day = $('#in_1').val();
+                month = $('#in_2').val();
+                year = $('#in_3').val();
+                
+                if(day && month && year){
+                    $("#rs_sec").slideDown();
+                    $("#err_msg").hide();
+                } else {
+                    $("#rs_sec").hide();
+                    $("#err_msg").slideDown();
+
+                    return;
+                }                
+
+                let num = day.toString()+month.toString()+year.toString();
+
+                let angel_num = findSingleNum(num);
+
+                while(angel_num > 9){
+                    angel_num = findSingleNum(angel_num);
+                }
+                
+                $("#output").text(angel_num);
+                
+                function findSingleNum(num){
+                    num = (typeof num == 'number') ?  num.toString() : num;
+                    
+                    let arr = num.split('');
+                    let total = 0;
+
+                    arr.forEach(function(str){
+                        total = total + Number(str);
+                    });
+
+                    return total;
+                }
+            });
+
+            
+        });
+
+        
+    </script>
+</body>
+</html> 
