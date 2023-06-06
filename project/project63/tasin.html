@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <title>Loan calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+<!-----------Please copy and paste following code into any HTML element ---------------->
+
+<!----------- copy starts ---------------->
+<style>
+    .ms-cl {
+  color: #000000;
+  font-family: Roboto,sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+.ms-cl *, ::after, ::before {
+  box-sizing: border-box;
+}
+.ms-cl {
+  line-height: 1.5;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+.ms-cl .container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+.justify-content-center {
+  -webkit-box-pack: center!important;
+  -ms-flex-pack: center!important;
+  justify-content: center!important;
+}
+.bg-white {
+  background: #fff;
+}
+.calc-form-wrap .calc-row {
+	padding-bottom: 4px;
+	border-bottom: 1px solid #dee3e7;
+	margin-bottom: 23px
+}
+.calc-form-wrap .btn, a.btn, button.btn {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    text-decoration: none!important;
+}
+.calc-form-wrap .btn {
+    -webkit-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+    border: none;
+    border-radius: 26px;
+    background: #197f3d;
+    color: #fff!important;
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 24px;
+    padding: 14px 40px;
+}
+.calc-form-wrap .text-center {
+    text-align: center;
+}
+@media (min-width:1024px) {
+	.calc-form-wrap .calc-row {
+		margin-bottom: 11px
+	}
+}
+@media (min-width:1024px) {
+	.calculators-intro .calc-form-wrap .label-row:not(.small-labels) {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		flex-direction: column
+	}
+}
+.calc-form-wrap .label-row {
+	color: #03256c;
+	padding: 0 0 10px
+}
+@media (min-width:1024px) {
+	.calc-form-wrap .label-row {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+		justify-content: space-between
+	}
+}
+.calc-form-wrap .label-row label:last-of-type {
+	text-align: right
+}
+.calculators-intro .calc-form-wrap .calc-label {
+	padding: 0 0 46px
+}
+@media (min-width:1024px) {
+	.calculators-intro .calc-form-wrap .calc-label {
+		width: 100%;
+		padding: 0 0 22px;
+		font-size: 24px;
+		letter-spacing: -.06px
+	}
+}
+.calc-form-wrap .row {
+	display: block;
+	margin: 0
+}
+.calc-form-wrap .row.hide {
+	display: none
+}
+.calc-form-wrap .container {
+	padding: 0
+}
+.calc-form-wrap .label-row {
+	color: #03256c;
+	padding: 0 0 10px
+}
+
+@media (min-width:1024px) {
+	.calc-form-wrap .label-row {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+		justify-content: space-between
+	}
+}
+.calc-form-wrap .label-row label:last-of-type {
+	text-align: right
+}
+.calc-form-wrap .calc-label {
+	color: #000000;
+	font-size: 18px;
+	line-height: 22px;
+	margin: 0;
+	letter-spacing: -.045px;
+	padding: 0 0 9px
+}
+
+@media (min-width:1024px) {
+	.calc-form-wrap .calc-label {
+		padding: 0
+	}
+}
+.calc-form-wrap .small-labels {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	font-size: 12px;
+	line-height: 14px;
+	opacity: .7;
+	color: #000000
+}
+
+@media (min-width:1024px) {
+	.calc-form-wrap .text-right {
+		text-align: right
+	}
+}
+.calc-form-wrap .label-result {
+	font-size: 24px;
+	line-height: 29px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	color: #197f3d;
+	padding: 0 0 2px
+}
+.calc-form-wrap .label-result input {
+	pointer-events: none;
+	border: none;
+	font-size: inherit;
+	line-height: inherit;
+	color: inherit;
+	width: 160px !important;
+    padding: 0 !important;
+    color: #197f3d !important;
+    font-size: 24px !important;
+    background: none !important;
+}
+
+@media (min-width:1024px) {
+	.calc-form-wrap .label-result input {
+		text-align: right
+	}
+}
+@media (max-width:1023px) {
+	.calc-form-wrap .label-result input#accountReceivableFinancing_interestValue,
+	.calc-form-wrap .label-result input#businessLineOfCredit_interestValue,
+	.calc-form-wrap .label-result input#businessTermCalculator_interestValue,
+	.calc-form-wrap .label-result input#commercialCalculator_interestValue,
+	.calc-form-wrap .label-result input#equipmentFinancingCalculator_interestValue,
+	.calc-form-wrap .label-result input#sbaLoanCalculator_interestValue,
+	.calc-form-wrap .label-result input#shotTermCalculator_interestValue {
+		width: 30px !important
+	}
+}
+.calc-form-wrap .label-result input#accountReceivableFinancing_termValue,
+.calc-form-wrap .label-result input#businessLineOfCredit_termValue_1,
+.calc-form-wrap .label-result input#businessTermCalculator_termValue,
+.calc-form-wrap .label-result input#commercialCalculator_termValue,
+.calc-form-wrap .label-result input#equipmentFinancingCalculator_termValue,
+.calc-form-wrap .label-result input#merchantCashAdvance_termValue,
+.calc-form-wrap .label-result input#sbaLoanCalculator_termValue,
+.calc-form-wrap .label-result input#shotTermCalculator_termValue {
+	width: 44px !important
+}
+.calc-form-wrap .calc-row {
+	padding-bottom: 4px;
+	border-bottom: 1px solid #dee3e7;
+	margin-bottom: 23px
+}
+
+@media (min-width:1024px) {
+	.calc-form-wrap .calc-row {
+		margin-bottom: 11px
+	}
+}
+.calc-form-wrap .ui-slider {
+	border-radius: 11px;
+	border: none;
+	background: #ebeff5;
+	margin: 0 0 14px
+}
+.calc-form-wrap .ui-slider-horizontal {
+	height: 5px
+}
+.calc-form-wrap .ui-slider-range {
+	background: #197f3d;
+	border-radius: 11px
+}
+.calc-form-wrap .ui-slider-handle {
+	border-radius: 50%;
+	width: 22px;
+	height: 22px;
+	border: 4px solid #ffffff;
+	background: #197f3d;
+	outline: none;
+	margin-top: -2px;
+	box-shadow: 0 0 3px #ccc;
+	margin-top: -4px;
+}
+.calc-form-wrap .total {
+	line-height: 43px;
+	letter-spacing: -.01em;
+	color: #197f3d;
+	padding-bottom: 23px;
+	font-size: 36px
+}
+
+@media (max-width:1199px) {
+	.calc-form-wrap .total {
+		font-size: 30px
+	}
+}
+
+@media (max-width:1023px) {
+	.calc-form-wrap .total {
+		text-align: center;
+		font-size: 36px
+	}
+}
+
+@media (min-width:1024px) {
+	.calc-form-wrap .total-box {
+		padding: 9px 0 0
+	}
+}
+.calc-form-wrap .total-box .calc-label {
+	color: #03256c;
+	padding-bottom: 15px
+}
+
+@media (min-width:1024px) {
+	.calc-form-wrap .total-box .calc-label {
+		padding-bottom: 0;
+		margin-bottom: -5px
+	}
+}
+
+@media (min-width:1024px) {
+	.calc-form-wrap .total-box .wrap {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+		justify-content: space-between;
+		-webkit-box-align: end;
+		-ms-flex-align: end;
+		align-items: flex-end;
+		min-height: 70px
+	}
+}
+.calc-form-wrap .disclaimer,
+.calc-form-wrap .loanterm {
+	padding-bottom: 30px
+}
+
+@media (min-width:1024px) {
+	.calc-form-wrap .termValue {
+		text-align: center
+	}
+}
+.calc-form-wrap .slider-container .termValue {
+	width: 60px;
+	min-width: 60px;
+	text-align: center;
+	color: #03256c
+}
+.calc-form-wrap .label-result input {
+	outline: 0
+}
+.calc-form-wrap .label-result input#accountReceivableFinancing_termValue,
+.calc-form-wrap .label-result input#businessLineOfCredit_termValue_1,
+.calc-form-wrap .label-result input#businessTermCalculator_termValue,
+.calc-form-wrap .label-result input#commercialCalculator_termValue,
+.calc-form-wrap .label-result input#equipmentFinancingCalculator_termValue,
+.calc-form-wrap .label-result input#merchantCashAdvance_termValue,
+.calc-form-wrap .label-result input#sbaLoanCalculator_termValue,
+.calc-form-wrap .label-result input#shotTermCalculator_termValue {
+	width: 100% !important
+}
+.calc-form-wrap .label-result input#accountReceivableFinancing_termValue {
+	width: 44px !important
+}
+
+@media (max-width:1024px) {
+	.calc-form-wrap .label-result input#accountReceivableFinancing_termValue {
+		width: 100% !important
+	}
+}
+
+@media (max-width:767px) {
+	.calc-form-wrap .label-result input#commercialCalculator_interestValue {
+		width: 40px !important
+	}
+}
+.individual-calc-intro p {
+	margin: 0 0 30px
+}
+
+@media (min-width:1024px) {
+	.individual-calc-intro p {
+		margin: 0 0 34px
+	}
+}
+.individual-calc-intro .calc-form-holder {
+	position: relative;
+	z-index: 2;
+	border-radius: 15px;
+	padding: 21px 20px 40px;
+	-webkit-box-shadow: 0 10px 30px 1px rgba(0, 0, 0, .1);
+	box-shadow: 0 10px 30px 1px rgba(0, 0, 0, .1)
+}
+
+@media (min-width:1024px) {
+	.individual-calc-intro .calc-form-holder {
+		padding: 40px 30px
+	}
+}
+.payment-toggle {
+	margin: 0;
+	padding: 0;
+	list-style: none
+}
+.payment-toggle {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	position: relative;
+	z-index: 1;
+	padding-bottom: 30px
+}
+.payment-toggle li {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	position: relative;
+	overflow: hidden;
+	color: #000820;
+	font-size: 16px;
+	line-height: 20px;
+	letter-spacing: -.1px;
+	padding-right: 20px
+}
+.payment-toggle label {
+	padding-left: 26px
+}
+.payment-toggle input[type=radio] {
+	position: absolute;
+	left: -99px
+}
+.payment-toggle input[type=radio]:checked+label+.check {
+	border-color: #197f3d
+}
+.payment-toggle input[type=radio]:checked+label+.check:after {
+	content: ""
+}
+.payment-toggle .check {
+	position: absolute;
+	top: 3px;
+	left: 0;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	border: 1px solid #dee3e7;
+	z-index: -1
+}
+.payment-toggle .check:after {
+	position: absolute;
+	width: 12px;
+	height: 12px;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+	border-radius: 50%;
+	background: #197f3d
+}
+.payment-toggle .inside {
+	display: none
+}
+@media (min-width: 576px){
+  .ms-cl .container {
+      max-width: 540px;
+  }
+}
+@media (min-width: 768px){
+  .ms-cl .container {
+      max-width: 540px;
+  }
+  .ms-cl .col-md-12 {
+      -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+      max-width: 100%;
+  }
+  .ms-cl .col-md-8 {
+      -ms-flex: 0 0 66.666667%;
+      flex: 0 0 66.666667%;
+      max-width: 66.666667%;
+  }
+  .ms-cl .col-md-6 {
+      -ms-flex: 0 0 50%;
+      flex: 0 0 50%;
+      max-width: 50%;
+  }
+  .ms-cl .col-md-4 {
+      -ms-flex: 0 0 33.333333%;
+      flex: 0 0 33.333333%;
+      max-width: 33.333333%;
+  }
+  .ms-cl .col-md-3 {
+      -ms-flex: 0 0 25%;
+      flex: 0 0 25%;
+      max-width: 25%;
+  }
+}
+@media (min-width: 992px){
+  .ms-cl .container {
+      max-width: 540px;
+  }
+}
+@media (min-width: 1200px) {
+  .ms-cl .container {
+      max-width: 540px;
+  }
+}
+.ms-cl .hide {
+  display: none;
+}
+
+
+#hm_cl *, ::after, ::before {
+    box-sizing: border-box;
+}
+#hm_cl {
+    line-height: 1.5;
+    font-family: 'Roboto', sans-serif;
+}
+#hm_cl .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    text-align: left;
+}
+#hm_cl label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-size: 15px;
+    font-weight: 500;
+}
+#hm_cl .table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 0rem;
+    background-color: transparent;
+    border-collapse: collapse;
+}
+#hm_cl .table td, #hm_cl .table th {
+    padding: .65rem .75rem;
+    vertical-align: middle;
+    border-right: none !important;
+    border-left: none !important;
+    border-top: none !important;
+    border-bottom: 1px solid #cecabe;
+    font-size: 16px;
+    background: transparent;
+    box-shadow: none;
+    color:#000000;
+}
+#hm_cl .table th {
+    text-align: left;
+    font-weight: 500;
+}
+#hm_cl h3, h4, p {
+    margin: 10px 0;
+}
+#hm_cl .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+#hm_cl .col-md-1, #hm_cl .col-md-10, #hm_cl .col-md-11, #hm_cl .col-md-12, #hm_cl .col-md-2, #hm_cl .col-md-3, #hm_cl .col-md-4, #hm_cl .col-md-5, #hm_cl .col-md-6, #hm_cl .col-md-7, #hm_cl .col-md-8, #hm_cl .col-md-9 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+#hm_cl .form-group {
+    margin-bottom: 1rem;
+}
+#hm_cl .form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#hm_cl .form-control:focus {
+    outline: none;
+}
+#hm_cl .input-group {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    width: 100%;
+}
+#hm_cl .input-group>.custom-select:not(:last-child), #hm_cl .input-group>.form-control:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+#hm_cl .input-group>.custom-file, #hm_cl .input-group>.custom-select, #hm_cl .input-group>.form-control, #hm_cl .input-group>.form-control-plaintext {
+    position: relative;
+    -ms-flex: 1 1 0%;
+    flex: 1 1 0%;
+    min-width: 0;
+    margin-bottom: 0;
+}#hm_cl .input-group>.custom-select:not(:first-child), #hm_cl .input-group>.form-control:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+#hm_cl .input-group>.custom-select:not(:last-child), #hm_cl .input-group>.form-control:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+#hm_cl .input-group>.custom-file+.custom-file, #hm_cl .input-group>.custom-file+.custom-select, #hm_cl .input-group>.custom-file+.form-control, #hm_cl .input-group>.custom-select+.custom-file, #hm_cl .input-group>.custom-select+.custom-select, #hm_cl .input-group>.custom-select+.form-control, #hm_cl .input-group>.form-control+.custom-file, #hm_cl .input-group>.form-control+.custom-select, #hm_cl .input-group>.form-control+.form-control, #hm_cl .input-group>.form-control-plaintext+.custom-file, #hm_cl .input-group>.form-control-plaintext+.custom-select, #hm_cl .input-group>.form-control-plaintext+.form-control {
+    margin-left: -1px;
+}
+#hm_cl .input-group>.custom-file, #hm_cl .input-group>.custom-select, #hm_cl .input-group>.form-control, #hm_cl .input-group>.form-control-plaintext {
+    position: relative;
+    -ms-flex: 1 1 0%;
+    flex: 1 1 0%;
+    min-width: 0;
+    margin-bottom: 0;
+}
+#hm_cl .custom-control-label::before, #hm_cl .custom-file-label, #hm_cl .custom-select {
+    transition: background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#hm_cl .input-group-append {
+    margin-left: -1px;
+}
+#hm_cl .input-group-append, #hm_cl .input-group-prepend {
+    display: -ms-flexbox;
+    display: flex;
+}
+#hm_cl .input-group>.input-group-append:last-child>.btn:not(:last-child):not(.dropdown-toggle), #hm_cl .input-group>.input-group-append:last-child>.input-group-text:not(:last-child), #hm_cl .input-group>.input-group-append:not(:last-child)>.btn, #hm_cl .input-group>.input-group-append:not(:last-child)>.input-group-text, #hm_cl .input-group>.input-group-prepend>.btn, #hm_cl .input-group>.input-group-prepend>.input-group-text {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+#hm_cl .input-group>.input-group-append>.btn, #hm_cl .input-group>.input-group-append>.input-group-text, #hm_cl .input-group>.input-group-prepend:first-child>.btn:not(:first-child), #hm_cl .input-group>.input-group-prepend:first-child>.input-group-text:not(:first-child), #hm_cl .input-group>.input-group-prepend:not(:first-child)>.btn, #hm_cl .input-group>.input-group-prepend:not(:first-child)>.input-group-text {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+#hm_cl .input-group-append .btn, #hm_cl .input-group-prepend .btn {
+    position: relative;
+    z-index: 2;
+}
+#hm_cl .input-group-text {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0.375rem 0.75rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+#hm_cl .input-group-append .btn+.btn, #hm_cl .input-group-append .btn+.input-group-text, #hm_cl .input-group-append .input-group-text+.btn, #hm_cl .input-group-append .input-group-text+.input-group-text, #hm_cl .input-group-prepend .btn+.btn, #hm_cl .input-group-prepend .btn+.input-group-text, #hm_cl .input-group-prepend .input-group-text+.btn, #hm_cl .input-group-prepend .input-group-text+.input-group-text {
+    margin-left: -1px;
+}
+#hm_cl .input-group-prepend .btn, #hm_cl .input-group-append .btn {
+    position: relative;
+    z-index: 2;
+}
+#hm_cl .text-center {
+    text-align: center!important;
+}
+/* Custom css */
+#hm_cl .cl-wrapper {
+    position: relative;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 10px 30px 1px rgb(0 0 0 / 10%);
+}
+#hm_cl .cl-left-div {
+    padding: 3rem 3rem 2rem 3rem!important;
+    background: #ffffff;
+    border-radius: 10px;
+}
+#hm_cl .cl-right-div {
+    padding: 2rem 3rem !important;
+    border-radius: 0 0 8px 8px;
+    background: #ffffff;
+    color: #000000;
+}
+#hm_cl .rs-sec {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+    padding: 1.2rem;
+    margin: 6px 0;
+    box-shadow: 0 10px 30px 1px rgb(0 0 0 / 10%);
+}
+#hm_cl .rs-vl {
+    text-align: right;
+    font-weight: 500;
+}
+#hm_cl .rs-sub-title-sp {
+    font-size: 18px;
+    margin: 2px;
+    border-bottom: 1px solid #70BF4C;
+}
+#hm_cl .rs-sp-value {
+    font-size: 32px;
+    margin: 8px 2px;
+    color: #197f3d;
+}
+#hm_cl .sp-rs {
+    color: #197f3d;
+}
+#hm_cl .btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 2px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#hm_cl .btn-warning {
+    color: #fff;
+    background-color: #197f3d;
+    border-color: #197f3d;
+    text-decoration: none;
+    padding: 0.5rem 3.4375rem;
+    font-size: 1.25rem;
+    border-radius: 55px;
+}
+#hm_cl .btn-warning:hover {
+    color: #127635;
+    background-color: #ffffff;
+    border-color: #197f3d;
+}
+#hm_cl .rs-top-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #000;
+}
+#hm_cl .sp-pd-left {
+    padding-left: 25px;
+}
+#hm_cl .prepend-text {
+    position: absolute; 
+    font-size: 16px;
+    bottom: 22px;
+    left: 18px;
+    padding: 1px 5px;
+    border-radius: 5px;
+    color: #000;
+}
+/* responsive */
+
+@media (max-width: 768px){
+    #hm_cl .cl-left-div {
+        padding: 1rem 2rem !important;
+    }
+    #hm_cl .cl-right-div {
+        padding: 2rem 1rem !important;
+        border-radius: 0 0 8px 8px;
+    }
+    #hm_cl .form-control {
+        height: auto;
+        padding: .175rem .75rem;
+    }
+    #hm_cl label {
+        font-size: 14px;
+    }
+    #hm_cl .rs-sec {
+        flex-direction: column;
+    }
+    #hm_cl .btn-warning {
+        padding: 1.1375rem 2rem;
+        font-size: 1rem;
+    }
+    #hm_cl .prepend-text {
+        position: absolute;
+        font-size: 16px;
+        bottom: 19px;
+        left: 14px;
+        padding: 1px 5px;
+        border-radius: 5px;
+        color: #000;
+    }
+    #hm_cl .sp-pd-left{
+        padding-left: 15px;
+    }
+}
+@media (min-width: 576px){
+    #hm_cl .container, #hm_cl .container-sm {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px){
+    #hm_cl .container, #hm_cl .container-md, #hm_cl .container-sm {
+        max-width: 100%;
+    }
+    #hm_cl .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    #hm_cl .col-md-9 {
+        -ms-flex: 0 0 75%;
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+    #hm_cl .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+    #hm_cl .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    #hm_cl .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    #hm_cl .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+@media (min-width: 992px){
+    #hm_cl .container, #hm_cl .container-lg, #hm_cl .container-md, #hm_cl .container-sm {
+        max-width: 950px;
+    }
+}
+@media (min-width: 1200px) {
+    #hm_cl .container, #hm_cl .container-lg, #hm_cl .container-md, #hm_cl .container-sm, #hm_cl .container-xl {
+        max-width: 1100px;
+    }
+}
+#hm_cl hr {
+    border: none;
+    border-bottom: 1px solid #ccc;
+}
+</style>
+<div id="hm_cl">
+    <div class="container cl-wrapper">
+        <div class="row">
+            <div class="col-md-12 cl-left-div">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 style="margin: 0;margin-bottom:16px;border-bottom: 1px solid #ccc;">I would like to make a profit each year of</h3>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="hm_in_1">I want to earn</label>
+                        <div class="form-group">
+                            <input type="text" class="form-control cl-input sp-pd-left input_form" id="in_earn" value="100000" placeholder="Per Year">
+                            <span class="prepend-text">£</span>
+                        </div>                     
+                    </div>
+                    <div class="col-md-6">
+                        <label for="hm_in_2">I want to take off  weeks each year</label>    
+                        <div class="form-group">
+                            <input type="text" class="form-control cl-input input_form" id="in_holiday" value="4">
+                        </div>             
+                    </div>
+                    
+                </div> 
+                <div class="row">
+                    <div class="col-md-6">   
+                        <label for="hm_in_3">My business costs are</label>    
+                        <div class="form-group">
+                            <input type="text" class="form-control cl-input sp-pd-left input_form" id="in_avr_cost" value="350" placeholder="Per month">
+                            <span class="prepend-text">£</span>
+                        </div>                
+                    </div>
+                    <div class="col-md-6">   
+                        <label for="hm_in_4">My average amount I charge for my services is</label>    
+                        <div class="form-group">
+                            <input type="text" class="form-control cl-input sp-pd-left input_form" id="in_arv_chrg" value="40">
+                            <span class="prepend-text">£</span>
+                        </div>                
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="rs-top-title">The average amount you will earn each day / week / month will be:</p>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="rs-sec">
+                            <div class="rs-sp-vl-sec text-center">
+                                <h4 class="rs-sub-title-sp" id="text_1">Per DAY</h4>
+                                <h2 class="rs-sp-value" id="gv_2">£</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="rs-sec">
+                            <div class="rs-sp-vl-sec text-center">
+                                <h4 class="rs-sub-title-sp">Per WEEK</h4>
+                                <h2 class="rs-sp-value" id="gv_4">£</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="rs-sec">
+                            <div class="rs-sp-vl-sec text-center">
+                                <h4 class="rs-sub-title-sp" id="text_2">Per MONTH</h4>
+                                <h2 class="rs-sp-value" id="gv_6">£</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="rs-top-title">The total number of appointments or sales you need to have will be:</p>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="rs-sec">
+                            <div class="rs-sp-vl-sec text-center">
+                                <h4 class="rs-sub-title-sp" id="text_1">Per DAY</h4>
+                                <h2 class="rs-sp-value" id="gvn_2">-</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="rs-sec">
+                            <div class="rs-sp-vl-sec text-center">
+                                <h4 class="rs-sub-title-sp">Per WEEK</h4>
+                                <h2 class="rs-sp-value" id="gvn_4">-</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="rs-sec">
+                            <div class="rs-sp-vl-sec text-center">
+                                <h4 class="rs-sub-title-sp" id="text_2">Per MONTH</h4>
+                                <h2 class="rs-sp-value" id="gvn_6">-</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <h3 class="text-center">
+                    To earn <span class="sp-rs input_form" id="rs_4">£0</span> a year you will earn <span class="sp-rs input_form" id="rs_5">£0</span> 
+                    per week and need to book in <span class="sp-rs input_form" id="rs_6">Y</span> appointments / sales each week to achieve this.
+                </h3>
+                <hr>
+                <br>
+                <p class="text-center">Do you need to understand exactly what you’re making in your business so that you're not left feeling anxious or confused?</p>
+                <p class="text-center">
+                    <a class="btn btn-warning" href="#">Sign up for your FREE Pocket PA Trial here</a>                    
+                </p>
+                <p class="text-center">
+                    <small style="color: #5d5d5d;">** This does not include tax & national insurance costs. Remember, you will need to budget an amount for Tax & National insurance as well, but Pocket PA has a tax estimator tool to help you with that too!</small>                 
+                </p>    
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+    <script>
+        jQuery(($) => {
+            let earn_wk = 0, earn_mn = 0, earn_yr = 0;
+            let num_appt_wk = 0, num_appt_mn = 0, num_appt_yr = 0;
+            let earn_wk_2 = 0, earn_mn_2 = 0, earn_yr_2 = 0;
+            let num_appt_wk_2 = 0, num_appt_mn_2 = 0, num_appt_yr_2 = 0;
+            let in_earn = 0, in_holiday = 0, in_avr_cost = 0, in_arv_chrg = 0, in_avr_cost_type = 12;
+
+            const numOptionCurrency = {
+                digitGroupSeparator        : ',',
+                decimalCharacter           : '.',
+                decimalCharacterAlternative: '.',
+                currencySymbol             : '',
+                currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.prefix,
+                decimalPlaces              : 0,
+                minimumValue: 0
+            };
+            const numOptionNumber = {
+                digitGroupSeparator        : ',',
+                decimalCharacter           : '.',
+                decimalCharacterAlternative: '.',
+                currencySymbol             : '',
+                currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.suffix,
+                decimalPlaces              : 0,
+                minimumValue: 0
+            };
+
+            new AutoNumeric('#in_earn', numOptionCurrency);
+            new AutoNumeric('#in_avr_cost', numOptionCurrency);
+            new AutoNumeric('#in_arv_chrg', numOptionCurrency);
+            new AutoNumeric('#in_holiday', numOptionNumber);
+
+            const nft = Intl.NumberFormat("en-US", {
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0
+            });
+
+            $(".input_form").on("input", function(){
+                calc();
+            });
+
+            calc();
+
+            function calc(){
+                in_earn = removeSign($("#in_earn").val());
+                in_holiday = removeSign($("#in_holiday").val());
+                in_avr_cost = removeSign($("#in_avr_cost").val());
+                in_arv_chrg = removeSign($("#in_arv_chrg").val());
+
+                earn_wk = in_earn/(52-in_holiday);
+                earn_mn = (earn_wk*52)/12;
+                earn_yr = (earn_wk*52);
+
+                num_appt_wk = earn_wk/in_arv_chrg;
+                num_appt_dl = num_appt_wk/5;
+                num_appt_mn = earn_mn/in_arv_chrg;
+                num_appt_yr = earn_yr/in_arv_chrg;
+
+                let yearly = in_avr_cost*in_avr_cost_type;
+
+                earn_wk_2 = earn_wk + (yearly/52);
+                earn_mn_2 = earn_mn + (yearly/12);
+                earn_yr_2 = earn_yr + yearly;
+
+                num_appt_wk_2 = earn_wk_2/in_arv_chrg;
+                num_appt_dl_2 = num_appt_wk_2/5;
+                num_appt_mn_2 = earn_mn_2/in_arv_chrg;
+
+                $(".earn-amount").text("£"+nft.format(in_earn));
+                $("#gv_2").text("£"+nft.format(earn_wk_2))
+                $("#gv_4").text("£"+nft.format(earn_mn_2));
+                $("#gv_6").text("£"+nft.format(earn_yr_2));
+
+                $("#gvn_2").text(nft.format(num_appt_dl_2));
+                $("#gvn_4").text(nft.format(num_appt_wk_2));
+                $("#gvn_6").text(nft.format(num_appt_mn_2));
+
+                $("#rs_4").text("£"+nft.format(in_earn));
+                $("#rs_5").text("£"+nft.format(earn_mn_2));
+                $("#rs_6").text("£"+nft.format(num_appt_wk_2));
+
+            }
+
+            function removeSign(vl){
+                return Number(vl.replace(/\$|£|%|,/g, ''));
+            }
+        });
+    </script>
+<!----------- copy ends ---------------->
+</body>
+</html>

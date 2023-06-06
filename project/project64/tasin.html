@@ -1,0 +1,887 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <title>Property Management Cost Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <style>
+        #mx_cl *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+        }
+
+        #mx_cl {
+            line-height: 1.5;
+            font-family: inherit;
+        }
+
+        #mx_cl .container {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #4a4a4a;
+            text-align: left;
+            padding-top: 25px !important;
+        }
+
+        #mx_cl label {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            position: relative;
+        }
+
+        #mx_cl .row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        #mx_cl .col-md-1,
+        #mx_cl .col-md-10,
+        #mx_cl .col-md-11,
+        #mx_cl .col-md-12,
+        #mx_cl .col-md-2,
+        #mx_cl .col-md-3,
+        #mx_cl .col-md-4,
+        #mx_cl .col-md-5,
+        #mx_cl .col-md-6,
+        #mx_cl .col-md-7,
+        #mx_cl .col-md-8,
+        #mx_cl .col-md-9 {
+            position: relative;
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        #mx_cl .form-group {
+            margin-bottom: 1rem;
+        }
+
+        #mx_cl .form-control {
+            display: block;
+            width: 100%;
+            height: calc(1em + 0.75rem + 11px);
+            padding: 0.275rem 0.75rem;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #4a4a4a;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #dddddd;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+            border-radius: 8px;
+        }
+
+        #mx_cl .form-control:focus {
+            outline: none;
+        }
+
+        #mx_cl .btn {
+            display: inline-block;
+            font-weight: 400;
+            color: #212529;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-color: transparent;
+            border: 1px solid transparent;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: .25rem;
+            transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+
+        #mx_cl .btn-primary {
+            color: #fff;
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+
+        #mx_cl .btn-reset {
+            color: #fff;
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+
+        #mx_cl table {
+            border-collapse: collapse;
+        }
+
+        #mx_cl .table {
+            width: 100%;
+            margin-bottom: 5px;
+            color: #212529;
+            border: none;
+        }
+
+        #mx_cl .table td,
+        #mx_cl .table th {
+            padding: 3px 0;
+            vertical-align: top;
+            border-top: none;
+            border-bottom: 1px solid #00af92;
+            color: #FFFFFF;
+            font-size: 14px;
+        }
+
+        #mx_cl .table td:last-child,
+        #mx_cl .table th:last-child {
+            text-align: right;
+        }
+
+        #mx_cl .table tr:last-child td,
+        #mx_cl .table tr:last-child th {
+            font-size: 16px;
+            font-weight: 600;
+            border-bottom: none;
+        }
+
+        #mx_cl .text-center {
+            text-align: center;
+        }
+
+        @media (min-width: 576px) {
+            #mx_cl .container {
+                max-width: 100%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            #mx_cl .container {
+                max-width: 100%;
+            }
+
+            #mx_cl .col-md-12 {
+                -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            #mx_cl .col-md-9 {
+                -ms-flex: 0 0 75%;
+                flex: 0 0 75%;
+                max-width: 75%;
+            }
+
+            #mx_cl .col-md-8 {
+                -ms-flex: 0 0 66.666667%;
+                flex: 0 0 66.666667%;
+                max-width: 66.666667%;
+            }
+
+            #mx_cl .col-md-7 {
+                -ms-flex: 0 0 58.33333%;
+                flex: 0 0 58.33333%;
+                max-width: 58.33333%;
+            }
+
+            #mx_cl .col-md-6 {
+                -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+
+            #mx_cl .col-md-5 {
+                -ms-flex: 0 0 41.666667%;
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+
+            #mx_cl .col-md-4 {
+                -ms-flex: 0 0 33.333333%;
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+
+            #mx_cl .col-md-3 {
+                -ms-flex: 0 0 25%;
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+        }
+
+        @media (min-width: 992px) {
+            #mx_cl .container {
+                max-width: 960px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            #mx_cl .container {
+                max-width: 1150px;
+            }
+        }
+
+        #mx_cl .text-right {
+            text-align: right;
+        }
+
+        #mx_cl .form-group,
+        #mx_cl .input-group {
+            position: relative;
+            margin-bottom: 5px;
+        }
+
+        #mx_cl .top-title {
+            font-weight: 600;
+            font-size: 24px;
+            color: #04CBAA;
+            text-align: center;
+            border-bottom: 1px solid #dddddd;
+            padding: 8px 6px;
+            margin: 0;
+        }
+
+        #mx_cl .all-body {
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+            border-radius: 8px;
+            border-bottom: 1px solid #dddddd;
+
+        }
+
+        #mx_cl .left-sub-heading {
+            font-weight: 600;
+            font-size: 16px;
+            color: #04CBAA;
+            margin-bottom: 8px;
+        }
+
+        #mx_cl .sub-heading-hr {
+            border-bottom: 1px solid #dddddd;
+            width: 100%;
+        }
+
+        #mx_cl .output-vl {
+            font-weight: 600;
+            font-size: 24px;
+            color: #000000;
+            display: block;
+            text-align: center;
+        }
+
+        #mx_cl .right-section {
+            background-color: #04CBAA;
+            padding: 30px;
+            border-radius: 8px;
+            height: 100%;
+        }
+
+        #mx_cl .right-section-p {
+            color: #000000;
+            margin-top: 0px;
+            font-size: 14px;
+        }
+
+        #mx_cl .section-row {
+            padding: 22px 32px;
+        }
+
+        #mx_cl .common-p {
+            margin-bottom: 10px;
+        }
+
+        #mx_cl .right-mid {
+            margin-bottom: 15px;
+        }
+
+        #ms-cl .input-group {
+            position: relative;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -ms-flex-align: stretch;
+            align-items: stretch;
+            width: 100%;
+        }
+
+        #mx_cl .prepend-text {
+            position: absolute;
+            bottom: 7px;
+            left: 12px;
+        }
+
+
+        #mx_cl .append-text {
+            position: absolute;
+            bottom: 7px;
+            right: 12px;
+        }
+
+        #mx_cl .sp-left {
+            padding-left: 22px;
+        }
+
+        #mx_cl .sp-left {
+            padding-right: 22px;
+        }
+
+        #mx_cl .rs-sub-title {
+            margin: 0;
+            color: #fff;
+            border-bottom: 1px solid #fff;
+            font-size: 16px;
+        }
+
+        #mx_cl .help-tip {
+            position: absolute;
+            top: 1px;
+            right: -22px;
+            text-align: center;
+            background-color: #fff;
+            border: 1px solid #04cbaa;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 14px;
+            line-height: 26px;
+            cursor: default;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #mx_cl .help-tip:before {
+            content: '?';
+            font-weight: 500;
+            color: #04cbaa;
+        }
+
+        #mx_cl .help-tip:hover p {
+            display: block;
+            transform-origin: 100% 0%;
+            -webkit-animation: fadeIn 0.3s ease-in-out;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        #mx_cl .help-tip p {
+            /* The tooltip */
+            display: none;
+            text-align: left;
+            background-color: #ffffff;
+            padding: 14px;
+            width: 300px;
+            position: absolute;
+            border-radius: 6px;
+            box-shadow: 0px 0px 10px rgb(0 0 0 / 20%);
+            right: -11px;
+            color: #000;
+            font-size: 14px;
+            line-height: 1.4;
+            top: 13px;
+            z-index: 100;
+        }
+
+        #mx_cl .help-tip p:before {
+            /* The pointer of the tooltip */
+            position: absolute;
+            content: '';
+            width: 0;
+            height: 0;
+            border: 6px solid transparent;
+            border-bottom-color: #8a8a8a;
+            right: 13px;
+            top: -12px;
+        }
+
+        #mx_cl .help-tip p:after {
+            width: 100%;
+            height: 40px;
+            content: '';
+            position: absolute;
+            top: -40px;
+            left: 0;
+        }
+
+        #mx_cl .flex_ele {
+            display: flex;
+            width: 100%;
+            height: calc(1em + 0.75rem + 11px);
+
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #4a4a4a;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #dddddd;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+            border-radius: 8px;
+            align-items: center;
+        }
+        
+
+        #mx_cl .inner_form{
+            border-top-left-radius: 0px;
+            border-bottom-left-radius: 0px;
+            border-left: none;
+            border-right: none;
+        }
+        
+     
+
+        #mx_cl .is-active{
+            background-color:#04CBAA;
+            color: #fff;
+
+        }
+
+        #mx_cl .leasing-fee-first {
+            padding: 7px 10px;
+            border-right: 1px solid #D9D9D9;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+            cursor: pointer;
+        }
+
+        #mx_cl .leasing-fee-last {
+            padding: 7px 10px;
+            border-right: 1px solid #D9D9D9;
+            cursor: pointer;
+        }
+
+        #mx_cl .option-btn:not(.is-active):hover {
+            background-color: #dddddd;
+        }
+
+        #mx_cl .rs-bottom {
+            border: 1px solid #00af92;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 768px) {
+            #mx_cl .top-title {
+                font-size: 24px;
+            }
+
+            #mx_cl .section-row {
+                padding: 24px 26px;
+            }
+
+            #mx_cl .right-section {
+                padding: 16px;
+            }
+        }
+    </style>
+    <div class="ms-cl" id="mx_cl">
+        <div class="container">
+            <div class="all-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="top-title">Property Management Cost and Profitability Calculator</h3>
+                        <div class="section-row">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <label for="in_1" class="left-sub-heading">Home Value</label>
+                                                <input type="text" class="form-control sp-left cl-input in-curr" id="in_1"
+                                                    value="1000000" autocomplete="off">
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <label for="in_3">Annual Value Appreciation</label>
+                                                <input type="text" class="form-control right-left cl-input in-prcnt" id="in_3"
+                                                    value="4" autocomplete="off">
+                                                <span class="append-text">%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="left-sub-heading sub-heading-hr">Income:</label>
+                                    </div>
+                                    <div class="row right-mid">
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <label for="in_2">Monthly Rent</label>
+                                                <input type="text" class="form-control sp-left cl-input in-curr"
+                                                    id="in_2" value="5000" autocomplete="off">
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <label for="in_22">Annual Rent</label>
+                                                <input type="text" class="form-control sp-left cl-input" id="in_22"
+                                                    style="background-color: #04CBAA; border-color: #04CBAA; color: #fff;"
+                                                    readonly autocomplete="off">
+                                                <span class="prepend-text" style="color: #fff;">$</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="left-sub-heading sub-heading-hr">Expense:</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label for="in_4">Leasing Fee
+                                                <div class="help-tip">
+                                                    <p>Leasing fee is usually between 50-100% of one month's rent. Some companies charge a flat fee or even higher leasing fee if they secure longer
+                                                        than 1 year term or charge leasing fee again during lease
+                                                        renewal. An average tenant normally stay around 3 years and
+                                                        maybe longer for detached single family homes.</p>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <div class="flex_ele">
+                                                    <span class="leasing-fee-first option-btn" data-value="dollar">$</span>
+                                                    <span class="leasing-fee-last option-btn is-active" data-value="prcnt">%</span>
+                                                    <input type="text" class="form-control cl-input inner_form"
+                                                    id="in_4" value="50" autocomplete="off">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="in_5">Management Fees
+                                                <div class="help-tip">
+                                                    <p>All management companies have ancillary fees such as lease
+                                                        renewal, inspections, maintenance markup, and etc, which equals
+                                                        to another .5%-2% in management fees.</p>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <div class="flex_ele">
+                                                    <span class="leasing-fee-first option-btn-2" data-value="dollar">$</span>
+                                                    <span class="leasing-fee-last option-btn-2 is-active" data-value="prcnt">%</span>
+                                                    <input type="text" class="form-control cl-input inner_form"
+                                                    id="in_5" value="5" autocomplete="off">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="in_6">Mortgage, HOA, Insurance, Property Tax</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control sp-left cl-input in-curr"
+                                                    id="in_6" value="4500" autocomplete="off">
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="in_7">Your Hourly Rate
+                                                <div class="help-tip">
+                                                    <p>An average landlord spends a minimum of 40 hours per year
+                                                        performing leasing and managing 1 rental unit.</p>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control sp-left cl-input in-curr"
+                                                    id="in_7" value="50" autocomplete="off">
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="in_8">Estimated Repairs Over 3 Years
+                                                <div class="help-tip">
+                                                    <p>Annual repair is usually between 5-8% of total gross rent depending on the age of the property, the cost is usually lower for condos. This expense should also include recurring expenses Such as landscaping and pool maintenance.</p>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control right-left cl-input in-prcnt"
+                                                    id="in_8" value="6" autocomplete="off">
+                                                <span class="append-text">%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="in_88">Vacancy Rate
+                                                <div class="help-tip">
+                                                    <p>Vacancy Rate is between 2-10% depending on how fast you can turn over the unit to rent-ready condition and rent out the property.</p>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control right-left cl-input in-prcnt"
+                                                    id="in_88" value="3" autocomplete="off">
+                                                <span class="append-text">%</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="in_9">Miscellaneous</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control sp-left cl-input in-curr"
+                                                    id="in_9" value="0" autocomplete="off">
+                                                <span class="prepend-text">$</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="right-section">
+                                        <h3 class="rs-sub-title">Income:</h3>
+                                        <table class="table">
+                                            <tr>
+                                                <td>Rent</td>
+                                                <td id="rs_1">$0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Annual Value Appreciation</td>
+                                                <td id="rs_2">$0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Total</td>
+                                                <td id="rs_3">$0.00</td>
+                                            </tr>
+                                        </table>
+                                        <h3 class="rs-sub-title">Expense:</h3>
+                                        <table class="table">
+                                            <tr>
+                                                <td>Leasing Fee</td>
+                                                <td id="rs_4">$0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Management Fees</td>
+                                                <td id="rs_5">$0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mortgage, HOA, Insurance, Property Tax</td>
+                                                <td id="rs_6">$0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Your Hourly Rate</td>
+                                                <td id="rs_7">$0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Estimated Repairs Over 3 Years</td>
+                                                <td id="rs_8">$0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Vacancy Rate</td>
+                                                <td id="rs_88">$0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Miscellaneous</td>
+                                                <td id="rs_13">$0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Total</td>
+                                                <td id="rs_9">$0.00</td>
+                                            </tr>
+                                        </table>
+                                        <span class="output-vl" id="rs_10">$0.00</span>
+                                        <p class="right-section-p text-center">Net Profit after 3 years if you have a
+                                            property manager</p>
+                                        <span class="output-vl" id="rs_11">$0.00</span>
+                                        <p class="right-section-p text-center">Net Profit after 3 years If you are
+                                            self-managing</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/autonumeric@4.8.1"></script>
+    <script>
+        jQuery(($) => {
+            let ins = {}, fee_type = "prcnt", mn_fee_type = "prcnt";
+            let flat_vl = false, is_prcnt = true;
+
+            const numOptionCurrency = {
+                digitGroupSeparator: ',',
+                decimalCharacter: '.',
+                decimalCharacterAlternative: '.',
+                currencySymbol: '',
+                currencySymbolPlacement: AutoNumeric.options.currencySymbolPlacement.prefix,
+                decimalPlaces: 0,
+                minimumValue: 0,
+                maximumValue: 99999999999
+            };
+
+            const numOptionPercent = {
+                digitGroupSeparator: ',',
+                decimalCharacter: '.',
+                decimalCharacterAlternative: '.',
+                currencySymbol: '',
+                currencySymbolPlacement: AutoNumeric.options.currencySymbolPlacement.suffix,
+                decimalPlaces: 2,
+                minimumValue: 0,
+                maximumValue: 100
+            };
+
+            const nft = Intl.NumberFormat("en-US", {
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0
+            });
+
+            const anElement1 = AutoNumeric.multiple('.in-curr', numOptionCurrency);
+            const anElement2 = AutoNumeric.multiple('.in-prcnt', numOptionPercent);
+            const elm3 = new AutoNumeric('#in_4', numOptionPercent);
+            const elm4 = new AutoNumeric('#in_5', numOptionPercent);
+
+            get_vl();
+
+            $(".option-btn").on("click", function () {
+                $(".option-btn").removeClass("is-active");
+                $(this).addClass("is-active");
+                fee_type = $(this).data("value");
+
+                if(fee_type == "dollar"){
+                    elm3.set(0);
+                    elm3.update(numOptionCurrency);
+                } else {
+                    elm3.set(0);
+                    elm3.update(numOptionPercent);
+                }
+                get_vl();
+            });
+
+            $(".option-btn-2").on("click", function () {
+                $(".option-btn-2").removeClass("is-active");
+                $(this).addClass("is-active");
+                mn_fee_type = $(this).data("value");
+
+                if(mn_fee_type == "dollar"){
+                    elm4.set(0);
+                    elm4.update(numOptionCurrency);
+                } else {
+                    elm4.set(0);
+                    elm4.update(numOptionPercent);
+                }
+                get_vl();
+            });
+
+            $("#in_40").on("input", function () {
+                flat_vl = true;
+                is_prcnt = false;
+                get_vl();
+            });
+
+            $("#in_4").on("input", function () {
+                flat_vl = false;
+                is_prcnt = true;
+                get_vl();
+            });
+
+            $(".cl-input").on("input", function () {
+                get_vl();
+            });
+
+            function get_vl() {
+                $(".cl-input").each(function (i, elm) {
+                    let vl = removeSign($(elm).val());
+                    let inID = $(elm).attr("id");
+
+                    if ($(elm).hasClass("in-prcnt")) {
+                        vl = vl / 100;
+                    }
+
+                    ins[inID] = vl;
+                });
+
+                calcFunc();
+            }
+
+            function calcFunc() {
+                ins["in_4"] = removeSign($("#in_4").val());
+
+                let monthly_rent = ins["in_2"];
+
+                ins["in_22"] = monthly_rent * 12;
+                let annual_rent = ins["in_22"];
+
+                rs_1 = annual_rent * 3;
+                rs_2 = (ins["in_1"] * ins["in_3"]) * 3;
+                rs_3 = rs_1 + rs_2;
+
+                if(fee_type == "dollar"){
+                    rs_4 = ins["in_4"];
+                } else {
+                    rs_4 = monthly_rent * (ins["in_4"]/100);
+                }
+
+                if(mn_fee_type == "dollar"){
+                    rs_5 = ins["in_5"];
+                } else {
+                    rs_5 = (monthly_rent * (ins["in_5"]/100)) * 3 * 12;
+                }
+
+                rs_6 = ins["in_6"] * 3 * 12;
+                rs_7 = ins["in_7"] * 40 * 3;
+                rs_8 = (rs_1 * ins["in_8"]);
+                rs_88 = (rs_1 * ins["in_88"]);
+                rs_13 = ins["in_9"];
+                rs_9 = rs_4 + rs_5 + rs_6 + rs_7 + rs_8 + rs_13;
+
+                let ext_cost = rs_5 + rs_7;
+
+                rs_10 = rs_3 - rs_4 - rs_5 - rs_6 - rs_8 - rs_13 - rs_88;
+                rs_11 = rs_3 - rs_6 - rs_7 - rs_8 - rs_13 - rs_88;
+
+                $("#in_22").val(nft.format(annual_rent));
+
+                $("#rs_1").text("$" + nft.format(rs_1));
+                $("#rs_2").text("$" + nft.format(rs_2));
+                $("#rs_3").text("$" + nft.format(rs_3));
+                $("#rs_4").text("$" + nft.format(rs_4));
+                $("#rs_5").text("$" + nft.format(rs_5));
+                $("#rs_6").text("$" + nft.format(rs_6));
+                $("#rs_7").text("$" + nft.format(rs_7));
+                $("#rs_8").text("$" + nft.format(rs_8));
+                $("#rs_88").text("$" + nft.format(rs_88));
+                $("#rs_9").text("$" + nft.format(rs_9));
+                $("#rs_10").text("$" + nft.format(rs_10));
+                $("#rs_11").text("$" + nft.format(rs_11));
+                $("#rs_13").text("$" + nft.format(rs_13));
+            }
+
+            function removeSign(vl) {
+                return Number(vl.replace(/\$|,/g, ''));
+            }
+        });
+    </script>
+</body>
+
+</html>

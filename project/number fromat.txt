@@ -18,7 +18,7 @@ const numOptionCurrency = {
         };
 
         new AutoNumeric('#in_1', numOptionCurrency);
-new AutoNumeric('#in_4', numOptionPercent);
+	new AutoNumeric('#in_4', numOptionPercent);
 
 const anElement1 = AutoNumeric.multiple('.cl-in', numOptionCurrency);
 
