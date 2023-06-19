@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>.
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body>
+<style>
+div#bmi__calculator *,
+div#bmi__calculator :after,
+div#bmi__calculator :before {
+    box-sizing: border-box
+}
+
+div#bmi__calculator {
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 32px;
+    position: relative;
+    color: #0c0c0c;
+}
+
+div#bmi__calculator .bmi__title {
+    text-align: center;
+    font-weight: 400;
+    color: #1d1f45;
+    text-transform: capitalize;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    line-height: 1.2
+}
+
+div#bmi__calculator input[type=text] {
+    background: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    box-shadow: none;
+    color: #000;
+    font-weight: 600;
+    height: auto;
+    margin-bottom: 0;
+    padding: 10px 15px;
+    width: 100%;
+}
+div#bmi__calculator input[type=text]:focus {
+    outline: none;
+    border-color: #00007C;
+}
+
+div#bmi__calculator .bmi__box {
+    margin-bottom: 20px;
+    flex: 1
+}
+
+div#bmi__calculator .bmi__box>div {
+    margin: 10px 5px
+}
+
+div#bmi__calculator .bmi__imperial .bmi__group.bmi__group_double:nth-child(1) {
+    margin-right: 5px
+}
+
+div#bmi__calculator .bmi__group {
+    text-align: left;
+    position: relative
+}
+
+div#bmi__calculator span.bmi__addon {
+    font-size: 15px;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #747474;
+}
+
+div#bmi__calculator .bmi__name {
+    font-weight: 400;
+    color: #000;
+    font-size: 17px;
+    text-align: left;
+    text-transform: capitalize;
+    margin-bottom: 10px
+}
+
+div#bmi__calculator #bmi__value {
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    padding: 15px;
+}
+
+div#bmi__calculator .bmi__result_title {
+    text-align: center;
+    font-weight: 400;
+    font-size: 30px;
+    margin-bottom: 16px;
+    color: #2bbacc;
+}
+
+div#bmi__calculator .bmi__inner_row {
+    display: flex
+}
+
+div#bmi__calculator .bmi__group.bmi__group_double {
+    display: inline-block;
+    width: calc(50% - 3px)
+}
+
+div#bmi__calculator .bmi__details_result_text div {
+    margin-bottom: 15px;
+    font-size: 17px;
+    line-height: 19px;
+    color: #0c0c0c;
+    text-align: center
+}
+
+div#bmi__calculator span.bmi__directive {
+    font-weight: 400;
+    text-align: center;
+    font-size: 18px;
+    display: block;
+    margin-bottom: 10px
+}
+
+div#bmi__calculator span#bmi__weight_range {
+    font-weight: 700;
+    font-size: 33px;
+    text-align: center
+}
+
+div#bmi__calculator .bmi__weight_range {
+    text-align: center
+}
+
+div#bmi__calculator .bmi__btn_row {
+    text-align: center
+}
+
+div#bmi__calculator .bmi__btn {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    background: #000;
+    padding: 10px 30px;
+    font-weight: 400;
+    font-size: 17px;
+    border-radius: 2px;
+    display: inline-block;
+    margin: 0 auto;
+    cursor: pointer
+}
+
+div#bmi__calculator .bmi__btn.bmi__btn_back {
+    background: #fff;
+    color: #505050;
+    text-decoration: underline;
+    font-weight: 100;
+    font-size: 14px;
+    margin-top: 10px
+}
+div#bmi__calculator .bmi__graphic {
+    clear: both;
+    margin: 1rem auto 2rem auto;
+    width: 300px
+}
+
+div#bmi__calculator .bmi__graphic_scale {
+    border: 1px solid #fff;
+    border-radius: 1px;
+    box-shadow: 0 2px 4px 0 #9b9b9b;
+    height: 260px;
+    left: 50px;
+    position: relative;
+    width: 50px
+}
+
+div#bmi__calculator .bmi__graphic_scale {
+    background: linear-gradient(to top, #dadada, #dadada 9%, #2bbacc 14%, #2bbacc 24%, #dadada 29%, #dadada)
+}
+
+div#bmi__calculator .bmi__graphic_scale #bmi__marker {
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: #fff;
+    font-size: .75rem;
+    font-weight: 700;
+    left: -50px;
+    height: 48px;
+    padding: 18px 18px;
+    position: absolute;
+    text-align: left;
+    text-transform: uppercase;
+    width: 70px;
+    z-index: 10;
+}
+
+div#bmi__calculator .bmi__graphic_scale #bmi__marker {
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgdmlld0JveD0iMCAwIDcyIDU0IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAKICAgIDx0aXRsZT5waW4gZm9yIHNjYWxlPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGRlZnM+CiAgICAgICAgPGZpbHRlciB4PSItNTAlIiB5PSItNTAlIiB3aWR0aD0iMjAwJSIgaGVpZ2h0PSIyMDAlIiBmaWx0ZXJVbml0cz0ib2JqZWN0Qm91bmRpbmdCb3giIGlkPSJmaWx0ZXItMSI+CiAgICAgICAgICAgIDxmZU9mZnNldCBkeD0iMCIgZHk9IjIiIGluPSJTb3VyY2VBbHBoYSIgcmVzdWx0PSJzaGFkb3dPZmZzZXRPdXRlcjEiPjwvZmVPZmZzZXQ+CiAgICAgICAgICAgIDxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjIiIGluPSJzaGFkb3dPZmZzZXRPdXRlcjEiIHJlc3VsdD0ic2hhZG93Qmx1ck91dGVyMSI+PC9mZUdhdXNzaWFuQmx1cj4KICAgICAgICAgICAgPGZlQ29sb3JNYXRyaXggdmFsdWVzPSIwIDAgMCAwIDAuMjE1Njg2Mjc1ICAgMCAwIDAgMCAwLjI3ODQzMTM3MyAgIDAgMCAwIDAgMC4zMDk4MDM5MjIgIDAgMCAwIDAuMTc4NDcwMzM1IDAiIHR5cGU9Im1hdHJpeCIgaW49InNoYWRvd0JsdXJPdXRlcjEiIHJlc3VsdD0ic2hhZG93TWF0cml4T3V0ZXIxIj48L2ZlQ29sb3JNYXRyaXg+CiAgICAgICAgICAgIDxmZU1lcmdlPgogICAgICAgICAgICAgICAgPGZlTWVyZ2VOb2RlIGluPSJzaGFkb3dNYXRyaXhPdXRlcjEiPjwvZmVNZXJnZU5vZGU+CiAgICAgICAgICAgICAgICA8ZmVNZXJnZU5vZGUgaW49IlNvdXJjZUdyYXBoaWMiPjwvZmVNZXJnZU5vZGU+CiAgICAgICAgICAgIDwvZmVNZXJnZT4KICAgICAgICA8L2ZpbHRlcj4KICAgICAgICA8cGF0aCBkPSJNMjAuNDMwNjY3NCwwIEM5LjMyMzQxNzY0LDAgMC4zMjA4NzU4MzUsOC4zODUzMTcyMSAwLjMyMDg3NTgzNSwxOC43Mjk1NTQ1IEMwLjMyMDg3NTgzNSwxOS4xMTY2NDY0IDAuMzM1OTU3MzQxLDE5LjUwMTUwNDEgMC4zNjEwOTMxODQsMTkuODgyNDUxOCBDMS4yMjg1NTkwNSwzNi42MzAxODQ3IDIwLjQzMDY2NzQsNTkuMzQ1MTY2NyAyMC40MzA2Njc0LDU5LjM0NTE2NjcgQzIwLjQzMDY2NzQsNTkuMzQ1MTY2NyAzOS42MzA1NDE0LDM2LjYzMDE4NDcgNDAuNDk4MDA3MiwxOS44ODI0NTE4IEM0MC41MjMxNDMxLDE5LjUwMTUwNDEgNDAuNTM5MzQxNywxOS4xMTY2NDY0IDQwLjUzOTM0MTcsMTguNzI5NTU0NSBDNDAuNTM5MzQxNyw4LjM4NTMxNzIxIDMxLjUzNjc5OTksMCAyMC40MzA2Njc0LDAiIGlkPSJwYXRoLTIiPjwvcGF0aD4KICAgICAgICA8ZmlsdGVyIHg9Ii01MCUiIHk9Ii01MCUiIHdpZHRoPSIyMDAlIiBoZWlnaHQ9IjIwMCUiIGZpbHRlclVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgaWQ9ImZpbHRlci0zIj4KICAgICAgICAgICAgPGZlT2Zmc2V0IGR4PSIwIiBkeT0iMiIgaW49IlNvdXJjZUFscGhhIiByZXN1bHQ9InNoYWRvd09mZnNldE91dGVyMSI+PC9mZU9mZnNldD4KICAgICAgICAgICAgPGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMiIgaW49InNoYWRvd09mZnNldE91dGVyMSIgcmVzdWx0PSJzaGFkb3dCbHVyT3V0ZXIxIj48L2ZlR2F1c3NpYW5CbHVyPgogICAgICAgICAgICA8ZmVDb2xvck1hdHJpeCB2YWx1ZXM9IjAgMCAwIDAgMC44ICAgMCAwIDAgMCAwLjggICAwIDAgMCAwIDAuOCAgMCAwIDAgMSAwIiB0eXBlPSJtYXRyaXgiIGluPSJzaGFkb3dCbHVyT3V0ZXIxIj48L2ZlQ29sb3JNYXRyaXg+CiAgICAgICAgPC9maWx0ZXI+CiAgICA8L2RlZnM+CiAgICA8ZyBpZD0iU3ltYm9scyI+CiAgICAgICAgPGcgaWQ9Im06LWJtaS1oZWFkZXItdy1SZXN1bHRzMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTI2LjAwMDAwMCwgLTQ3MC4wMDAwMDApIj4KICAgICAgICAgICAgPGcgaWQ9InZlcnRpY2FsLWJtaS1zY2FsZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzAuMDAwMDAwLCAzNDIuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICA8ZyBpZD0icGluLWZvci1zY2FsZSIgZmlsdGVyPSJ1cmwoI2ZpbHRlci0xKSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMS4wMDAwMDAsIDEzMi4wMDAwMDApIj4KICAgICAgICAgICAgICAgICAgICA8ZyBpZD0iR3JvdXAtMyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzAuMDAwMDAwLCAyMS4xNTMwMDcpIHJvdGF0ZSgtOTAuMDAwMDAwKSB0cmFuc2xhdGUoLTMwLjAwMDAwMCwgLTIxLjE1MzAwNykgdHJhbnNsYXRlKDkuNTAwMDAwLCAtOC44NDY5OTMpIj4KICAgICAgICAgICAgICAgICAgICAgICAgPGcgaWQ9IkZpbGwtMS1Db3B5Ij4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDx1c2UgZmlsbD0iYmxhY2siIGZpbGwtb3BhY2l0eT0iMSIgZmlsdGVyPSJ1cmwoI2ZpbHRlci0zKSIgeGxpbms6aHJlZj0iI3BhdGgtMiI+PC91c2U+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8dXNlIGZpbGw9IiNGRkZGRkYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgeGxpbms6aHJlZj0iI3BhdGgtMiI+PC91c2U+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTTUuMTgxNzM2NDQsMTkuMjkwMzYyIEM1LjE0NDExNTM3LDE5LjY5ODA0MTkgNS4xMjQ5MTU0NywyMC4xMTA2MjUxIDUuMTI0OTE1NDcsMjAuNTI3Mzg2MSBDNS4xMjQ5MTU0NywyMC44MjIwMDI5IDUuMTM2Mzk0MDQsMjEuMTE0OTE5MSA1LjE1NTUyNSwyMS40MDQ4NTk0IEM1LjgxNTc1NTcsMzQuMTUxNjA1NyAyMC40MzA1MzM5LDUxLjQ0MDA0MTkgMjAuNDMwNTMzOSw1MS40NDAwNDE5IEMyMC40MzA1MzM5LDUxLjQ0MDA0MTkgMzUuMDQzNjExNiwzNC4xNTE2MDU3IDM1LjcwMzg0MjMsMjEuNDA0ODU5NCBDMzUuNzIyOTczMywyMS4xMTQ5MTkxIDM1LjczNTMwMjEsMjAuODIyMDAyOSAzNS43MzUzMDIxLDIwLjUyNzM4NjEgQzM1LjczNTMwMjEsMjAuMTEwNjIxNiAzNS43MTYxMDE5LDE5LjY5ODAzNTEgMzUuNjc4NDgwMywxOS4yOTAzNTIgQzM1LjQ4ODU0MDEsMTEuNjA5Mzc2MSAyOC43MjExMjk2LDUuNDE2MDQwOTMgMjAuNDMwNTgwMSw1LjQxNjA0MDkzIEMxMi4xMzgxNjgzLDUuNDE2MDQwOTMgNS4zNzE2NDU0MywxMS42MDkzODE1IDUuMTgxNzM2NDQsMTkuMjkwMzYyIFoiIGlkPSJDb21iaW5lZC1TaGFwZSIgZmlsbD0iIzAwMDAwMCI+PC9wYXRoPgogICAgICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+)
+}
+
+div#bmi__calculator .bmi__graphic_scale .bmi__range_section {
+    border-bottom: 1px dashed #b0bec5;
+    display: -ms-flexbox;
+    display: flex;
+    left: -50px;
+    position: relative;
+    width: 300px
+}
+
+div#bmi__calculator .bmi__graphic_scale .bmi__range_section_obese {
+    height: 58%
+}
+
+div#bmi__calculator .bmi__graphic_scale .bmi__range_section_overweight {
+    height: 14%
+}
+
+div#bmi__calculator .bmi__graphic_scale .bmi__range_section_healthy {
+    height: 18%
+}
+
+div#bmi__calculator .bmi__graphic_scale .bmi__range_section_underweight {
+    height: 10%
+}
+
+div#bmi__calculator .bmi__graphic_scale .bmi__range_sectionrange:last-child {
+    border-bottom: none
+}
+
+div#bmi__calculator .bmi__graphic_scale .bmi__range_decriptionn {
+    color: #000;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    font-size: .938rem;
+    -ms-flex-pack: center;
+    justify-content: center;
+    left: 120px;
+    line-height: 1;
+    position: relative;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+div#bmi__calculator .bmi__graphic_scale .bmi__range_decriptionn b {
+    display: block
+}
+div#bmi__calculator .hd-in-sec {
+    display: flex;
+}
+
+@media all and (max-width:780px) {
+    div#bmi__calculator .bmi__box {
+        display: block
+    }
+
+    div#bmi__calculator .bmi__box>div.bmi__group {
+        margin-bottom: 5px
+    }
+
+    div#bmi__calculator .bmi__inner_row {
+        display: block
+    }
+}    
+div#bmi__calculator .option-sec {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px !important;
+}    
+div#bmi__calculator .option-item {
+    flex: 1;
+    border-bottom: 3px solid #ccc;
+    padding: 10px;
+    background: #f6f6f6;
+    cursor: pointer;
+}
+div#bmi__calculator .option-item.is-active {
+    border-color: #2bbacc;
+}
+div#bmi__calculator .option-item:nth-child(1) {
+    margin-right: 5px;
+}
+div#bmi__calculator .con-2 {
+    display: none;
+}
+div#bmi__calculator .calc-btn {
+    display: block;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 26px !important;
+    background-color: #2bbacc;
+}
+div#bmi__calculator .img-sec {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-content: center;
+}
+div#bmi__calculator .img-sec img {
+  width: 250px;
+}
+div#bmi__calculator  .cl-wrapper {
+    position: relative;
+    padding: 40px;
+    box-shadow: 0px 0px 85px rgba(13, 14, 67, 0.12);
+    border-radius: 8px;
+    background: #F3F7FC;
+    margin-top: 10px;
+}
+</style>
+<div id="bmi__calculator">
+    <div class="img-sec">
+        <img src="https://i.postimg.cc/DfcD3fy2/sm-logo.png" alt="">
+    </div>
+   <div class="bmi__inner cl-wrapper">
+      <div class="bmi__inner_row">
+         <div class="bmi__box">
+            <div class="option-sec">
+                <div class="option-item is-active" onclick="bmi__calculator.changeUnit(1);">US Units</div>
+                <div class="option-item" onclick="bmi__calculator.changeUnit(2);">Metric Units</div>
+            </div>
+            <div class="bmi__name">Height:</div>
+            <div class="bmi__imperial con-1">
+               <div class="hd-in-sec">
+                    <div class="bmi__group bmi__group_double"> <input type="text" id="bmi__height_ft" class="bmi__inputs" value="5" placeholder=""><span class="bmi__addon">ft</span> </div>
+                    <div class="bmi__group bmi__group_double"> <input type="text" id="bmi__height_in" class="bmi__inputs" value="10" placeholder=""><span class="bmi__addon">in</span> </div>
+               </div>
+            </div>
+            <div class="bmi__imperial con-2">
+               <div class="bmi__group"> <input type="text" id="bmi__height_cm" class="bmi__inputs" value="180" placeholder=""><span class="bmi__addon">cm</span> </div>
+            </div>
+            <div class="bmi__name">Weight:</div>
+            <div class="bmi__imperial">
+               <div class="bmi__group con-1"> <input type="text" id="bmi__weight_lbs" class="bmi__inputs" value="170" placeholder=""><span class="bmi__addon">lbs</span> </div>
+               <div class="bmi__group con-2"> <input type="text" id="bmi__weight_kg" class="bmi__inputs" value="65" placeholder=""><span class="bmi__addon">kg</span> </div>
+            </div>
+            <div class="bmi__btn calc-btn" onclick="bmi__calculator.calculate();">calculate</div>
+         </div>
+         <div class="bmi__box">
+            <div class="bmi__result">
+                <div class="bmi__graphic">
+                    <div class="bmi__graphic_scale">
+                        <span id="bmi__marker">You</span> 
+                        <span class="bmi__range_section bmi__range_section_obese">
+                            <div class="bmi__range_decriptionn"> <b>Obese</b>30.0 and above </div>
+                        </span>
+                        <span class="bmi__range_section bmi__range_section_overweight">
+                            <div class="bmi__range_decriptionn"> <b>Overweight</b>25.0 - 29.9 </div>
+                        </span>
+                        <span class="bmi__range_section bmi__range_section_healthy">
+                            <div class="bmi__range_decriptionn selected"> <b>Healthy</b>18.5 - 24.9 </div>
+                        </span>
+                        <span class="bmi__range_section bmi__range_section_underweight">
+                            <div class="bmi__range_decriptionn"> <b>Underweight</b>Below 18.5 </div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+         </div>
+      </div>
+      <div class="bmi__result_title">Your BMI = <span id="bmi__value">0</span></div>
+      <div class="bmi__details">
+         <div class="bmi__details_result_text" id="bmi__details_result_text_obese">
+            <div>Since your weight puts you in the obese range, you're much more likely to have serious health problems.</div>
+            <div><strong>The healthy range for BMI is between 18.5 and 24.9</strong>.</div>
+         </div>
+         <div class="bmi__details_result_text" id="bmi__details_result_text_over">
+            <div>Since your weight puts you in the overweight range, losing some extra pounds is a good first step toward lowering your chances of health problems.&nbsp;</div>
+            <div><strong>The healthy range for BMI is between 18.5 and 24.9.&nbsp;</strong></div>
+            <div>If you have a very muscular build, though, you could have an overweight BMI and still be OK.</div>
+         </div>
+         <div class="bmi__details_result_text" id="bmi__details_result_text_under">
+            <div>A few more pounds can lessen your chances of thinning bones and a weakened immune system, as well as feeling tired. Women who are underweight may have irregular periods or stop having them altogether. Underweight men may have lower sperm counts.</div>
+            <div><strong>The healthy range for BMI is between 18.5 and 24.9</strong>.</div>
+         </div>
+         <div class="bmi__details_result_text" id="bmi__details_result_text_normal">
+            <div>You're in a good place now. <strong>The healthy range for BMI is between 18.5 and 24.9</strong>. Keep up your healthy habits to maintain your weight.</div>
+         </div>
+         <span class="bmi__directive">A healthy weight for someone your height would be</span> 
+         <div class="bmi__weight_range"> <span class="" id="bmi__weight_range">0 - 0</span> <span id="bmi__weight_unit">LBS</span></div>
+      </div>
+   </div>
+</div>
+<script>
+   var bmi__calculator = {
+      unit: 1,
+      init: function () {
+         this.listener()
+      },
+      changeUnit: function (x) {
+        if(x == 1){
+            for (var l = document.querySelectorAll(".con-1"), i = 0; i < l.length; i++) l[i].style.display = "block";
+            for (var l = document.querySelectorAll(".con-2"), i = 0; i < l.length; i++) l[i].style.display = "none";
+        } else {
+            for (var l = document.querySelectorAll(".con-1"), i = 0; i < l.length; i++) l[i].style.display = "none";
+            for (var l = document.querySelectorAll(".con-2"), i = 0; i < l.length; i++) l[i].style.display = "block";
+        }
+        for (var l = document.querySelectorAll(".option-item"), i = 0; i < l.length; i++) l[i].classList.remove("is-active");
+
+        document.querySelectorAll(".option-item")[x-1].classList.add("is-active");
+        this.unit = x;
+      },
+      listener: function () {
+         document.getElementById("bmi__height_in").addEventListener("keyup", function (e) {
+            parseFloat(this.value) > 11 && (this.value = 11)
+         }), document.getElementById("bmi__height_ft").addEventListener("keyup", function (e) {
+            parseFloat(this.value) > 9 && (this.value = 9)
+         }), document.getElementById("bmi__weight_lbs").addEventListener("change", function (e) {
+            parseFloat(this.value) < 80 && (this.value = 80), parseFloat(this.value) > 800 && (this.value = 800)
+         })
+      },
+      calculate: function () {
+         var e = {
+               ft: (this.unit == 1) ? parseFloat(document.querySelector("#bmi__height_ft").value) : 0 || 0,
+               in: (this.unit == 1) ? parseFloat(document.querySelector("#bmi__height_in").value) : parseFloat(document.querySelector("#bmi__height_cm").value)/2.54 || 0,
+               lbs: (this.unit == 1) ? parseFloat(document.querySelector("#bmi__weight_lbs").value) : parseFloat(document.querySelector("#bmi__weight_kg").value) * 2.205
+            },
+            t = document.querySelector("#bmi__value");
+         if (e.bmi = e.lbs / Math.pow(12 * e.ft + e.in, 2) * 703, e.weight_min = 18.5 * Math.pow(12 * e.ft + e.in, 2) / 703, e.weight_max = 24.9 * Math.pow(12 * e.ft + e.in, 2) / 703, e.bmi = e.bmi.toFixed(1), isNaN(e.bmi)) return !1;
+         document.querySelector("#bmi__weight_range").innerHTML = ((this.unit == 1) ? e.weight_min.toFixed(0) : (e.weight_min/2.205).toFixed(0)) + " - " + ((this.unit == 1) ? e.weight_max.toFixed(0) : (e.weight_max/2.205).toFixed(0)), t.className = "", t.innerHTML = e.bmi;
+         document.querySelector("#bmi__weight_unit").innerHTML = (this.unit == 1) ? "LBS" : "KG";
+         console.log(e.weight_min.toFixed(0), e.weight_max.toFixed(0));
+         for (var l = document.querySelectorAll(".bmi__details_result_text"), i = 0; i < l.length; i++) l[i].style.display = "none";
+         e.bmi < 18.5 ? document.getElementById("bmi__details_result_text_under").style.display = "block" : e.bmi < 25 ? document.getElementById("bmi__details_result_text_normal").style.display = "block" : e.bmi < 30 ? document.getElementById("bmi__details_result_text_over").style.display = "block" : document.getElementById("bmi__details_result_text_obese").style.display = "block", e.bottom = (e.bmi - 15) * (260 / 35) - 24, e.bottom < 15 && (e.bottom = -24), e.bottom > 260 && (e.bottom = 236), document.querySelector("#bmi__marker").style.bottom = e.bottom + "px"
+      }
+   };
+bmi__calculator.calculate(); 
+</script>
+</body>
+</html>

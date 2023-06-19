@@ -1,0 +1,642 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Dehumidifer Capacity Calculator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <style>
+        #mx_cl *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+        }
+
+        #mx_cl {
+            line-height: 1.5;
+            font-family: inherit;
+        }
+
+        #mx_cl .container {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #4a4a4a;
+            text-align: left;
+        }
+
+        #mx_cl label {
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 500;
+
+        }
+
+        #mx_cl .row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        #mx_cl .col-md-1,
+        #mx_cl .col-md-10,
+        #mx_cl .col-md-11,
+        #mx_cl .col-md-12,
+        #mx_cl .col-md-2,
+        #mx_cl .col-md-3,
+        #mx_cl .col-md-4,
+        #mx_cl .col-md-5,
+        #mx_cl .col-md-6,
+        #mx_cl .col-md-7,
+        #mx_cl .col-md-8,
+        #mx_cl .col-md-9 {
+            position: relative;
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        #mx_cl .form-group {
+            margin-bottom: 1rem;
+        }
+
+        #mx_cl .form-control {
+            display: block;
+            width: 100%;
+            height: calc(1em + 0.95rem + 11px);
+            padding: 0.375rem 0.85rem;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #4a4a4a;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #dddddd;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+            border-radius: 8px;
+            margin-top: 5px;
+        }
+
+        #mx_cl .form-control:focus {
+            outline: none;
+        }
+
+        #mx_cl .btn {
+            display: inline-block;
+            font-weight: 400;
+            color: #212529;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-color: transparent;
+            border: 1px solid transparent;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: .25rem;
+            transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+
+        #mx_cl .btn-primary {
+            color: #fff;
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+
+        #mx_cl .btn-reset {
+            color: #fff;
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+
+        #mx_cl table {
+            border-collapse: collapse;
+        }
+
+        #mx_cl .table {
+            width: 100%;
+            margin-bottom: 1rem;
+            color: #212529;
+        }
+
+        #mx_cl .table td,
+        #mx_cl .table th {
+            padding: .5rem;
+            vertical-align: top;
+            border-top: 1px solid #008D96;
+            padding-left: 0px;
+            padding-top: 5px;
+        }
+
+        #mx_cl .table td.t-head {
+            padding: .5rem;
+            vertical-align: top;
+            border-top: none;
+            padding-left: 0px;
+        }
+
+        #mx_cl .text-center {
+            text-align: center;
+        }
+
+        @media (min-width: 576px) {
+            #mx_cl .container {
+                max-width: 100%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            #mx_cl .container {
+                max-width: 100%;
+            }
+
+            #mx_cl .col-md-12 {
+                -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            #mx_cl .col-md-9 {
+                -ms-flex: 0 0 75%;
+                flex: 0 0 75%;
+                max-width: 75%;
+            }
+
+            #mx_cl .col-md-8 {
+                -ms-flex: 0 0 66.666667%;
+                flex: 0 0 66.666667%;
+                max-width: 66.666667%;
+            }
+
+            #mx_cl .col-md-7 {
+                -ms-flex: 0 0 58.33333%;
+                flex: 0 0 58.33333%;
+                max-width: 58.33333%;
+            }
+
+            #mx_cl .col-md-6 {
+                -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+
+            #mx_cl .col-md-5 {
+                -ms-flex: 0 0 41.666667%;
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+
+            #mx_cl .col-md-4 {
+                -ms-flex: 0 0 33.333333%;
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+
+            #mx_cl .col-md-3 {
+                -ms-flex: 0 0 25%;
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+        }
+
+        @media (min-width: 992px) {
+            #mx_cl .container {
+                max-width: 960px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            #mx_cl .container {
+                max-width: 700px;
+            }
+        }
+
+        #mx_cl .text-right {
+            text-align: right;
+        }
+
+        #mx_cl .form-group,
+        #mx_cl .input-group {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            #mx_cl .section-row {
+                padding: 20px !important;
+            }
+
+            #mx_cl .top-title {
+                font-size: 20px !important;
+            }
+
+            #mx_cl label {
+                display: inline-block;
+                font-size: 14px;
+                font-weight: 500;
+            }
+
+            #mx_cl .form-control {
+                margin-bottom: 10px;
+            }
+
+            #mx_cl .first-groupp {
+                margin: 0px;
+                padding: 0px;
+            }
+
+            #mx_cl .footer-section {
+                text-align: center;
+            }
+
+            #mx_cl .footer-left-p {
+                font-size: 14px;
+            }
+        }
+
+        #mx_cl .top-title {
+            font-weight: 600;
+            font-size: 24px;
+            color: #0B0774;
+            text-align: center;
+            border-bottom: 1px solid #0B0774;
+            padding: 5px;
+            margin: 0px;
+        }
+
+        #mx_cl .all-body {
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+            border-radius: 8px;
+
+
+        }
+
+        #mx_cl .left-sub-heading {
+            font-weight: 600;
+            font-size: 20px;
+            color: #009AA4;
+
+        }
+
+        #mx_cl .sub-heading-hr {
+            border-bottom: 1px solid #A8A8A8;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        #mx_cl .output {
+            font-weight: 600;
+            font-size: 36px;
+            color: #FFFFFF;
+        }
+
+        #mx_cl .right-section {
+            background-color: #009AA4;
+            padding: 30px;
+            border-radius: 8px;
+            padding-bottom: 15px;
+
+        }
+
+        #mx_cl .right-section-p {
+            color: #fff;
+            margin-top: 0px;
+        }
+
+        #mx_cl .section-row {
+            padding: 40px;
+            padding-top: 10px;
+        }
+
+        #mx_cl .common-p {
+            margin-top: 10px;
+        }
+
+        #mx_cl .right-mid {
+            margin-bottom: 15px;
+        }
+
+        #ms-cl .input-group {
+            position: relative;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -ms-flex-align: stretch;
+            align-items: stretch;
+            width: 100%;
+        }
+
+        #mx_cl .input-group-text {
+            margin-bottom: 0;
+            position: absolute;
+            padding-left: 5px;
+            padding-top: 9.3px;
+            font-size: 1rem;
+
+        }
+
+        #mx_cl .input-group-text-right {
+            margin-bottom: 0;
+            position: absolute;
+            left: 10px;
+            font-size: 1rem;
+        }
+
+        #mx_cl .space-left {
+            padding-left: 40px;
+        }
+
+        #mx_cl .right-section-output {
+            text-align: center;
+        }
+
+        #mx_cl .t-head {
+            font-size: 20px;
+            line-height: 24px;
+            display: flex;
+            align-items: center;
+            color: #FFFFFF;
+        }
+
+        #mx_cl .first-output {
+            color: #fff;
+            font-weight: 600;
+            font-size: 20px;
+        }
+
+        #mx_cl .common-class {
+            color: #FFFFFF;
+        }
+
+        #mx_cl .text-align-right {
+            text-align: right;
+        }
+
+        #mx_cl .last-table {
+            margin-bottom: 0px;
+        }
+
+        #mx_cl .footer-section {
+            background-color: #0B0774;
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        #mx_cl .left-footer-p {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        #mx_cl .footer-output {
+            font-size: 20px;
+            font-weight: 600;
+        }
+        #mx_cl .prepend-text {
+            position: absolute;
+            bottom: 8px;
+            left: 10px;
+        }
+        #mx_cl .footer-left-p {
+            display: block;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 12px;
+        }
+        #mx_cl .help-tip {
+            position: relative;
+            text-align: center;
+            background-color: #ffffff;
+            border: 1px solid #167bba;
+            color: #000;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 13px;
+            line-height: 18px;
+            cursor: default;
+            display: inline-block;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5px;
+            font-style: italic;
+            font-family: auto;
+        }
+        #mx_cl .help-tip:before {
+            content: "i";
+            font-weight: bold;
+            color: #167bba;
+        }
+        #mx_cl .help-tip p:after {
+            /* Prevents the tooltip from being hidden */
+            width: 100%;
+            height: 40px;
+            content: "";
+            position: absolute;
+            top: -40px;
+            left: 0;
+        }
+        #mx_cl .help-tip:hover p {
+            display: block;
+            font-style: normal;
+            transform-origin: 100% 0%;
+            -webkit-animation: fadeIn 0.3s ease-in-out;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        #mx_cl .help-tip p {
+            display: none;
+            text-align: left;
+            background-color: #f7f7f7;
+            padding: 20px;
+            width: 300px;
+            position: absolute;
+            border-radius: 3px;
+            box-shadow: 1px 1px 1px rgb(0 0 0 / 20%);
+            right: -50px;
+            color: #000;
+            font-size: 14px;
+            line-height: 1.4;
+            top: 13px;
+            z-index: 10;
+            font-family: Arial, sans-serif;
+        }
+        #mx_cl .footer-link{
+            font-size: 22px;
+            text-align: center;
+            margin-top: 15px;
+        }
+        #mx_cl .footer-link a{
+            text-decoration: none;
+            color: #0B0774;
+            font-style: italic;
+        }
+    </style>
+    <div class="ms-cl" id="mx_cl">
+        <div class="container">
+            <div class="all-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="top-title">Dehumidifer Capacity Calculator</h3>
+                        <div class="section-row">
+                            <br>
+                            <div class="form-group">
+                                <label for="in_1">
+                                    Humidity level of your location:
+                                    <div class="help-tip">
+                                        <p>On average, what is the level of humidity in your location?</p>
+                                    </div>
+                                </label>
+                                <select class="form-control cl-input" id="in_1">
+                                    <option value="9,3">Low</option>
+                                    <option value="10,4">Med</option>
+                                    <option value="12,5">High</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="in_2">
+                                    Do many people live or spend time in the room:
+                                    <div class="help-tip">
+                                        <p>Is the room a low or high traffic area?</p>
+                                    </div>
+                                </label>
+                                <select class="form-control cl-input" id="in_2">
+                                    <option value="5">Yes</option>
+                                    <option value="0">No</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="in_3">
+                                    Does the room have multiple doors and windows:
+                                    <div class="help-tip">
+                                        <p>The more windows and doors there are,the more opportunity for humity to accumulate on those glass surfaces.</p>
+                                    </div>
+                                </label>
+                                <select class="form-control cl-input" id="in_3">
+                                    <option value="5">Yes</option>
+                                    <option value="0">No</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="in_4">
+                                    Is there a washer/dryer near the room:
+                                    <div class="help-tip">
+                                        <p>Washers and Dryers can produce excess dampness and humidity.</p>
+                                    </div>
+                                </label>
+                                <select class="form-control cl-input" id="in_4">
+                                    <option value="5">Yes</option>
+                                    <option value="0">No</option>
+                                </select>
+                            </div>
+                            <div class="row">
+                            <div class="col-md-6">
+                                <label for="in_5">
+                                    How big is the room (L x W) ft:
+                                    <div class="help-tip">
+                                        <p>What is the square footage of the room in feet?</p>
+                                    </div>
+                                </label>
+                                <div class="input-group">
+                                    <span class="prepend-text">L= </span>
+                                    <input type="text" class="form-control cl-input space-left" id="in_5" value="">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="in_6" class="label2"></label>
+                                <div class="input-group">
+                                    <span class="prepend-text">W= </span>
+                                    <input type="text" class="form-control cl-input space-left" id="in_6" value="">
+                                </div>
+                            </div>
+                            <div class="col-md-12"  style="width: 100%; display: grid; place-content: center;">
+                                <img src="calculate button.png" alt="" style="width: 150px; cursor: pointer;" id="clac_btn">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="footer-section">
+                            <span class="footer-left-p">This is the capacity of dehumidifier that you
+                                need:</span>
+                            <span class="footer-output" id="out_1">-</span>
+                        </div>
+                        <div class="footer-link">
+                            <a href="https://dehumldlflerguru.com" class="footer-wb-link">Dehumldlflerguru.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        jQuery(function($){
+            $("#clac_btn").on("click", function(){
+                in_1 = $("#in_1").val();
+                in_2 = Number($("#in_2").val());
+                in_3 = Number($("#in_3").val());
+                in_4 = Number($("#in_4").val());
+                in_5 = Number($("#in_5").val());
+                in_6 = Number($("#in_6").val());
+
+                let arr = in_1.split(",");
+
+                let base_num = Number(arr[0]);
+                let add_num = Number(arr[1]);
+                let total_point = 0;
+                let output_text = "";
+                
+                if(in_5 && in_6){
+                    let sq_ft = in_5 * in_6;
+
+                    if(sq_ft <= 500){
+                        total_point = base_num;
+                    } else {
+                        let ext_ft = sq_ft - 500;
+                        let ext_num = Math.ceil(ext_ft/500);
+                        total_point = base_num + (ext_num * add_num);
+                    }
+
+                    total_point = total_point + in_2 + in_3 + in_4;
+
+                    if(total_point > 30){
+                        output_text = "Large Dehumidifier: 45 to 50 Pints Capacity";
+                    } else if(total_point < 30 && total_point > 22){
+                        output_text = "Medium  Dehumidifier: 30 Pints Capacity";
+                    } else if(total_point < 23){
+                        output_text = "Small  Dehumidifier: 20 to 22 Pints Capacity";
+                    }
+                } else {
+                    output_text = "-";
+                }
+
+                $("#out_1").text(output_text);
+            });
+        });
+    </script>
+</body>
+
+</html>

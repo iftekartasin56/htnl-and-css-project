@@ -1,0 +1,1650 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <title>Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'lexend', sans-serif;
+        }
+    </style>
+</head>
+<body style="background: #32CCB1;">
+
+<!-----------Please copy and paste following code into any HTML element ---------------->
+
+<!----------- copy starts ---------------->
+<style>
+.ms-cl *, ::after, ::before {
+    box-sizing: border-box;
+}
+.ms-cl {
+    line-height: 1.5;
+    font-family: inherit;
+}
+.ms-cl .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    text-align: left;
+}
+.ms-cl label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000000;
+}
+.ms-cl .h1, .ms-cl h1 {
+    font-size: 2.5rem;
+}
+.ms-cl .h1, .ms-cl .h2, .ms-cl .h3, .ms-cl h1, .ms-cl h2, .ms-cl h3 {
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: .5rem;
+}
+.ms-cl .h3, .ms-cl h3 {
+    /* font-size: 1.75rem; */
+}
+.ms-cl .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.ms-cl .col-md-1, .ms-cl .col-md-10, .ms-cl .col-md-11, .ms-cl .col-md-12, .ms-cl .col-md-2, .ms-cl .col-md-3, .ms-cl .col-md-4, .ms-cl .col-md-5, .ms-cl .col-md-6, .ms-cl .col-md-7, .ms-cl .col-md-8, .ms-cl .col-md-9, .ms-cl .col-md-auto, .ms-cl .col-sm, .ms-cl .col-sm-1, .ms-cl .col-sm-10, .ms-cl .col-sm-11, .ms-cl .col-sm-12, .ms-cl .col-sm-2, .ms-cl .col-sm-3, .ms-cl .col-sm-4, .ms-cl .col-sm-5, .ms-cl .col-sm-6, .ms-cl .col-sm-7, .ms-cl .col-sm-8, .ms-cl .col-sm-9, .ms-cl .col-sm-auto, .ms-cl .col-xl, .ms-cl .col-xl-1, .ms-cl .col-xl-10, .ms-cl .col-xl-11, .ms-cl .col-xl-12, .ms-cl .col-xl-2, .ms-cl .col-xl-3, .ms-cl .col-xl-4, .ms-cl .col-xl-5, .ms-cl .col-xl-6, .ms-cl .col-xl-7, .ms-cl .col-xl-8, .ms-cl .col-xl-9, .ms-cl .col-xl-auto {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.ms-cl .form-group {
+    margin-bottom: 15px;
+    position: relative;
+}
+.ms-cl .form-control {
+    display: block;
+    width: 100%;
+    height: 35px;
+    padding: 0.175rem 0.55rem;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    color: #000000 !important;
+    background-color: #fff !important;
+    background-clip: padding-box;
+    border: 1px solid #CDCDCD;
+    font-family: inherit;
+    transition: background .3s,border .3s,border-radius .3s,box-shadow .3s,-webkit-border-radius .3s,-webkit-box-shadow .3s;
+}
+.ms-cl .form-control:focus {
+    outline: none;
+}
+/* responsive */
+@media (min-width: 768px){
+    .ms-cl .container {
+        max-width: 100%;
+    }
+    .ms-cl .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .ms-cl .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+    .ms-cl .col-md-7 {
+        -ms-flex: 0 0 58.33333%;
+        flex: 0 0 58.33333%;
+        max-width: 58.33333%;
+    }
+    .ms-cl .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .ms-cl .col-md-5 {
+        -ms-flex: 0 0 41.66666%;
+        flex: 0 0 41.66666%;
+        max-width: 41.66666%;
+    }
+    .ms-cl .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    .ms-cl .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+@media (min-width: 820px){
+    .ms-cl .container {
+        max-width: 960px;
+    }
+}
+@media (min-width: 1200px) {
+    .ms-cl .container {
+        max-width: 1150px;
+    }
+}
+.ms-cl .sp-pd-left {
+    padding-left: 28px !important;
+}
+.ms-cl .sp-pd-right {
+    padding-right: 28px !important;
+}
+.ms-cl .ms-mr {
+    margin-bottom: 1rem;
+}
+.ms-cl .text-center {
+    text-align: center;
+}
+.ms-cl .text-left {
+    text-align: left !important;
+}
+.ms-cl .text-right {
+    text-align: right !important;
+}
+.ms-cl .content-sec{
+    margin-bottom: 40px;
+}
+.ms-cl .top-title {
+    color: #000;
+    font-size: 25px !important;
+    font-weight: 600;
+    border-bottom: 1px solid #000;
+    margin-bottom: 20px;
+}
+.ms-cl .rs-title {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    border-bottom: 1px solid #fff;
+}
+.ms-cl .rs-vl {
+    color: #fff;
+    font-size: 40px;
+    font-weight: 700;
+}
+.ms-cl .option-sec {
+    display: flex;
+    margin-bottom: 10px;
+    box-shadow: 0 0px 22px 1px rgb(0 0 0 / 19%);
+    gap: 25px;
+    border-bottom: 5px solid #00226C;
+}
+.ms-cl .option-sec .option-item {
+    width: 100%;
+    border-right: none;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+}
+.ms-cl .option-sec .option-item.is-active {
+    background-color: #00226C;
+    color: #fff;
+}
+.ms-cl .option-sec .option-item:not(.is-active):hover {
+    background-color: #dde0e1;
+}
+.ms-cl .cl-wrapper {
+    position: relative;
+    padding: 40px;
+    border: 1px solid #e1e1e1;
+    box-shadow: 0px 0px 85px rgba(13, 14, 67, 0.12);
+    border-radius: 8px;
+    background: #ffffff;
+    margin-top: 10px;
+}
+.ms-cl .append-text {
+    font-size: 16px;
+    position: absolute;
+    bottom: 4px;
+    right: 8px;
+    color: #000000;
+}
+.ms-cl .btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 18px;
+    line-height: 1.5;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.ms-cl .btn-primary {
+    color: #fff;
+    background-color: #32CCB1;
+    border-color: #32CCB1;
+    margin: 0;
+    margin-top: 15px;
+    width: 100%;
+}
+.ms-cl .sp-cal-btn {
+    color: #fff;
+    background-color: #FF9900;
+    border-color: #FF9900;
+}
+.ms-cl .output-sec {
+    background-color: #32CCB1;
+    margin-top: 25px;
+    padding: 24px 30px 24px 30px;
+    border-radius: 5px;
+}
+.ms-cl .sp-right-output-sec {
+    margin-top: 18px;
+}
+.ms-cl .sp-txtarea {
+    margin-top: 15px;
+}
+.ms-cl .sp-txtarea-in {
+    height: 100px;
+}
+.ms-cl .sp-right-txtarea {
+    height: 45px;
+}
+.ms-cl .sp-order-btn {
+    background-color: #00226C;
+    border-color: #00226C;
+}
+.ms-cl .col-sm-66 {
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.ms-cl .col-sm-34 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+@media (max-width: 768px){
+    .ms-cl label {
+        margin-bottom: 12px;
+        font-size: 18px;
+    }
+    .ms-cl .option-sec{
+        flex-direction: column;
+        gap: 15px;
+        border-bottom: none;
+    }
+    .ms-cl .cl-wrapper{
+        padding: 20px;
+    }
+}
+.ms-cl .left-pd {
+    padding-left: 25px !important;
+}
+.ms-cl .right-pd {
+    padding-right: 25px !important;
+}
+.ms-cl .f600 {
+    font-weight: 600 !important;
+}
+.ms-cl .ds-none {
+    display: none;
+}
+.ms-cl .err-input {
+    border-color: red;
+}
+.ms-cl .select2-container{
+    width: 100% !important;
+}
+.ms-cl .select2-container .select2-selection--single {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    height: 35px;
+    user-select: none;
+    -webkit-user-select: none;
+    border-radius: 0px !important;
+}
+.ms-cl .select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #444;
+    line-height: 28px;
+    padding-top: 3px;
+}
+.ms-cl .select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 26px;
+    position: absolute;
+    top: 5px;
+    right: 1px;
+    width: 20px;
+}
+.select2-search__field:focus{
+    height: 35px;
+    outline: none;
+}
+</style>
+<div class="ms-cl" id="ms_cl">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="option-sec">
+                <span data-value="slide_a" class="option-item is-active">Capsules</span>
+                <span data-value="slide_b" class="option-item">Oral Liquids</span>
+                <span data-value="slide_c" class="option-item">Topical Pain Killers</span>
+                <span data-value="slide_d" class="option-item">Derma</span>
+            </div>
+        </div>
+        <div class="col-md-12 slide-sec" id="slide_a">
+            <div class="cl-wrapper">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="top-title">Capsules</h3>
+                    </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Choose Ingredient</label>
+                                <select class="form-control cl-required cl-select slide-a-input  sl-search"  id="a_in_1" required>
+                                    <option value="" selected>Please Select...</option>
+                                    <option value="0.002">Clomiphen</option>
+                                    <option value="0.02">Disulfiram</option>
+                                    <option value="0.012">Methadone</option>
+                                    <option value="0.023">Naltrexone</option>
+                                    <option value="0.0001">Neomycin</option>
+                                    <option value="0.01">Nortriptyline</option>
+                                    <option value="0.02">Phenazopyridine</option>
+                                    <option value="0.03">Thyroid (Desiccated)</option>
+                                    <option value="0.011">Tramadol</option>
+                                    <option value="0.022">Fluoxetine</option>
+                                    <option value="0.22">Minoxidil</option>
+                                    <option value="0.11">Doxycycline</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Enter Strength</label>
+                                <div class="form-group">
+                                    <input type="text" class="form-control cl-in slide-a-input" style="padding-right: 20px;" id="a_in_2" required>
+                                    <span class="append-text">mg</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Enter Quantity</label>
+                                <div class="form-group">
+                                    <input type="text" class="form-control cl-in slide-a-input" style="padding-right: 20px;" id="a_in_3" required>
+                                    <span class="append-text">Caps</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Delivery</label>
+                                <select class="form-control cl-required slide-a-input  sl-search"  id="a_in_4" required>
+                                    <option value="">Please Select...</option>
+                                    <option value="8">In Calgary</option>
+                                    <option value="40">Outside Calgary</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <button class="btn btn-primary" id="a_calc_btn">Calculate</button> 
+                        </div>
+                        <div class="col-md-6">
+                            <button class="btn btn-primary sp-cal-btn" id="a_reset_btn">Reset</button> 
+                        </div>
+                        <div class="col-md-6 cl-left-div">
+                            <div class="output-sec">
+                                <h3 class="rs-title">Pharmacy Price</h3>
+                                <span class="rs-vl" id="a_rs_1">$0.00</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 cl-right-div">
+                            <div class="output-sec">
+                                <h3 class="rs-title">Customer Price</h3>
+                                <span class="rs-vl" id="a_rs_2">$0.00</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12 sp-txtarea">
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Notes:</label>
+                                <textarea class="form-control sp-txtarea-in slide-a-input" id="a_in_5"></textarea>
+                              </div>
+                        </div>
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <button class="btn btn-primary sp-order-btn" id="a_order_btn">Place-order</button> 
+                        </div>
+                        <div class="col-md-3"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 slide-sec ds-none" id="slide_b">
+            <div class="cl-wrapper">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="top-title">Oral Liquids</h3>
+                    </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="hm_in_11">Choose Liquid Compound</label>
+                                <select class="form-control cl-required slide-b-input sl-search"  id="b_in_1" required>
+                                    <option value="">Please Select...</option>
+                                    <option value="0.09">Acetaminophen 100mg/ml</option>
+                                    <option value="0.11">Acetaminophen 250mg/ml</option>
+                                    <option value="0.09">Amlodipine 1mg/ml</option>
+                                    <option value="0.1">Amlodipine 2mg/ml</option>
+                                    <option value="0.07">Atenolol 2mg/ml</option>
+                                    <option value="0.12">Atenolol 20mg/m</option>
+                                    <option value="0.09">Baclofen 1mg/ml</option>
+                                    <option value="0.1">Baclofen 2mg/ml</option>
+                                    <option value="0.11">Baclofen 5mg/ml</option>
+                                    <option value="0.09">Bisoprolol 1mg/ml</option>
+                                    <option value="0.11">Bisoprolol 2mg/ml</option>
+                                    <option value="0.35">Budesonide 1mg/ml</option>
+                                    <option value="1.6">Budesonide 6mg/ml</option>
+                                    <option value="0.11">Celecoxib 20mg/ml</option>
+                                    <option value="0.13">Celecoxib 40mg/ml</option>
+                                    <option value="0.19">Clobazam 1mg/ml</option>
+                                    <option value="0.23">Clobazam 2mg/ml</option>
+                                    <option value="0.06">Clonazepam 0.1mg/ml</option>
+                                    <option value="0.11">Clonazepam 0.5mg/ml</option>
+                                    <option value="0.14">Clopidogrel 75mg/5ml</option>
+                                    <option value="0.02">Cyclobenzaprine 1mg/ml</option>
+                                    <option value="0.03">Cyclobenzaprine 2mg/ml</option>
+                                    <option value="0.16">Doxycycline 25mg/ml</option>
+                                    <option value="0.32">Doxycycline 100mg/ml</option>
+                                    <option value="0.08">Enalapril 1mg/ml</option>
+                                    <option value="0.19">Enalapril 5mg/ml</option>
+                                    <option value="0.15">Gabapentin 25mg/ml</option>
+                                    <option value="0.35">Gabapentin 100mg/ml</option>
+                                    <option value="0.15">Lansoprazole 3mg/ml</option>
+                                    <option value="0.2">Lansoprazole 6mg/ml</option>
+                                    <option value="0.1">Lithium Carbonate 10mg/ml</option>
+                                    <option value="0.09">Lithium Carbonate 50mg/ml</option>
+                                    <option value="0.11">Levodopa(100mg):Carb(25mg)/5ml</option>
+                                    <option value="0.14">Levodopa(250mg):Carb(25mg)/5ml</option>
+                                    <option value="0.14">Levetiracetam 50mg/ml</option>
+                                    <option value="0.35">Levetiracetam 300mg/ml</option>
+                                    <option value="0.13">Nabilone 1mg/5ml</option>
+                                    <option value="0.11">Nitrofurantoin 5mg/ml</option>
+                                    <option value="0.32">Nitrofurantoin 25mg/ml</option>
+                                    <option value="0.22">Omeprazole 2mg/ml</option>
+                                    <option value="0.23">Omeprazole 10mg/ml</option>
+                                    <option value="0.12">Propranolol 1mg/ml</option>
+                                    <option value="0.15">Propranolol 5mg/ml</option>
+                                    <option value="0.07">Sulfa/Trim40mg/8mg/ml</option>
+                                    <option value="0.14">Tramadol 5mg/ml</option>
+                                    <option value="0.41">Tramadol 50mg/ml</option>
+                                    <option value="3.6">Vancomycin 50mg/ml</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Enter Volume</label>
+                                <div class="form-group">
+                                    <input type="text" class="form-control cl-in slide-b-input" style="padding-right: 20px;" id="b_in_2" required>
+                                    <span class="append-text">mls</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="hm_in_11">Delivery</label>
+                                <select class="form-control cl-required slide-b-input  sl-search"  id="b_in_3" required>
+                                    <option value="">Please Select...</option>
+                                    <option value="8">In Calgary</option>
+                                    <option value="40">Outside Calgary</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <button class="btn btn-primary" id="b_calc_btn">Calculate</button> 
+                        </div>
+                        <div class="col-md-6">
+                            <button class="btn btn-primary sp-cal-btn" id="b_reset_btn">Reset</button> 
+                        </div>
+                        <div class="col-md-6 cl-left-div">
+                            <div class="output-sec">
+                                <h3 class="rs-title">Pharmacy Price</h3>
+                                <span class="rs-vl" id="b_rs_1">$0.00</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 cl-right-div">
+                            <div class="output-sec">
+                                <h3 class="rs-title">Customer Price</h3>
+                                <span class="rs-vl" id="b_rs_2">$0.00</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12 sp-txtarea">
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Notes:</label>
+                                <textarea class="form-control sp-txtarea-in slide-b-input" id="b_in_4"></textarea>
+                              </div>
+                        </div>
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <button class="btn btn-primary sp-order-btn" id="b_order_btn">Place-order</button> 
+                        </div>
+                        <div class="col-md-3"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-12 slide-sec ds-none" id="slide_c">
+            <div class="cl-wrapper">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="top-title">Topical Pain Killers</h3>
+                    </div>
+                   <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-sm-66">
+                                <div class="form-group">
+                                    <tr>
+                                        <td>
+                                            <label>Ingredient 1</label>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <select class="form-control cl-required slide-c-input  sl-search"  id="c_in_1" required>
+                                                    <option value="">Please Select...</option>
+                                                    <option value="3.21">Amitriptyline</option>
+                                                    <option value="6.42">Baclofen</option>
+                                                    <option value="0.72">Benzocaine</option>
+                                                    <option value="14.5">Bupivacaine</option>
+                                                    <option value="0.16">Camphor</option>
+                                                    <option value="55.64">Capsaicin</option>
+                                                    <option value="35.31">Clonidine</option>
+                                                    <option value="5.35">Cyclobenzaprine</option>
+                                                    <option value="20">Dexamethasone</option>
+                                                    <option value="0.37">Diclofenac</option>
+                                                    <option value="0.06">DMSO</option>
+                                                    <option value="3.75">Gabapentin</option>
+                                                    <option value="2.6">Hydrocortisone</option>
+                                                    <option value="0.18">Ibuprofen</option>
+                                                    <option value="4.82">Ketamine </option>
+                                                    <option value="0.8">Ketoprofen</option>
+                                                    <option value="0.18">Lidocaine </option>
+                                                    <option value="0.16">Magnesium Chloride</option>
+                                                    <option value="0.37">Menthol</option>
+                                                    <option value="4">Methadone</option>
+                                                    <option value="3.85">Morphine</option>
+                                                    <option value="1.3">Naproxen</option>
+                                                    <option value="7.7">Nifedipine</option>
+                                                    <option value="1.71">Pentoxifylline</option>
+                                                    <option value="4.5">Piroxicam</option>
+                                                    <option value="1.61">Tetracaine</option>
+                                                    <option value="4.2">Tramadol</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </div>
+                            </div>
+                            <div class="col-sm-34">
+                                <div class="form-group">
+                                    <tr>
+                                        <td>
+                                            <label>&nbsp;</label>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control cl-in-prcnt slide-c-input" style="padding-right: 20px;" id="c_in_2" required>
+                                                <span class="append-text">%</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </div>
+                            </div>
+                            <div class="col-sm-66">
+                                <div class="form-group">
+                                    <tr>
+                                        <td>
+                                            <label>Ingredient 2</label>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <select class="form-control cl-required slide-c-input  sl-search"  id="c_in_3" required>
+                                                    <option value="">Please Select...</option>
+                                                    <option value="3.21">Amitriptyline</option>
+                                                    <option value="6.42">Baclofen</option>
+                                                    <option value="0.72">Benzocaine</option>
+                                                    <option value="14.5">Bupivacaine</option>
+                                                    <option value="0.16">Camphor</option>
+                                                    <option value="55.64">Capsaicin</option>
+                                                    <option value="35.31">Clonidine</option>
+                                                    <option value="5.35">Cyclobenzaprine</option>
+                                                    <option value="20">Dexamethasone</option>
+                                                    <option value="0.37">Diclofenac</option>
+                                                    <option value="0.06">DMSO</option>
+                                                    <option value="3.75">Gabapentin</option>
+                                                    <option value="2.6">Hydrocortisone</option>
+                                                    <option value="0.18">Ibuprofen</option>
+                                                    <option value="4.82">Ketamine </option>
+                                                    <option value="0.8">Ketoprofen</option>
+                                                    <option value="0.18">Lidocaine </option>
+                                                    <option value="0.16">Magnesium Chloride</option>
+                                                    <option value="0.37">Menthol</option>
+                                                    <option value="4">Methadone</option>
+                                                    <option value="3.85">Morphine</option>
+                                                    <option value="1.3">Naproxen</option>
+                                                    <option value="7.7">Nifedipine</option>
+                                                    <option value="1.71">Pentoxifylline</option>
+                                                    <option value="4.5">Piroxicam</option>
+                                                    <option value="1.61">Tetracaine</option>
+                                                    <option value="4.2">Tramadol</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </div>
+                            </div>
+                            <div class="col-sm-34">
+                                <div class="form-group">
+                                    <tr>
+                                        <td>
+                                            <label>&nbsp;</label>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control cl-in-prcnt slide-c-input" style="padding-right: 20px;" id="c_in_4" required>
+                                                <span class="append-text">%</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </div>
+                            </div>
+                            <div class="col-sm-66">
+                                <div class="form-group">
+                                    <tr>
+                                        <td>
+                                            <label>Ingredient 3</label>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <select class="form-control cl-required slide-c-input  sl-search"  id="c_in_5" required>
+                                                    <option value="">Please Select...</option>
+                                                    <option value="3.21">Amitriptyline</option>
+                                                    <option value="6.42">Baclofen</option>
+                                                    <option value="0.72">Benzocaine</option>
+                                                    <option value="14.5">Bupivacaine</option>
+                                                    <option value="0.16">Camphor</option>
+                                                    <option value="55.64">Capsaicin</option>
+                                                    <option value="35.31">Clonidine</option>
+                                                    <option value="5.35">Cyclobenzaprine</option>
+                                                    <option value="20">Dexamethasone</option>
+                                                    <option value="0.37">Diclofenac</option>
+                                                    <option value="0.06">DMSO</option>
+                                                    <option value="3.75">Gabapentin</option>
+                                                    <option value="2.6">Hydrocortisone</option>
+                                                    <option value="0.18">Ibuprofen</option>
+                                                    <option value="4.82">Ketamine </option>
+                                                    <option value="0.8">Ketoprofen</option>
+                                                    <option value="0.18">Lidocaine </option>
+                                                    <option value="0.16">Magnesium Chloride</option>
+                                                    <option value="0.37">Menthol</option>
+                                                    <option value="4">Methadone</option>
+                                                    <option value="3.85">Morphine</option>
+                                                    <option value="1.3">Naproxen</option>
+                                                    <option value="7.7">Nifedipine</option>
+                                                    <option value="1.71">Pentoxifylline</option>
+                                                    <option value="4.5">Piroxicam</option>
+                                                    <option value="1.61">Tetracaine</option>
+                                                    <option value="4.2">Tramadol</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </div>
+                            </div>
+                            <div class="col-sm-34">
+                                <div class="form-group">
+                                    <tr>
+                                        <td>
+                                            <label>&nbsp;</label>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control cl-in-prcnt slide-c-input" style="padding-right: 20px;" id="c_in_6" required>
+                                                <span class="append-text">%</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </div>
+                            </div>
+                            <div class="col-sm-66">
+                                <div class="form-group">
+                                    <tr>
+                                        <td>
+                                            <label>Ingredient 4</label>
+                                            <div class="form-group">
+                                                <select class="form-control cl-required slide-c-input  sl-search"  id="c_in_7" required>
+                                                    <option value="">Please Select...</option>
+                                                    <option value="3.21">Amitriptyline</option>
+                                                    <option value="6.42">Baclofen</option>
+                                                    <option value="0.72">Benzocaine</option>
+                                                    <option value="14.5">Bupivacaine</option>
+                                                    <option value="0.16">Camphor</option>
+                                                    <option value="55.64">Capsaicin</option>
+                                                    <option value="35.31">Clonidine</option>
+                                                    <option value="5.35">Cyclobenzaprine</option>
+                                                    <option value="20">Dexamethasone</option>
+                                                    <option value="0.37">Diclofenac</option>
+                                                    <option value="0.06">DMSO</option>
+                                                    <option value="3.75">Gabapentin</option>
+                                                    <option value="2.6">Hydrocortisone</option>
+                                                    <option value="0.18">Ibuprofen</option>
+                                                    <option value="4.82">Ketamine </option>
+                                                    <option value="0.8">Ketoprofen</option>
+                                                    <option value="0.18">Lidocaine </option>
+                                                    <option value="0.16">Magnesium Chloride</option>
+                                                    <option value="0.37">Menthol</option>
+                                                    <option value="4">Methadone</option>
+                                                    <option value="3.85">Morphine</option>
+                                                    <option value="1.3">Naproxen</option>
+                                                    <option value="7.7">Nifedipine</option>
+                                                    <option value="1.71">Pentoxifylline</option>
+                                                    <option value="4.5">Piroxicam</option>
+                                                    <option value="1.61">Tetracaine</option>
+                                                    <option value="4.2">Tramadol</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </div>
+                            </div>
+                            <div class="col-sm-34">
+                                <div class="form-group">
+                                    <tr>
+                                        <td>
+                                            <label>&nbsp;</label>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control cl-in-prcnt slide-c-input" style="padding-right: 20px;" id="c_in_8" required>
+                                                <span class="append-text">%</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </div>
+                            </div>
+                            <div class="col-sm-66">
+                                <div class="form-group">
+                                    <tr>
+                                        <td>
+                                            <label>Ingredient 5</label>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <select class="form-control cl-required slide-c-input sl-search"  id="c_in_9" required>
+                                                    <option value="">Please Select...</option>
+                                                    <option value="3.21">Amitriptyline</option>
+                                                    <option value="6.42">Baclofen</option>
+                                                    <option value="0.72">Benzocaine</option>
+                                                    <option value="14.5">Bupivacaine</option>
+                                                    <option value="0.16">Camphor</option>
+                                                    <option value="55.64">Capsaicin</option>
+                                                    <option value="35.31">Clonidine</option>
+                                                    <option value="5.35">Cyclobenzaprine</option>
+                                                    <option value="20">Dexamethasone</option>
+                                                    <option value="0.37">Diclofenac</option>
+                                                    <option value="0.06">DMSO</option>
+                                                    <option value="3.75">Gabapentin</option>
+                                                    <option value="2.6">Hydrocortisone</option>
+                                                    <option value="0.18">Ibuprofen</option>
+                                                    <option value="4.82">Ketamine </option>
+                                                    <option value="0.8">Ketoprofen</option>
+                                                    <option value="0.18">Lidocaine </option>
+                                                    <option value="0.16">Magnesium Chloride</option>
+                                                    <option value="0.37">Menthol</option>
+                                                    <option value="4">Methadone</option>
+                                                    <option value="3.85">Morphine</option>
+                                                    <option value="1.3">Naproxen</option>
+                                                    <option value="7.7">Nifedipine</option>
+                                                    <option value="1.71">Pentoxifylline</option>
+                                                    <option value="4.5">Piroxicam</option>
+                                                    <option value="1.61">Tetracaine</option>
+                                                    <option value="4.2">Tramadol</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </div>
+                            </div>
+                            <div class="col-sm-34">
+                                <div class="form-group">
+                                    <tr>
+                                        <td>
+                                            <label>&nbsp;</label>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control cl-in-prcnt slide-c-input" style="padding-right: 20px;" id="c_in_10" required>
+                                                <span class="append-text">%</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </div>
+                            </div>
+                            <div class="col-sm-66">
+                                <div class="form-group">
+                                    <tr>
+                                        <td>
+                                            <label>Ingredient 6</label>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <select class="form-control cl-required slide-c-input sl-search"  id="c_in_11" required>
+                                                    <option value="">Please Select...</option>
+                                                    <option value="3.21">Amitriptyline</option>
+                                                    <option value="6.42">Baclofen</option>
+                                                    <option value="0.72">Benzocaine</option>
+                                                    <option value="14.5">Bupivacaine</option>
+                                                    <option value="0.16">Camphor</option>
+                                                    <option value="55.64">Capsaicin</option>
+                                                    <option value="35.31">Clonidine</option>
+                                                    <option value="5.35">Cyclobenzaprine</option>
+                                                    <option value="20">Dexamethasone</option>
+                                                    <option value="0.37">Diclofenac</option>
+                                                    <option value="0.06">DMSO</option>
+                                                    <option value="3.75">Gabapentin</option>
+                                                    <option value="2.6">Hydrocortisone</option>
+                                                    <option value="0.18">Ibuprofen</option>
+                                                    <option value="4.82">Ketamine </option>
+                                                    <option value="0.8">Ketoprofen</option>
+                                                    <option value="0.18">Lidocaine </option>
+                                                    <option value="0.16">Magnesium Chloride</option>
+                                                    <option value="0.37">Menthol</option>
+                                                    <option value="4">Methadone</option>
+                                                    <option value="3.85">Morphine</option>
+                                                    <option value="1.3">Naproxen</option>
+                                                    <option value="7.7">Nifedipine</option>
+                                                    <option value="1.71">Pentoxifylline</option>
+                                                    <option value="4.5">Piroxicam</option>
+                                                    <option value="1.61">Tetracaine</option>
+                                                    <option value="4.2">Tramadol</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </div>
+                            </div>
+                            <div class="col-sm-34">
+                                <div class="form-group">
+                                    <tr>
+                                        <td>
+                                            <label>&nbsp;</label>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control cl-in-prcnt slide-c-input" style="padding-right: 20px;" id="c_in_12" required>
+                                                <span class="append-text">%</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-sm-66">
+                                <div class="form-group">
+                                    <tr>
+                                        <td>
+                                            <label>Choose Base</label>
+                                        </td>
+                                        <td>
+                                           <div class="form-group">
+                                                <select class="form-control cl-required slide-c-input sl-search"  id="c_in_13" required>
+                                                    <option value="">Please Select...</option>
+                                                    <option value="0.12">Emulsifying Base</option>
+                                                    <option value="0.2">Difussimax </option>
+                                                    <option value="0.07">Glaxal Base</option>
+                                                    <option value="0.32">Lipoderm</option>
+                                                    <option value="0.1">MD (Cream)</option>
+                                                    <option value="0.15">Mediflo-30</option>
+                                                    <option value="0.09">PLO  </option>
+                                                    <option value="0.09">PLO TD </option>
+                                                    <option value="0.16">VersaPro (Cream)</option>
+                                                    <option value="0.15">VanPen</option>
+                                                    <option value="0.04">Vaseline</option>
+                                                    <option value="0.11">Zinc Oxide Base</option>
+                                                </select>
+                                           </div>
+                                        </td>
+                                    </tr>
+                                </div>
+                            </div>
+                            <div class="col-sm-34">
+                                <div class="form-group">
+                                    <tr>
+                                        <td>
+                                            <label>&nbsp;</label>
+                                        </td>
+                                        <td>
+                                           <div class="form-group">
+                                                <input type="text" class="form-control cl-in-prcnt slide-c-input" style="padding-right: 20px;" id="c_in_14" required>
+                                                <span class="append-text">%</span>
+                                           </div>
+                                        </td>
+                                    </tr>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <label>Total Qty./Vol.</label>
+                                <div class="form-group">
+                                    <input type="text" class="form-control cl-in-prcnt slide-c-input" style="padding-right: 20px;" id="c_in_15" required> 
+                                    <span class="append-text">%</span>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <label>Packaging</label>
+                                <div class="form-group">
+                                    <select class="form-control cl-required slide-c-input sl-search"  id="c_in_16" required>
+                                        <option value="">Please Select...</option>
+                                        <option value="5.5">Pump</option>
+                                        <option value="0.7">jar</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <label>Delivery</label>
+                                <div class="form-group">
+                                    <select class="form-control cl-required slide-c-input sl-search"  id="c_in_17" required>
+                                        <option value="">Please Select...</option>
+                                        <option value="8">In Calgary</option>
+                                        <option value="35">Outside Calgary</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-primary" id="c_calc_btn">Calculate</button>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-primary sp-cal-btn" id="c_reset_btn">Reset</button> 
+                            </div>
+                            <div class="col-md-12 sp-txtarea sp-right-txtarea">
+                                <div class="form-group">
+                                    <label>Notes:</label>
+                                    <textarea class="form-control sp-right-txtarea" id="c_in_18"></textarea>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="col-md-6 cl-left-div">
+                            <div class="output-sec">
+                                <h3 class="rs-title">Pharmacy Price</h3>
+                                <span class="rs-vl" id="c_rs_1">$0.00</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 cl-right-div">
+                            <div class="output-sec">
+                                <h3 class="rs-title">Customer Price</h3>
+                                <span class="rs-vl" id="c_rs_2">$0.00</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <button class="btn btn-primary sp-order-btn" id="order_btn">Place-order</button> 
+                        </div>
+                        <div class="col-md-3"></div>
+                </div>
+            </div>
+            <div class="cl-wrapper">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="top-title">Diclo 10% (Bulk Orders-In 500g Jars)</h3>
+                    </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="hm_in_11">Choose Base</label>
+                                <select class="form-control cl-required slide-b-input sl-search"  id="c_in_19" required>
+                                    <option value="">Please Select...</option>
+                                    <option value="0.1">Plo Medi-Flo-30</option>
+                                    <option value="0.7">Transdermal Plo/Cream</option>
+                                    <option value="0.4">Versapro</option>
+                                    <option value="0.4">Lipoderm </option>
+                                    <option value="0.7">Perm8</option>
+                                    <option value="0.044">Mediderm</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="hm_in_11">Delivery</label>
+                                <select class="form-control cl-required slide-b-input  sl-search"  id="c_in_20" required>
+                                    <option value="">Please Select...</option>
+                                    <option value="8">In Calgary</option>
+                                    <option value="40">Outside Calgary</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Rx qty</label>
+                                <div class="form-group">
+                                    <input type="text" class="form-control cl-in slide-b-input" style="padding-right: 20px;" id="c_in_21" required>
+                                    <span class="append-text">mls</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <button class="btn btn-primary" id="c_calc_btn_1">Calculate</button> 
+                        </div>
+                        <div class="col-md-6">
+                            <button class="btn btn-primary sp-cal-btn" id="c_reset_btn_1">Reset</button> 
+                        </div>
+                        <div class="col-md-6 cl-left-div">
+                            <div class="output-sec">
+                                <h3 class="rs-title">Pharmacy Price</h3>
+                                <span class="rs-vl" id="c_rs_3">$0.00</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 cl-right-div">
+                            <div class="output-sec">
+                                <h3 class="rs-title">Customer Price</h3>
+                                <span class="rs-vl" id="c_rs_4">$0.00</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12 sp-txtarea">
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Notes:</label>
+                                <textarea class="form-control sp-txtarea-in slide-b-input" id="c_in_22"></textarea>
+                              </div>
+                        </div>
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <button class="btn btn-primary sp-order-btn" id="b_order_btn">Place-order</button> 
+                        </div>
+                        <div class="col-md-3"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 slide-sec ds-none" id="slide_d">
+            <div class="cl-wrapper">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="top-title">Derma</h3>
+                    </div>
+                   <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-sm-66">
+                                <div class="form-group">
+                                    <tr>
+                                        <td>
+                                            <label>Ingredient 1</label>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <select class="form-control cl-required slide-d-input sl-search"  id="d_in_1">
+                                                    <option value="">Please Select...</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </div>
+                            </div>
+                            <div class="col-sm-34">
+                                <div class="form-group">
+                                    <tr>
+                                        <td>
+                                            <label for="hm_in_11">&nbsp;</label>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control cl-in slide-d-input" style="padding-right: 20px;" id="d_in_2">
+                                                <span class="append-text">%</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </div>
+                            </div>
+                            <div class="col-sm-66">
+                                <div class="form-group">
+                                    <tr>
+                                        <td>
+                                            <label for="hm_in_11">Ingredient 2</label>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <select class="form-control cl-required slide-d-input sl-search"  id="d_in_3">
+                                                    <option value="">Please Select...</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </div>
+                            </div>
+                            <div class="col-sm-34">
+                                <div class="form-group">
+                                    <tr>
+                                        <td>
+                                            <label for="hm_in_11">&nbsp;</label>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control cl-in slide-d-input" style="padding-right: 20px;" id="d_in_4">
+                                                <span class="append-text">%</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </div>
+                            </div>
+                            <div class="col-sm-66">
+                                <div class="form-group">
+                                    <tr>
+                                        <td>
+                                            <label for="hm_in_11">Ingredient 3</label>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <select class="form-control cl-required slide-d-input sl-search"  id="d_in_5">
+                                                    <option value="">Please Select...</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </div>
+                            </div>
+                            <div class="col-sm-34">
+                                <div class="form-group">
+                                    <tr>
+                                        <td>
+                                            <label for="hm_in_11">&nbsp;</label>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control cl-in slide-d-input" style="padding-right: 20px;" id="d_in_6">
+                                                <span class="append-text">%</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </div>
+                            </div>
+                            <div class="col-sm-66">
+                                <div class="form-group">
+                                    <tr>
+                                        <td>
+                                            <label for="hm_in_11">Ingredient 4</label>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <select class="form-control cl-required slide-d-input sl-search"  id="d_in_7">
+                                                    <option value="">Please Select...</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </div>
+                            </div>
+                            <div class="col-sm-34">
+                                <div class="form-group">
+                                    <tr>
+                                        <td>
+                                            <label for="hm_in_11">&nbsp;</label>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control cl-in slide-d-input" style="padding-right: 20px;" id="d_in_8">
+                                                <span class="append-text">%</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </div>
+                            </div>
+                            <div class="col-sm-66">
+                                <div class="form-group">
+                                    <tr>
+                                        <td>
+                                            <label for="hm_in_11">Ingredient 5</label>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <select class="form-control cl-required slide-d-input sl-search"  id="d_in_9">
+                                                    <option value="">Please Select...</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </div>
+                            </div>
+                            <div class="col-sm-34">
+                                <div class="form-group">
+                                    <tr>
+                                        <td>
+                                            <label for="hm_in_11">&nbsp;</label>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control cl-in slide-d-input" style="padding-right: 20px;" id="d_in_10">
+                                                <span class="append-text">%</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </div>
+                            </div>
+                            <div class="col-sm-66">
+                                <div class="form-group">
+                                    <tr>
+                                        <td>
+                                            <label for="hm_in_11">Base 1</label>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <select class="form-control cl-required slide-d-input sl-search"  id="d_in_11">
+                                                    <option value="">Please Select...</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </div>
+                            </div>
+                            <div class="col-sm-34">
+                                <div class="form-group">
+                                    <tr>
+                                        <td>
+                                            <label for="hm_in_11">&nbsp;</label>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control cl-in slide-d-input" style="padding-right: 20px;" id="d_in_12">
+                                                <span class="append-text">%</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </div>
+                            </div>
+                            <div class="col-sm-66">
+                                <div class="form-group">
+                                    <tr>
+                                        <td>
+                                            <label for="hm_in_11">Base 2</label>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <select class="form-control cl-required slide-d-input sl-search"  id="d_in_13">
+                                                    <option value="">Please Select...</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </div>
+                            </div>
+                            <div class="col-sm-34">
+                                <div class="form-group">
+                                    <tr>
+                                        <td>
+                                            <label for="hm_in_11">&nbsp;</label>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control cl-in slide-d-input" style="padding-right: 20px;" id="d_in_14">
+                                                <span class="append-text">%</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </div>
+                            </div>
+                            <div class="col-sm-66">
+                                <div class="form-group">
+                                    <tr>
+                                        <td>
+                                            <label for="hm_in_11">Base 3</label>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <select class="form-control cl-required slide-d-input sl-search"  id="d_in_15">
+                                                    <option value="">Please Select...</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </div>
+                            </div>
+                            <div class="col-sm-34">
+                                <div class="form-group">
+                                    <tr>
+                                        <td>
+                                            <label for="hm_in_11">&nbsp;</label>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control cl-in slide-d-input" style="padding-right: 20px;" id="d_in_16">
+                                                <span class="append-text">%</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label for="">Total Qty./Vol.</label>
+                                <div class="form-group">
+                                    <input type="text" class="form-control cl-in slide-d-input" style="padding-right: 20px;">
+                                    <span class="append-text">%</span>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="">Packaging</label>
+                                <div class="form-group">
+                                    <select class="form-control cl-required slide-d-input sl-search"  id="d_in_17">
+                                        <option value="">Please Select...</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="">Delivery</label>
+                                <div class="form-group">
+                                    <select class="form-control cl-required slide-d-input sl-search"  id="d_in_18">
+                                        <option value="">Please Select...</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-primary" id="d_calc_btn">Calculate</button>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-primary sp-cal-btn" id="d_reset_btn">Reset</button> 
+                            </div>
+                            <div class="col-md-12 cl-left-div">
+                                <div class="output-sec sp-right-output-sec">
+                                    <h3 class="rs-title">Pharmacy Price</h3>
+                                    <span class="rs-vl" id="d_rs_1">$0.00</span>
+                                </div>
+                            </div>
+                            <div class="col-md-12 cl-right-div">
+                                <div class="output-sec sp-right-output-sec">
+                                    <h3 class="rs-title">Customer Price</h3>
+                                    <span class="rs-vl" id="d_rs_2">$0.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 sp-txtarea sp--txtarea-in">
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Notes:</label>
+                            <textarea class="form-control sp-txtarea-in" id="d_in_19"></textarea>
+                          </div>
+                    </div>
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <button class="btn btn-primary sp-order-btn" id="d_order_btn">Place-order</button> 
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script>
+     jQuery(($)=>{
+        let slide_id = "slide_a";
+        const numOptionCurrency = {
+            digitGroupSeparator        : ',',
+            decimalCharacter           : '.',
+            decimalCharacterAlternative: '.',
+            currencySymbol             : '',
+            currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.prefix,
+            decimalPlaces              : 0
+        };
+        const numOptionPercent = {
+            digitGroupSeparator        : ',',
+            decimalCharacter           : '.',
+            decimalCharacterAlternative: '.',
+            currencySymbol             : '',
+            currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.prefix,
+            decimalPlaces              : 2,
+            minimumValue               : 0,
+            maximumValue               : 100
+        };
+        const nftd = Intl.NumberFormat("en-US",{
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+
+        const anElement1 = AutoNumeric.multiple('.cl-in', numOptionCurrency);
+        const anElement2 = AutoNumeric.multiple('.cl-in-prcnt', numOptionPercent);
+
+        function removeComma(num){
+            return Number(num.replace(/,/g,""));
+        }
+
+        $('.sl-search').select2();
+
+        $('.option-item').on('click',function(){
+            $('.option-item').removeClass('is-active');
+            $(this).addClass('is-active');
+            slide_id = $(this).data('value');
+            $('.slide-sec').addClass('ds-none');
+            $('#'+slide_id).removeClass('ds-none');
+        });
+        $('.slide-a-input[required]').on('input', function(){
+            $(this).removeClass('err-input');
+        });
+
+        $('.slide-b-input[required]').on('input', function(){
+            $(this).removeClass('err-input');
+        });
+        $('.slide-c-input[required]').on('input', function(){
+            $(this).removeClass('err-input');
+        });
+
+        $('#a_calc_btn').on('click', function() {
+            slide_a_Calc();
+        });
+
+        $('#b_calc_btn').on('click', function() {
+            slide_b_Calc();
+        }); 
+        $('#c_calc_btn').on('click', function() {
+            slide_c_Calc();
+        }); 
+
+        $('#a_reset_btn').on('click', function() {
+            $('.slide-a-input').val("");
+            $('#a_rs_1').text("$0.00");
+            $('#a_rs_2').text("$0.00");
+        });
+
+        $('#b_reset_btn').on('click', function() {
+            $('.slide-b-input').val("");
+            $('#b_rs_1').text("$0.00");
+            $('#b_rs_2').text("$0.00");
+        });
+        $('#c_reset_btn').on('click', function() {
+            $('.slide-c-input').val("");
+            $('#c_rs_1').text("$0.00");
+            $('#c_rs_2').text("$0.00");
+        });
+
+        function slide_a_Calc(){
+            a_in_1 = Number($('#a_in_1').val());
+            a_in_2 = removeComma($('#a_in_2').val());
+            a_in_3 = removeComma($('#a_in_3').val());
+            a_in_4 = Number($('#a_in_4').val());
+
+            console.log(a_in_1, a_in_2, a_in_3, a_in_4);
+
+           if(a_in_1 && a_in_2 && a_in_3 && a_in_4){
+
+                let a_rsl_1 = a_in_1 * a_in_2 * a_in_3 + a_in_4;
+                
+                if(a_in_3 <= 100){
+                    a_rsl_1 = a_rsl_1 + 18.5;
+                } else if(a_in_3 <= 200){
+                    a_rsl_1 = a_rsl_1 + 25;
+                } else if(a_in_3 <= 300){
+                    a_rsl_1 = a_rsl_1 + 35;
+                } else if(a_in_3 > 300){
+                    a_rsl_1 = a_rsl_1 + 50;
+                }
+                
+                $('#a_rs_1').text("$" + nftd.format(a_rsl_1));
+                let a_rsl_2 = a_rsl_1 * 1.07 + 12.15;
+                $('#a_rs_2').text("$" + nftd.format(a_rsl_2));
+           } else{
+                $('#a_rs_1').text("$0.00");
+                $('#a_rs_2').text("$0.00");
+           }
+
+           $('.slide-a-input[required]').each(function(i, elm){
+            let vl =$(elm).val();
+                if(vl){
+                    $(elm).removeClass('err-input');
+                } else{
+                    $(elm).addClass('err-input');
+                }
+           });
+        }
+
+        function slide_b_Calc(){
+            b_in_1 = Number($('#b_in_1').val());
+            b_in_2 = removeComma($('#b_in_2').val());
+            b_in_3 = Number($('#b_in_3').val());
+
+           if(b_in_1 && b_in_2 && b_in_3){
+
+                let b_rsl_1 = b_in_1 * b_in_2;
+                let b_rsl_2 = b_rsl_1 + b_in_3;
+                
+                if(b_in_2 <= 100){
+                    b_rsl_2 = b_rsl_2 + 18.5;
+                } else if(b_in_2 > 100){
+                    b_rsl_2 = b_rsl_2 + 25;
+                } else if(b_in_2 > 500){
+                    b_rsl_2 = b_rsl_2 + 40;
+                }
+                
+                $('#b_rs_1').text("$" + nftd.format(b_rsl_2));
+
+                let b_rsl_3 = b_rsl_2 * 1.07 + 12.15;
+                $('#b_rs_2').text("$" + nftd.format(b_rsl_3));
+           } else{
+                $('#b_rsl_2').text("$0.00");
+                $('#b_rsl_2').text("$0.00");
+           }
+
+           $('.slide-b-input[required]').each(function(i, elm){
+            let vl =$(elm).val();
+                if(vl){
+                    $(elm).removeClass('err-input');
+                } else{
+                    $(elm).addClass('err-input');
+                }
+           });
+        }
+
+        function slide_c_Calc(){
+            c_in_1 = Number($('#c_in_1').val());
+            c_in_2 = Number($('#c_in_2').val());
+            c_in_3 = Number($('#c_in_3').val());
+            c_in_4 = Number($('#c_in_4').val());
+            c_in_5 = Number($('#c_in_5').val());
+            c_in_6 = Number($('#c_in_6').val());
+            c_in_7 = Number($('#c_in_7').val());
+            c_in_8 = Number($('#c_in_8').val());
+            c_in_9 = Number($('#c_in_9').val());
+            c_in_10 = Number($('#c_in_10').val());
+            c_in_11 = Number($('#c_in_11').val());
+            c_in_12 = Number($('#c_in_12').val());
+            c_in_13 = Number($('#c_in_13').val());
+            c_in_14 = Number($('#c_in_14').val());
+            c_in_15 = Number($('#c_in_15').val());
+            c_in_16 = Number($('#c_in_16').val());
+            c_in_17 = Number($('#c_in_17').val());
+
+           if(c_in_1 && c_in_2 && c_in_3 && c_in_4 && c_in_5 && c_in_6 && c_in_7 && c_in_8 && c_in_9 && c_in_10 && c_in_11 && c_in_12 && c_in_13 && c_in_14 && c_in_15 && c_in_16 && c_in_17){
+
+                let total_ingredient_1 = c_in_1 * c_in_2;
+                let total_ingredient_2 = c_in_3 * c_in_4;
+                let total_ingredient_3 = c_in_5 * c_in_6;
+                let total_ingredient_4 = c_in_7 * c_in_8;
+                let total_ingredient_5 = c_in_9 * c_in_10;
+                let total_ingredient_6 = c_in_11 * c_in_12;
+                let total_choose_prcnt = 100 - (c_in_2 - c_in_4 - c_in_6 - c_in_8 - c_in_10 - c_in_12);
+                let total_Choose_base = c_in_13 * total_choose_prcnt;
+
+                console.log(total_Choose_base);
+
+                let b_rsl_1 = b_in_1 * b_in_2;
+                let b_rsl_2 = b_rsl_1 + b_in_3;
+                
+                if(b_in_2 <= 100){
+                    b_rsl_2 = b_rsl_2 + 18.5;
+                } else if(b_in_2 > 100){
+                    b_rsl_2 = b_rsl_2 + 25;
+                } else if(b_in_2 > 500){
+                    b_rsl_2 = b_rsl_2 + 40;
+                }
+                
+                $('#b_rs_1').text("$" + nftd.format(b_rsl_2));
+
+                let b_rsl_3 = b_rsl_2 * 1.07 + 12.15;
+                $('#b_rs_2').text("$" + nftd.format(b_rsl_3));
+           } else{
+                $('#c_rsl_2').text("$0.00");
+                $('#c_rsl_2').text("$0.00");
+           }
+
+           $('.slide-c-input[required]').each(function(i, elm){
+            let vl =$(elm).val();
+                if(vl){
+                    $(elm).removeClass('err-input');
+                } else{
+                    $(elm).addClass('err-input');
+                }
+           });
+        }
+     });
+</script>
+<!----------- copy ends ---------------->
+</body>
+</html>
