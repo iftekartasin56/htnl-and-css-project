@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Investment Calculator</title>
+</head>
+<body>
+
+<div id="wrapper">
+    <style>
+        #wrapper {
+            width:1080px;
+            margin:0 auto;
+        }
+        .ms--cal {
+            font-family: Arial,Helvetica,sans-serif !important;
+        }
+        .ms--cal * {
+            margin:0;
+            padding: 0;
+        }
+        .ms--cal h1, .ms--cal h2, .ms--cal h3, .ms--cal h4 {
+            margin-bottom: 12px;
+        }
+        .ms--row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 0;
+        }
+        .ms--input-sec label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .ms--input-group {
+            position: relative;
+        }
+        .ms--form-control {
+            display: block;
+            width: 100%;
+            padding: .375rem .75rem .375rem 1.7rem;
+            font-size: 1.5rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: none;
+            border-bottom: 5px solid #ced4da;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            box-sizing: border-box;
+            transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        }
+        .ms--form-control:hover {
+            border-bottom: 5px solid #2A85AF;
+        }
+        .ms--form-control:focus {
+            outline: none !important;
+            border-bottom: 5px solid #2A85AF;
+        }
+        .ms--input-append {
+            font-size: 1.5rem;
+            font-weight: 400;
+            line-height: 1.5;
+            position: absolute;
+            top: 39px;
+            color: #4f4f4f;
+        }
+        .ms--cal-result {
+            background: #000;
+            color: #fff;
+            padding: 2rem;
+        }
+        .ms--cal-result h2 {
+            font-size: 18px;
+        }
+        .ms--cal-result .ms--cal-value {
+            color:#E3AC16;
+            font-size: 40px;
+        }
+        .ms--bdr {
+            width: 100%;
+            height: 1px;
+            background: #6f6f6f;
+            margin-bottom: 30px;;
+        }
+        .ms--col-md-6 {
+            flex: 0 0 auto;
+            width: 50%;
+            box-sizing: border-box;
+            padding: 8px;
+        }
+        .ms--mb-3 {
+            margin-bottom: 1.5rem;
+        }
+        .ms--text-center {
+            text-align: center;
+        }
+        .ms--text-right {
+            text-align: right;
+        }
+        @media (max-width: 768px){
+            .ms--col-md-6 {
+                width: 100%;
+            }
+            .ms--cal-value {
+                 font-size: 30px;
+             }
+             #wrapper {
+                width:100%;
+                margin:0 auto;
+            }
+        }
+    </style>
+    <div class="ms--cal">
+        <div class="ms--row ms--input-sec">
+            <div class="ms--col-md-6">
+                <div class="ms--input-group ms--mb-3">
+                    <label class="ms--form-label">Current Balance</label>
+                    <input type="text" class="ms--form-control cl-in" id="cl_in_1">
+                    <span class="ms--input-append">$</span>
+                </div>
+                <div class="ms--input-group ms--mb-3">
+                    <label class="ms--form-label">Interest Rate</label>
+                    <input type="text" class="ms--form-control cl-prcnt" id="range">
+                    <span class="ms--input-append">%</span>
+                </div>
+                <div class="ms--input-group ms--mb-3">
+                    <label class="ms--form-label">Fixed Monthly Payment</label>
+                    <input type="text" class="ms--form-control cl-in" id="cl_in_2">
+                    <span class="ms--input-append">$</span>
+                </div>
+                <div class="ms--input-group ms--mb-3">
+                    <label class="ms--form-label">Extra Payment per month</label>
+                    <input type="text" class="ms--form-control cl-in" id="cl_in_3">
+                    <span class="ms--input-append">$</span>
+                </div>
+            </div>
+            <div class="ms--col-md-6">
+                <div class="ms--cal-result">
+                    <h1 class="ms--text-center">Results</h1>
+                    <br>
+                    <div class="ms--bdr"></div>
+                    <div class="rs-sp-vl-sec" style="text-align: right;">
+                        <h2 class="rs-sp-value ms--cal-value ms--text-right" style="color: #E3AC16;"><span id="rs_1">$0.00</span></h2>
+                        <span id="rs_2" style='font-size:18px;'></span>
+                    </div>
+                    <h2 class="ms--text-right" style="margin-top: 20px;">Months to Pay Off</h2>
+                    <div class="ms--bdr"></div>
+                    <div class="rs-sp-vl-sec">
+                        <h2 class="rs-sp-value ms--cal-value ms--text-right" style="color: #E3AC16;" id="rs_3">$0.00</h2>
+                    </div>
+                    <h2 class="ms--text-right">Total Interest Paid</h2>
+                    <div class="ms--bdr"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+    <script>
+            jQuery(document).ready(function($){
+            let cl_in_1, cl_in_2, cl_in_3, cl_rate, xcl_in_2 = "";
+            let one_arr = [];
+            let two_arr = [];
+            let three_arr = [];
+            let four_arr = [];
+            let five_arr = [];
+            let six_arr = [];
+            let min_payment = 25;
+
+            const numOptionCurrency = {
+                digitGroupSeparator        : ',',
+                decimalCharacter           : '.',
+                decimalCharacterAlternative: '.',
+                currencySymbol             : '',
+                currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.prefix,
+                decimalPlaces              : 0,
+                minimumValue               : 0
+            };
+            const numOptionPercent = {
+                digitGroupSeparator        : ',',
+                decimalCharacter           : '.',
+                decimalCharacterAlternative: '.',
+                currencySymbol             : '',
+                currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.suffix,
+                decimalPlaces              : 0,
+                minimumValue               : 0,
+                maximumValue               : 100
+            };
+
+            const anElement1 = AutoNumeric.multiple('.cl-in', numOptionCurrency);
+            const anElement2 = AutoNumeric.multiple('.cl-prcnt', numOptionPercent);
+
+            function removeComma(num){
+                return Number(num.replace(/,/g,""));
+            }
+            
+            const nft = Intl.NumberFormat("en-US", {
+                minimumFractionDigits:0,
+                maximumFractionDigits:0
+            });
+
+            const nftd = Intl.NumberFormat("en-US", {
+                minimumFractionDigits:2,
+                maximumFractionDigits:2
+            });
+
+            $("#cl_in_1, #cl_in_2, #cl_in_3, #range").on("input", function(){
+                cl_in_1 = removeComma($("#cl_in_1").val());
+                xcl_in_2 = removeComma($("#cl_in_2").val());
+                cl_in_2 = removeComma($("#cl_in_2").val());
+                cl_in_3 = removeComma($("#cl_in_3").val());
+                cl_rate = Number($("#range").val());
+                calc();
+            });
+
+            function calc(){
+                if(cl_in_1){
+                    buildArrays();
+                } else {
+                    $("#rs_1, #rs_3").text("-");  
+                    $("#rs_2").html("");
+                }
+            }
+
+            Array.prototype.min = function() {
+                return Math.min.apply(null, this);
+            };
+
+            Array.prototype.max = function() {
+                return Math.max.apply(null, this);
+            };
+
+            function buildArrays(){
+                one_arr = [];
+                two_arr = [];
+                three_arr = [];
+                four_arr = [];
+                five_arr = [];
+                six_arr = [];
+                extra_arr = [];
+
+                one_arr[0]  = 0;
+                two_arr[0]  = 0;
+                three_arr[0]  = 0;
+                extra_arr[0]  = 0;
+                four_arr[0]  = 0;
+                five_arr[0]  = 0;
+                six_arr[0] = cl_in_1;
+
+                let i = 1;
+                let j = cl_in_1;
+                for(i=1;(i<361 && j >0);i++){
+                    if(six_arr[i - 1] > 0){
+                        one_arr[i]  = one_arr[i-1] + 1;
+                    }
+                    two_arr[i]  = cl_rate;
+                    extra_arr[i]  = cl_in_3;
+                    four_arr[i]  = (two_arr[i]/100)/12*six_arr[i-1];
+                    
+                    let x;
+                    if(xcl_in_2 == ""){
+                        x = Math.min(Math.max(0*six_arr[i-1]+four_arr[i], min_payment), four_arr[i] + six_arr[i-1]);
+                    } else {
+                        cl_in_2 = Number(xcl_in_2);
+                        x = Math.min(cl_in_2,six_arr[i-1] + four_arr[i]);
+                    }
+                    three_arr[i]  = x;
+                    five_arr[i]  = three_arr[i]+extra_arr[i]-four_arr[i];
+                    j = six_arr[i-1]-five_arr[i];
+                    six_arr[i]  = j;
+                }
+                rs_1 = one_arr.max();
+                rs_2 = (rs_1/12);
+                rs_3 = four_arr.reduce((a, b) => a + b, 0);
+                
+                $("#rs_1").text(nft.format(rs_1));  
+                if(rs_2){
+                    $("#rs_2").html("("+nftd.format(rs_2)+" years)");   
+                } else {
+                    $("#rs_2").html("");   
+                }
+                $("#rs_3").text("$"+nftd.format(rs_3));
+            }
+            function f_value(cal_v) {
+                return isFinite(cal_v) ? cal_val : 0;
+            }
+        });
+    </script>
+</div>
+</body>
+</html>

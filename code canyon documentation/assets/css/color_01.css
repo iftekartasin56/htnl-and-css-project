@@ -1,0 +1,195 @@
+/*
+
+Template: VedhaDocs - The complete documentation template
+Version: 1.0
+Author: vedhathemes
+
+*/
+/*================================================
+  [  Table of contents  ]
+  ================================================
+  
+  :: Sidemenu
+  :: Header
+  :: Layout
+  :: Article
+  :: Article-2
+  :: Footer
+  :: 404
+  :: Pagination
+  :: Badge
+  :: Contact
+  :: Faq
+  :: Chat-Box-Header
+
+======================================
+[ End table content ]
+======================================*/
+
+/*============================
+  sidemenu
+  ============================*/
+  .org-theme .sidebar-wrapper,
+  #show-sidebar {
+    background: linear-gradient(-20deg, rgba(9,46,168,1) 0%, rgba(15,37,110,1) 100%);
+  }
+  
+  .sidebar-wrapper .sidebar-brand{
+      background: #071a58;
+  }
+  .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu ul li.active a
+  {
+    color: #6b83d3;
+  }
+  .sidebar-wrapper .sidebar-menu ul li.side-list.active > a
+  {
+    color: #6b83d3;
+  }
+  /*end of sidemenu*/
+  
+  /*============================
+    Header
+    ============================*/
+  .doc-head-section {
+      background: #dde5ff;
+  }
+  .search-wrapper {
+    border-bottom: 1px solid #afb6cd;
+  }
+  
+  .header-full {
+    border-bottom: 1px solid #cad3f0;
+  }
+  .header-full .search-wrapper{
+    background: #ccd8ff;
+  }
+  
+  /*end of header*/
+  
+  /*============================
+    layout
+    ============================*/
+  .imp-note{
+    border-left: 5px solid #9fb5ff;
+  }
+  
+  #features h4 i {
+    color: #8da7ff;
+  }
+  /*end of layout*/
+  
+  /*============================
+    article
+    ============================*/
+  .article-inner-wrapper i
+  {
+    color: #698af6;
+  }
+  .article-content-list h5 i
+  {
+    color: #b8c8ff;
+  }
+  /*end of article*/
+  
+  /*============================
+    article-2
+    ============================*/
+  .article-helpful .box-btns a
+  {
+    border: 1px solid #7394ff;
+    color: #7394ff;
+  }
+  .article-helpful .box-btns a:hover {
+    background: #7394ff;
+    color: #fff;
+  }
+  .comments .atr-comment .inner-comment a
+  {
+    color:#7394ff;
+  }
+  .leave_cmt form .input-wrapper input.submit-btn
+  {
+    background: #0a2d9e;
+  }
+  ul.pro-ul li:before
+  {
+    border: 1px solid #0a2d9e;
+  }
+  /*end of article-2*/
+  
+  /*============================
+    footer
+    ============================*/
+  footer
+  {
+    background: #dde5ff;
+  }
+  footer ul li a
+  {
+    color: #173164;
+    border-right: 1px solid #6f7fab;
+  }
+  /*end of footer*/
+  
+  /*============================
+    404
+    ============================*/
+  .error-sec a
+  {background: rgba(9,46,168,1);
+    background: -moz-linear-gradient(top, rgba(9,46,168,1) 0%, rgba(15,37,110,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(9,46,168,1)), color-stop(100%, rgba(15,37,110,1)));
+    background: -webkit-linear-gradient(top, rgba(9,46,168,1) 0%, rgba(15,37,110,1) 100%);
+    background: -o-linear-gradient(top, rgba(9,46,168,1) 0%, rgba(15,37,110,1) 100%);
+    background: -ms-linear-gradient(top, rgba(9,46,168,1) 0%, rgba(15,37,110,1) 100%);
+    background: linear-gradient(to bottom, rgba(9,46,168,1) 0%, rgba(15,37,110,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#092ea8', endColorstr='#0f256e', GradientType=0 );
+  }
+  /*end of 404*/
+  
+  /*============================
+    pagination
+    ============================*/
+  .page-link {
+      color: #0c2a8f;
+  }
+  .page-item.active .page-link {
+    background-color: #0d277d;
+    border-color: #0d277d;
+  }
+  /*end of pagination*/
+  
+  /*============================
+    badge
+    ============================*/
+  .badge-secondary
+  {
+      background-color: #728ff2;
+  }
+  /*end of badge*/
+  
+  /*============================
+    contact
+    ============================*/
+  .contact-form input[type=submit] {
+    background: #0a2d9e;
+    border: 1px solid #0a2d9e;
+    color: #fff;
+  }
+  /*end of contact*/
+  
+  /*============================
+    faq
+    ============================*/
+  .faq-div h4 {
+    color: #0a2d9e;
+  }
+  /*end of faq*/
+  
+  /*============================
+    chat-box-header
+    ============================*/
+  .chat-box-header
+  {
+    background: #113dc9;
+  }
+  /*end of chat-box-header*/

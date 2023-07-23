@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+<title>System Price Calculator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet" />
+<style>
+    body {
+        font-family: "Roboto", sans-serif;
+    }
+</style>
+</head>
+<body>
+<style>
+#mx_cl *,
+::after,
+::before {
+    box-sizing: border-box;
+}
+#mx_cl {
+    line-height: 1.5;
+    font-family: inherit;
+}
+#mx_cl .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4a4a4a;
+    text-align: left;
+}
+#mx_cl label {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 0.5rem;
+}
+#mx_cl p {
+    margin: 0;
+}
+#mx_cl h3 {
+    margin: 0;
+}
+#mx_cl .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+#mx_cl .col-md-1,
+#mx_cl .col-md-10,
+#mx_cl .col-md-11,
+#mx_cl .col-md-12,
+#mx_cl .col-md-2,
+#mx_cl .col-md-3,
+#mx_cl .col-md-4,
+#mx_cl .col-md-5,
+#mx_cl .col-md-6,
+#mx_cl .col-md-7,
+#mx_cl .col-md-8,
+#mx_cl .col-md-9 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+#mx_cl .col-sm-50 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+#mx_cl .form-group {
+    margin-bottom: 1rem;
+}
+#mx_cl .form-control {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+    font-weight: 400;
+    height: 34px;
+    border-radius: 0;
+    color: #000;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #dbdbdb;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+#mx_cl .form-control:focus {
+    outline: none;
+}
+#mx_cl .btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+#mx_cl .btn-add {
+    color: #fff;
+    background-color: #12498d;
+    border-color: #12498d;
+    width: 100%;
+}
+#mx_cl .btn-reset {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+}
+#mx_cl table {
+    border-collapse: collapse;
+}
+#mx_cl .table {
+    width: 100%;
+}
+#mx_cl .table td,
+#mx_cl .table th {
+    padding: 5px 0;
+    vertical-align: top;
+    border: none !important;
+    border-bottom: 1px solid #666666 !important;
+    color: #fff;
+    font-size: 14px;
+    text-align: left;
+}
+#mx_cl .table td.rs-vl,
+#mx_cl .table th.rs-vl {
+    text-align: right;
+    color: #A0C93A;
+    font-weight: 600;
+}
+#mx_cl .text-center {
+    text-align: center;
+}
+@media (min-width: 576px) {
+    #mx_cl .container {
+        max-width: 100%;
+    }
+}
+@media (min-width: 768px) {
+    #mx_cl .container {
+        max-width: 100%;
+    }
+    #mx_cl .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    #mx_cl .col-md-9 {
+        -ms-flex: 0 0 75%;
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+    #mx_cl .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+    #mx_cl .col-md-7 {
+        -ms-flex: 0 0 58.33333%;
+        flex: 0 0 58.33333%;
+        max-width: 58.33333%;
+    }
+    #mx_cl .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    #mx_cl .col-md-5 {
+        -ms-flex: 0 0 41.666667%;
+        flex: 0 0 41.666667%;
+        max-width: 41.666667%;
+    }
+    #mx_cl .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    #mx_cl .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+@media (min-width: 992px) {
+    #mx_cl .container {
+        max-width: 960px;
+    }
+}
+@media (min-width: 1200px) {
+    #mx_cl .container {
+        max-width: 1150px;
+    }
+}
+#mx_cl .text-right {
+    text-align: right;
+}
+#mx_cl .form-group,
+#mx_cl .input-group {
+    position: relative;
+    margin-bottom: 8px;
+}
+#mx_cl .top-title {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f79721;
+    color: #12498d;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 1.8em;
+    font-weight: 700;
+    line-height: 1.25em;
+    text-align: center;
+    margin: 5px 0 30px 0;
+}
+#mx_cl .form-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #12498d;
+    border: 1px solid #fff;
+}
+#mx_cl .sp-title1 {
+    background-color: #fff;
+    border: 1px solid #12498d !important;
+    width: 250px;
+    text-align: center;
+    padding: 10px 20px;
+    margin-top: -53px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+#mx_cl .sp-left-box {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 30px 34px;
+}
+#mx_cl .left-bot-box {
+    border-radius: 0 0 8px 8px;
+    padding: 30px 35px;
+    background-color: #12498d;
+}
+#mx_cl .avg-input {
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #888;
+}
+#mx_cl .sp-in-title {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+}
+#mx_cl .sp-in-vl {
+    color: #A0C93A;
+    font-size: 30px;
+    font-weight: 600;
+}
+#mx_cl .rs-sm-vl {
+    color: #A0C93A;
+    font-size: 22px;
+    font-weight: 600;
+}
+#mx_cl .in-title {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    padding-top: 15px;
+    border-bottom: 1px solid #666666;
+}
+#mx_cl .in-vl {
+    color: #f79721;
+    font-size: 30px;
+    font-weight: 700;
+}
+#mx_cl .right-in-box {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 30px 30px;
+    background-color: #324354;
+    height: 100%;
+}
+#mx_cl .sp-border-bt {
+    border-bottom: 1px solid #666666;
+}
+#mx_cl .sp-td-col {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: left;
+}
+#mx_cl .sp-td-vl {
+    color: #f79721;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: right;
+}
+#mx_cl .sp-title {
+    background: #12498d;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    color: #fff !important;
+    text-align: center;
+    width: 250px;
+    padding: 10px 20px;
+    margin-top: -60px;
+    margin-bottom: 10px;
+}
+#mx_cl .sp-title-cl {
+    text-align: center;
+    color: #fff !important;
+    background-color: #f79721;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    padding: 10px 20px;
+    width: 250px;
+    margin-top: -60px;
+    margin-bottom: 10px;
+}
+#mx_cl .btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 5px;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#mx_cl .btn-primary {
+    background-color: #324354;
+    border: 1PX solid #324354;
+    margin: 15px;
+    color: #fff;
+    width: 100%;
+}
+#mx_cl .right-rs-top-title {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #A0C93A;
+}
+#mx_cl .btn-primary:hover {
+    background-color: #324354;
+}
+@media (max-width: 768px) {
+    #mx_cl .mb-center-div {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #mx_cl .sp-title1, #mx_cl .sp-title, #mx_cl .sp-title-cl {
+        width: auto;
+    }
+}
+#mx_cl .section-title {
+    font-size: 16px;
+    border-bottom: 1px solid #666666;
+    margin-bottom: 20px;
+}
+#mx_cl .prepend-text {
+    position: absolute;
+    left: 12px;
+    bottom: 5px;
+}
+#mx_cl .append-text {
+    position: absolute;
+    right: 12px;
+    bottom: 5px;
+}
+#mx_cl .left-padding {
+    padding-left: 26px;
+}
+#mx_cl .rs-sec-title {
+    color: #A0C93A;
+    font-size: 16px;
+    font-weight: 400;
+}
+#mx_cl .adder_item_rev {
+    width: 15px;
+    height: 15px;
+    display: flex;
+    background: #666;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    margin-left: 4px;
+    margin-top: 2px;
+    color: #d1d1d1;
+    visibility: hidden;
+    cursor: pointer;
+}
+#mx_cl .table tr:hover .adder_item_rev {
+    visibility: visible;
+}
+#mx_cl .logo-img {
+    width: 100px;
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.9/datepicker.min.css">
+<div class="ms-cl" id="mx_cl">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" style="margin-top: 25px;"></div>
+            <div class="col-md-5">
+                <div class="sp-left-box">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="in_1" class="headd">Investment Amount</label>     
+                                <input type="text" class="form-control cl-in" id="in_1" autocomplete="off"/>
+                            </div>                       
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="in_3" class="headd">Investment Term (Years):</label>
+                        <select class="form-control" id="in_3">
+                            <option value="" disabled selected>select Years</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
+                    <br>
+                    <h3 class="section-title">Return Percentage</h3>
+                    <div class="row term-in">
+                        <div class="col-sm-50">
+                            <label for="in_4" class="headd">Year 1</label>                            
+                        </div>
+                        <div class="col-sm-50">
+                            <div class="form-group">
+                                <input type="text" class="form-control cl-in cr-in" id="in_4" autocomplete="off" />
+                                <span class="append-text">%</span>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="row term-in">
+                            <div class="col-sm-50">
+                                <label for="in_5" class="headd">Year 2</label>                            
+                            </div>
+                            <div class="col-sm-50">
+                                <div class="form-group">
+                                    <input type="text" class="form-control cl-in cr-in" id="in_5" autocomplete="off" />
+                                    <span class="append-text">%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row term-in">
+                            <div class="col-sm-50">
+                                <label for="in_6" class="headd">Year 3</label>                            
+                            </div>
+                            <div class="col-sm-50">
+                                <div class="form-group">
+                                    <input type="text" class="form-control cl-in cr-in" id="in_6" autocomplete="off" />
+                                    <span class="append-text">%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row term-in">
+                            <div class="col-sm-50">
+                                <label for="in_7" class="headd">Year 4</label>                            
+                            </div>
+                            <div class="col-sm-50">
+                                <div class="form-group">
+                                    <input type="text" class="form-control cl-in cr-in" id="in_7" autocomplete="off" />
+                                    <span class="append-text">%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row term-in">
+                            <div class="col-sm-50">
+                                <label for="in_8" class="headd">Year 5</label>                            
+                            </div>
+                            <div class="col-sm-50">
+                                <div class="form-group">
+                                    <input type="text" class="form-control cl-in cr-in" id="in_8" autocomplete="off" />
+                                    <span class="append-text">%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row term-in">
+                            <div class="col-sm-50">
+                                <label for="in_9" class="headd">Year 6</label>                            
+                            </div>
+                            <div class="col-sm-50">
+                                <div class="form-group">
+                                    <input type="text" class="form-control cl-in cr-in" id="in_9" autocomplete="off" />
+                                    <span class="append-text">%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row term-in">
+                            <div class="col-sm-50">
+                                <label for="in_10" class="headd">Year 7</label>                            
+                            </div>
+                            <div class="col-sm-50">
+                                <div class="form-group">
+                                    <input type="text" class="form-control cl-in cr-in" id="in_10" autocomplete="off" />
+                                    <span class="append-text">%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row term-in">
+                            <div class="col-sm-50">
+                                <label for="in_11" class="headd">Year 8</label>                            
+                            </div>
+                            <div class="col-sm-50">
+                                <div class="form-group">
+                                    <input type="text" class="form-control cl-in cr-in" id="in_11" autocomplete="off" />
+                                    <span class="append-text">%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row term-in">
+                            <div class="col-sm-50">
+                                <label for="in_12" class="headd">Year 9</label>                            
+                            </div>
+                            <div class="col-sm-50">
+                                <div class="form-group">
+                                    <input type="text" class="form-control cl-in cr-in" id="in_12" autocomplete="off" />
+                                    <span class="append-text">%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row term-in">
+                            <div class="col-sm-50">
+                                <label for="in_13" class="headd">Year 10</label>                            
+                            </div>
+                            <div class="col-sm-50">
+                                <div class="form-group">
+                                    <input type="text" class="form-control cl-in cr-in" id="in_13" autocomplete="off" />
+                                    <span class="append-text">%</span>
+                                </div>
+                            </div>
+                        </div>
+                    <br>
+                    <div class="form-group">
+                        <button class="btn btn-primary">Calculate Returns</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="right-in-box">
+                    <div class="right-rs-top-title">
+                        <h3 class="rs-sec-title">Year</h3>
+                        <h3 class="rs-sec-title">Profit</h3>
+                    </div>
+                    <table class="table form-table">
+                        <tbody id="rs_adder_list_no">
+                            <tr>
+                                <td colspan="3" style="text-align: center !important; color: #fff; font-weight: normal; border: none !important;">No profit found!</td>
+                            </tr>
+                        </tbody>
+                        <tbody id="rs_adder_list"></tbody>
+                    </table>
+                    <br>
+                    <table class="table form-table">
+                        <tbody>
+                            <tr>
+                                <td>Year 1</td>
+                                <td class="rs-vl" id="rs_1">$0.00</td>
+                                <td style="width: 20px;"></td>
+                            </tr>
+                            <tr>
+                                <td>Year 2</td>
+                                <td class="rs-vl" id="rs_2">$0.00</td>
+                                <td style="width: 20px;"></td>
+                            </tr>
+                            <tr>
+                                <td>Year 3</td>
+                                <td class="rs-vl" id="rs_3">$0.00</td>
+                                <td style="width: 20px;"></td>
+                            </tr>
+                            <tr>
+                                <td>Year 4</td>
+                                <td class="rs-vl" id="rs_4">$0.00</td>
+                                <td style="width: 20px;"></td>
+                            </tr>
+                            <tr>
+                                <td>Year 5</td>
+                                <td class="rs-vl" id="rs_5">$0.00</td>
+                                <td style="width: 20px;"></td>
+                            </tr>
+                            <tr>
+                                <td>Year 6</td>
+                                <td class="rs-vl" id="rs_6">$0.00</td>
+                                <td style="width: 20px;"></td>
+                            </tr>
+                            <tr>
+                                <td>Year 7</td>
+                                <td class="rs-vl" id="rs_7">$0.00</td>
+                                <td style="width: 20px;"></td>
+                            </tr>
+                            <tr>
+                                <td>Year 8</td>
+                                <td class="rs-vl" id="rs_8">$0.00</td>
+                                <td style="width: 20px;"></td>
+                            </tr>
+                            <tr>
+                                <td>Year 9</td>
+                                <td class="rs-vl" id="rs_9">$0.00</td>
+                                <td style="width: 20px;"></td>
+                            </tr>
+                            <tr>
+                                <td>Year 10</td>
+                                <td class="rs-vl" id="rs_10">$0.00</td>
+                                <td style="width: 20px;"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="sp-in-box">
+                                <h3 class="in-title">Total Profit</h3>
+                                <span class="sp-in-vl rs_vl" id="rs_11">$0.00 <span class="rs-sm-vl">(0.00%)</span></span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="sp-in-box">
+                                <h3 class="in-title">Average Annual Return</h3>
+                                <span class="sp-in-vl rs_vl" id="rs_12">$0.00 <span class="rs-sm-vl">(0.00%)</span></span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="sp-in-box">
+                                <h3 class="in-title">Equity Multiple</small></h3>
+                                <span class="sp-in-vl rs_vl" id="rs_12">0.00 x</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.9/datepicker.min.js"></script>
+<script>
+jQuery(($) => {
+    let ins = {};
+    let rs = {};
+
+    const nft = Intl.NumberFormat("en-US", {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+    });
+
+    const nftd = Intl.NumberFormat("en-US", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+
+    const numOptionCurrency = {
+        digitGroupSeparator        : ',',
+        decimalCharacter           : '.',
+        decimalCharacterAlternative: '.',
+        currencySymbol             : '',
+        currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.prefix,
+        decimalPlaces              : 0,
+        minimumValue: 0
+    };
+    const numOptionPercent = {
+        digitGroupSeparator        : ',',
+        decimalCharacter           : '.',
+        decimalCharacterAlternative: '.',
+        currencySymbol             : '',
+        currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.suffix,
+        decimalPlaces              : 2,
+        minimumValue: 0,
+        maximumValue: 100
+    };
+    const numOption = {
+        digitGroupSeparator        : ',',
+        decimalCharacter           : '.',
+        decimalCharacterAlternative: '.',
+        currencySymbol             : '',
+        currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.suffix,
+        decimalPlaces              : 2,
+        minimumValue: 0
+    };
+
+    const anElement1 = AutoNumeric.multiple('.cr-in', numOptionCurrency);
+    const anElement2 = AutoNumeric.multiple('.pr-in', numOptionPercent);
+    const anElement = AutoNumeric.multiple('.num-in', numOption);
+
+    $("#cl_date").datepicker({
+        autoClose: true,
+        viewStart: 2,
+        format: 'dd/mm/yyyy'
+    });
+
+    $('#cl_date').datepicker('setDate', new Date());
+
+    calcFunc();
+
+    $(".cl-in").on("input", function() {
+        calcFunc();
+    });
+
+    $("#adder_add_btn").on("click", function() {
+        if($("#in_3").val()){
+            let adder_title = $("#in_3 option:selected").text();
+            let vl = $("#in_3").val();
+
+            let is_avl = false;
+
+            $(document).find(".adder_item").each(function(i, elm) {
+                if($(elm).find(".adder_title").text().trim() == adder_title){
+                    is_avl = true;
+                }
+            });
+
+            if(!is_avl){
+                let row = `
+                    <tr class="adder_item">
+                        <td class="adder_title">${adder_title}</td>
+                        <td data-value="${vl}" class="rs-vl adder_price">$0.00</td>
+                        <td style="width: 20px;"><span class="adder_item_rev">x</span></td>
+                    </tr>
+                `;
+
+                $("#rs_adder_list_no").hide();
+                $("#rs_adder_list").append(row);
+
+                $(this).text("Added");
+                
+                setTimeout(function(){
+                    $("#adder_add_btn").text("+Add");
+                }, 1000);
+            }            
+        }
+        calcFunc();
+    });
+
+    $(document).on("click", ".adder_item_rev", function() {
+        $(this).closest("tr").remove();
+
+        if($(document).find(".adder_item").length == 0){
+            $("#rs_adder_list_no").show();
+        }
+        calcFunc();
+    });
+
+    function calcFunc() {
+        $(".cl-in").each(function(i, elm){
+            let vl = removeSign($(elm).val());
+            let inID = $(elm).attr("id");
+
+            ins[inID] = vl;
+        });
+
+        let adder_total = 0;
+
+        $(document).find(".adder_item").each(function(i, elm) {
+            let rs_vl = $(elm).find(".adder_price");
+
+            let arr = rs_vl.data("value").split(", ").map(function(a){
+                return Number(a);
+            });
+
+            let adder_price = 0;
+            if(arr[0]){
+                adder_price = arr[0];
+            } else {
+                adder_price = arr[1]*ins["in_1"]*1000;
+            }
+            adder_total = adder_total + adder_price;
+
+            rs_vl.text("$"+nftd.format(adder_price));
+        });
+
+        adder_total = adder_total + ins["in_1"]*ins["in_2"]*1000;
+
+        rs["rs_1"] = ins["in_4"];
+        rs["rs_2"] = ins["in_5"];
+        rs["rs_3"] = ins["in_6"];
+        rs["rs_4"] = ins["in_7"];
+        rs["rs_5"] = ins["in_8"];
+        rs["rs_6"] = ins["in_9"];
+
+        let menual_adder_total = rs["rs_1"] + rs["rs_2"] + rs["rs_3"] + rs["rs_4"] + rs["rs_5"] + rs["rs_6"];
+
+        rs["rs_7"] = adder_total + menual_adder_total;
+        rs["rs_8"] = rs["rs_7"]/(1-(ins["in_10"]/100));
+        rs["rs_9"] = rs["rs_7"] /ins["in_1"]/1000;
+        rs["rs_10"] = rs["rs_8"] /ins["in_1"]/1000;
+
+        Object.keys(rs).forEach(function(k){
+            $("#"+k).text("$"+nftd.format(onlyNum(rs[k])));
+        });
+    }
+
+    function onlyNum(num){
+        return isFinite(num) ? num : 0;
+    }
+
+    function removeSign(vl){
+            return Number(vl.replace(/\$|,/g, ''));
+    }
+});
+</script>
+</body>
+</html>

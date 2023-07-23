@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Investment Calculator</title>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <style>
+            #wrapper {
+                width: 1080px;
+                margin: 0 auto;
+            }
+
+            .ms--cal {
+                font-family: Arial, Helvetica, sans-serif !important;
+            }
+
+            .ms--cal * {
+                margin: 0;
+                padding: 0;
+            }
+
+            .ms--cal h1,
+            .ms--cal h2,
+            .ms--cal h3,
+            .ms--cal h4 {
+                margin-bottom: 1rem;
+            }
+
+            .ms--row {
+                display: flex;
+                flex-wrap: wrap;
+                margin-top: 0;
+            }
+
+            .ms--input-sec label {
+                display: block;
+                margin-bottom: 10px;
+                font-size: 18px;
+                font-weight: 600;
+            }
+
+            .ms--input-group {
+                position: relative;
+            }
+
+            .ms--form-control {
+                display: block;
+                width: 100%;
+                padding: .375rem .75rem .375rem 1.7rem;
+                font-size: 1.5rem;
+                font-weight: 400;
+                line-height: 1.5;
+                color: #212529;
+                background-color: #fff;
+                background-clip: padding-box;
+                border: none;
+                border-bottom: 5px solid #ced4da;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                box-sizing: border-box;
+                transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+            }
+
+            .ms--form-control:hover {
+                border-bottom: 5px solid #2A85AF;
+            }
+
+            .ms--form-control:focus {
+                outline: none !important;
+                border-bottom: 5px solid #2A85AF;
+            }
+
+            .ms--input-append {
+                font-size: 1.5rem;
+                font-weight: 400;
+                line-height: 1.5;
+                position: absolute;
+                top: 37px;
+                color: #4f4f4f;
+            }
+
+            .ms--cal-result {
+                background: #000;
+                color: #fff;
+                padding: 2rem;
+            }
+
+            .ms--cal-result h2 {
+                font-size: 18px;
+            }
+
+            .ms--cal-result .ms--cal-value {
+                color: #E3AC16;
+                font-size: 40px;
+            }
+
+            .ms--bdr {
+                width: 100%;
+                height: 1px;
+                background: #6f6f6f;
+                margin-bottom: 20px;
+                ;
+            }
+
+            .ms--col-md-6 {
+                flex: 0 0 auto;
+                width: 50%;
+                box-sizing: border-box;
+                padding: 8px;
+            }
+
+            .ms--mb-3 {
+                margin-bottom: 1.5rem;
+            }
+
+            .ms--text-center {
+                text-align: center;
+            }
+
+            .ms--text-right {
+                text-align: right;
+            }
+
+            @media (max-width: 768px) {
+                .ms--col-md-6 {
+                    width: 100%;
+                }
+
+                .ms--cal-value {
+                    font-size: 30px;
+                }
+                #wrapper {
+                width: 100%;
+            }
+            }
+        </style>
+        <div class="ms--cal">
+            <div class="ms--row ms--input-sec">
+                <div class="ms--col-md-6">
+                    <div class="ms--input-group ms--mb-3">
+                        <label class="ms--form-label">Car Price</label>
+                        <input type="text" class="ms--form-control nf-class">
+                        <span class="ms--input-append">$</span>
+                    </div>
+                    <div class="ms--input-group ms--mb-3">
+                        <label class="ms--form-label">Down Payment <small>(includes trade-in)</small></label>
+                        <input type="text" class="ms--form-control nf-class">
+                        <span class="ms--input-append">$</span>
+                    </div>
+                    <div class="ms--input-group ms--mb-3">
+                        <label class="ms--form-label">Loan Amount</label>
+                        <input type="text" class="ms--form-control" id="cal_in_loan" readonly>
+                        <span class="ms--input-append">$</span>
+                    </div>
+                    <div class="ms--input-group ms--mb-3">
+                        <label class="ms--form-label">Interest Rate</label>
+                        <input type="text" class="ms--form-control ir-per">
+                        <span class="ms--input-append">%</span>
+                    </div>
+                    <div class="ms--input-group ms--mb-3">
+                        <label class="ms--form-label">No. of Months</label>
+                        <input type="text" class="ms--form-control nf-class">
+                    </div>
+                </div>
+                <div class="ms--col-md-6">
+                    <div class="ms--cal-result">
+                        <h1 class="ms--text-center">Results</h1>
+                        <br>
+                        <div class="ms--bdr"></div>
+                        <h1 class="ms--cal-value ms--text-right" id="cal_rs_1">$0.00</h1>
+                        <h2 class="ms--text-right">Monthly Payment</h2>
+                        <div class="ms--bdr"></div>
+                        <h1 class="ms--cal-value ms--text-right" id="cal_rs_2">$0.00</h1>
+                        <h2 class="ms--text-right">Total Paid</h2>
+                        <div class="ms--bdr"></div>
+                        <h1 class="ms--cal-value ms--text-right" id="cal_rs_3">$0.00</h1>
+                        <h2 class="ms--text-right">Cost to Finance <br><small>(Extra That You Pay Over Car
+                                Price)</small></h2>
+                        <div class="ms--bdr"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+        <script>
+
+            jQuery(document).ready(function ($) {
+
+
+                const numOptionCurrency = {
+                    digitGroupSeparator: ',',
+                    decimalCharacter: '.',
+                    decimalCharacterAlternative: '.',
+                    currencySymbol: '',
+                    currencySymbolPlacement: AutoNumeric.options.currencySymbolPlacement.prefix,
+                    decimalPlaces: 0,
+                    minimumValue: 0
+                };
+                const numOptionPercent = {
+                    digitGroupSeparator: ',',
+                    decimalCharacter: '.',
+                    decimalCharacterAlternative: '.',
+                    currencySymbol: '',
+                    currencySymbolPlacement: AutoNumeric.options.currencySymbolPlacement.suffix,
+                    decimalPlaces: 2,
+                    minimumValue: 0,
+                    maximumValue: 100
+                };
+
+
+                new AutoNumeric('.ir-per', numOptionPercent);
+
+                const anElement1 = AutoNumeric.multiple('.nf-class', numOptionCurrency);
+
+                function removeComma(num) {
+                    return Number(num.replace(/,/g, ""));
+                }
+
+                const nft = Intl.NumberFormat("en-US", {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 0
+                });
+                let cal_inputs, cal_rs;
+                let cal_x, cal_y, cal_z, i;
+
+                nftd = Intl.NumberFormat('en-US', {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
+                });
+
+                $('.ms--form-control').on('keyup change', function () {
+                    cal_inputs = [];
+                    $('.ms--form-control').each(function () {
+                        let vl = removeComma($(this).val());
+                        cal_inputs.push(vl);
+                    });
+                    cal_y = cal_inputs[0] - cal_inputs[1];
+                    $('#cal_in_loan').val(nft.format(cal_y));
+                    calculate_rs(cal_inputs);
+                });
+
+                function calculate_rs(cal_inputs) {
+                    if (cal_inputs[0] && cal_inputs[2] && cal_inputs[3] && cal_inputs[4]) {
+                        cal_rs = [];
+                        cal_x = (-1) * pmt((cal_inputs[3] / 100) / 12, cal_inputs[4], cal_inputs[2]);
+                        cal_rs.push(f_value(cal_x));
+
+                        cal_x = (cal_x * cal_inputs[4]) + cal_inputs[1];
+                        cal_rs.push(f_value(cal_x));
+
+                        cal_x = cal_x - cal_inputs[0];
+                        cal_rs.push(f_value(cal_x));
+                        $('#cal_rs_1').text("$" + nftd.format(cal_rs[0]));
+                        $('#cal_rs_2').text("$" + nftd.format(cal_rs[1]));
+                        $('#cal_rs_3').text("$" + nftd.format(cal_rs[2]));
+                    } else {
+                        $('#cal_rs_1').text("$" + nftd.format(0.00));
+                        $('#cal_rs_2').text("$" + nftd.format(0.00));
+                        $('#cal_rs_3').text("$" + nftd.format(0.00));
+                    }
+
+                }
+                function pmt(rate, nperiod, pv, fv, type) {
+                    if (!fv) fv = 0;
+                    if (!type) type = 0;
+
+                    if (rate == 0) return -(pv + fv) / nperiod;
+
+                    var pvif = Math.pow(1 + rate, nperiod);
+                    var pmt = rate / (pvif - 1) * -(pv * pvif + fv);
+
+                    if (type == 1) {
+                        pmt /= (1 + rate);
+                    };
+
+                    return pmt;
+                }
+
+                function f_value(cal_v) {
+                    let cal_val = (cal_v > 0) ? cal_v : 0;
+                    return cal_val;
+                }
+            });
+        </script>
+    </div>
+</body>
+
+</html>

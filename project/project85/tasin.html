@@ -1,0 +1,581 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <title>Financial Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <style>
+        #mx_cl *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+        }
+
+        #mx_cl {
+            line-height: 1.5;
+            font-family: inherit;
+        }
+
+        #mx_cl .container {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #4a4a4a;
+            text-align: left;
+        }
+
+        #mx_cl label {
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        #mx_cl .row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        #mx_cl .col-md-1,
+        #mx_cl .col-md-10,
+        #mx_cl .col-md-11,
+        #mx_cl .col-md-12,
+        #mx_cl .col-md-2,
+        #mx_cl .col-md-3,
+        #mx_cl .col-md-4,
+        #mx_cl .col-md-5,
+        #mx_cl .col-md-6,
+        #mx_cl .col-md-7,
+        #mx_cl .col-md-8,
+        #mx_cl .col-md-9 {
+            position: relative;
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        #mx_cl .form-group {
+            margin-bottom: 1rem;
+        }
+
+        #mx_cl .form-control {
+            display: block;
+            width: 100%;
+            height: 35px;
+            padding: 0.275rem 0.75rem;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #4a4a4a;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #dddddd;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+
+        #mx_cl .form-control:focus {
+            outline: none;
+        }
+
+        #mx_cl .btn {
+            display: inline-block;
+            font-weight: 400;
+            color: #212529;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-color: transparent;
+            border: 1px solid transparent;
+            padding: 5px 30px;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: .25rem;
+            transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+
+        #mx_cl .btn-primary {
+            color: #fff;
+            height: 35px;
+            background-color: #057689;
+            border-color: #057689;
+            width: 100%;
+            text-decoration: none;
+            border-radius: 0;
+        }
+
+        #mx_cl .btn-reset {
+            color: #fff;
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+
+        #mx_cl table {
+            border-collapse: collapse;
+        }
+
+        #mx_cl .table {
+            width: 100%;
+            margin-bottom: 1rem;
+            color: #212529;
+        }
+
+        #mx_cl .table td,
+        #mx_cl .table th {
+            padding: .75rem;
+            vertical-align: top;
+            border-top: 1px solid #dee2e6;
+        }
+
+        #mx_cl .text-center {
+            text-align: center;
+        }
+
+        @media (min-width: 576px) {
+            #mx_cl .container {
+                max-width: 100%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            #mx_cl .container {
+                max-width: 100%;
+            }
+
+            #mx_cl .col-md-12 {
+                -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            #mx_cl .col-md-9 {
+                -ms-flex: 0 0 75%;
+                flex: 0 0 75%;
+                max-width: 75%;
+            }
+
+            #mx_cl .col-md-8 {
+                -ms-flex: 0 0 66.666667%;
+                flex: 0 0 66.666667%;
+                max-width: 66.666667%;
+            }
+
+            #mx_cl .col-md-7 {
+                -ms-flex: 0 0 58.33333%;
+                flex: 0 0 58.33333%;
+                max-width: 58.33333%;
+            }
+
+            #mx_cl .col-md-6 {
+                -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+
+            #mx_cl .col-md-5 {
+                -ms-flex: 0 0 41.666667%;
+                flex: 0 0 41.666667%;
+                max-width: 41.666667%;
+            }
+
+            #mx_cl .col-md-4 {
+                -ms-flex: 0 0 33.333333%;
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+
+            #mx_cl .col-md-3 {
+                -ms-flex: 0 0 25%;
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+        }
+
+        @media (min-width: 992px) {
+            #mx_cl .container {
+                max-width: 960px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            #mx_cl .container {
+                max-width: 950px;
+            }
+        }
+
+        #mx_cl .text-right {
+            text-align: right;
+        }
+
+        #mx_cl .form-group,
+        #mx_cl .input-group {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        #mx_cl .form-check {
+            margin-bottom: 10px;
+        }
+
+
+
+        #mx_cl .top-title {
+            font-size: 25px;
+        }
+
+        #mx_cl .right-box {
+            display: flex;
+            padding: 30px;
+            background-color: #F5F5F5;
+            justify-content: space-between;
+            border: 1px solid #D9D9D9;
+        }
+
+        #mx_cl .right-p {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        #mx_cl .output {
+            font-size: 30px;
+            font-weight: 600;
+        }
+
+        #mx_cl .button-sec {
+            text-align: center;
+        }
+
+        #mx_cl .option-sec {
+            display: flex;
+            gap: 30px;
+            justify-content: start;
+        }
+
+
+        #mx_cl .check-box.is-active .tick-mark {
+            background-color: #0D2131;
+            border: 1px solid #0D2131;
+        }
+
+        #mx_cl .check-box:hover:not(.is-active) .tick-mark {
+            background-color: #dddddd;
+        }
+
+        #mx_cl .check-box {
+            display: flex;
+            margin-bottom: 6px;
+            cursor: pointer;
+        }
+
+        #mx_cl .tck-mark {
+            display: inline-block;
+            margin-top: 1px;
+        }
+
+        #mx_cl .tick-mark {
+            background-color: #ffffff;
+            padding: 2px;
+            color: #fff;
+            width: 20px;
+            height: 20px;
+            font-size: 14px;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            border: 1px solid #0D2131;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            margin-right: 10px;
+        }
+
+        #mx_cl .check-box.is-active .tick-mark {
+            background-color: #0D2131;
+            border: 1px solid #0D2131;
+        }
+
+        #mx_cl .check-box:hover:not(.is-active) .tick-mark {
+            background-color: #dddddd;
+        }
+
+        #mx_cl .form-field1 {
+            display: none;
+        }
+
+        #mx_cl .form-field {
+            display: none;
+        }
+
+        #mx_cl .err-input {
+            border-color: red;
+        }
+
+        @media (max-width: 768px) {
+            #mx_cl .right-box {
+                display: block;
+                text-align: center;
+            }
+
+            #mx_cl .right-left-sec {
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+    <div class="ms-cl" id="mx_cl">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="in_1">What type of product are you selling?</label>
+                        <input type="text" class="form-control in-rq" id="in_1" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="in_2">Preferred Currency</label>
+                        <input type="text" class="form-control in-rq" id="in_2" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="in_3">Revenue from your online store (Montly)</label>
+                        <input type="text" class="form-control in-rq in-num" id="in_3" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="in_3">Are you currently doing email marketing?</label>
+                        <div class="option-sec">
+                            <div class="check-box in-email-option" data-value="yes">
+                                <div class="tck-mark"><span class="tick-mark ">✓</span></div>
+                                <span class="option-title" style="cursor: pointer;">Yes</span>
+                            </div>
+                            <div class="check-box in-email-option" data-value="no">
+                                <div class="tck-mark"><span class="tick-mark">✓</span></div>
+                                <span class="option-title" style="cursor: pointer;">No</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group form-field1">
+                        <label for="in_4">What's your current email list size?</label>
+                        <input type="text" class="form-control in-num" id="in_4" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="in_3">Are you currently doing sms marketing?</label>
+                        <div class="option-sec">
+                            <div class="option-sec">
+                                <div class="check-box in-finance in-sms-option" data-value="yes">
+                                    <div class="tck-mark"><span class="tick-mark">✓</span></div>
+                                    <span class="option-title" style="cursor: pointer;">Yes</span>
+                                </div>
+                                <div class="check-box in-finance in-sms-option" data-value="no">
+                                    <div class="tck-mark"><span class="tick-mark ">✓</span></div>
+                                    <span class="option-title" style="cursor: pointer;">No</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group form-field">
+                        <label for="in_5">What's your current sms list?</label>
+                        <input type="text" class="form-control in-num" id="in_5" placeholder="">
+                    </div>
+                    <div class="email-field" id="email_field">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <input type="email" class="form-control in-rq" placeholder="Enter your email...">
+                            </div>
+                            <div class="col-md-4">
+                                <button class="btn btn-primary" id="fr_sub_btn">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="right-box">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="right-left-sec">
+                                    <span class="right-p">Revenue</span>
+                                    <div class="output" id="output_1">0.00</div>
+                                </div>                                
+                            </div>
+                            <div class="col-md-6">
+                                <div class="right-right-sec">
+                                    <span class="right-p">Potential Extra Profits</span>
+                                    <div class="output" id="output_2">0.00</div>
+                                </div>                       
+                            </div>
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+                                <br>
+                                <br>
+                                <br>
+                                <a href="#" class="btn btn-primary">Contact us</a>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+<script>
+    jQuery(document).ready(function ($) {
+        let txt_msg = "";
+        const numOptionCurrency = {
+            digitGroupSeparator        : ',',
+            decimalCharacter           : '.',
+            decimalCharacterAlternative: '.',
+            currencySymbol             : '',
+            currencySymbolPlacement    : AutoNumeric.options.currencySymbolPlacement.prefix,
+            decimalPlaces              : 0,
+            minimumValue: 0
+        };
+
+        const nftd = Intl.NumberFormat("en-US", {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        });
+
+        const anElement1 = AutoNumeric.multiple('.in-num', numOptionCurrency);
+
+        $(".in-sms-option").on("click", function () {
+            $(".in-sms-option").removeClass("is-active");
+            $(this).addClass("is-active");
+
+            var value = $(this).data("value");
+            if (value === "yes") {
+                $(".form-field").show();
+                $("#in_5").addClass("in-rq");
+            } else {
+                $(".form-field").hide();
+                $("#in_5").removeClass("in-rq");
+            }
+        });
+
+        $(".in-email-option").on("click", function () {
+            $(".in-email-option").removeClass("is-active");
+            $(this).addClass("is-active");
+
+            var value = $(this).data("value");
+            if (value === "yes") {
+                $(".form-field1").show();
+                $("#in_4").addClass("in-rq");
+            } else {
+                $(".form-field1").hide();
+                $("#in_4").removeClass("in-rq");
+            }
+        });
+
+        $(".in-rq").on("input", function(){
+            $(this).removeClass("err-input");
+        });
+
+        $('#fr_sub_btn').on('click', function(){
+            let total_rq = $(".in-rq").length;
+            let x = 0;
+
+            $(".in-rq").each(function(i, elm){                
+                let vl = $(elm).val().trim();
+                let type = $(elm).attr("type");
+
+                if(type == "email"){
+                    vl = validateEmailAdd(vl);
+                }
+                if(vl){
+                    $(elm).removeClass("err-input");
+                    x++;
+                } else {
+                    $(elm).addClass("err-input");
+                }
+            });
+
+            if(total_rq == x){
+            let is_email = "";
+            let is_sms = "";
+
+            if($(".in-email-option.is-active").data("value") == "yes") {
+                is_email = `
+What's your current email list size?
+= ${$("#in_4").val()}
+`;
+            }
+
+            if($(".in-sms-option.is-active").data("value") == "yes") {
+                is_sms = `
+What's your current email list size?
+= ${$("#in_5").val()}
+`;
+            }
+
+            txt_msg = `What type of product are you selling?
+= ${$("#in_1").val()}
+
+Preferred Currency
+= ${$("#in_2").val()}
+
+Revenue from your online store (Montly)
+= ${$("#in_3").val()}
+
+Are you currently doing email marketing?
+= ${$(".in-email-option.is-active").data("value")}
+${is_email}
+Are you currently doing sms marketing?
+= ${$(".in-sms-option.is-active").data("value")}
+${is_sms}
+`;
+            console.log(txt_msg);
+            }
+        })
+
+        $('#in_3').on('input', function(){
+            Calc();
+        })
+
+        function Calc(){
+            in_3 = removeSign($('#in_3').val());
+
+            let potential_profits = in_3 * 0.5;
+            
+            $('#output_1').text(nftd.format(in_3));
+            $('#output_2').text(nftd.format(potential_profits));
+        }
+
+        function removeSign(vl){
+            return Number(vl.replace(/\$|,/g, ''));
+        }
+
+        // Validate email input field
+        function validateEmailAdd(email) {
+            const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }
+    });
+</script>
+
+</html>
